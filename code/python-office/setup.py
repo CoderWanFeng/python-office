@@ -17,11 +17,9 @@ setup(
     description = "python for office",
     long_description = "",
     license = "MIT Licence",
-
     url = "http://python4office.cn/",     #项目相关文件地址，一般是github
     author = "程序员晚枫",
     author_email = "1957875073@qq.com",
-
     packages = find_packages(),
     include_package_data = True,
     platforms = "any",
