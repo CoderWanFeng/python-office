@@ -25,6 +25,11 @@ setup(
     packages = find_packages(),
     include_package_data = True,
     platforms = "any",
-    install_requires = ['pandas']          #这个项目需要的第三方库
+    install_requires = [
+        'pandas',
+        # 'Django >= 1.11, != 1.11.1, <= 2',
+        'xlrd==1.2.0',
+    ],#这个项目需要的第三方库
+    python_requires='>=3.6',
 )
 
