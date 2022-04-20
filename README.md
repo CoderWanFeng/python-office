@@ -12,3 +12,9 @@
     ```
 - 增加doc文件夹里的教程
     - 可以是原创，也可以是网上收集的资料分享
+    
+## 联系我
+#### 项目介绍
+本项目旨在整理所有Python + 自动化办公的技术资料。
+创建人：[程序员晚枫](https://mp.weixin.qq.com/s/brapCp8aZxIOjgE8qLWs3A) ， 个人网站：www.python4office.cn
+欢迎大家提交PR（pull request），一起来丰富这个项目！
