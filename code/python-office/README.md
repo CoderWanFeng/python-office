@@ -1,0 +1,3 @@
+- https://mp.weixin.qq.com/s/zzD4pxNMFd0ZuWqXlVFdAg
+    - python setup.py sdist  
+    - twine upload dist/python4office-0.0.1.tar.gz
