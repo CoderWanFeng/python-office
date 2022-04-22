@@ -19,7 +19,7 @@ Python库的地址：https://pypi.org/project/python-office/
 ```
 Gitee地址：https://gitee.com/CoderWanFeng/python-office
 
-GitHub地址：https://github.com/heyWFeng/python-office
+GitHub地址：https://github.com/CoderWanFeng/python-office
 ```
 
 
