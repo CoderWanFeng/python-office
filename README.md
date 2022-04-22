@@ -2,13 +2,27 @@
 
 ### 项目来源
 Python自动化办公是一个最近几年刚刚兴起的方向，需要安装的第三方库非常多且杂。
-在开发的过程中，需要不断重复pip install some-packages，有没有一个第三方库，可以像Anaconda汇总了所有的Python数据分析库一样，可以一键安装所有Python自动化办公的第三方库呢？
 
-通过我的检索，我发现是我太天真了，目前并没有。
+在开发的过程中，需要不断重复pip install some-packages。
 
-不过既然我和大家一起，做了3年的Python自动化办公的分享和学习了，那我们就自己来创建一个，提交给Python官方吧。
+**有没有一个第三方库**，可以像Anaconda汇总了所有的Python数据分析库一样，**可以一键安装所有Python自动化办公的第三方库呢？**
+
+通过在Pypi的官网检索，发现目前还没有。那我们就自己来创建一个，提交给Python仓库吧。
 
 于是就有了今天的python-office库：可以一键完成所有Python自动化办公的开发环境的安装。
+
+> 目前项目已上线，下载地址：
+```
+Python库的地址：https://pypi.org/project/python-office/
+```
+> 也欢迎懂技术的朋友，参与该项目的更新与维护，源码地址如下
+```
+Gitee地址：https://gitee.com/CoderWanFeng/python-office
+
+GitHub地址：https://github.com/heyWFeng/python-office
+```
+
+
 ### 使用方法
 本项目旨在开发一个第三方库：python-office，可以帮助需要进行Python自动化办公的朋友，
 通过下列方式，一键安装完成可以进行Python自动化办公的开发环境。
@@ -20,7 +34,7 @@ pip install python-office
 
 欢迎大家提交PR（pull request），一起来丰富这个项目！
 
-### 主要内容
+### 目前包含的第三方库有
 
 #### Excel
 - [xlrd](http://xlrd.readthedocs.io/en/latest/)

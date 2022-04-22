@@ -38,6 +38,7 @@ setup(
         'django',
         'flask',
         'matplotlib',
+        'easyocr',
     ],#这个项目需要的第三方库
     python_requires='>=3.6',
 )
