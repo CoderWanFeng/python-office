@@ -23,82 +23,41 @@ pip install python-office
 ### 主要内容
 
 #### Excel
-------
-- xlrd
-    - [下载](https://pypi.org/project/xlrd/)
-    - [文字教程](http://xlrd.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV1y54y1i78U?p=13)
-- xlwt
-    - [下载](https://pypi.python.org/pypi/xlwt)
-    - [文字教程](https://xlwt.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV1y54y1i78U?p=13)
-- xlutils
-    - [下载](https://pypi.python.org/pypi/xlutils)
-    - [文字教程](https://xlutils.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV1y54y1i78U?p=14)
-- xlwings
-    - [下载](https://pypi.org/project/xlwings/)
-    - [文字教程](https://docs.xlwings.org/en/stable/)
-    - [视频教程](https://www.bilibili.com/video/BV1my4y1x7NQ)
-- openpyxl
-    - [下载](https://pypi.python.org/pypi/openpyxl)
-    - [文字教程](https://openpyxl.readthedocs.io/en/stable/)
-    - [视频教程](https://www.bilibili.com/video/BV1eM4y1A7JR)
-- xlswriter
-    - [下载](https://pypi.python.org/pypi/XlsxWriter)
-    - [文字教程](https://xlsxwriter.readthedocs.io/)
-    - [视频教程](https://www.bilibili.com/video/BV1y54y1i78U?p=18)
-- pandas
-    - [下载]()
-    - [文字教程](https://pandas.pydata.org/)
-    - [视频教程](https://www.bilibili.com/video/BV1hk4y1C73S)
-- PyXLL
-    - [下载](https://www.pyxll.com/download.html)
-    - [文字教程](https://mp.weixin.qq.com/s/eczI5fe2xg42563ksDGcxA)
-- 拓展
-    - Go语言处理Excel：https://github.com/qax-os/excelize
+- [xlrd](http://xlrd.readthedocs.io/en/latest/)
+- [xlwt](https://xlwt.readthedocs.io/en/latest/)
+- [xlutils](https://xlutils.readthedocs.io/en/latest/)
+- [xlwings](https://docs.xlwings.org/en/stable/)
+- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
+- [xlswriter](https://xlsxwriter.readthedocs.io/)
+- [pandas](https://pandas.pydata.org/)
+- [PyXLL](https://mp.weixin.qq.com/s/eczI5fe2xg42563ksDGcxA)
 #### Word
-
-- python-docx
-    - [下载](http://pypi.python.org/pypi/python-docx)
-    - [文字教程](https://python-docx.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV1hy4y187eQ)
+- [python-docx](https://python-docx.readthedocs.io/en/latest/)
 
 #### PPT
 
-- python-pptx
-    - [下载](http://pypi.python.org/pypi/python-pptx)
-    - [文字教程](https://python-pptx.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV1564y127Ws)
+- [python-pptx](https://python-pptx.readthedocs.io/en/latest/)
 
 #### PDF
 
-- [PyPDF2](https://www.bilibili.com/video/BV18V411J7Cy)
-    - [下载](https://pypi.org/project/PyPDF2/)
-    - [文字教程](https://pypdf2.readthedocs.io/en/latest/)
-    - [视频教程](https://www.bilibili.com/video/BV18V411J7Cy)
+- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/)
+#### OCR
+- [easyocr](https://pypdf2.readthedocs.io/en/latest/)
 
 #### 爬虫
 
-- scrapy
-    - [文字教程](https://scrapy.org/)
-    - [视频教程](https://www.bilibili.com/video/BV1LV411m7Ym)
+- [scrapy](https://scrapy.org/)
 
 #### 网站开发
-- django
-    - [文字教程](https://www.djangoproject.com/)
-    - [视频教程](https://mp.weixin.qq.com/s/2BPiuy_gRA4j6CTWG7jVtQ)
+- [django](https://www.djangoproject.com/)
+- [flask](https://dormousehole.readthedocs.io/en/latest/)
 
 #### 数据分析 & 数据可视化
-- pandas
-    - [下载]()
-    - [文字教程](https://pandas.pydata.org/)
-    - [视频教程](https://www.bilibili.com/video/BV1hk4y1C73S)
-#### 个人网站
-- hexo
-    - [中文文档](https://hexo.io/zh-cn/)
+- [pandas](https://pandas.pydata.org/)
+- [numpy](https://numpy.org/)
+- [matplotlib](https://matplotlib.org/)
 
-#### 拓展技术
+
 
     
 ## 联系我
