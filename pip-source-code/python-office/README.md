@@ -1,3 +1,2 @@
-- https://mp.weixin.qq.com/s/zzD4pxNMFd0ZuWqXlVFdAg
-    - python setup.py sdist  
-    - twine upload dist/python4office-0.0.1.tar.gz
+## 关于setup的参数
+- https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#install-requires
