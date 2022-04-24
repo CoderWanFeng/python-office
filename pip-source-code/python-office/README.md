@@ -8,6 +8,8 @@
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 
-## 关于setup的参数
-
-- https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#install-requires
+## 参考资料 
+- 关于setup.py的参数说明
+    - https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#install-requires
+- 如何使用setup.cfg
+    - https://zhuanlan.zhihu.com/p/261579357
