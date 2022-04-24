@@ -28,6 +28,7 @@ MANIFEST
 .idea/
 .gitee/
 upload.sh
+test/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
