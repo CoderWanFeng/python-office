@@ -1,5 +1,15 @@
 # Python自动化办公学习指南
 
+## 版本说明
+
+| 版本号 | 版本信息            | 发布日期  |
+| ------ | ------------------- | --------- |
+| 0.0.1  | 项目初始化          | 2022-4-19 |
+| 0.0.2  | 添加基础库          | 2022-4-21 |
+| 0.0.3  | 增加matplotlib和ocr | 2022-4-24 |
+| 0.0.4  | 修改配置文件为setup.cfg | 2022-4-24 |
+
+> 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 
 
 [![图片](https://mmbiz.qpic.cn/mmbiz_jpg/zDSXSxxV3hKiaoXW8JVY1TsKFYiaKP52tbhV3S5SXcziam69C8BqqiaRjAGLs412Ph2cb7picSKniaclGUehOM7d6vzA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1)](http://mp.weixin.qq.com/s?__biz=Mzg3MDU3OTgxMg==&mid=2247490887&idx=1&sn=4b127c7bd829514e45ff3a577f940286&chksm=ce8af64cf9fd7f5a69cb743c0e467307bb7ade480edd6b457f6fae581fadf9c86c9b9bc0fd31&scene=21#wechat_redirect)
@@ -128,3 +138,11 @@ GitHub地址：https://github.com/CoderWanFeng/python-office
 - 个人微信：[CoderWanFeng](http://www.python4office.cn/wechat-qrcode/)
 - 个人网站：[www.python4office.cn](www.python4office.cn)
   欢迎大家提交PR（pull request），一起来丰富这个项目！
+  
+## 参考资料 
+- 关于setup.py的参数说明
+    - https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#install-requires
+- 如何使用setup.cfg
+    - https://zhuanlan.zhihu.com/p/261579357
+- 打包pip
+    - https://mp.weixin.qq.com/s/zzD4pxNMFd0ZuWqXlVFdAg
