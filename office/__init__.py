@@ -1,1 +1,1 @@
-from . import docx
+from . import word

@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+
+#############################################
+# File Name: word.py
+# Author: 程序员晚枫
+# Mail: 1957875073@qq.com
+# Created Time:  2022-4-25 10:17:34
+# Description: 有关word的自动化操作
+#############################################
+
 from win32com.client import constants, gencache
 import os  # 目录的操作
 
@@ -11,7 +22,7 @@ def createpdf(wordPath, pdfPath):
 
 
 
-# 文件的批量转换:
+# 1、文件的批量转换
 # 自己指定路径，
 # 为了适配wps不能转换doc的问题，这里限定：只能转换docx
 def docx2pdf(path):
