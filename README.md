@@ -69,15 +69,6 @@ pip install python-office
 
 ## 目前包含的第三方库有
 
-> “
->
-> 欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护，我每天下午merge一次。源码地址如下
-
-```
-Gitee地址：https://gitee.com/CoderWanFeng/python-office
-
-GitHub地址：https://github.com/CoderWanFeng/python-office
-```
 
 #### Excel
 
@@ -135,16 +126,20 @@ GitHub地址：https://github.com/CoderWanFeng/python-office
 
 
 
-## 联系我
+## 加入我们
 
 #### 项目介绍
 
-本项目旨在整理所有Python + 自动化办公的技术资料。
+本项目旨在打包所有Python + 自动化办公的技术，方便大家的自动化办公使用。
+欢迎大家提交PR（pull request），一起来丰富这个项目！
+> “
+>
+> 欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护，我每天下午merge一次。源码地址如下
 
-- 创建人：[程序员晚枫](https://mp.weixin.qq.com/s/brapCp8aZxIOjgE8qLWs3A) ， 
-- 个人微信：[CoderWanFeng](http://www.python4office.cn/wechat-qrcode/)
-- 个人网站：[www.python4office.cn](www.python4office.cn)
-  欢迎大家提交PR（pull request），一起来丰富这个项目！
+- Gitee地址：[https://gitee.com/CoderWanFeng/python-office](https://gitee.com/CoderWanFeng/python-office)
+
+- GitHub地址：[https://github.com/CoderWanFeng/python-office](https://github.com/CoderWanFeng/python-office)
+
   
 ## 参考资料 
 - 关于setup.py的参数说明
