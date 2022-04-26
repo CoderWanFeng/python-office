@@ -6,11 +6,17 @@
 | ------ | ------------------- | --------- |
 | 0.0.1  | 项目初始化          | 2022-4-19 |
 | 0.0.2  | 添加基础库          | 2022-4-21 |
-| 0.0.3  | 增加matplotlib和ocr | 2022-4-24 |
+| 0.0.3  | 增加matplotlib和easyocr | 2022-4-24 |
 | 0.0.4  | 修改配置文件为setup.cfg | 2022-4-24 |
 | 0.0.5  | 发布wheel文件 | 2022-4-24 |
+| 0.0.6  | 增加功能：word批量转pdf | 2022-4-24 |
+| 0.0.7  | 修复功能：word批量转pdf | 2022-4-24 |
+| 0.0.8  | 增加功能：单个pdf添加水印 | 2022-4-25 |
+| 0.0.9  | 因为安装包太大，去掉matplotlib；添加项目交流群 | 2022-4-25 |
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
+>
+> 或者，欢迎有学习/定制功能/加入项目需求的同学，直接加入我们的项目交流群👉[点我直达](http://www.python4office.cn/images/2-free-group.jpg)
 
 
 [![图片](https://mmbiz.qpic.cn/mmbiz_jpg/zDSXSxxV3hKiaoXW8JVY1TsKFYiaKP52tbhV3S5SXcziam69C8BqqiaRjAGLs412Ph2cb7picSKniaclGUehOM7d6vzA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1)](http://mp.weixin.qq.com/s?__biz=Mzg3MDU3OTgxMg==&mid=2247490887&idx=1&sn=4b127c7bd829514e45ff3a577f940286&chksm=ce8af64cf9fd7f5a69cb743c0e467307bb7ade480edd6b457f6fae581fadf9c86c9b9bc0fd31&scene=21#wechat_redirect)
@@ -48,7 +54,7 @@ Python自动化办公是一个最近几年刚刚兴起的方向，需要安装�
 > 目前项目已上线，下载地址：
 
 ```
-Python库的地址：https://pypi.org/project/python-office/
+Python库的地址：[https://pypi.org/project/python-office/](https://pypi.org/project/python-office/)
 ```
 
 ## 下载和使用
