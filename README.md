@@ -13,6 +13,7 @@
 | 0.0.7  | 修复功能：word批量转pdf | 2022-4-24 |
 | 0.0.8  | 增加功能：单个pdf添加水印 | 2022-4-25 |
 | 0.0.9  | 因为安装包太大，去掉matplotlib；添加项目交流群 | 2022-4-25 |
+| 0.0.10  | add 【词云功能】 | 2022-4-28 |
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 >
@@ -65,19 +66,21 @@ Python库的地址：[https://pypi.org/project/python-office/](https://pypi.org/
 pip install python-office
 ```
 
-作用：一键搭建所有Python + 自动化办公的编程环境。
+作用：
+- 一键搭建所有Python + 自动化办公的编程环境。
+- 一行代码，解决大部分自动化办公的问题，不需要小白学习Python知识，自己苦哈哈的写代码
+
+
+## 功能文档（持续更新）
+- word：
+    - word 转 pdf：[python-office库：只要2行Python代码，实现Word批量转换PDF](https://mp.weixin.qq.com/s/6SM_66BjCIzUkkRWrDe5pQ)
+- pdf：
+    - pdf添加水印：[一行Python代码，给PDF文件添加水印，快速而且免费~python-office自动化办公，YYDS](https://mp.weixin.qq.com/s/yJDs5RoytRL5hl-ybXkZOA)
+- image：
+    - 自动生成词云：[逆天！1 行代码就可以生成可视化词云，python-office自动化办公发布新功能！](https://mp.weixin.qq.com/s/ifmt7MDleACNQKxk77EeNA)
 
 ## 目前包含的第三方库有
 
-> “
->
-> 欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护，我每天下午merge一次。源码地址如下
-
-```
-Gitee地址：https://gitee.com/CoderWanFeng/python-office
-
-GitHub地址：https://github.com/CoderWanFeng/python-office
-```
 
 #### Excel
 
@@ -135,16 +138,20 @@ GitHub地址：https://github.com/CoderWanFeng/python-office
 
 
 
-## 联系我
+## 加入我们
 
 #### 项目介绍
 
-本项目旨在整理所有Python + 自动化办公的技术资料。
+本项目旨在打包所有Python + 自动化办公的技术，方便大家的自动化办公使用。
+欢迎大家提交PR（pull request），一起来丰富这个项目！
+> “
+>
+> 欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护，我每天下午merge一次。源码地址如下
 
-- 创建人：[程序员晚枫](https://mp.weixin.qq.com/s/brapCp8aZxIOjgE8qLWs3A) ， 
-- 个人微信：[CoderWanFeng](http://www.python4office.cn/wechat-qrcode/)
-- 个人网站：[www.python4office.cn](www.python4office.cn)
-  欢迎大家提交PR（pull request），一起来丰富这个项目！
+- Gitee地址：[https://gitee.com/CoderWanFeng/python-office](https://gitee.com/CoderWanFeng/python-office)
+
+- GitHub地址：[https://github.com/CoderWanFeng/python-office](https://github.com/CoderWanFeng/python-office)
+
   
 ## 参考资料 
 - 关于setup.py的参数说明

@@ -1,3 +1,3 @@
 from . import word
 from . import pdf
-from . import email
+from . import image
