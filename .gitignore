@@ -32,8 +32,8 @@ MANIFEST
 .gitee/
 upload.sh
 test/
-clean.sh
-allpackages.txt
+test/clean.sh
+test/allpackages.txt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

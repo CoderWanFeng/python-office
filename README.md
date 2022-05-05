@@ -1,69 +1,28 @@
 # Python自动化办公学习指南
 
-## 版本说明
 
-| 版本号 | 版本信息            | 发布日期  |
-| ------ | ------------------- | --------- |
-| 0.0.1  | 项目初始化          | 2022-4-19 |
-| 0.0.2  | 添加基础库          | 2022-4-21 |
-| 0.0.3  | 增加matplotlib和easyocr | 2022-4-24 |
-| 0.0.4  | 修改配置文件为setup.cfg | 2022-4-24 |
-| 0.0.5  | 发布wheel文件 | 2022-4-24 |
-| 0.0.6  | 增加功能：word批量转pdf | 2022-4-24 |
-| 0.0.7  | 修复功能：word批量转pdf | 2022-4-24 |
-| 0.0.8  | 增加功能：单个pdf添加水印 | 2022-4-25 |
-| 0.0.9  | 因为安装包太大，去掉matplotlib；添加项目交流群 | 2022-4-25 |
-| 0.0.10  | add 【词云功能】 | 2022-4-28 |
-
-> 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
->
-> 或者，欢迎有学习/定制功能/加入项目需求的同学，直接加入我们的项目交流群👉[点我直达](http://www.python4office.cn/images/2-free-group.jpg)
-
-
-[![图片](https://mmbiz.qpic.cn/mmbiz_jpg/zDSXSxxV3hKiaoXW8JVY1TsKFYiaKP52tbhV3S5SXcziam69C8BqqiaRjAGLs412Ph2cb7picSKniaclGUehOM7d6vzA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1)](http://mp.weixin.qq.com/s?__biz=Mzg3MDU3OTgxMg==&mid=2247490887&idx=1&sn=4b127c7bd829514e45ff3a577f940286&chksm=ce8af64cf9fd7f5a69cb743c0e467307bb7ade480edd6b457f6fae581fadf9c86c9b9bc0fd31&scene=21#wechat_redirect)
+![图片](https://f10.baidu.com/it/u=442371958,171656815&fm=30&app=106&f=JPEG&access=215967316?w=640&h=201&s=D923707E86D40D7216227510020080DA)
 
 
 
-大家好，这里是法学院毕业的程序员晚枫，专注于Python自动化办公知识分享。技术交流微信👉[CoderWanFeng](https://mp.weixin.qq.com/s?__biz=MzkyMzIwOTgzMA==&mid=2247485697&idx=1&sn=19fd2c7cc0193e7ca529e05519bd67e9&scene=21#wechat_redirect)
+大家好，这里是法学院毕业的程序员晚枫，专注于Python自动化办公知识分享。
+
+
+最近Pypi官网发布了一个Python自动化办公的神器：python-office，内含所有Python自动化办公的第三方库，可以帮助小白【快速使用】Python自动化办公。
 
 
 
-最近Pypi官网发布了一个Python自动化办公的神器：python-office，内含所有Python自动化办公的第三方库，可以帮助小白快速学会Python自动化办公。
-
-
-
-安装命令：
-
-
-
-```
-pip install python-office
-```
-
-## 项目来源
-
-Python自动化办公是一个最近几年刚刚兴起的方向，需要安装的第三方库非常多且杂。
-
-在开发的过程中，需要不断重复pip install some-packages。
-
-**有没有一个第三方库**，可以像Anaconda汇总了所有的Python数据分析库一样，**可以一键安装所有Python自动化办公的第三方库呢？**
-
-于是就有了今天的python-office库：可以一键完成所有Python自动化办公的开发环境的安装，其中包含的第三方库的功能和使用说明，之前给大家整理过：[深度盘点丨史上最全的Python自动化办公库（34个）](http://mp.weixin.qq.com/s?__biz=MzI2Nzg5MjgyNg==&mid=2247494263&idx=2&sn=20233004805dbc3934e524aeecfb69b3&chksm=eaf54b42dd82c254c2fb81c0dc1441861be9ac511f61bbbe0df1b005f43c312883ad491c8b43&scene=21#wechat_redirect)
-
-> “
->
-> 目前项目已上线，下载地址：
-
-```
-Python库的地址：[https://pypi.org/project/python-office/](https://pypi.org/project/python-office/)
-```
-
-## 下载和使用
+## 1、下载和使用
 
 本项目旨在开发一个第三方库：python-office，可以帮助需要进行Python自动化办公的朋友，**尤其是小白，**通过下列方式，一键安装完成进行Python自动化办公的开发环境。
+> 目前项目已上线Python官网
 
+0. 安装这个库之前，你的电脑上，需要有python环境
+没有的同学，请移步这个7分钟的安装视频：https://www.bilibili.com/video/BV1Zb4y1y72V?p=2
+
+1. 安装好后，打开pycharm的terminal，输入以下命令，即可自动安装
 ```
-pip install python-office
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 ```
 
 作用：
@@ -71,15 +30,38 @@ pip install python-office
 - 一行代码，解决大部分自动化办公的问题，不需要小白学习Python知识，自己苦哈哈的写代码
 
 
-## 功能文档（持续更新）
-- word：
-    - word 转 pdf：[python-office库：只要2行Python代码，实现Word批量转换PDF](https://mp.weixin.qq.com/s/6SM_66BjCIzUkkRWrDe5pQ)
-- pdf：
-    - pdf添加水印：[一行Python代码，给PDF文件添加水印，快速而且免费~python-office自动化办公，YYDS](https://mp.weixin.qq.com/s/yJDs5RoytRL5hl-ybXkZOA)
-- image：
-    - 自动生成词云：[逆天！1 行代码就可以生成可视化词云，python-office自动化办公发布新功能！](https://mp.weixin.qq.com/s/ifmt7MDleACNQKxk77EeNA)
+## 2、版本说明
 
-## 目前包含的第三方库有
+| 版本号 | 版本信息            | 发布日期  |
+| ------ | ------------------- | --------- |
+| 0.0.1  | init：项目初始化          | 2022-4-19 |
+| 0.0.2  | init：添加基础库          | 2022-4-21 |
+| 0.0.3  | init：matplotlib和easyocr | 2022-4-24 |
+| 0.0.4  | init：修改配置文件为setup.cfg | 2022-4-24 |
+| 0.0.5  | init：发布wheel文件 | 2022-4-24 |
+| 0.0.6  | add：word批量转pdf | 2022-4-24 |
+| 0.0.7  | patch：word批量转pdf | 2022-4-24 |
+| 0.0.8  | add：单个pdf添加水印 | 2022-4-25 |
+| 0.0.9  | patch：因为安装包太大，去掉matplotlib；添加项目交流群 | 2022-4-25 |
+| 0.0.10  | add：txt文本转词云功能 | 2022-4-28 |
+| 0.0.11  | update：word批量转pdf | 2022-5-1 |
+| 0.0.12  | add：重命名指定路径下的文件/文件夹 | 2022-5-4 |
+
+> 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
+>
+> 或者，欢迎有学习/定制功能/加入项目需求的同学，直接加入我们的项目交流群👉[点我直达](http://www.python4office.cn/images/2-free-group.jpg)
+
+## 3、功能文档（持续更新）
+- word：
+    - docx2pdf：word 转 pdf：[python-office库：只要2行Python代码，实现Word批量转换PDF](https://mp.weixin.qq.com/s/6SM_66BjCIzUkkRWrDe5pQ)
+- pdf：
+    - add_watermark：pdf添加水印：[一行Python代码，给PDF文件添加水印，快速而且免费~python-office自动化办公，YYDS](https://mp.weixin.qq.com/s/yJDs5RoytRL5hl-ybXkZOA)
+- image：
+    - txt2wordcloud：自动生成词云：[逆天！1 行代码就可以生成可视化词云，python-office自动化办公发布新功能！](https://mp.weixin.qq.com/s/ifmt7MDleACNQKxk77EeNA)
+- file
+    - replace4filename：重命名文件/文件夹
+
+## 4、目前包含的第三方库有
 
 
 #### Excel
@@ -138,7 +120,7 @@ pip install python-office
 
 
 
-## 加入我们
+## 5、加入我们
 
 #### 项目介绍
 

@@ -5,6 +5,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import registerFont
+from fpdf import FPDF
 
 
 def create_watermark(content):
@@ -65,3 +66,17 @@ def add_watermark():
     pdf_file_out = '添加了水印的文件.pdf'  # 添加PDF水印后的文件
     pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out)
     print("水印添加结束，请打开电脑上的这个位置，查看结果文件：{path}".format(path=os.getcwd()))
+
+
+def txt2pdf():
+    pdf = FPDF()
+    pdf.add_page()  # Add a page
+    pdf.set_font("Arial", size=15)  # set style and size of font
+    f = open(
+        'D:\\workplace\\code\\BaiduNetdiskWorkspace\\personal\\linux\\workplace\\pro\\git\\gitee\\python-office\\test\\allpackages.txt',
+        "r")  # open the text file in read mode
+    # insert the texts in pdf
+    for x in f:
+        pdf.cell(50, 5, txt=x, ln=1, align='C')
+    # pdf.output("path where you want to store pdf file\\file_name.pdf")
+    pdf.output("game_notes.pdf")
