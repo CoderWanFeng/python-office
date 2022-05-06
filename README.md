@@ -6,6 +6,7 @@
 
 
 大家好，这里是法学院毕业的程序员晚枫，专注于Python自动化办公知识分享。
+> 自动化办公，学习交流群[👉【戳我加入】](http://www.python4office.cn/wechat-group/)
 
 
 最近Pypi官网发布了一个Python自动化办公的神器：python-office，内含所有Python自动化办公的第三方库，可以帮助小白【快速使用】Python自动化办公。
@@ -15,10 +16,10 @@
 ## 1、下载和使用
 
 本项目旨在开发一个第三方库：python-office，可以帮助需要进行Python自动化办公的朋友，**尤其是小白，**通过下列方式，一键安装完成进行Python自动化办公的开发环境。
-> 目前项目已上线Python官网
+> 目前项目已上线Python官网：[传送门](https://pypi.org/project/python-office)
 
 0. 安装这个库之前，你的电脑上，需要有python环境
-没有的同学，请移步这个7分钟的安装视频：https://www.bilibili.com/video/BV1Zb4y1y72V?p=2
+没有的同学，请移步这个7分钟的安装视频：[来，手把手带你搭建Python环境](https://www.bilibili.com/video/BV1Zb4y1y72V?p=2)
 
 1. 安装好后，打开pycharm的terminal，输入以下命令，即可自动安装
 ```
