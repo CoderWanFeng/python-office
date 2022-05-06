@@ -47,6 +47,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 0.0.10  | add：txt文本转词云功能 | 2022-4-28 |
 | 0.0.11  | update：word批量转pdf | 2022-5-1 |
 | 0.0.12  | add：重命名指定路径下的文件/文件夹 | 2022-5-4 |
+| 0.0.13  | update：因为c++14的原因，去掉wordcloud库，需要的同学，自行install即可 | 2022-5-6 |
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 >
