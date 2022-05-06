@@ -82,7 +82,13 @@ path = 'D:\\QMDownload\\'
 office.file.replace4filename(path=path,del_content='新建文件夹',replace_content='5')
 
 ```
-
+### 五、视频操作
+#### 1、从视频里提取MP3
+```python
+import office
+path = 'D:\\QMDownload\\'
+office.video.video2mp3(path=path,mp3_name='result')
+```
 # 目前包含的第三方库有
 
 
@@ -174,7 +180,7 @@ office.file.replace4filename(path=path,del_content='新建文件夹',replace_con
 | 0.0.11  | update：word批量转pdf | 2022-5-1 |
 | 0.0.12  | add：重命名指定路径下的文件/文件夹 | 2022-5-4 |
 | 0.0.13  | update：因为c++14的原因，去掉wordcloud库，需要的同学，自行install即可 | 2022-5-6 |
-| 0.0.14  | add：给图片加水印 | 2022-5-6 |
+| 0.0.14  | add：给图片加水印、生成二维码、提取音频、翻译 | 2022-5-6 |
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 >
