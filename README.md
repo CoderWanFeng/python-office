@@ -18,7 +18,7 @@
 > 目前项目已上线Python官网：[传送门](https://pypi.org/project/python-office)
 
 0. 安装这个库之前，你的电脑上，需要有python环境
-没有的同学，请移步这个7分钟的安装视频：[来，手把手带你搭建Python环境](https://www.bilibili.com/video/BV1Zb4y1y72V?p=2)
+没有的同学，请移步这个6分钟的安装视频：[来，手把手带你搭建Python环境](https://www.bilibili.com/video/BV1Q44y1u7rV)
 
 1. 安装好后，打开pycharm的terminal，输入以下命令，即可自动安装
 ```

@@ -68,6 +68,7 @@ def add_watermark():
     print("水印添加结束，请打开电脑上的这个位置，查看结果文件：{path}".format(path=os.getcwd()))
 
 
+# txt转pdf
 def txt2pdf():
     pdf = FPDF()
     pdf.add_page()  # Add a page
