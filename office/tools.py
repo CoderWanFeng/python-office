@@ -1,6 +1,8 @@
 # import the library
 from translate import Translator
 import qrcode
+import string
+import random
 
 
 def transtools(to_lang, content):
@@ -24,3 +26,12 @@ def qrcodetools(url):
     img = qr.make_image(fill='black', back_color='white')
     # store the image
     img.save('qrcode_img.png')
+
+def passwordtools(len = 8):
+    """
+    @Author & Date  : CoderWanFeng 2022/5/9 11:54
+    @Desc  : 随机密码生成器，默认是8位
+    @Return  ：
+    """
+    chars = string.digits + string.ascii_letters
+    return ''.join(random.sample(chars * 10, len))
