@@ -31,7 +31,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 
 
-# 功能文档和代码代码示例（持续更新）
+# 代码文档（持续更新）
 
 
 
