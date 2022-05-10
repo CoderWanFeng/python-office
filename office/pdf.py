@@ -37,11 +37,10 @@ def txt2pdf():
 # PDF加密
 def encrypt4pdf(path, password, res_pdf='encrypt.pdf'):
     """
-    @Author & Date  : liuzf 2022/5/9 18:27
+    @Author & Date  : CoderWanFeng 2022/5/9 18:27
     @Desc  : path: 存放文件的路径
             password: 你的密码
             res_pdf: 结果文件的名称 ，可以为空，默认是：encrypt.pdf
-    @Return  ：
     """
     pdf = pikepdf.open(path)
     pdf.save(res_pdf, encryption=pikepdf.Encryption(owner=password,  user=password,R=4))

@@ -52,6 +52,7 @@ import office  # 导入python-office
 office.pdf.add_watermark() # 不需要对代码进行任何修改，直接运行
 ```
 #### 2、pdf加密、解密
+[1行python代码，实现PDF加密、解密](https://mp.weixin.qq.com/s/YOxBzYPMqfl5gCAWtnVXKA)
 ```python
 import office
 
@@ -190,6 +191,7 @@ office.video.video2mp3(path=path,mp3_name='result')
 | 0.0.13  | update：因为c++14的原因，去掉wordcloud库，需要的同学，自行install即可 | 2022-5-6 |
 | 0.0.14  | add：给图片加水印、生成二维码、提取音频、翻译 | 2022-5-6 |
 | 0.0.15  | add：pdf加密、解密 | 2022-5-9 |
+| 0.0.16  | update：不再使用wordcloud功能 | 2022-5-10 |
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 >
