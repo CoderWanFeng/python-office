@@ -34,6 +34,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 # 代码文档（持续更新）
 
+## 1、文字版
 
 
 - Word：
@@ -51,7 +52,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
     - 图片加水印：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
 - Files
-    - 批量重命名 文件/文件夹：[代码](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
+    - 批量重命名 文件/文件夹：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
 - Video
     - 从视频里提取音频：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
@@ -60,6 +61,10 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
     - 生成二维码：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
     - 翻译：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
+## 2、视频版
+- [官网发布：python-office，专为自动化办公而生](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
+- [批量重命名](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
+- [PPT批量转PDF](https://www.bilibili.com/video/BV17Y411c792?spm_id_from=333.999.0.0)
 
 # 开源仓库
 
@@ -93,6 +98,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 0.0.16  | update：不再使用wordcloud功能 | 2022-5-10 |
 | 0.0.17  | add：txt转pdf | 2022-5-10 |
 | 0.0.18  | update：确定第一版readme.md、home链接改为：github地址 | 2022-5-10 |
+| 0.0.19  | add：一键模拟生成 - 带有逼真模拟数据的Excel文件 | 2022-5-13 |
 
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)

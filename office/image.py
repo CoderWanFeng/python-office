@@ -9,14 +9,18 @@
 #############################################
 
 import os
-from service.image import add_watermark_service
+# from service.image import add_watermark_service
 # 生成词云需要使用的类库
 from PIL import Image
-# from wordcloud import WordCloud
-# import jieba
+from alive_progress import alive_bar
+
+
 
 
 # 自动生成gif
+from service.image import add_watermark_service
+
+
 def image2gif():
     im = Image.open("1.jpg")
     images = []
@@ -24,6 +28,8 @@ def image2gif():
     images.append(Image.open('3.jpg'))
     im.save('gif.gif', save_all=True, append_images=images, loop=1, duration=1, comment=b"aaabb")
 
+# from wordcloud import WordCloud
+# import jieba
 
 # def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
 #     """
@@ -59,8 +65,10 @@ def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.
     """
     if os.path.isdir(file):
         names = os.listdir(file)
-        for name in names:
-            image_file = os.path.join(file, name)
-            add_watermark_service.add_mark2file(image_file, mark, out, color, size, opacity, space, angle)
+        with alive_bar(len(names)) as bar:
+            for name in names:
+                bar()
+                image_file = os.path.join(file, name)
+                add_watermark_service.add_mark2file(image_file, mark, out, color, size, opacity, space, angle)
     else:
         add_watermark_service.add_mark2file(file, mark, out, color, size, opacity, space, angle)
