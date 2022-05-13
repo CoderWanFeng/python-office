@@ -9,6 +9,8 @@
 #############################################
 import os
 from alive_progress import alive_bar
+import time
+
 from service.ppt.ppt2pdf_service import ppt2pdf_single
 
 
@@ -33,3 +35,4 @@ def ppt2pdf(path):
             output_filename = path + '/' + new_name
             # 将ppt转成pdf文件
             ppt2pdf_single(filename, output_filename)
+            time.sleep(3)

@@ -5,6 +5,7 @@
 ![Issues](https://img.shields.io/github/issues/CoderWanFeng/python-office)
 ![Forks](https://img.shields.io/github/forks/CoderWanFeng/python-office)
 ![Pull Requests](https://img.shields.io/github/issues-pr/CoderWanFeng/python-office?)
+![License](https://img.shields.io/github/license/CoderWanFeng/python-office)
 
 ![图片](https://f10.baidu.com/it/u=442371958,171656815&fm=30&app=106&f=JPEG&access=215967316?w=640&h=201&s=D923707E86D40D7216227510020080DA)
 
@@ -31,8 +32,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 
 
-# 功能文档和代码代码示例（持续更新）
+# 代码文档（持续更新）
 
+## 1、文字版
 
 
 - Word：
@@ -50,7 +52,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
     - 图片加水印：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
 - Files
-    - 批量重命名 文件/文件夹：[代码](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
+    - 批量重命名 文件/文件夹：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
 - Video
     - 从视频里提取音频：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
@@ -59,8 +61,12 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
     - 生成二维码：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
     - 翻译：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
 
+## 2、视频版
+- [官网发布：python-office，专为自动化办公而生](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
+- [批量重命名](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
+- [PPT批量转PDF](https://www.bilibili.com/video/BV17Y411c792?spm_id_from=333.999.0.0)
 
-# 参与项目
+# 开源仓库
 
 欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护。
 我每天下午merge一次。源码地址如下
@@ -70,7 +76,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 - GitHub地址：[https://github.com/CoderWanFeng/python-office](https://github.com/CoderWanFeng/python-office)
 
 
-# 版本更新记录
+# 更新记录
 
 | 版本号 | 版本信息            | 发布日期  |
 | ------ | ------------------- | --------- |
@@ -91,16 +97,25 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 0.0.15  | add：pdf加密、解密 | 2022-5-9 |
 | 0.0.16  | update：不再使用wordcloud功能 | 2022-5-10 |
 | 0.0.17  | add：txt转pdf | 2022-5-10 |
+| 0.0.18  | update：确定第一版readme.md、home链接改为：github地址 | 2022-5-10 |
+| 0.0.19  | add：一键模拟生成 - 带有逼真模拟数据的Excel文件 | 2022-5-13 |
+
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
 >
 > 或者，欢迎有学习/定制功能/加入项目需求的同学，直接加入我们的项目交流群👉[点我直达](http://www.python4office.cn/images/2-free-group.jpg)
 
 ## 参考资料 
-- [深度盘点 | 史上最全Python网站开发库（37个）](https://mp.weixin.qq.com/s/nt38KmPVdiQvdV0q-pW85A)
-- [xlwings库 | Excel与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/2_qNnsPK6fjEAUu3jf-NFA)
-- [系统性的学会 Pandas， 看这一篇就够了！](https://mp.weixin.qq.com/s/tzy7h_qrk_tkK4ojnRSFtQ)
-- [Python-Docx库 | Word与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/_QzBRGeXsqF65-xlzQfFjQ)
-- [python-pptx库 | PPT与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/dXrveWypcR5S4XGauS4wcg)
-- [PyPDF2库 | PDF与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/M4ARo2SXZcGIjMcv19SVyA)
-- [278页PDF：《Python数据分析基础》，0基础入门专用~](https://mp.weixin.qq.com/s/YWNkn366SdF4IWYTczpBAw)
+- 教材：
+    - [278页PDF：《Python数据分析基础》，0基础入门专用~](https://mp.weixin.qq.com/s/YWNkn366SdF4IWYTczpBAw)
+    - [409页PDF：《Python：让繁琐工作自动化》](https://mp.weixin.qq.com/s/yQRSjUliJsdvKW8du9iF6g)
+    - [715页PDF：《Python数据科学手册》](https://mp.weixin.qq.com/s/WEZCqQdNY_KljGeXHgzdtA)
+- 文档：
+    - [深度盘点 | 史上最全Python网站开发库（37个）](https://mp.weixin.qq.com/s/nt38KmPVdiQvdV0q-pW85A)
+    - [深度盘点丨史上最全的Python自动化办公库（34个）](https://mp.weixin.qq.com/s/RsBG_cg8GsB2P-9zmhrA1Q)
+- 第三方库：
+    - [xlwings库 | Excel与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/2_qNnsPK6fjEAUu3jf-NFA)
+    - [系统性的学会 Pandas， 看这一篇就够了！](https://mp.weixin.qq.com/s/tzy7h_qrk_tkK4ojnRSFtQ)
+    - [Python-Docx库 | Word与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/_QzBRGeXsqF65-xlzQfFjQ)
+    - [python-pptx库 | PPT与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/dXrveWypcR5S4XGauS4wcg)
+    - [PyPDF2库 | PDF与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/M4ARo2SXZcGIjMcv19SVyA)
