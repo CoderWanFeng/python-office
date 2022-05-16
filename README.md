@@ -49,6 +49,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
     - TxT 转成 PDF：[代码](https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA)
     - PDF 加密、解密：[代码](https://mp.weixin.qq.com/s/YOxBzYPMqfl5gCAWtnVXKA)
     - PDF 加水印：[代码](https://mp.weixin.qq.com/s/yJDs5RoytRL5hl-ybXkZOA)
+    - 合并2个PDF：[代码](http://www.python4office.cn/python-office/merge2pdf/)
 
 - PPT
     - PPT 批量转成 PDF：[代码](https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg)
@@ -65,6 +66,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 - Tools
     - 生成二维码：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
     - 翻译：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
+    - 密码生成器：[代码](https://gitee.com/CoderWanFeng/python-office/blob/master/office/tools.py)
 
 ## 2、视频版
 - [官网发布：python-office，专为自动化办公而生](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
@@ -106,7 +108,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 0.0.18  | update：确定第一版readme.md、home链接改为：github地址 | 2022-5-10 |
 | 0.0.19  | add：一键模拟生成 - 带有模拟数据的Excel文件 | 2022-5-13 |
 | 0.0.20  | update：修复word转pdf，路径问题 | 2022-5-16 |
-| 0.0.21  | add：消除图像背景色 | 2022-5-16 |
+| 0.0.21  | add：消除图像背景色、merg2pdf | 2022-5-17 |
 
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
