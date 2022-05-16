@@ -25,8 +25,16 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+
+# CoderWanFeng
 .idea/
 .gitee/
+shell/upload.sh
+test/
+test/clean.sh
+test/allpackages.txt
+shell/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
