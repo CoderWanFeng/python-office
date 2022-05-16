@@ -3,6 +3,8 @@ import os
 from fpdf import FPDF
 from service.pdf import add_watermark_service
 import pikepdf
+from PyPDF2 import PdfFileReader, PdfFileWriter
+
 
 
 #给pdf加水印
@@ -49,3 +51,22 @@ def decrypt4pdf(path, password, res_pdf='decrypt.pdf'):
     pdf = pikepdf.open(path, password=password)
     pdf.save(res_pdf)
     pdf.close()
+
+#合并pdf
+def merge2pdf(one_by_one, output):
+    """
+    @Author & Date  : CoderWanFeng 2022/5/16 23:33
+    @Desc  : merge_pdfs(paths=['开篇词.pdf', '中国元宇宙白皮书 (送审稿).pdf'], output='merge.pdf')
+    """
+    pdf_writer = PdfFileWriter()
+
+    for path in one_by_one:
+        pdf_reader = PdfFileReader(path)
+        for page in range(pdf_reader.getNumPages()):
+            # 把每张PDF页面加入到这个可读取对象中
+            pdf_writer.addPage(pdf_reader.getPage(page))
+
+    # 把这个已合并了的PDF文档存储起来
+    with open(output, 'wb') as out:
+        pdf_writer.write(out)
+
