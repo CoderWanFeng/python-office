@@ -36,7 +36,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 ## 1、文字版
 
-
+- Excel:
+    - 一键生成10w+数据，各种类型都有：[代码](http://www.python4office.cn/python-office/fake2excel/)
 - Word：
     - Word 批量转成 PDF：[代码](https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg)
 
@@ -63,6 +64,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 ## 2、视频版
 - [官网发布：python-office，专为自动化办公而生](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
+- [满足你对Excel数据的所有幻想，python-office一键生成模拟数据 | excel自动化办公来啦~](https://www.bilibili.com/video/BV1wr4y1b7uk)
 - [批量重命名](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
 - [PPT批量转PDF](https://www.bilibili.com/video/BV17Y411c792?spm_id_from=333.999.0.0)
 
