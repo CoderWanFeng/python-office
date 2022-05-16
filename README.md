@@ -10,12 +10,16 @@
 ![图片](https://f10.baidu.com/it/u=442371958,171656815&fm=30&app=106&f=JPEG&access=215967316?w=640&h=201&s=D923707E86D40D7216227510020080DA)
 
 
-自动化办公，学习交流群[👉【戳我加入】](http://www.python4office.cn/wechat-group/)
+欢迎加入python-office自动化办公，开源小组[👉【戳我加入】](http://www.python4office.cn/images/python-office.jpg)
+
 
 # 作用
 - 一键搭建所有Python + 自动化办公的编程环境。
 - 一行代码，解决大部分自动化办公的问题，不需要小白学习Python知识，自己苦哈哈的写代码
-- 目前项目已上线Python官网：[传送门](https://pypi.org/project/python-office)
+- 目前项目已上线
+  - Python官网：[传送门](https://pypi.org/project/python-office)
+  - 开源中国：[传送门](https://www.oschina.net/p/python-office)
+  - GitHub：[传送门](https://github.com/CoderWanFeng/python-office)
 
 
 # 下载和使用
@@ -37,7 +41,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 ## 1、文字版
 
 - Excel:
-    - 一键生成10w+数据，各种类型都有：[代码](http://www.python4office.cn/python-office/fake2excel/)
+    - 一键生成10w+数据，各种类型都有：[代码](https://blog.csdn.net/weixin_64843653/article/details/124792670?spm=1001.2014.3001.5502)
 - Word：
     - Word 批量转成 PDF：[代码](https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg)
 
@@ -100,7 +104,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 0.0.16  | update：不再使用wordcloud功能 | 2022-5-10 |
 | 0.0.17  | add：txt转pdf | 2022-5-10 |
 | 0.0.18  | update：确定第一版readme.md、home链接改为：github地址 | 2022-5-10 |
-| 0.0.19  | add：一键模拟生成 - 带有逼真模拟数据的Excel文件 | 2022-5-13 |
+| 0.0.19  | add：一键模拟生成 - 带有模拟数据的Excel文件 | 2022-5-13 |
 
 
 > 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
