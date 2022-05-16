@@ -25,19 +25,29 @@ def createpdf(wordPath, pdfPath):
 # 1、文件的批量转换
 # 自己指定路径，
 # 为了适配wps不能转换doc的问题，这里限定：只能转换docx
-def docx2pdf(path):
-    print(os.listdir(path))  # 当前文件夹下的所有文件
-    wordfiles = []
-    for file in os.listdir('.'):
-        if file.endswith(('.docx')):  # 通过后缀找出所有的workd文件
-            wordfiles.append(file)
-    print(wordfiles)
-
-    for file in wordfiles:
-        # 获取文件路径
+def docx2pdf(path, docxSuffix=".docx"):
+    wordFiles = []
+    # 如果不存在，则不做处理
+    if not os.path.exists(path):
+        print("path does not exist path = " + path)
+        return
+    # 判断是否是文件
+    elif os.path.isfile(path):
+        print("path file type is file " + path)
+        wordFiles.append(path)
+    # 如果是目录，则遍历目录下面的文件
+    elif os.path.isdir(path):
+        print(os.listdir(path))
+        # 填充路径，补充完整路径
+        if not path.endswith("/") or not path.endswith("\\"):
+            path = path + "/"
+        for file in os.listdir(path):
+            if file.endswith(docxSuffix):
+                wordFiles.append(path + file)
+    print(wordFiles)
+    for file in wordFiles:
         filepath = os.path.abspath(file)
         index = filepath.rindex('.')
-        # 通过截取获取pdfpath
-        pdfpath = filepath[:index] + '.pdf'
-        print(pdfpath)
-        createpdf(filepath, pdfpath)
+        pdfPath = filepath[:index] + '.pdf'
+        print(pdfPath)
+        createpdf(filepath, pdfPath)
