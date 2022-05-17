@@ -107,22 +107,35 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
--------------------------------------------------------------------------------
-
-## 🪙支持python-office
-
-### 💳捐赠
-
-如果你觉得python-office错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
-
-[捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
-
-[捐赠给程序员晚枫](http://python4office.cn/images/wechat-pay.jpg)
-
 
 -------------------------------------------------------------------------------
 
 ## 🏗️添砖加瓦
+
+
+### 📐PR的建议
+
+python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）符合一些规范，规范如下：
+
+0. 每位参与者，请在文件夹：./contributors下，以自己的GitHub账号为名称，建立自己的py文件夹，在其中进行创作。不要修改自己文件夹以外的任何文件。
+    - 例如：我需要给python-office添加一个add方法。
+        - 我的Github账户名为：CoderWanFeng。
+        - 于是我在./contributors新建了文件夹./CoderWanFeng后，
+        - 新建了add.py文件，编辑我的代码
+1. 注释完备，尤其每个新增的方法应按照Google Python文档规范标明方法说明、参数说明、返回值说明等信息，必要时请添加单元测试，如果愿意，也可以加上你的大名。
+2. python-office的文档，需要进行格式化。注意：只需要格式化你自己的代码
+3. 请直接pull request到`master`分支。`master`是主分支，表示已经发布pypi库的版本。**未来参与人数增多，会开辟新的分支，请留意本文档的更新。**
+4. 我们如果关闭了你的issue或pr，请不要诧异，这是我们保持问题处理整洁的一种方式，你依旧可以继续讨论，当有讨论结果时我们会重新打开。
+
+
+### 🧬贡献代码的步骤
+
+1. 在Gitee或者Github上fork项目到自己的repo
+2. 把fork过去的项目也就是你的项目clone到你的本地
+3. 修改代码
+4. commit后push到自己的库
+5. 登录Gitee或Github在你首页可以看到一个 pull request 按钮，点击它，填写一些说明信息，然后提交到master分支即可。
+6. 等待维护者合并
 
 ### 🎋分支说明
 
@@ -140,23 +153,18 @@ python-office的源码分为两个分支，功能如下：
 - [Gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
 - [Github issue](https://github.com/CoderWanFeng/python-office/issues)
 
-### 🧬贡献代码的步骤
+-------------------------------------------------------------------------------
 
-1. 在Gitee或者Github上fork项目到自己的repo
-2. 把fork过去的项目也就是你的项目clone到你的本地
-3. 修改代码（记得一定要修改dev分支）
-4. commit后push到自己的库（dev分支）
-5. 登录Gitee或Github在你首页可以看到一个 pull request 按钮，点击它，填写一些说明信息，然后提交即可。
-6. 等待维护者合并
+## 🪙支持python-office
 
-### 📐PR的建议
+### 💳捐赠
 
-python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）符合一些规范，规范如下：
+如果你觉得python-office错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
 
-1. 注释完备，尤其每个新增的方法应按照Google Python文档规范标明方法说明、参数说明、返回值说明等信息，必要时请添加单元测试，如果愿意，也可以加上你的大名。
-2. python-office的文档，需要进行格式化。注意：只需要格式化你自己的代码
-3. 请直接pull request到`master`分支。`master`是主分支，表示已经发布pypi库的版本。**未来参与人数增多，会开辟新的分支，请留意本文档的更新。**
-4. 我们如果关闭了你的issue或pr，请不要诧异，这是我们保持问题处理整洁的一种方式，你依旧可以继续讨论，当有讨论结果时我们会重新打开。
+[捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
+
+[捐赠给程序员晚枫](http://python4office.cn/images/wechat-pay.jpg)
+
 
 -------------------------------------------------------------------------------
 
