@@ -7,7 +7,7 @@ from functools import cache, cached_property
 class PDF:
     """
     a pdf document with optimized lazy processing
-    @Author & Date: CNSeniorious000 2022/5/17
+    @Author & Date:CNSeniorious000 2022/5/17
     """
 
     @cache
