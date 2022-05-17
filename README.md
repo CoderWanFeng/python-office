@@ -117,13 +117,18 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）符合一些规范，规范如下：
 
-0. 每位参与者，请在文件夹：./contributors下，以自己的GitHub账号为名称，建立自己的py文件夹，在其中进行创作。不要修改自己文件夹以外的任何文件。
-    - 例如：我需要给python-office添加一个add方法。
-        - 我的Github账户名为：CoderWanFeng。
-        - 于是我在./contributors新建了文件夹./CoderWanFeng后，
-        - 新建了add.py文件，编辑我的代码
+参与项目建设的步骤：
+- 例如：你需要给python-office添加一个add方法。
+   1. 你的Github账户名为：demo
+   2. 于是你在./contributors新建了文件夹./demo
+   3. 新建了add.py文件，编辑你的代码
+   4. 编辑完成，提交pr到master分支（gitee或者GitHub，都可以）。可以注明你对自己功能的取名建议
+   5. 晚枫收到后，会对各位的代码进行测试后，合并后打包上传到python官方库
+
+### 📐代码规范
+
 1. 注释完备，尤其每个新增的方法应按照Google Python文档规范标明方法说明、参数说明、返回值说明等信息，必要时请添加单元测试，如果愿意，也可以加上你的大名。
-2. python-office的文档，需要进行格式化。注意：只需要格式化你自己的代码
+2. python-office的文档，需要进行格式化。注意：只能格式化你自己的代码
 3. 请直接pull request到`master`分支。`master`是主分支，表示已经发布pypi库的版本。**未来参与人数增多，会开辟新的分支，请留意本文档的更新。**
 4. 我们如果关闭了你的issue或pr，请不要诧异，这是我们保持问题处理整洁的一种方式，你依旧可以继续讨论，当有讨论结果时我们会重新打开。
 

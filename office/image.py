@@ -59,7 +59,7 @@ def image2gif():
 
 def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.15, space=75, angle=30):
     """
-    @Author & Date  : CoderWanFeng 2022/5/6 14:33
+    @Author & Date  : demo 2022/5/6 14:33
     @Desc  : 给图片添加水印
     @Return  ： 添加了水印的图片，输出到out指定的文件夹
     """

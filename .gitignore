@@ -27,7 +27,7 @@ share/python-wheels/
 MANIFEST
 
 
-# CoderWanFeng
+# demo
 .idea/
 .gitee/
 shell/upload.sh
