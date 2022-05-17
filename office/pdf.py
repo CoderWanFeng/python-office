@@ -1,27 +1,28 @@
 # -*- coding: utf-8 -*-
 import os
-from fpdf import FPDF
-from service.pdf import add_watermark_service
-import pikepdf
+# from fpdf import FPDF
+# from service.pdf import add_watermark_service
+# import pikepdf
 from PyPDF2 import PdfFileReader, PdfFileWriter
+from functools import cache, cached_property
 
 
-
-#给pdf加水印
+# 给pdf加水印
 def add_watermark():
     pdf_file_in = input("请输入需要添加水印的文件位置：")  # 需要添加水印的文件
-    Watermark_Str = input("请输入需要添加的水印内容：")
+    watermark_str = input("请输入需要添加的水印内容：")
     print('=' * 20)
     print('正在按要求，给你的PDF文件添加水印，请让程序飞一会儿~')
     print('=' * 20)
     pdf_file_mark = 'watermark.pdf'  # 水印文件
-    add_watermark_service.create_watermark(str(Watermark_Str))
+    add_watermark_service.create_watermark(str(watermark_str))
     pdf_file_out = '添加了水印的文件.pdf'  # 添加PDF水印后的文件
     add_watermark_service.pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out)
     print("水印添加结束，请打开电脑上的这个位置，查看结果文件：{path}".format(path=os.getcwd()))
 
+
 # txt转pdf
-def txt2pdf(path,res_pdf='txt2pdf.pdf'):
+def txt2pdf(path, res_pdf='txt2pdf.pdf'):
     pdf = FPDF()
     pdf.add_page()  # Add a page
     pdf.set_font("Arial", size=15)  # set style and size of font
@@ -42,7 +43,7 @@ def encrypt4pdf(path, password, res_pdf='encrypt.pdf'):
             res_pdf: 结果文件的名称 ，可以为空，默认是：encrypt.pdf
     """
     pdf = pikepdf.open(path)
-    pdf.save(res_pdf, encryption=pikepdf.Encryption(owner=password,  user=password,R=4))
+    pdf.save(res_pdf, encryption=pikepdf.Encryption(owner=password, user=password, R=4))
     pdf.close()
 
 
@@ -52,7 +53,8 @@ def decrypt4pdf(path, password, res_pdf='decrypt.pdf'):
     pdf.save(res_pdf)
     pdf.close()
 
-#合并pdf
+
+# 合并pdf
 def merge2pdf(one_by_one, output):
     """
     @Author & Date  : CoderWanFeng 2022/5/16 23:33
@@ -70,3 +72,60 @@ def merge2pdf(one_by_one, output):
     with open(output, 'wb') as out:
         pdf_writer.write(out)
 
+
+# PDF与栅格化
+# noinspection PyPackageRequirements
+class PDF:
+    """
+    a pdf document with optimized lazy processing
+
+    @Author & Date: CNSeniorious000 2022/5/17
+    """
+
+    @cache
+    def __new__(cls, *args, **kwargs):
+        """a path refers to only one document"""
+        return object.__new__(cls)
+
+    def __init__(self, path: str):
+        """load from disk or internet"""
+        if path.startswith("http"):
+            import requests
+            self.raw = requests.get(path).content
+        else:
+            self.raw = open(path, "rb").read()
+
+    @cached_property
+    def doc(self):
+        import fitz
+        # noinspection PyUnresolvedReferences
+        return fitz.open(stream=self.raw)
+
+    @property
+    def page_count(self):
+        return self.doc.page_count
+
+    @cache
+    def get_image(self, page=0, dpi=144, alpha=True):
+        return self.doc[page].get_pixmap(dpi=dpi, alpha=alpha)
+
+    def save_image(self, file_path: str, page=0, dpi=144, alpha=True):
+        return self.get_image(page, dpi, alpha).save(file_path)
+
+    def save_images(self, dir_path: str, pages=..., dpi=144, alpha=True, encode="png", show_bar=True):
+        if not os.path.isdir(dir_path):
+            os.mkdir(dir_path)
+
+        it = range(self.page_count) if pages is ... else pages
+
+        if show_bar:
+            from alive_progress import alive_it
+            it = alive_it(it)
+
+        for page in it:
+            self.save_image(f"{dir_path}/{page}.{encode}", page, dpi, alpha)
+
+
+if __name__ == '__main__':
+    a = PDF(r"C:\Users\17979\Downloads\ch3 预处理.pdf")
+    a.save_images("output")
