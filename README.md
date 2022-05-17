@@ -1,131 +1,172 @@
+<p align="center">
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="http://python4office.cn/images/github-nav.jpg" alt="github license"/>
+    </a>   
+</p>
+<p align="center">
+	<strong>🍬python for office</strong>
+</p>
+<p align="center">
+	👉 <a href="http://www.python4office.cn/">http://www.python4office.cn/</a> 👈
+</p>
 
 
-![Stars](https://img.shields.io/github/stars/CoderWanFeng/python-office)
-[![All Contributors](https://img.shields.io/github/contributors/CoderWanFeng/python-office)](#contributors-)
-![Issues](https://img.shields.io/github/issues/CoderWanFeng/python-office)
-![Forks](https://img.shields.io/github/forks/CoderWanFeng/python-office)
-![Pull Requests](https://img.shields.io/github/issues-pr/CoderWanFeng/python-office?)
-![License](https://img.shields.io/github/license/CoderWanFeng/python-office)
+<p align="center" name="'github">
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
+    </a>
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/contributors/CoderWanFeng/python-office" alt="github contributors"/>
+    </a>
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/forks/CoderWanFeng/python-office" alt="github forks"/>
+    </a>
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/issues/CoderWanFeng/python-office" alt="github issues"/>
+    </a>	
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/issues-pr/CoderWanFeng/python-office" alt="github license"/>
+    </a>
+    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <img src="https://img.shields.io/github/license/CoderWanFeng/python-office" alt="github license"/>
+    </a>   
+</p>
 
-![图片](https://f10.baidu.com/it/u=442371958,171656815&fm=30&app=106&f=JPEG&access=215967316?w=640&h=201&s=D923707E86D40D7216227510020080DA)
+<p align="center" name="gitee">
+	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
+		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
+	</a>
+	<a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
+	</a>
+	<a href="http://www.python4office.cn/images/qq.jpg">
+	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
+</p>
 
 
-欢迎加入python-office自动化办公，开源小组[👉【戳我加入】](http://www.python4office.cn/images/python-office.jpg)
 
 
-# 作用
-- 一键搭建所有Python + 自动化办公的编程环境。
-- 一行代码，解决大部分自动化办公的问题，不需要小白学习Python知识，自己苦哈哈的写代码
-- 目前项目已上线
-  - Python官网：[传送门](https://pypi.org/project/python-office)
-  - 开源中国：[传送门](https://www.oschina.net/p/python-office)
-  - GitHub：[传送门](https://github.com/CoderWanFeng/python-office)
+
+-------------------------------------------------------------------------------
+
+[**🌎English Documentation**](README-EN.md)
+
+-------------------------------------------------------------------------------
+
+## 📚简介
+
+Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识，做到了真正的开箱即用。
+
+### 🍺特点
+- 一键搭建所有 Python + 自动化办公的编程环境。
+- 使用一行代码解决大部分自动化办公的问题，不需要小白学习 Python 知识
+- 贴合职场办公需求
+- 极简编程，学习成本极低，工作效率提升显著
 
 
-# 下载和使用
-视频介绍：[官网发布：python-office库 | 专为Python自动化办公而生，一行代码提高办公效率](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
+-------------------------------------------------------------------------------
 
+## 📦安装
 
-0. 安装这个库之前，你的电脑上，需要有python环境
-没有的同学，请移步这个6分钟的安装视频：[来，手把手带你搭建Python环境](https://www.bilibili.com/video/BV1Q44y1u7rV)
+### 🍊pip 自动下载&更新
 
-1. 安装好后，打开pycharm的terminal，输入以下命令，即可自动安装
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 ```
 
 
+-------------------------------------------------------------------------------
 
-# 代码文档（持续更新）
+## 📝文档
 
-## 1、文字版
-
-- Excel:
-    - 一键生成10w+数据，各种类型都有：[代码](https://blog.csdn.net/weixin_64843653/article/details/124792670?spm=1001.2014.3001.5502)
-- Word：
-    - Word 批量转成 PDF：[代码](https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg)
-
-- PDF
-    - TxT 转成 PDF：[代码](https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA)
-    - PDF 加密、解密：[代码](https://mp.weixin.qq.com/s/YOxBzYPMqfl5gCAWtnVXKA)
-    - PDF 加水印：[代码](https://mp.weixin.qq.com/s/yJDs5RoytRL5hl-ybXkZOA)
-    - 合并2个PDF：[代码](http://www.python4office.cn/python-office/merge2pdf/)
-
-- PPT
-    - PPT 批量转成 PDF：[代码](https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg)
-
-- Image
-    - 图片加水印：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
-
-- Files
-    - 批量重命名 文件/文件夹：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
-
-- Video
-    - 从视频里提取音频：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
-
-- Tools
-    - 生成二维码：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
-    - 翻译：[代码](https://mp.weixin.qq.com/s/4Pt0YWakkPhfEWVMHwXe8g)
-    - 密码生成器：[代码](https://gitee.com/CoderWanFeng/python-office/blob/master/office/tools.py)
-
-## 2、视频版
-- [官网发布：python-office，专为自动化办公而生](https://www.bilibili.com/video/BV1pT4y1k7FH?spm_id_from=333.999.0.0)
-- [满足你对Excel数据的所有幻想，python-office一键生成模拟数据 | excel自动化办公来啦~](https://www.bilibili.com/video/BV1wr4y1b7uk)
-- [批量重命名](https://www.bilibili.com/video/BV12r4y187Yj?spm_id_from=333.999.0.0)
-- [PPT批量转PDF](https://www.bilibili.com/video/BV17Y411c792?spm_id_from=333.999.0.0)
-
-# 开源仓库
-
-欢迎感兴趣的朋友，通过提交PR的方式，参与该项目的更新与维护。
-我每天下午merge一次。源码地址如下
-
-- Gitee地址：[https://gitee.com/CoderWanFeng/python-office](https://gitee.com/CoderWanFeng/python-office)
-
-- GitHub地址：[https://github.com/CoderWanFeng/python-office](https://github.com/CoderWanFeng/python-office)
+[📘中文文档](http://www.python4office.cn/python-office/profile/)
 
 
-# 更新记录
-
-| 版本号 | 版本信息            | 发布日期  |
-| ------ | ------------------- | --------- |
-| 0.0.1  | init：项目初始化          | 2022-4-19 |
-| 0.0.2  | init：添加基础库          | 2022-4-21 |
-| 0.0.3  | init：matplotlib和easyocr | 2022-4-24 |
-| 0.0.4  | init：修改配置文件为setup.cfg | 2022-4-24 |
-| 0.0.5  | init：发布wheel文件 | 2022-4-24 |
-| 0.0.6  | add：word批量转pdf | 2022-4-24 |
-| 0.0.7  | patch：word批量转pdf | 2022-4-24 |
-| 0.0.8  | add：单个pdf添加水印 | 2022-4-25 |
-| 0.0.9  | patch：因为安装包太大，去掉matplotlib；添加项目交流群 | 2022-4-25 |
-| 0.0.10  | add：txt文本转词云功能 | 2022-4-28 |
-| 0.0.11  | update：word批量转pdf | 2022-5-1 |
-| 0.0.12  | add：重命名指定路径下的文件/文件夹 | 2022-5-4 |
-| 0.0.13  | update：因为c++14的原因，去掉wordcloud库，需要的同学，自行install即可 | 2022-5-6 |
-| 0.0.14  | add：给图片加水印、生成二维码、提取音频、翻译 | 2022-5-6 |
-| 0.0.15  | add：pdf加密、解密 | 2022-5-9 |
-| 0.0.16  | update：不再使用wordcloud功能 | 2022-5-10 |
-| 0.0.17  | add：txt转pdf | 2022-5-10 |
-| 0.0.18  | update：确定第一版readme.md、home链接改为：github地址 | 2022-5-10 |
-| 0.0.19  | add：一键模拟生成 - 带有模拟数据的Excel文件 | 2022-5-13 |
-| 0.0.20  | update：修复word转pdf，路径问题 | 2022-5-16 |
-| 0.0.21  | add：消除图像背景色、merg2pdf | 2022-5-17 |
+[🎬视频介绍](https://space.bilibili.com/259649365/channel/collectiondetail?sid=378950)
 
 
-> 关于版本更新，如有疑问，请私信微博@[程序员晚枫](http://www.python4office.cn/weibo-qaq/)
->
-> 或者，欢迎有学习/定制功能/加入项目需求的同学，直接加入我们的项目交流群👉[点我直达](http://www.python4office.cn/images/2-free-group.jpg)
+-------------------------------------------------------------------------------
 
-## 参考资料 
-- 教材：
-    - [278页PDF：《Python数据分析基础》，0基础入门专用~](https://mp.weixin.qq.com/s/YWNkn366SdF4IWYTczpBAw)
-    - [409页PDF：《Python：让繁琐工作自动化》](https://mp.weixin.qq.com/s/yQRSjUliJsdvKW8du9iF6g)
-    - [715页PDF：《Python数据科学手册》](https://mp.weixin.qq.com/s/WEZCqQdNY_KljGeXHgzdtA)
-- 文档：
-    - [深度盘点 | 史上最全Python网站开发库（37个）](https://mp.weixin.qq.com/s/nt38KmPVdiQvdV0q-pW85A)
-    - [深度盘点丨史上最全的Python自动化办公库（34个）](https://mp.weixin.qq.com/s/RsBG_cg8GsB2P-9zmhrA1Q)
-- 第三方库：
-    - [xlwings库 | Excel与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/2_qNnsPK6fjEAUu3jf-NFA)
-    - [系统性的学会 Pandas， 看这一篇就够了！](https://mp.weixin.qq.com/s/tzy7h_qrk_tkK4ojnRSFtQ)
-    - [Python-Docx库 | Word与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/_QzBRGeXsqF65-xlzQfFjQ)
-    - [python-pptx库 | PPT与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/dXrveWypcR5S4XGauS4wcg)
-    - [PyPDF2库 | PDF与Python的完美结合（附使用文档）](https://mp.weixin.qq.com/s/M4ARo2SXZcGIjMcv19SVyA)
+## 🛠️包含组件
+
+以下所有功能，都在逐步搭建中。
+
+| 模块                   |     介绍                                                                          |
+| ----------------------|---------------------------------------------------------------------------------- |
+| excel                 |     excel处理                                              |
+| word                  |     word处理                                              |
+| ppt                   |     ppt处理                                                                     |
+| pdf                   |     pdf处理                                              |
+| file                  |     文件和文件夹的操作                                          |
+| tools                 |     便捷小工具                                        |
+| web                   |     网站快捷搭建                                         |
+| email                 |     邮件功能                                                        |
+| image                 |     图片处理            |
+| video                 |     视频处理                                          |
+| ocr                   |     识别功能：文字识别、语音识别                                                         |
+
+可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
+
+-------------------------------------------------------------------------------
+
+## 🪙支持python-office
+
+### 💳捐赠
+
+如果你觉得python-office错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
+
+[捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
+
+[捐赠给程序员晚枫](http://python4office.cn/images/wechat-pay.jpg)
+
+
+-------------------------------------------------------------------------------
+
+## 🏗️添砖加瓦
+
+### 🎋分支说明
+
+python-office的源码分为两个分支，功能如下：
+
+| 分支       | 作用                                                          |
+|-----------|---------------------------------------------------------------|
+| master | 主分支，pypi发布版本使用的分支,可以直接pr |
+| develop    | 开发分支，供大家各自开发使用                 |
+
+### 🐞提供bug反馈或建议
+
+提交问题反馈时，请务必填写和python-office代码本身有关的问题，不进行有关python学习，甚至是个人练习的知识答疑和讨论。
+
+- [Gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
+- [Github issue](https://github.com/CoderWanFeng/python-office/issues)
+
+### 🧬贡献代码的步骤
+
+1. 在Gitee或者Github上fork项目到自己的repo
+2. 把fork过去的项目也就是你的项目clone到你的本地
+3. 修改代码（记得一定要修改dev分支）
+4. commit后push到自己的库（dev分支）
+5. 登录Gitee或Github在你首页可以看到一个 pull request 按钮，点击它，填写一些说明信息，然后提交即可。
+6. 等待维护者合并
+
+### 📐PR的建议
+
+python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）符合一些规范，规范如下：
+
+1. 注释完备，尤其每个新增的方法应按照Google Python文档规范标明方法说明、参数说明、返回值说明等信息，必要时请添加单元测试，如果愿意，也可以加上你的大名。
+2. python-office的文档，需要进行格式化。注意：只需要格式化你自己的代码
+3. 请直接pull request到`master`分支。`master`是主分支，表示已经发布pypi库的版本。**未来参与人数增多，会开辟新的分支，请留意本文档的更新。**
+4. 我们如果关闭了你的issue或pr，请不要诧异，这是我们保持问题处理整洁的一种方式，你依旧可以继续讨论，当有讨论结果时我们会重新打开。
+
+-------------------------------------------------------------------------------
+
+## ⭐Star python-office
+
+[![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
+
+## 📌公众号&开源小组
+
+<div align="center">
+	<img src="http://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
+	<img src="http://www.python4office.cn/images/python-office.jpg" height="150">
+</div>
