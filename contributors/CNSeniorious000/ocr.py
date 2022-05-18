@@ -1,6 +1,8 @@
 from functools import cache, cached_property
 import imageio as iio
 
+__all__ = ["ImgReader"]
+
 
 class ImgReader:
     """
@@ -17,7 +19,19 @@ class ImgReader:
         """load an image from disk or web"""
         self.path = path
         self.lang = lang
-        self.image = iio.imread_v2(path).base
+
+    @cached_property
+    def image(self):
+        return iio.imread_v2(self.path).base
+
+    @classmethod
+    @cache
+    def from_pdf(cls, path: str, page=0, dpi=54, alpha=False) -> "ImgReader":
+        from .pdf import PDF
+        self = cls(path)
+        # noinspection PyPropertyAccess
+        self.image = PDF(path).get_image(page, dpi, alpha)
+        return self
 
     @cached_property
     def reader(self):

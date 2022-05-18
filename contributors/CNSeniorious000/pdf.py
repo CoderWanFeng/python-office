@@ -1,6 +1,8 @@
 import os
 from functools import cache, cached_property
 
+__all__ = ["PDF"]
+
 
 # PDF与栅格化
 # noinspection PyPackageRequirements
