@@ -39,9 +39,8 @@ class PDF:
 
     @cache
     def get_image(self, *args, **kwargs):
-        from imageio import imread
-        from numpy import asarray
-        return asarray(imread(self.get_pixmap(*args, **kwargs).tobytes()))
+        import imageio as iio
+        return iio.imread_v2(self.get_pixmap(*args, **kwargs).tobytes()).base
 
     @staticmethod
     def show(image):
