@@ -164,7 +164,7 @@ python-office的源码分为两个分支，功能如下：
 
 ### 💳捐赠
 
-如果你觉得python-office错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
+如果你觉得python-office不错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
 
 [捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
 
