@@ -12,7 +12,7 @@ reportlab
 setuptools
 requests
 PyMuPDF
-easyocr
+# easyocr
 opencv-python
 rapidfuzz
 matplotlib
