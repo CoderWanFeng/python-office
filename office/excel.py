@@ -13,7 +13,7 @@ from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
 
-from utils import pandas_mem
+# from utils import pandas_mem
 
 
 def fake2excel(columns=['name'], rows=1, language='zh_CN', path='./fake2excel.xlsx', ):
@@ -69,12 +69,9 @@ def concat(file_dir:str, out_path:str="./merged.xlsx"):
 
     path_list = os.listdir(file_dir)
     excel_list = (
-        pd.read_excel(path).astype(str)
+        pd.read_excel(os.path.join(file_dir, path)).astype(str)
         for path in path_list if path.endswith("xlsx")
         )
-
-    if len(excel_list) == 0:
-        raise ValueError(f"there is no excel file in {file_dir}")
 
     data_frame = pd.concat(excel_list)
     data_frame.to_excel(out_path, index=False)
@@ -91,12 +88,4 @@ def merge(file_dir:str, out_path:str="./merged.xlsx"):
         out_path (str, optional): the output path. Defaults to "./merged.xlsx".
 
     """
-    ...
-
-
-
-# def merge():
-if __name__ == "__main__":
-    path1 = "/Users/bob/Desktop/test1.xlsx"
-    path2 = "/Users/bob/Desktop/test2.xlsx"
-    concat(path1, path2)
+    raise NotImplementedError("function not available")
