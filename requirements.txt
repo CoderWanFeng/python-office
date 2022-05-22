@@ -17,3 +17,5 @@ opencv-python
 rapidfuzz
 matplotlib
 imageio
+openpyxl
+pdf2image=1.16.0
