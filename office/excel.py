@@ -13,7 +13,7 @@ from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
 
-# from utils import pandas_mem
+from utils import pandas_mem
 
 
 def fake2excel(columns=['name'], rows=1, language='zh_CN', path='./fake2excel.xlsx', ):
