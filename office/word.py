@@ -9,11 +9,11 @@
 # Description: 有关word的自动化操作
 #############################################
 
-from win32com.client import constants, gencache
 import os  # 目录的操作
 
 
 def createpdf(wordPath, pdfPath):
+    from win32com.client import constants, gencache
     word = gencache.EnsureDispatch('Word.Application')
     doc = word.Documents.Open(wordPath, ReadOnly=1)
     # 转换方法

@@ -5,7 +5,6 @@ File(文件)-> Settings(设置) -> Editor(编辑器) -> Font(字体), 修改字�
 """
 
 # 1). 导入需要的模块(打开应用程序的模块)
-import win32com.client
 import os
 
 
@@ -16,6 +15,7 @@ def ppt2pdf_single(filename, output_filename):
     :param output_filename: 导出的pdf文件的名称
     :return:
     """
+    import win32com.client
     # 2). 打开PPT程序
     ppt_app = win32com.client.Dispatch('PowerPoint.Application')
     # ppt_app.Visible = True  # 程序操作应用程序的过程是否可视化
