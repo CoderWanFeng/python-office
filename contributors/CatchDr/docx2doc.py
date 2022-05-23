@@ -2,28 +2,37 @@
 #-*- coding:utf-8 -*-
 
 #############################################
-# File Name: word.py
-# Author: 程序员晚枫
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关word的自动化操作
+# File Name: docx2doc.py
+# Author: 刘运超
+# Mail: chaodreaming@gmail.com
+# Created Time:  2022-5-23 13:41:34
+# Description: docx转doc
 #############################################
 
 from win32com.client import constants, gencache
+import win32com
 import os  # 目录的操作
 
 
-def createpdf(wordPath, pdfPath):
-    word = gencache.EnsureDispatch('Word.Application')
-    doc = word.Documents.Open(wordPath, ReadOnly=1)
-    # 转换方法
-    doc.ExportAsFixedFormat(pdfPath, constants.wdExportFormatPDF)
+
+def createdoc(wordPath, docxPath):
+    # word = gencache.EnsureDispatch('Word.Application')
+    # doc = word.Documents.Open(wordPath, ReadOnly=1)
+    # # 转换方法
+    # doc.ExportAsFixedFormat(docxPath, constants.wdExportFormatPDF)
+    # word.Quit()
+
+    word = win32com.client.DispatchEx('Word.Application')
+    doc = word.Documents.Open(wordPath)
+    doc.SaveAs(docxPath, FileFormat=11)
+    doc.Close()
     word.Quit()
+
 
 # 1、文件的批量转换
 # 自己指定路径，
-# 为了适配wps不能转换doc的问题，这里限定：只能转换docx
-def docx2pdf(path, docxSuffix=".docx"):
+# 转换docx到doc
+def docx2doc(path, docxSuffix=".docx"):
     wordFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):
@@ -46,6 +55,6 @@ def docx2pdf(path, docxSuffix=".docx"):
     for file in wordFiles:
         filepath = os.path.abspath(file)
         index = filepath.rindex('.')
-        pdfPath = filepath[:index] + '.pdf'
-        print(pdfPath)
-        createpdf(filepath, pdfPath)
+        docPath = filepath[:index] + '.doc'
+        print(docPath)
+        createdoc(filepath, docPath)
