@@ -2,29 +2,32 @@
 #-*- coding:utf-8 -*-
 
 #############################################
-# File Name: word.py
-# Author: 程序员晚枫
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关word的自动化操作
+# File Name: pptx2ppt.py
+# Author: 刘运超
+# Mail: chaodreaming@gmail.com
+# Created Time:  2022-5-23 14:15
+# Description: pptx转ppt
 #############################################
 
-from win32com.client import constants, gencache
+from win32com.client import constants
+import win32com
 import os  # 目录的操作
 
+def createppt(pptxPath, pptPath):
+    powerpoint = win32com.client.Dispatch('PowerPoint.Application')
+    win32com.client.gencache.EnsureDispatch('PowerPoint.Application')
+    # powerpoint.Visible = 1
+    ppt = powerpoint.Presentations.Open(pptxPath)
+    ppt.SaveAs(pptPath)
+    ppt.Close()
+    powerpoint.Quit()
 
-def createpdf(wordPath, pdfPath):
-    word = gencache.EnsureDispatch('Word.Application')
-    doc = word.Documents.Open(wordPath, ReadOnly=1)
-    # 转换方法
-    doc.ExportAsFixedFormat(pdfPath, constants.wdExportFormatPDF)
-    word.Quit()
 
 # 1、文件的批量转换
 # 自己指定路径，
-# 为了适配wps不能转换doc的问题，这里限定：只能转换docx
-def docx2pdf(path, docxSuffix=".docx"):
-    wordFiles = []
+# 转换pptx到ppt
+def pptx2ppt(path, docxSuffix=".ppt"):
+    pptxFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):
         print("path does not exist path = " + path)
@@ -32,7 +35,7 @@ def docx2pdf(path, docxSuffix=".docx"):
     # 判断是否是文件
     elif os.path.isfile(path):
         print("path file type is file " + path)
-        wordFiles.append(path)
+        pptxFiles.append(path)
     # 如果是目录，则遍历目录下面的文件
     elif os.path.isdir(path):
         print(os.listdir(path))
@@ -41,11 +44,11 @@ def docx2pdf(path, docxSuffix=".docx"):
             path = path + "/"
         for file in os.listdir(path):
             if file.endswith(docxSuffix):
-                wordFiles.append(path + file)
-    print(wordFiles)
-    for file in wordFiles:
+                pptxFiles.append(path + file)
+    print(pptxFiles)
+    for file in pptxFiles:
         filepath = os.path.abspath(file)
         index = filepath.rindex('.')
-        pdfPath = filepath[:index] + '.pdf'
-        print(pdfPath)
-        createpdf(filepath, pdfPath)
+        pptPath = filepath[:index] + '.ppt'
+        print(pptPath)
+        createppt(filepath, pptPath)
