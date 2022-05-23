@@ -7,6 +7,9 @@ from PyPDF2 import PdfFileReader, PdfFileWriter
 from pdf2docx import Converter
 
 
+from office.pdf_tool.pdf2imgs import pdf2imgs
+
+
 #给pdf加水印
 def add_watermark():
     pdf_file_in = input("请输入需要添加水印的文件位置：")  # 需要添加水印的文件
