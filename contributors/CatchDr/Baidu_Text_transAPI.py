@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+
+#############################################
+# File Name: Baidu_Text_transApi.py
+# Author: 刘运超
+# Mail: chaodreaming@gmail.com
+# Created Time:  2022-5-23 14:45
+# Description: 调用百度翻译接口进行翻译
+#############################################
 import requests
 import random
 from hashlib import md5
