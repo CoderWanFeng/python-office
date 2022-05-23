@@ -4,7 +4,14 @@
 # 需要安装moviepy包
 # pip install moviepy
 
+from warnings import warn
+warn("this folder will be soon removed, use offce.video.* instead", DeprecationWarning)
+
+
 from moviepy.editor import VideoFileClip, concatenate_videoclips
+
+
+
 
 def video_combine(video_list, save_path):
     """

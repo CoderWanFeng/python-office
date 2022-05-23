@@ -1,3 +1,11 @@
+
+
+
+from warnings import warn
+warn("this folder will be soon removed, use offce.pdf.* instead", DeprecationWarning)
+
+
+
 import os
 from pdf2image import convert_from_path
 

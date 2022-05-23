@@ -2,13 +2,19 @@
 功能：实现MP4与gif格式的互相转换
 """
 
+from warnings import warn
+warn("this folder will be removed, use offce.video.* instead", DeprecationWarning)
+
+
 # 需要安装moviepy包
 # pip install moviepy
-
+from warnings import warn
 from moviepy.editor import VideoFileClip
 
 
 def mp4_to_gif(mp4_path, gif_path):
+
+    warn("use office.image.mp4_to_gif instead" ,DeprecationWarning)
     """
     功能：mp4文件转gif文件
     参数：

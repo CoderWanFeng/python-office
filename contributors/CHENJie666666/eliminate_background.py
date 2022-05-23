@@ -2,6 +2,14 @@
 功能：消除图片背景
 """
 
+
+from warnings import warn
+warn("this folder will be soon removed, use offce.image.* instead", DeprecationWarning)
+
+
+
+
+
 from PIL import Image
 
 def _hex_to_rgb(hex):

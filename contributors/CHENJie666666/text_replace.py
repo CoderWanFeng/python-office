@@ -2,6 +2,10 @@
 功能：批量实现文本内容替换功能
 """
 
+
+from warnings import warn
+warn("this folder will be removed, use offce.file.* instead", DeprecationWarning)
+
 import re
 import os
 
