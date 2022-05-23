@@ -36,8 +36,9 @@ def baidu_trans(query,from_lang,to_lang,appid,appkey):
 
 # if __name__ == '__main__':
 #     # 百度官方通用翻译api
-# 可参考这个链接申请 https://superdoctranslator.com/appidkey
-#     appid = 'xxxxxxxxxxxxxxx'
+#     # 可参考这些链接申请 https://superdoctranslator.com/appidkey
+#     # https://jingyan.baidu.com/article/3f16e00305bb552591c10304.html
+#     appid = 'xxxxxxxxxxxxx'
 #     appkey = 'xxxxxxxxxxxx'
 #     res=baidu_trans("good","en","zh",appid,appkey)
 #     print(res)
