@@ -19,5 +19,5 @@ rapidfuzz
 matplotlib
 imageio
 alive_progress
-pywin32
+# pywin32
 pdf2docx
