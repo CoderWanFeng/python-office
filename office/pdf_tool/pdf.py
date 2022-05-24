@@ -4,7 +4,10 @@ from fpdf import FPDF
 from service.pdf import add_watermark_service
 import pikepdf
 from PyPDF2 import PdfFileReader, PdfFileWriter
+from pdf2docx import Converter
 
+
+from office.pdf_tool.pdf2imgs import pdf2imgs
 
 
 #给pdf加水印
@@ -70,3 +73,14 @@ def merge2pdf(one_by_one, output):
     with open(output, 'wb') as out:
         pdf_writer.write(out)
 
+
+
+def pdf2docx(file_path):
+    try:
+        pdf_name = file_path.split('.')[0]
+        word_name = pdf_name + '.docx'
+        cv = Converter(file_path)
+        cv.convert(word_name)
+        cv.close()
+    except:
+        print('这个文件有问题~！')

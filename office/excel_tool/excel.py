@@ -8,6 +8,7 @@
 # Description: 有关 excel 的自动化操作
 #############################################
 
+import os
 from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
@@ -42,3 +43,49 @@ def fake2excel(columns=['name'], rows=1, language='zh_CN', path='./fake2excel.xl
         data = pandas_mem.reduce_pandas_mem_usage(data)
         data.to_excel(writer, index=False)
         writer.save()
+
+
+def concat(file_dir:str, out_path:str="./merged.xlsx"):
+    """to concatenate all excel sheets in one folder into one excel sheet
+       将一个文件夹内所有的excel文件全部合并为一个文件, 通过增加行进行操作。
+    
+    Author: Bob, 2022/5/22
+
+    Args:
+        file_dir (str): the folder path containing all excel
+        out_path (str, optional): the output path. Defaults to "./merged.xlsx".
+
+    Example: 
+        >>> concat("./documents", "test.xlsx")
+    """
+    assert isinstance(file_dir, str)
+    assert isinstance(out_path, str)
+    assert out_path.endswith("xlsx")
+    
+    if not os.path.exists(file_dir):
+        raise ValueError(f"{file_dir} does not exist!")
+    if not os.path.isdir(file_dir):
+        raise ValueError(f"{file_dir} must be a dir(folder)!")
+
+    path_list = os.listdir(file_dir)
+    excel_list = (
+        pd.read_excel(os.path.join(file_dir, path)).astype(str)
+        for path in path_list if path.endswith("xlsx")
+        )
+
+    data_frame = pd.concat(excel_list)
+    data_frame.to_excel(out_path, index=False)
+
+
+def merge(file_dir:str, out_path:str="./merged.xlsx"):
+    """to merge several sheets colomns by essential key word 
+    将拥有同样关键字段的例如(名字、学号)等将多个表格的列进行融合
+    
+    Author: Bob, 2022/5/22
+
+    Args:
+        file_dir (str): the folder path containing all excel
+        out_path (str, optional): the output path. Defaults to "./merged.xlsx".
+
+    """
+    raise NotImplementedError("function not available")

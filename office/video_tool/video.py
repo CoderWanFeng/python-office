@@ -1,5 +1,12 @@
 # import library
 import moviepy.editor as mp
+from moviepy.editor import VideoFileClip, concatenate_videoclips
+
+
+
+from office.video_tool.mp4_to_gif import mp4_to_gif, gif_to_mp4
+from office.video_tool.video_combine import video_combine
+
 
 #从视频里提取音频
 def video2mp3(path, mp3_name=None):

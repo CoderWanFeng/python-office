@@ -10,8 +10,10 @@
 
 
 import os
+import re
 from alive_progress import alive_bar
 
+from office.file_tool.replace_word import replace_word
 
 def replace4filename(path, del_content, replace_content=None):
     """
@@ -35,3 +37,5 @@ def replace4filename(path, del_content, replace_content=None):
                 os.rename(path + os.sep + old_file_name, path + os.sep + new_file_name)
                 work_count = work_count + 1
     print("当前目录下，共有{}个文件/文件夹，本次运行共进行了{}个文件/文件夹的重命名".format(len(fileList), work_count))
+
+

@@ -8,17 +8,15 @@
 # Description: 有关 图片 的自动化操作
 #############################################
 
-import os
-# from service.image import add_watermark_service
+
 # 生成词云需要使用的类库
+
+import os
 from PIL import Image
 from alive_progress import alive_bar
 
-
-
-
-# 自动生成gif
-from service.image import add_watermark_service
+from office.image_tool.watermark import add_mark2file
+from office.image_tool.remove_background import remove_bg
 
 
 def image2gif():
@@ -59,7 +57,7 @@ def image2gif():
 
 def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.15, space=75, angle=30):
     """
-    @Author & Date  : CoderWanFeng 2022/5/6 14:33
+    @Author & Date  : demo 2022/5/6 14:33
     @Desc  : 给图片添加水印
     @Return  ： 添加了水印的图片，输出到out指定的文件夹
     """
@@ -69,6 +67,6 @@ def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.
             for name in names:
                 bar()
                 image_file = os.path.join(file, name)
-                add_watermark_service.add_mark2file(image_file, mark, out, color, size, opacity, space, angle)
+                add_mark2file(image_file, mark, out, color, size, opacity, space, angle)
     else:
-        add_watermark_service.add_mark2file(file, mark, out, color, size, opacity, space, angle)
+        add_mark2file(file, mark, out, color, size, opacity, space, angle)
