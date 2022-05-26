@@ -7,7 +7,7 @@
 	<strong>🍬python for office</strong>
 </p>
 <p align="center">
-	👉 <a href="http://www.python4office.cn/images/python-office.jpg">Join WeiXin Chat-Group</a> 👈
+	👉 <a href="http://www.python4office.cn/images/python-office.jpg">本开源项目的交流群</a> 👈
 </p>
 
 
