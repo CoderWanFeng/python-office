@@ -26,7 +26,7 @@ def createppt(pptxPath, pptPath):
 # 1、文件的批量转换
 # 自己指定路径，
 # 转换pptx到ppt
-def pptx2ppt(path, docxSuffix=".ppt"):
+def pptx2ppt(path, docxSuffix=".pptx"):
     pptxFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):

@@ -26,7 +26,7 @@ def createxls(xlsxPath, xlsPath):
 # 1、文件的批量转换
 # 自己指定路径，
 # 转换xlsx到xls
-def xlsx2xls(path, docxSuffix=".xls"):
+def xlsx2xls(path, docxSuffix=".xlsx"):
     excelFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):
