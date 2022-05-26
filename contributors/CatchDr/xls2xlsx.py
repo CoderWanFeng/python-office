@@ -29,7 +29,7 @@ def createxlsx(xlsPath, xlsxPath):
 # 1、文件的批量转换
 # 自己指定路径，
 # 转换xls到xlsx
-def xls2xlsx(path, docxSuffix=".xlsx"):
+def xls2xlsx(path, docxSuffix=".xls"):
     excelFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):
