@@ -5,6 +5,8 @@ import os
 
 
 # 文件md5校验
+# source_file:文件1
+# target_file:文件2
 def file_compare(source_file,target_file):
     s = open(source_file, "br")
     t = open(target_file, "br")
@@ -18,7 +20,11 @@ def file_compare(source_file,target_file):
 
 # 文件夹(子目录)md5校验。生成.csv文档,用于查看对比结果(使用excel打开即可)
 # 目前校验相同和不相同都在同一文件下,后续优化
-def folder_compare(source_folder,target_folder,output_file):
+# source_folder:文件夹1
+# target_folder:文件夹2
+# result.csv生成在执行目录下
+def folder_compare(source_folder,target_folder):
+    output_file = os.getcwd() + "\\result.csv"
     # 判断是否已指定的路径分隔符结尾
     if source_folder.endswith(os.path.sep) and len(source_folder) > 1:
         source_folder = source_folder[:-1]
@@ -29,7 +35,7 @@ def folder_compare(source_folder,target_folder,output_file):
     # os.walk返回一个三元组
     # path:当前正在遍历的这个文件夹的本身的地址, 
     # dirs:是一个list,内容是该文件夹中所有的目录的名字(不包括子目录), 
-    # file_names:是 list,内容是该文件夹中所有的文件(不包括子目录),
+    # file_names:是一个list,内容是该文件夹中所有的文件(不包括子目录),
     # topdown参数为真，walk会遍历source_folder文件夹,与source_folder文件夹中每一个子目录
     output_file = open(output_file, "w+")
     for path, dirs, file_names in t:
@@ -80,4 +86,4 @@ def folder_compare(source_folder,target_folder,output_file):
     print("校验完成,结果请查看%s文件" % (output_file.name))
 
 # file_compare("D:\\blog\\bin\\yarn","C:\\Users\\DUZUN\\Desktop\\bin\\yarn")
-# folder_compare("D:\\blog\\bin","C:\\Users\\DUZUN\\Desktop\\bin","C:\\Users\\DUZUN\\Desktop\\result.csv")
+# folder_compare("D:\\blog\\bin","C:\\Users\\DUZUN\\Desktop\\bin")
