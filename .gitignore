@@ -1,3 +1,12 @@
+
+# demo
+.idea/
+.gitee/
+node_modules
+.cache
+.temp
+venv/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -26,12 +35,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-
-# demo
-.idea/
-.gitee/
-
-test/
 
 
 # PyInstaller
@@ -76,7 +79,7 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
+# Sphinx docs
 docs/_build/
 
 # PyBuilder
@@ -128,7 +131,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
+# mkdocs docs
 /site
 
 # mypy
