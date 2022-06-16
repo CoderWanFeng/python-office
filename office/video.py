@@ -1,4 +1,4 @@
-from core.VideoType import MainVideo
+from office.core.VideoType import MainVideo
 
 mainVideo = MainVideo()
 

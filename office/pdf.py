@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from core.PDFType import MainPDF
+from office.core.PDFType import MainPDF
 
 mainPDF = MainPDF()
 
