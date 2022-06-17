@@ -7,7 +7,7 @@
 # Created Time:  2022-4-25 10:17:34
 # Description: 有关 ppt 的自动化操作
 #############################################
-from core.PPTType import MainPPT
+from office.core.PPTType import MainPPT
 
 mainPPT = MainPPT()
 

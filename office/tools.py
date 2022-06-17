@@ -1,4 +1,4 @@
-from core.ToolsType import MainTools
+from office.core.ToolsType import MainTools
 
 mainTools = MainTools()
 

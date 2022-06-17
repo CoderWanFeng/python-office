@@ -7,7 +7,7 @@
 # Created Time:  2022-4-25 10:17:34
 # Description: 有关 excel 的自动化操作
 #############################################
-from core.ExcelType import MainExcel
+from office.core.ExcelType import MainExcel
 
 mainExcel = MainExcel()
 

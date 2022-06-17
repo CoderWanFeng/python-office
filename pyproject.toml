@@ -3,9 +3,6 @@ name = "python-office"
 
 packages = [
     { include = "office" }, # 调用的方法
-    { include = "cli" }, # 命令行工具
-    { include = "core" }, # 核心功能实现类
-    { include = "lib" }, # 工具类、第三方库的使用
 ]
 
 version = "0.0.28"
@@ -71,4 +68,4 @@ default = true
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 
 [tool.poetry.scripts]
-office = 'cli.main:app'
+office = 'office.cli.main:app'

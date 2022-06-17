@@ -1,11 +1,11 @@
-from . import word
-from . import pdf
-from . import image
-from . import file
-from . import video
-from . import tools
-from . import ppt
-from . import excel
+from office import word
+from office import pdf
+from office import image
+from office import file
+from office import video
+from office import tools
+from office import ppt
+from office import excel
 
 print('=' * 30)
 print('【python-office库】，功能持续更新中')

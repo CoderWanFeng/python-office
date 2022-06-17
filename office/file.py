@@ -7,8 +7,8 @@
 # Created Time:  2022-4-25 10:17:34
 # Description: 有关 文件 的自动化操作
 #############################################
-from core.FileType import MainFile
-from core.SearchByContentType import MainSearchByContent
+from office.core.FileType import MainFile
+from office.core.SearchByContentType import MainSearchByContent
 
 mainFile = MainFile()
 mainSearchByContent = MainSearchByContent()

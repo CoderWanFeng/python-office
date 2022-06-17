@@ -8,7 +8,7 @@
 # Created Time:  2022-4-25 10:17:34
 # Description: 有关word的自动化操作
 #############################################
-from core.WordType import MainWord
+from office.core.WordType import MainWord
 
 # 创建对象
 mainWord = MainWord()

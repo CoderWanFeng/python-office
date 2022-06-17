@@ -7,7 +7,7 @@
 # Created Time:  2022-4-25 10:17:34
 # Description: 有关 图片 的自动化操作
 #############################################
-from core.ImageType import MainImage
+from office.core.ImageType import MainImage
 
 mainImage = MainImage()
 
