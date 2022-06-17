@@ -1,7 +1,7 @@
 import os
 import time
 
-from ..lib.ppt.ppt2pdf_service import ppt2pdf_single
+from office.lib.ppt.ppt2pdf_service import ppt2pdf_single
 
 
 class MainPPT():

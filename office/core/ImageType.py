@@ -4,7 +4,7 @@ import os
 from PIL import Image
 from alive_progress import alive_bar
 
-from ..lib.image import add_watermark_service
+from office.lib.image import add_watermark_service
 
 
 class MainImage():
