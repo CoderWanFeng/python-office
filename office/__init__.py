@@ -1,11 +1,11 @@
-from office import word
-from office import pdf
-from office import image
-from office import file
-from office import video
-from office import tools
-from office import ppt
-from office import excel
+from office.api import word
+from office.api import pdf
+from office.api import image
+from office.api import file
+from office.api import video
+from office.api import tools
+from office.api import ppt
+from office.api import excel
 
 print('=' * 30)
 print('【python-office库】，功能持续更新中')

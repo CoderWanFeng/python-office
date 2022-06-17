@@ -1,6 +1,6 @@
 import os
 from fpdf import FPDF
-from lib.pdf import add_watermark_service
+from ..lib.pdf import add_watermark_service
 import pikepdf
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from pdf2docx import Converter

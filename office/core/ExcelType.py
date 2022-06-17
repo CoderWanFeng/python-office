@@ -1,7 +1,7 @@
 from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
-from lib.utils import pandas_mem
+from ..lib.utils import pandas_mem
 
 
 class MainExcel():
