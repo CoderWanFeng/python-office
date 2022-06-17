@@ -69,3 +69,10 @@ url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 
 [tool.poetry.scripts]
 office = 'office.cli.main:app'
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["tests", "office"]
+
+[tool.coverage.run]
+source_pkgs = ["office"]

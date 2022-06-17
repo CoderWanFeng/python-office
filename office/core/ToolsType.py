@@ -4,8 +4,8 @@ import string
 import random
 import socket
 
-from ..lib.tools.weather_city_code import WEATHER_CITY_CODE_DIC
-from ..lib.tools.weather_service import weather_spider
+from office.lib.tools.weather_city_code import WEATHER_CITY_CODE_DIC
+from office.lib.tools.weather_service import weather_spider
 # from utils.tools.weather_city_code import WEATHER_CITY_CODE_DIC
 
 
