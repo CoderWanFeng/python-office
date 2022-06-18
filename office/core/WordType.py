@@ -27,7 +27,7 @@ class MainWord():
         for file in wordFiles:
             filepath = os.path.abspath(file)
             index = filepath.rindex('.')
-            pdfPath = filepath[:index] + '.pdf'
+            pdfPath = os.path.abspath(filepath[:index] + '.pdf')
             print(pdfPath)
             self.createpdf(filepath, pdfPath)
 
