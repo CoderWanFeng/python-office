@@ -18,3 +18,7 @@ def image2gif():
 
 def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.15, space=75, angle=30):
     mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
+
+
+def img2Cartoon(path):
+    mainImage.img2Cartoon(path)

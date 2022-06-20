@@ -9,7 +9,7 @@ from office.api import excel
 
 print('=' * 30)
 print('【python-office库】，功能持续更新中')
-print( '全部功能文档：http://www.python4office.cn/python-office/profile/')
+print( '全部功能文档：https://www.python-office.com/')
 print('使用有问题 or 提交你的功能需求 or 参与项目开发')
-print('请加入【项目交流群】： http://www.python4office.cn/images/python-office.jpg')
+print('请加入【项目交流群】： https://www.python-office.com/api/img-cdn/python-office.jpg')
 print('=' * 30)
