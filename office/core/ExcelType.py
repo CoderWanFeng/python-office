@@ -17,8 +17,8 @@ class MainExcel():
         # 可以选择英语
         if language.lower() == 'english':
             language = 'en_US'
-        else:
-            language = 'zh_CN'
+        # else:
+        #     language = 'zh_CN'
         # 开始造数
         fake = Faker(language)
         excel_dict = {}
