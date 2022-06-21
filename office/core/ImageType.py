@@ -63,7 +63,7 @@ class MainImage():
         else:
             add_watermark_service.add_mark2file(file, mark, out, color, size, opacity, space, angle)
 
-    def get_access_token(self):
+    def get_access_token(self, client_id, client_secret):
 
         # 获取token的API
         url = 'https://aip.baidubce.com/oauth/2.0/token'
@@ -72,9 +72,9 @@ class MainImage():
             # 固定参数
             'grant_type': 'client_credentials',
             # 必选参数，传入你的API Key
-            'client_id': 'OVALewIvPyLmiNITnceIhrYf',
+            'client_id': client_id,
             # 必选参数，传入你的Secret Key
-            'client_secret': 'rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN'
+            'client_secret': client_secret
         }
         # 发送请求，获取响应数据
 
@@ -84,7 +84,7 @@ class MainImage():
         # 将access_token返回
         return access_token
 
-    def img2Cartoon(self, path):
+    def img2Cartoon(self, path, client_id, client_secret):
         print('*' * 20 + "{}".format('正在进行动漫头像的转换') + '*' * 20)
         print('*' * 20 + "{}".format('本仓库的视频教程：http://t.cn/A6aAvu47') + '*' * 20)
         # 头像动漫化的API
@@ -100,7 +100,7 @@ class MainImage():
         # 请求的参数
         params = {
             # 开始获取的access_token
-            'access_token': self.get_access_token(),
+            'access_token': self.get_access_token(client_id, client_secret),
             # 图片的base64编码
             'image': path,
         }

@@ -8,17 +8,20 @@
 # Description: 有关 图片 的自动化操作
 #############################################
 from office.core.ImageType import MainImage
+from office.lib.utils.except_utils import except_dec
 
 mainImage = MainImage()
 
-
+@except_dec()
 def image2gif():
     mainImage.image2gif()
 
 # todo：输出文件路径
+@except_dec()
 def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.15, space=75, angle=30):
     mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
 
 # todo：输入文件路径
+@except_dec()
 def img2Cartoon(path):
     mainImage.img2Cartoon(path)
