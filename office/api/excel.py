@@ -8,9 +8,11 @@
 # Description: 有关 excel 的自动化操作
 #############################################
 from office.core.ExcelType import MainExcel
+from office.lib.utils.except_utils import except_dec
 
 mainExcel = MainExcel()
 
-
-def fake2excel(columns=['name'], rows=1, language='zh_CN', path='./fake2excel.xlsx'):
-    mainExcel.fake2excel(columns, rows, language, path)
+# todo:输出文件路径
+@except_dec()
+def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_CN'):
+    mainExcel.fake2excel(columns, rows, path, language)

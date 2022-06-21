@@ -6,12 +6,12 @@ mainPDF = MainPDF()
 
 
 # 给pdf加水印
-def add_watermark():
+def add_watermark() -> None:
     mainPDF.add_watermark()
 
 
 # txt转pdf
-def txt2pdf(path, res_pdf='txt2pdf.pdf'):
+def txt2pdf(path: str, res_pdf='txt2pdf.pdf'):
     mainPDF.file2pdf(path, res_pdf)
 
 
@@ -30,5 +30,6 @@ def merge2pdf(one_by_one, output):
     mainPDF.merge2pdf(one_by_one, output)
 
 
+# todo：输入文件路径
 def pdf2docx(file_path):
     mainPDF.pdf2docx(file_path)

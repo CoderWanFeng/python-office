@@ -6,7 +6,7 @@ from office.lib.utils import pandas_mem
 
 class MainExcel():
 
-    def fake2excel(self, columns, rows, language, path):
+    def fake2excel(self, columns, rows, path, language):
         """
         @Author & Date  : CoderWanFeng 2022/5/13 0:12
         @Desc  : columns:list，每列的数据名称，默认是名称
@@ -17,6 +17,8 @@ class MainExcel():
         # 可以选择英语
         if language.lower() == 'english':
             language = 'en_US'
+        else:
+            language = 'zh_CN'
         # 开始造数
         fake = Faker(language)
         excel_dict = {}
@@ -32,4 +34,5 @@ class MainExcel():
             data = pd.DataFrame(excel_dict)
             data = pandas_mem.reduce_pandas_mem_usage(data)
             data.to_excel(writer, index=False)
-            writer.save()
+            # writer.save()
+            writer.close()

@@ -12,5 +12,6 @@ from office.core.PPTType import MainPPT
 mainPPT = MainPPT()
 
 
-def ppt2pdf(path):
+# todo：输入文件路径
+def ppt2pdf(path: str):
     mainPPT.ppt2pdf(path)
