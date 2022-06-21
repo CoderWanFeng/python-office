@@ -12,11 +12,14 @@ def except_dec(msg='异常原因'):
             try:
                 return func(*args, **kwargs)
             except Exception as e:
-                print('*' * 20 + "{}".format('糟糕，你的程序出现了异常') + '*' * 20)
+                print('=' * 30)
+
+                print('糟糕，你的程序出现了异常')
                 print(
                     f'>>>异常时间：\t{datetime.now()}\n>>>异常函数：\t{func.__name__}\n>>>{msg}：\t{e}')
 
-                print('*' * 20 + "{}".format('别慌，你的异常我来解决→http://t.cn/A6XVQXAk') + '*' * 20)
+                print('别慌，你的异常我来帮你解决→ http://t.cn/A6a2JOC8')
+                print('=' * 30)
 
                 # print(f'{sign}{traceback.format_exc()}{sign}')
 

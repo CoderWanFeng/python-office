@@ -63,7 +63,7 @@ class MainImage():
         else:
             add_watermark_service.add_mark2file(file, mark, out, color, size, opacity, space, angle)
 
-    def get_access_token(self, client_id, client_secret):
+    def get_access_token(self, client_api, client_secret):
 
         # 获取token的API
         url = 'https://aip.baidubce.com/oauth/2.0/token'
@@ -72,7 +72,7 @@ class MainImage():
             # 固定参数
             'grant_type': 'client_credentials',
             # 必选参数，传入你的API Key
-            'client_id': client_id,
+            'client_id': client_api,
             # 必选参数，传入你的Secret Key
             'client_secret': client_secret
         }
@@ -84,9 +84,14 @@ class MainImage():
         # 将access_token返回
         return access_token
 
-    def img2Cartoon(self, path, client_id, client_secret):
-        print('*' * 20 + "{}".format('正在进行动漫头像的转换') + '*' * 20)
-        print('*' * 20 + "{}".format('本仓库的视频教程：http://t.cn/A6aAvu47') + '*' * 20)
+    def img2Cartoon(self, path, client_api, client_secret):
+        print('=' * 30)
+        print('正在进行动漫头像的转换')
+        print('本仓库的视频教程：http://t.cn/A6aAvu47')
+        print('这个接口调用的是百度AI平台的免费试用接口（200次），如果代码报错，大概率是试用次数没有了')
+        print('获取免费使用次数的教程，我整理在这个文档里了：https://python-office.com/office/image.html')
+        print('=' * 30)
+
         # 头像动漫化的API
         url = 'https://aip.baidubce.com/rest/2.0/image-process/v1/selfie_anime'
         # 以二进制的方式读取原始图片
@@ -100,7 +105,7 @@ class MainImage():
         # 请求的参数
         params = {
             # 开始获取的access_token
-            'access_token': self.get_access_token(client_id, client_secret),
+            'access_token': self.get_access_token(client_api, client_secret),
             # 图片的base64编码
             'image': path,
         }
