@@ -4,7 +4,7 @@
     </a>   
 </p>
 <p align="center">
-	<strong>🍬python for office</strong>
+	👉 <a href="https://www.python-office.com/">项目官网：https://www.python-office.com/</a> 👈
 </p>
 <p align="center">
 	👉 <a href="http://www.python4office.cn/images/python-office.jpg">本开源项目的交流群</a> 👈
@@ -80,10 +80,10 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 ## 📝文档
 
-[📘中文文档](http://www.python4office.cn/python-office/profile/)
+[📘中文文档](https://www.python-office.com/)
 
 
-[🎬视频介绍](https://space.bilibili.com/259649365/channel/collectiondetail?sid=378950)
+[🎬视频介绍](https://www.bilibili.com/video/BV1pT4y1k7FH)
 
 
 -------------------------------------------------------------------------------
