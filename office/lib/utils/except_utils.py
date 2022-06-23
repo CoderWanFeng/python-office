@@ -18,7 +18,10 @@ def except_dec(msg='异常原因'):
                 print(
                     f'>>>异常时间：\t{datetime.now()}\n>>>异常函数：\t{func.__name__}\n>>>{msg}：\t{e}')
 
-                print('别慌，你的异常我来帮你解决→ http://t.cn/A6a2JOC8')
+                print('别慌，你的异常也许【群友也遇到过】 → http://t.cn/A65MiFvH')
+                print('当然，也可以免费【加入星球，向我提问】 → http://t.cn/A6qeZpVt')
+
+
                 print('=' * 30)
 
                 # print(f'{sign}{traceback.format_exc()}{sign}')

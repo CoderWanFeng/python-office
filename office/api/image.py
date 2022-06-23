@@ -26,5 +26,5 @@ def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.
 
 # todo：输入文件路径
 @except_dec()
-def img2Cartoon(path):
-    mainImage.img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN')
+def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN'):
+    mainImage.img2Cartoon(path, client_api, client_secret)
