@@ -7,7 +7,7 @@
 	👉 <a href="https://www.python-office.com/">项目官网：https://www.python-office.com/</a> 👈
 </p>
 <p align="center">
-	👉 <a href="http://www.python4office.cn/images/python-office.jpg">本开源项目的交流群</a> 👈
+	👉 <a href="https://www.python-office.com/api/img-cdn/python-office.jpg">本开源项目的交流群</a> 👈
 </p>
 
 
@@ -182,5 +182,5 @@ python-office的源码分为两个分支，功能如下：
 
 <div align="center">
 	<img src="http://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
-	<img src="http://www.python4office.cn/images/python-office.jpg" height="150">
+	<img src="https://www.python-office.com/api/img-cdn/python-office.jpg" height="150">
 </div>

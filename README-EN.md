@@ -187,5 +187,5 @@ Buy us a cup of coffee if you appreciate python-office. Thank you sincerely.
 
 <div align="center">
 	<img src="http://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
-	<img src="http://www.python4office.cn/images/python-office.jpg" height="150">
+	<img src="https://www.python-office.com/api/img-cdn/python-office.jpg" height="150">
 </div>
