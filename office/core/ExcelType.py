@@ -48,13 +48,17 @@ class MainExcel():
         if not output_file.endswith(xlsxSuffix):
             raise Exception(f'您自定义的输出文件名，不是以{xlsxSuffix}结尾的')
         file_path_dict = self.getfile(dir_path)  # excel文件所在的文件夹
-        writer = pd.ExcelWriter(output_file)  # 合并后的excel名称
+        try:
+            writer = pd.ExcelWriter(output_file)  # 合并后的excel名称
+        except PermissionError:
+            raise Exception(f'小可爱，你的输出文件，是不是上次打开了没关闭呀？这是你自己指定的输出文件名称：{output_file}')
         for file, path in file_path_dict.items():
             if file.endswith("xlsx"):
                 df = pd.read_excel(path)
             if file.endswith("csv"):
                 df = pd.read_csv(path)
             df.to_excel(writer, sheet_name=file.split('.')[0], index=False)
+        print(f'您指定的Excel文件已经合并完毕，合并后的文件名是{output_file}')
         writer.save()
 
     def getfile(self, dirpath):
