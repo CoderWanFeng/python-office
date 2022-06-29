@@ -115,8 +115,11 @@ class MainImage():
         if response:
             # 打开一个文件
             f = open('result.jpg', 'wb')
-            # 获取动漫头像
-            anime = response.json()['image']
+            try:
+                # 获取动漫头像
+                anime = response.json()['image']
+            except:
+                raise Exception('你没有开通百度AI账号，错误原因以及【免费】开通方式，见：https://mp.weixin.qq.com/s/5Eyk2j20jzSaVcr1DTsfvw')
             # 对返回的头像进行解码
             anime = base64.b64decode(anime)
             # 将头像写入文件当中

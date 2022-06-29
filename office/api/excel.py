@@ -12,7 +12,18 @@ from office.lib.utils.except_utils import except_dec
 
 mainExcel = MainExcel()
 
+
 # todo:输出文件路径
 @except_dec()
 def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_CN'):
     mainExcel.fake2excel(columns, rows, path, language)
+
+
+@except_dec()
+def merge2excel(dir_path, output_file='merge2excel.xlsx'):
+    """
+    :param dir_path:
+    :param output_file:
+    :return:
+    """
+    mainExcel.merge2excel(dir_path, output_file)

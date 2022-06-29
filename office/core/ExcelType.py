@@ -2,6 +2,8 @@ from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
 from office.lib.utils import pandas_mem
+import os
+from pathlib import Path
 
 
 class MainExcel():
@@ -36,3 +38,30 @@ class MainExcel():
             data.to_excel(writer, index=False)
             # writer.save()
             writer.close()
+
+    def merge2excel(self, dir_path, output_file,xlsxSuffix=".xlsx"):
+        """
+        :param dir_path:
+        :param output_file:
+        :return:
+        """
+        if not output_file.endswith(xlsxSuffix):
+            raise Exception(f'您自定义的输出文件名，不是以{xlsxSuffix}结尾的')
+        file_path_dict = self.getfile(dir_path)  # excel文件所在的文件夹
+        writer = pd.ExcelWriter(output_file)  # 合并后的excel名称
+        for file, path in file_path_dict.items():
+            if file.endswith("xlsx"):
+                df = pd.read_excel(path)
+            if file.endswith("csv"):
+                df = pd.read_csv(path)
+            df.to_excel(writer, sheet_name=file.split('.')[0], index=False)
+        writer.save()
+
+    def getfile(self, dirpath):
+        path = Path(dirpath)
+        file_path_dict = {}
+        for root, dirs, files in os.walk(dirpath):
+            for file in files:
+                if file.endswith("xlsx") or file.endswith("csv"):
+                    file_path_dict[file] = (path / file)
+        return file_path_dict
