@@ -19,6 +19,7 @@ def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_
     mainExcel.fake2excel(columns, rows, path, language)
 
 
+# 多个excel，合并到一个excel的不同sheet中
 @except_dec()
 def merge2excel(dir_path, output_file='merge2excel.xlsx'):
     """
@@ -27,3 +28,9 @@ def merge2excel(dir_path, output_file='merge2excel.xlsx'):
     :return:
     """
     mainExcel.merge2excel(dir_path, output_file)
+
+
+# 同一个excel里的不同sheet，拆分为不同的excel文件
+@except_dec()
+def sheet2excel(file_path):
+    mainExcel.sheet2excel(file_path)

@@ -4,6 +4,11 @@ from alive_progress import alive_bar
 from office.lib.utils import pandas_mem
 import os
 from pathlib import Path
+from openpyxl import load_workbook
+import warnings
+
+# 忽略waring警告
+warnings.filterwarnings("ignore")
 
 
 class MainExcel():
@@ -39,7 +44,7 @@ class MainExcel():
             # writer.save()
             writer.close()
 
-    def merge2excel(self, dir_path, output_file,xlsxSuffix=".xlsx"):
+    def merge2excel(self, dir_path, output_file, xlsxSuffix=".xlsx"):
         """
         :param dir_path:
         :param output_file:
@@ -69,3 +74,37 @@ class MainExcel():
                 if file.endswith("xlsx") or file.endswith("csv"):
                     file_path_dict[file] = (path / file)
         return file_path_dict
+
+    def sheet2excel(self, file_path):
+        # 先读取一次文件，获取sheet表的名称
+
+        origin_excel = load_workbook(filename=file_path)  # 读取原excel文件
+        origin_sheet_names = origin_excel.sheetnames  # 获取sheet的名称
+        print(f'一共有{len(origin_sheet_names)}个sheet，名称分别为：{origin_sheet_names}')
+        print('拆分开始')
+
+        if len(origin_sheet_names) > 1:  # 如果sheetnames小于1，报错：该文件不需要拆分
+
+            for j in range(len(origin_sheet_names)):
+
+                wb = load_workbook(filename=file_path)  # 再读取一次文件，由于每次删除后需要保存一次，所以不能与上一次一样
+                sheet = wb[origin_sheet_names[j]]
+                wb.copy_worksheet(sheet)
+
+                new_filename = origin_sheet_names[j] + '.xlsx'  # 新建一个sheet命名的excel文件
+
+                for i in range(len(origin_sheet_names)):
+                    sheet1 = wb[origin_sheet_names[i]]
+                    wb.remove(sheet1)
+
+                wb.save(filename=new_filename)
+
+                # 由于使用copy_worksheet后，sheet表名有copy字段，这里做个调整
+
+                new = load_workbook(filename=new_filename)
+                news = new.active
+                news.title = origin_sheet_names[j]
+                new.save(filename=new_filename)
+            print('拆分结束')
+        else:
+            raise Exception(f"你的文件只有一个sheet，难道还要拆分吗？我做不到啊~~~，你的文件名{file_path}")
