@@ -3,9 +3,13 @@ import qrcode
 import string
 import random
 import socket
+import time
+from office.lib.tools.lottery8ticket import ticket_kinds
 
 from office.lib.tools.weather_city_code import WEATHER_CITY_CODE_DIC
 from office.lib.tools.weather_service import weather_spider
+
+
 # from utils.tools.weather_city_code import WEATHER_CITY_CODE_DIC
 
 
@@ -56,9 +60,25 @@ class MainTools():
             except:
                 print('未查到%s城市，请重新输入：' % cityName)
 
-
     # 通过url，获取ip地址
-    def url2ip(self,url):
+    def url2ip(self, url):
         socket_list = socket.getaddrinfo(url, None, 0, socket.SOCK_STREAM)
         ip_info = socket_list[0][4][0]
         print('【{}】 这个网址对应的IP地址是：{}'.format(url, ip_info))
+
+    def lottery8ticket(self):
+        '''
+        自动生成彩票
+        种类代码：
+
+        '''
+        while True:
+            for num, name_def in ticket_kinds.items():
+                print(num, name_def[0])
+            kind = input("选择一个种类：")
+            kind = int(kind)  # 转化成整数，方便根据索引取出彩票方法
+            if kind == 0:
+                break
+            print('*' * 20)
+            print(kind)
+            print('*' * 20)
