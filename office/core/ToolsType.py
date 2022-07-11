@@ -76,9 +76,8 @@ class MainTools():
             for num, name_def in ticket_kinds.items():
                 print(num, name_def[0])
             kind = input("选择一个种类：")
-            kind = int(kind)  # 转化成整数，方便根据索引取出彩票方法
-            if kind == 0:
+            if kind == str(0):
                 break
             print('*' * 20)
-            print(kind)
+            print(ticket_kinds.get(kind)[1]())
             print('*' * 20)

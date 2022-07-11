@@ -40,3 +40,8 @@ def merge2pdf(one_by_one, output):
 @except_dec()
 def pdf2docx(file_path):
     mainPDF.pdf2docx(file_path)
+
+
+@except_dec()
+def pdf2imgs(pdf_path, out_dir):
+    mainPDF.pdf2imgs(pdf_path, out_dir)
