@@ -1,5 +1,10 @@
+import random
+
+
 def SSL():
-    return '双色球的号码是：5555'
+    red_ball = random.sample(range(1, 34), 6)
+    blue_ball = random.sample(range(1, 17), 1)
+    return f'双色球的号码是：红色球{red_ball}，蓝色球{blue_ball}'
 
 
 def D3():
@@ -35,27 +40,22 @@ def QWS():
 
 
 def X_22_5():
-    pass
+    res = random.sample(range(1, 33), 5)  # 1到22，不重复的5个数
+    return res
 
 
 def X_36_7():
-    pass
+    res = random.sample(range(1, 37), 7)  # 1到36，不重复的7个数
+    return res
 
 
 def X_26_5():
-    pass
-
-
-def QWS():
-    pass
-
-
-def QWS():
-    pass
+    res = random.sample(range(1, 27), 5)
+    return res
 
 
 ticket_kinds = {
-    "0": ["退出",None],
+    "0": ["退出", None],
     "1": ["双色球", SSL],
     "2": ["福彩3D", D3],
     "3": ["七乐彩", SLC],

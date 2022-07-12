@@ -79,5 +79,8 @@ class MainTools():
             if kind == str(0):
                 break
             print('*' * 20)
-            print(ticket_kinds.get(kind)[1]())
+            if not ticket_kinds.get(kind)[1]():
+                print('这个规则太复杂了，我们正在开发。如果可以提供建议，请私信：http://t.cn/A6XVQXAk')
+            else:
+                print(f'{ticket_kinds.get(kind)[0]}的号码是 -->> {ticket_kinds.get(kind)[1]()}')
             print('*' * 20)
