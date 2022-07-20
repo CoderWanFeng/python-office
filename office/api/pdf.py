@@ -38,8 +38,8 @@ def merge2pdf(one_by_one, output):
 
 # todo：输入文件路径
 @except_dec()
-def pdf2docx(file_path):
-    mainPDF.pdf2docx(file_path)
+def pdf2docx(file_path, output_path='.'):
+    mainPDF.pdf2docx(file_path, output_path)
 
 
 @except_dec()
