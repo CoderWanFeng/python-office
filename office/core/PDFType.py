@@ -4,8 +4,7 @@ import pikepdf
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from pdf2docx import Converter
 import os
-import datetime
-
+from pathlib import Path
 import fitz  # fitz就是pip install PyMuPDF
 
 
@@ -35,15 +34,12 @@ class MainPDF():
             # pdf.output("path where you want to store pdf file\\file_name.pdf")
             pdf.output(res_pdf)
 
-    def pdf2docx(self, file_path):
-        try:
-            pdf_name = file_path.split('.')[0]
-            word_name = pdf_name + '.docx'
-            cv = Converter(file_path)
-            cv.convert(word_name)
-            cv.close()
-        except:
-            print('这个文件有问题~！')
+    def pdf2docx(self, file_path, output_path):
+        word_name = os.path.basename(file_path)[:-4] + '.docx'
+        word_path = Path(output_path) / word_name
+        cv = Converter(file_path)
+        cv.convert(word_path)
+        cv.close()
 
     # 合并pdf
     def merge2pdf(self, one_by_one, output):
@@ -81,23 +77,44 @@ class MainPDF():
         pdf.save(res_pdf)
         pdf.close()
 
+    # def pdf2imgs(self, pdf_path: str, out_dir=".") -> None:
+    #     print('PDF开始转换，你可以加入交流群唠唠嗑：http://www.python4office.cn/wechat-group/')
+    #     pdfDoc = fitz.open(pdf_path)
+    #     if pdfDoc.pageCount > 50:
+    #         print('少年，你的PDF页数有点多哟，请耐心等待~')
+    #     for pg in range(pdfDoc.pageCount):
+    #         page = pdfDoc[pg]
+    #         rotate = int(0)
+    #         # 每个尺寸的缩放系数为1.3，这将为我们生成分辨率提高2.6的图像。
+    #         # 此处若是不做设置，默认图片大小为：792X612, dpi=96
+    #         zoom_x = 1.33333333  # (1.33333333-->1056x816)   (2-->1584x1224)
+    #         zoom_y = 1.33333333
+    #         mat = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)
+    #         pix = page.getPixmap(matrix=mat, alpha=False)
+
+    #         if not os.path.exists(out_dir):  # 判断存放图片的文件夹是否存在
+    #             os.makedirs(out_dir)  # 若图片文件夹不存在就创建
+
+    #         pix.writePNG(out_dir + '/' + 'images_%s.png' % pg)  # 将图片写入指定的文件夹内
+    #     print(f'PDF转换Image完成，图片在你指定的output文件夹{out_dir}，如果没有指定，默认是PDF同一个文件夹')
+
     def pdf2imgs(self, pdf_path: str, out_dir=".") -> None:
         print('PDF开始转换，你可以加入交流群唠唠嗑：http://www.python4office.cn/wechat-group/')
         pdfDoc = fitz.open(pdf_path)
-        if pdfDoc.pageCount > 50:
+        if pdfDoc.page_count > 50:
             print('少年，你的PDF页数有点多哟，请耐心等待~')
-        for pg in range(pdfDoc.pageCount):
+        for pg in range(pdfDoc.page_count):
             page = pdfDoc[pg]
             rotate = int(0)
             # 每个尺寸的缩放系数为1.3，这将为我们生成分辨率提高2.6的图像。
             # 此处若是不做设置，默认图片大小为：792X612, dpi=96
             zoom_x = 1.33333333  # (1.33333333-->1056x816)   (2-->1584x1224)
             zoom_y = 1.33333333
-            mat = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)
-            pix = page.getPixmap(matrix=mat, alpha=False)
+            mat = fitz.Matrix(zoom_x, zoom_y).prerotate(rotate)
+            pix = page.get_pixmap(matrix=mat, alpha=False)
 
             if not os.path.exists(out_dir):  # 判断存放图片的文件夹是否存在
                 os.makedirs(out_dir)  # 若图片文件夹不存在就创建
 
-            pix.writePNG(out_dir + '/' + 'images_%s.png' % pg)  # 将图片写入指定的文件夹内
+            pix.save(out_dir + '/' + 'images_%s.png' % pg)  # 将图片写入指定的文件夹内
         print(f'PDF转换Image完成，图片在你指定的output文件夹{out_dir}，如果没有指定，默认是PDF同一个文件夹')
