@@ -46,9 +46,9 @@ class MainExcel():
 
     def merge2excel(self, dir_path, output_file, xlsxSuffix=".xlsx"):
         """
-        :param dir_path:
-        :param output_file:
-        :return:
+        :param dir_path: 存放excel文件的位置
+        :param output_file: 输出合并后excel文件的位置
+        :return: 没有返回值
         """
         if not output_file.endswith(xlsxSuffix):
             raise Exception(f'您自定义的输出文件名，不是以{xlsxSuffix}结尾的')
