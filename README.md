@@ -7,7 +7,7 @@
 	👉 <a href="https://www.python-office.com/">项目官网：https://www.python-office.com/</a> 👈
 </p>
 <p align="center">
-	👉 <a href="https://www.python-office.com/api/img-cdn/python-office.jpg">本开源项目的交流群</a> 👈
+	👉 <a href="https://www.python-office.com/api/img-cdn/python-office.jpg/">本开源项目的交流群</a> 👈
 </p>
 
 
