@@ -4,10 +4,10 @@
     </a>   
 </p>
 <p align="center">
-	👉 <a href="https://www.python-office.com/">项目官网：https://www.python-office.com/</a> 👈
+	👉 <a target="_blank" href="https://www.python-office.com/">项目官网：https://www.python-office.com/</a> 👈
 </p>
 <p align="center">
-	👉 <a href="https://www.python-office.com/api/img-cdn/group/python-office.jpg">本开源项目的交流群</a> 👈
+	👉 <a target="_blank" href="https://www.python-office.com/api/img-cdn/group/python-office.jpg">本开源项目的交流群</a> 👈
 </p>
 
 
@@ -39,7 +39,7 @@
 	<a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
 		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
 	</a>
-	<a href="http://www.python4office.cn/images/qq.jpg">
+	<a target="_blank" href="http://www.python4office.cn/images/qq.jpg">
 	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
 </p>
 
@@ -182,5 +182,5 @@ python-office的源码分为两个分支，功能如下：
 
 <div align="center">
 	<img src="http://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
-	<img src="https://www.python-office.com/api/img-cdn/python-office.jpg" height="150">
+	<img src="https://www.python-office.com/api/img-cdn/group/python-office.jpg" height="150">
 </div>
