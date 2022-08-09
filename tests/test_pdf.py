@@ -1,6 +1,6 @@
 import unittest
 
-from office.api.pdf import pdf2imgs, pdf2docx
+from office.api.pdf import pdf2imgs, pdf2docx, add_img_water
 
 
 class TestExcel(unittest.TestCase):
@@ -14,3 +14,6 @@ class TestExcel(unittest.TestCase):
             file_path=r'D:\如何利用Python进行自动化办公.pdf',
             output_path=r'C:\output\test'
         )
+
+    def test_add_img_water(self):
+        add_img_water(pdf_file_in='./pdf/add_img.pdf', pdf_file_mark='./pdf/in.pdf', pdf_file_out='add_img.pdf')

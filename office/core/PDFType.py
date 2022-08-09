@@ -118,3 +118,6 @@ class MainPDF():
 
             pix.save(out_dir + '/' + 'images_%s.png' % pg)  # 将图片写入指定的文件夹内
         print(f'PDF转换Image完成，图片在你指定的output文件夹{out_dir}，如果没有指定，默认是PDF同一个文件夹')
+
+    def add_img_watermark(self, pdf_file_in, pdf_file_mark, pdf_file_out):
+        add_watermark_service.pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out)

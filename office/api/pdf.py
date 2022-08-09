@@ -45,3 +45,8 @@ def pdf2docx(file_path, output_path='.'):
 @except_dec()
 def pdf2imgs(pdf_path, out_dir):
     mainPDF.pdf2imgs(pdf_path, out_dir)
+
+
+@except_dec()
+def add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out):
+    mainPDF.add_img_watermark(pdf_file_in, pdf_file_mark, pdf_file_out)
