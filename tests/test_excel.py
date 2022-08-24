@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 import pandas as pd
-from office.api.excel import fake2excel
+from office.api.excel import fake2excel, find_excel_data
 import os
 
 class TestExcel(unittest.TestCase):
@@ -42,3 +42,6 @@ class TestExcel(unittest.TestCase):
         #     sheet_name="手机商品",
         #     index=False,  # 不保留index
         # )
+
+    def test_find_excel_data(self):
+        find_excel_data(search_key='刘家站垦殖场', target_dir=r'D:\workplace\code\gitee\python-office\contributors\bulabean')

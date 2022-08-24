@@ -1,3 +1,4 @@
+import search4file
 from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
@@ -128,3 +129,12 @@ class MainExcel():
             )
 
             pass
+
+    def find_excel_data(self, search_key, target_dir):
+        """
+        检索指定目录下的excel文件和过滤
+        参数：
+            search_key：检索的关键词
+            target_dir：目标文件夹
+        """
+        search4file.find_excel_data(search_key, target_dir)

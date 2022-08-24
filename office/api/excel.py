@@ -39,3 +39,10 @@ def sheet2excel(file_path):
 @except_dec()
 def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: str = 'merge2sheet'):
     mainExcel.merge2sheet(dir_path, output_sheet_name, output_excel_name)
+
+
+# 搜索excel中指定内容的文件、行数、内容详情
+# 作者：https://gitee.com/bulabean
+# @except_dec()
+def find_excel_data(search_key: str, target_dir: str):
+    mainExcel.find_excel_data(search_key, target_dir)
