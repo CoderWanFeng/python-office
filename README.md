@@ -56,8 +56,10 @@
 ## 📚简介
 
 Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识，做到了真正的开箱即用。
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](http://t.cn/A6XVQXAk)
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/5eFJcon_yA0zdqjnxbSR1w)
 
+
+![](https://www.python-office.com/api/img-cdn/python-office/find_excel_data/group.jpg)
 ### 🍺特点
 - 一键搭建所有 Python + 自动化办公的编程环境。
 - 使用一行代码解决大部分自动化办公的问题，不需要小白学习 Python 知识

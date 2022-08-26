@@ -1,6 +1,10 @@
 import os
 from alive_progress import alive_bar
 
+import pathlib
+
+from office.lib.utils.time_utils import time_count_dec
+
 
 class MainFile():
 
@@ -27,3 +31,72 @@ class MainFile():
                     work_count = work_count + 1
         print("当前目录下，共有{}个文件/文件夹，本次运行共进行了{}个文件/文件夹的重命名".format(len(fileList), work_count))
 
+    @time_count_dec
+    def file_name_insert_content(self, file_path, insert_position: int, insert_content: str):
+        """
+
+        :param Path: 文件存放路径
+        :param InsertPosition: 插入位置（内容将插入在此之后，如果输入位置大于文件主名长度将插入在末尾）
+        :param InsertContent: 插入内容
+        """
+        Path = pathlib.Path(file_path).resolve()
+        if Path.is_dir():
+            FileNameList = list(Path.glob("*"))  # 获取该路径下的文件列表
+            for FileName in FileNameList:
+                if FileName.is_file():  # 判断是否为文件，只对文件进行操作
+                    FileNameExtension = "".join(list(FileName.suffixes))
+                    FileNameRoot = FileName.name.replace(FileNameExtension, "")
+                    # 分离文件主名和扩展名，防止对扩展名进行操作
+                    FileNameFormer = FileNameRoot[:insert_position:]
+                    FileNameLatter = FileNameRoot[insert_position::]
+                    # 拆分文件主名
+                    NewFileName = FileNameFormer + insert_content + FileNameLatter + FileNameExtension  # 合并文件名
+                    if not Path.joinpath(NewFileName).is_file():
+                        FileName.rename(Path.joinpath(NewFileName))
+                    else:
+                        print(f"该目录下已存在名为{NewFileName}的文件，请检查！")
+        else:
+            print("请输入文件夹路径")
+
+    @time_count_dec
+    def file_name_add_prefix(self, file_path, prefix_content: str):
+        """
+
+        :param Path: 文件存放路径
+        :param PrefixContent: 前缀内容
+        """
+        Path = pathlib.Path(file_path).resolve()
+        if Path.is_dir():
+            FileNameList = list(Path.glob("*"))  # 获取该路径下的文件列表
+            for FileName in FileNameList:
+                if FileName.is_file():  # 判断是否为文件，只对文件进行操作
+                    NewFileName = prefix_content + FileName.name  # 合并文件名
+                    if not Path.joinpath(NewFileName).is_file():
+                        FileName.rename(Path.joinpath(NewFileName))
+                    else:
+                        print(f"该目录下已存在名为{NewFileName}的文件，请检查！")
+        else:
+            print("请输入文件夹路径")
+
+    @time_count_dec
+    def file_name_add_postfix(self, file_path, postfix_content: str):
+        """
+
+        :param Path: 文件存放路径
+        :param PostfixContent: 后缀内容
+        """
+        Path = pathlib.Path(file_path).resolve()
+        if Path.is_dir():
+            FileNameList = list(Path.glob("*"))  # 获取该路径下的文件列表
+            for FileName in FileNameList:
+                if FileName.is_file():  # 判断是否为文件，只对文件进行操作
+                    FileNameExtension = "".join(list(FileName.suffixes))
+                    FileNameRoot = FileName.name.replace(FileNameExtension, "")
+                    # 分离文件主名和扩展名
+                    NewFileName = FileNameRoot + postfix_content + FileNameExtension  # 合并文件名
+                    if not Path.joinpath(NewFileName).is_file():
+                        FileName.rename(Path.joinpath(NewFileName))
+                    else:
+                        print(f"该目录下已存在名为{NewFileName}的文件，请检查！")
+        else:
+            print("请输入文件夹路径")
