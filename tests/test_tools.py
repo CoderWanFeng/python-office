@@ -1,7 +1,7 @@
 import unittest
 
 from office.api.image import add_watermark
-from office.api.tools import url2ip, weather, lottery8ticket
+from office.api.tools import *
 
 
 class TestTools(unittest.TestCase):
@@ -18,4 +18,5 @@ class TestTools(unittest.TestCase):
     def test_lottery8ticket(self):
         lottery8ticket()
 
-
+    def test_create_article(self):
+        create_article('生日快乐',line_num=2000)

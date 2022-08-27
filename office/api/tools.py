@@ -35,3 +35,7 @@ def url2ip(url):
 @except_dec()
 def lottery8ticket():
     mainTools.lottery8ticket()
+
+
+def create_article(theme, line_num=200):
+    mainTools.create_article(theme, line_num)

@@ -28,16 +28,25 @@ def search_by_content(search_path, content):  # 定义 search() 函数，传入 
     mainSearchByContent.search_by_content(search_path, content)
 
 
+# author：https://github.com/CoderWanFeng/python-office/pull/72
 @except_dec()
 def file_name_insert_content(file_path, insert_position: int, insert_content: str):
     mainFile.file_name_insert_content(file_path, insert_position, insert_content)
 
 
+# author：https://github.com/CoderWanFeng/python-office/pull/72
 @except_dec()
 def file_name_add_prefix(file_path, prefix_content):
     mainFile.file_name_add_prefix(file_path, prefix_content)
 
 
+# author：https://github.com/CoderWanFeng/python-office/pull/72
 @except_dec
 def file_name_add_postfix(file_path, postfix_content):
     mainFile.file_name_add_postfix(file_path, postfix_content)
+
+
+# author：https://github.com/CoderWanFeng/python-office/pull/74
+@except_dec()
+def search_specify_type_file(file_path, file_type):
+    mainFile.search_specify_type_file(file_path, file_type)

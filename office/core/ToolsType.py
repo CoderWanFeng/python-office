@@ -5,6 +5,7 @@ import random
 import socket
 import time
 from office.lib.tools.lottery8ticket import ticket_kinds
+from office.lib.tools.qoute_dict_create_article import qoute, create_article_main
 
 from office.lib.tools.weather_city_code import WEATHER_CITY_CODE_DIC
 from office.lib.tools.weather_service import weather_spider
@@ -84,3 +85,6 @@ class MainTools():
             else:
                 print(f'{ticket_kinds.get(kind)[0]}的号码是 -->> {ticket_kinds.get(kind)[1]()}')
             print('*' * 20)
+
+    def create_article(self, theme, line_num):
+        create_article_main(theme, line_num)

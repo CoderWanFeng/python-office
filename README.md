@@ -56,7 +56,7 @@
 ## 📚简介
 
 Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识，做到了真正的开箱即用。
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/5eFJcon_yA0zdqjnxbSR1w)
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/dAm2B09i2ZaqCwhwP-AEdQ)
 
 
 ![](https://www.python-office.com/api/img-cdn/python-office/find_excel_data/group.jpg)
@@ -180,9 +180,7 @@ python-office的源码分为两个分支，功能如下：
 
 [![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
 
-## 📌公众号&开源小组
+## 📌联系作者
 
-<div align="center">
-	<img src="http://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
-	<img src="https://www.python-office.com/api/img-cdn/group/python-office.jpg" height="150">
-</div>
+
+![CoderWanFeng](https://www.python-office.com/api/img-cdn/group/qr-code.jpg)

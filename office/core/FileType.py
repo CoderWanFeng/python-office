@@ -100,3 +100,23 @@ class MainFile():
                         print(f"该目录下已存在名为{NewFileName}的文件，请检查！")
         else:
             print("请输入文件夹路径")
+
+    def search_specify_type_file(self, file_path, file_type: str):
+        '''
+
+        :param file_path:目标路径
+        :param file_type:需要查找的文件类型
+        '''
+        print("开始查找")
+        i = 0  # 计数变量
+        file_path = pathlib.Path(file_path).resolve()
+        if file_path.is_dir():
+            file_name_list = list(file_path.glob("**/*"))  # 获取该路径下的文件列表
+            for file_name in file_name_list:
+                file_name_extension = "".join(list(file_name.suffixes))
+                if file_name_extension == file_type:
+                    print(f"{file_name.name}，{file_name.parent}")
+                    i = i + 1
+            print(f"查找完成，共找到{i}个文件")
+        else:
+            print("请输入文件夹路径")
