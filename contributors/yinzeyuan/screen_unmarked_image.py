@@ -33,21 +33,20 @@ class MainRuiming():
             self.__make_dir(dir_path, "未标注图片")
             image_name_root_set = set()
             marked_file_name_root_set = set()
+            # 创建集合
             dir_path_file_list = list(dir_path.iterdir())
-            print(dir_path_file_list)
             for file_name in dir_path_file_list:
+                # 按文件类型添加文件名到对应的集合
                 if file_name.is_file():
                     if file_name.suffix == image_name_extension:
                         image_name_root_set.add(file_name.name.replace(image_name_extension, ""))
                     if file_name.suffix == marked_file_name_extension:
                         marked_file_name_root_set.add(file_name.name.replace(marked_file_name_extension, ""))
             unmarked_image_list = list(image_name_root_set - marked_file_name_root_set)
-            print(image_name_root_set)
-            print(marked_file_name_root_set)
-            print(unmarked_image_list)
             for i in unmarked_image_list:
                 shutil.move(dir_path.joinpath(i + image_name_extension),
                             unmarked_image_storage_path.joinpath(i + image_name_extension))
+            print("筛选完成")
         else:
             print("路径输入有误，请检查！")
 
