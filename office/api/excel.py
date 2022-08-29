@@ -42,7 +42,14 @@ def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: 
 
 
 # 搜索excel中指定内容的文件、行数、内容详情
-# 作者：https://gitee.com/bulabean
-# @except_dec()
+# PR内容 & 作者：https://gitee.com/CoderWanFeng/python-office/pulls/10
+@except_dec()
 def find_excel_data(search_key: str, target_dir: str):
     mainExcel.find_excel_data(search_key, target_dir)
+
+
+# 按指定列的内容，拆分excel
+# PR内容 & 作者：：https://gitee.com/CoderWanFeng/python-office/pulls/11
+@except_dec()
+def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None):
+    mainExcel.split_excel_by_column(filepath, column, worksheet_name)

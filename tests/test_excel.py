@@ -2,8 +2,9 @@ import unittest
 from pathlib import Path
 
 import pandas as pd
-from office.api.excel import fake2excel, find_excel_data
+from office.api.excel import fake2excel, find_excel_data, split_excel_by_column
 import os
+
 
 class TestExcel(unittest.TestCase):
     def test_fake2excel(self):
@@ -27,9 +28,8 @@ class TestExcel(unittest.TestCase):
             res.to_excel(
                 R"./excel/output_file2.xlsx",
                 sheet_name="手机商品",
-                index=False # 不保留index
+                index=False  # 不保留index
             )
-
 
         # single_df_1 = pd.read_excel(r'./excel/1月.xls')
         # print(single_df_1)
@@ -45,3 +45,7 @@ class TestExcel(unittest.TestCase):
 
     def test_find_excel_data(self):
         find_excel_data(search_key='刘家站垦殖场', target_dir=r'D:\workplace\code\gitee\python-office\contributors\bulabean')
+
+    def test_split_excel_by_column(self):
+        split_excel_by_column(filepath=r'D:\workplace\code\gitee\python-office\contributors\bulabean\sedemo.xls',
+                              column=6)

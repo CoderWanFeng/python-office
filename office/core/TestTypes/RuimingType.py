@@ -1,10 +1,6 @@
 import pathlib
 import shutil
 
-'''
-子包的名字：Ruiming
-'''
-
 
 class MainRuiming():
     def __make_dir(self, dir_path, dir_name):
@@ -49,12 +45,3 @@ class MainRuiming():
             print("筛选完成")
         else:
             print("路径输入有误，请检查！")
-
-
-if __name__ == '__main__':
-    ruiming = MainRuiming()
-    ruiming.screen_unmarked_image(dir_path="./test1")
-'''
-test1文件夹下有1.jpg、2.jpg、1.xml三个文件
-执行完毕后，2.jpg被移动到./test1/未标注图片/中
-'''

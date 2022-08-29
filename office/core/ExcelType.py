@@ -2,6 +2,8 @@ import search4file
 from faker import Faker
 import pandas as pd
 from alive_progress import alive_bar
+
+from office.lib.excel import SplitExcel
 from office.lib.utils import pandas_mem
 import os
 from pathlib import Path
@@ -138,3 +140,6 @@ class MainExcel():
             target_dir：目标文件夹
         """
         search4file.find_excel_data(search_key, target_dir)
+
+    def split_excel_by_column(self, filepath, column, worksheet_name):
+        SplitExcel.split_excel_by_column(filepath, column, worksheet_name)
