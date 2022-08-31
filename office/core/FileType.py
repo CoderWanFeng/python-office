@@ -35,9 +35,9 @@ class MainFile():
     def file_name_insert_content(self, file_path, insert_position: int, insert_content: str):
         """
 
-        :param Path: 文件存放路径
-        :param InsertPosition: 插入位置（内容将插入在此之后，如果输入位置大于文件主名长度将插入在末尾）
-        :param InsertContent: 插入内容
+        :param file_path: 文件存放路径
+        :param insert_position: 插入位置（内容将插入在此之后，如果输入位置大于文件主名长度将插入在末尾）
+        :param insert_content: 插入内容
         """
         Path = pathlib.Path(file_path).resolve()
         if Path.is_dir():
@@ -62,8 +62,8 @@ class MainFile():
     def file_name_add_prefix(self, file_path, prefix_content: str):
         """
 
-        :param Path: 文件存放路径
-        :param PrefixContent: 前缀内容
+        :param file_path: 文件存放路径
+        :param prefix_content: 前缀内容
         """
         Path = pathlib.Path(file_path).resolve()
         if Path.is_dir():
@@ -82,8 +82,8 @@ class MainFile():
     def file_name_add_postfix(self, file_path, postfix_content: str):
         """
 
-        :param Path: 文件存放路径
-        :param PostfixContent: 后缀内容
+        :param file_path: 文件存放路径
+        :param postfix_content: 后缀内容
         """
         Path = pathlib.Path(file_path).resolve()
         if Path.is_dir():
