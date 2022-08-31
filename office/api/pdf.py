@@ -6,10 +6,23 @@ from office.lib.utils.except_utils import except_dec
 mainPDF = MainPDF()
 
 
-# 给pdf加水印
+# 给pdf加水印-无参数
 @except_dec()
 def add_watermark() -> None:
     mainPDF.add_watermark()
+
+
+# 给pdf加水印-有参数
+@except_dec()
+def add_watermark_by_parameters(pdf_file, mark_str, output_file_name='添加了水印的文件.pdf') -> None:
+    """
+    必填参数：
+    pdf_file:pdf的位置，例如：d:/code/程序员晚枫.pdf
+    mark_str:需要添加的水印内容，例如：百度一下：程序员晚枫
+    选填参数：
+    output_file_name：指定添加了水印的文件名称，可以不指定，默认是：添加了水印的文件.pdf
+    """
+    mainPDF.add_watermark_by_parameters(pdf_file, mark_str, output_file_name)
 
 
 # txt转pdf

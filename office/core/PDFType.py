@@ -22,6 +22,21 @@ class MainPDF():
         add_watermark_service.pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out)
         print("水印添加结束，请打开电脑上的这个位置，查看结果文件：{path}".format(path=os.getcwd()))
 
+    def add_watermark_by_parameters(self, pdf_file, mark_str, output_file_name):
+        """
+        给pdf添加水印，需要参数的版本
+        """
+        # pdf_file_in = input("请输入需要添加水印的文件位置：")  # 需要添加水印的文件
+        # Watermark_Str = input("请输入需要添加的水印内容：")
+        print('=' * 20)
+        print('正在按要求，给你的PDF文件添加水印，请让程序飞一会儿~')
+        print('=' * 20)
+        pdf_file_mark = 'watermark.pdf'  # 水印文件
+        add_watermark_service.create_watermark(str(mark_str))
+        pdf_file_out = output_file_name  # '添加了水印的文件.pdf'  # 添加PDF水印后的文件
+        add_watermark_service.pdf_add_watermark(pdf_file, pdf_file_mark, pdf_file_out)
+        print("水印添加结束，请打开电脑上的这个位置，查看结果文件：{path}".format(path=os.getcwd()))
+
     def file2pdf(self, file_type, path, res_pdf='file2pdf.pdf'):
         if file_type == 'txt':
             pdf = FPDF()
