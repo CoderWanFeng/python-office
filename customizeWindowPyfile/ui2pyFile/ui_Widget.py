@@ -356,7 +356,7 @@ class Ui_Widget(object):
     def retranslateUi(self, Widget):
         _translate = QtCore.QCoreApplication.translate
         Widget.setWindowTitle(_translate("Widget", "Widget"))
-        self.label_8.setText(_translate("Widget", "Office自动化办公助手"))
+        self.label_8.setText(_translate("Widget", "官网：www.python-office.com"))
         self.label_2.setText(_translate("Widget", "PPT转PDF:"))
         self.pathPPT2PDF.setText(_translate("Widget", "D:\\Desktop\\功能测试\\ppt文件"))
         self.chooseButtonPPT2PDF.setText(_translate("Widget", " 选择路径"))
