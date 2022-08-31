@@ -41,7 +41,7 @@ def file_name_add_prefix(file_path, prefix_content):
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
-@except_dec
+@except_dec()
 def file_name_add_postfix(file_path, postfix_content):
     mainFile.file_name_add_postfix(file_path, postfix_content)
 

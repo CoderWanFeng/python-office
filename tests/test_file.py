@@ -1,6 +1,6 @@
 import unittest
 
-from office.api.file import file_name_add_prefix, search_specify_type_file, file_name_insert_content
+from office.api.file import file_name_add_prefix, search_specify_type_file, file_name_insert_content, file_name_add_postfix
 
 
 class TestExcel(unittest.TestCase):
@@ -13,3 +13,7 @@ class TestExcel(unittest.TestCase):
     def test_file_name_insert_content(self):
         file_name_insert_content(file_path=r"C:\Users\37386\PycharmProjects\python-office\testfile\file",
                                  insert_position=1, insert_content="插入内容测试")
+
+    def test_file_name_add_postfix(self):
+        file_name_add_postfix(r"C:\Users\37386\PycharmProjects\python-office\testfile\file",
+                              "添加后缀测试")
