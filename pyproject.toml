@@ -1,0 +1,78 @@
+[tool.poetry]
+name = "python-office"
+
+packages = [
+    { include = "office" }, # 调用的方法
+]
+
+version = "0.0.28"
+description = "python for office"
+authors = [
+    "CoderWanFeng <1529577833@qq.com>"
+]
+readme = "README.md"  # Markdown files are supported
+
+repository = "https://github.com/CoderWanFeng/python-office"
+homepage = "http://www.python4office.cn/python-office/profile/"
+
+keywords = [
+"python",
+"office"
+]
+
+license = "Apache-2.0"
+
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/CoderWanFeng/python-office/issues"
+"Documentation" = "https://github.com/CoderWanFeng/python-office/blob/master/README.md"
+"Source Code" = "https://github.com/CoderWanFeng/python-office"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+xlrd = "^2.0.1"
+xlwt = "^1.3.0"
+xlutils = "^2.0.0"
+xlwings = "^0.27.10"
+python-docx = "^0.8.11"
+python-pptx = "^0.6.21"
+pypdf2 = "^2.1.0"
+openpyxl = "^3.0.10"
+pandas = "^1.1.2"
+faker = "^13.12.1"
+reportlab = "^3.6.10"
+rich = "^12.4.4"
+moviepy = "^1.0.3"
+fpdf = "^1.7.2"
+qrcode = "^7.3.1"
+translate = "^3.6.1"
+pikepdf = "^5.1.3"
+progress = "^1.6"
+alive-progress = "^2.4.1"
+pdf2docx = "^0.5.3"
+typer = "^0.4.1"
+
+[tool.poetry.dev-dependencies]
+poetry-core = "^1.0.0"
+
+[build-system]
+
+requires = [
+"poetry-core>=1.0.0"
+]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "tsinghua"
+default = true
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+[tool.poetry.scripts]
+office = 'office.cli.main:app'
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["tests", "office"]
+
+[tool.coverage.run]
+source_pkgs = ["office"]
