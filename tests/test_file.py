@@ -1,6 +1,7 @@
 import unittest
 
-from office.api.file import file_name_add_prefix, search_specify_type_file, file_name_insert_content, file_name_add_postfix
+from office.api.file import file_name_add_prefix, search_specify_type_file, file_name_insert_content, \
+    file_name_add_postfix, output_file_list_to_excel
 
 
 class TestFile(unittest.TestCase):
@@ -17,3 +18,6 @@ class TestFile(unittest.TestCase):
     def test_file_name_add_postfix(self):
         file_name_add_postfix(r"C:\Users\37386\PycharmProjects\python-office\testfile\file",
                               "添加后缀测试")
+
+    def test_output_file_list_to_excel(self):
+        output_file_list_to_excel("../testfile")

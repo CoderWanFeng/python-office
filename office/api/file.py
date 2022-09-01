@@ -50,3 +50,8 @@ def file_name_add_postfix(file_path, postfix_content):
 @except_dec()
 def search_specify_type_file(file_path, file_type):
     mainFile.search_specify_type_file(file_path, file_type)
+
+
+@except_dec()
+def output_file_list_to_excel(dir_path):
+    mainFile.output_file_list_to_excel(dir_path)
