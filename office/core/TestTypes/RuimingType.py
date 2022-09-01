@@ -1,5 +1,6 @@
 import pathlib
 import shutil
+import xml.etree.ElementTree
 
 
 class MainRuiming():
@@ -45,3 +46,28 @@ class MainRuiming():
             print("筛选完成")
         else:
             print("路径输入有误，请检查！")
+
+    def change_label_in_xml(self, dir_path, old_label, new_label):
+        """
+
+        :param dir_path: 图片及标注文件的存放路径
+        :param old_label: 需要修改的标签
+        :param new_label: 修改后的标签
+        """
+        dir_path = pathlib.Path(dir_path).resolve()
+        if dir_path.is_dir():
+            file_list = list(dir_path.iterdir())
+            for file in file_list:
+                if file.suffix == ".xml":
+                    xml_file = xml.etree.ElementTree.parse(str(file))
+                    xml_root = xml_file.getroot()
+                    label_xpath = "./object/name"
+                    label_list = xml_root.findall(label_xpath)
+                    print(label_list)
+                    for label in label_list:
+                        print(label.text)
+                        if label.text == old_label:
+                            label.text = new_label
+                    xml_file.write(str(file), encoding="utf-8")
+        else:
+            print("请输入正确的路径！")
