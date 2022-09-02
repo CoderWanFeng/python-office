@@ -37,5 +37,11 @@ def lottery8ticket():
     mainTools.lottery8ticket()
 
 
+@except_dec()
 def create_article(theme, line_num=200):
     mainTools.create_article(theme, line_num)
+
+
+@except_dec()
+def pwd4wifi(len_pwd=8):
+    mainTools.pwd4wifi(len_pwd)

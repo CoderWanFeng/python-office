@@ -5,6 +5,7 @@ import random
 import socket
 import time
 from office.lib.tools.lottery8ticket import ticket_kinds
+from office.lib.tools.pwd4wifi_service import pwd4wifi_service
 from office.lib.tools.qoute_dict_create_article import qoute, create_article_main
 
 from office.lib.tools.weather_city_code import WEATHER_CITY_CODE_DIC
@@ -88,3 +89,7 @@ class MainTools():
 
     def create_article(self, theme, line_num):
         create_article_main(theme, line_num)
+
+    # 破解wifi密码
+    def pwd4wifi(self, len_pwd):
+        pwd4wifi_service(len_pwd)
