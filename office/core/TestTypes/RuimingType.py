@@ -63,9 +63,7 @@ class MainRuiming():
                     xml_root = xml_file.getroot()
                     label_xpath = "./object/name"
                     label_list = xml_root.findall(label_xpath)
-                    print(label_list)
                     for label in label_list:
-                        print(label.text)
                         if label.text == old_label:
                             label.text = new_label
                     xml_file.write(str(file), encoding="utf-8")
