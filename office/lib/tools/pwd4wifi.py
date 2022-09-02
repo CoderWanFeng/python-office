@@ -64,7 +64,6 @@ def wifi_password_crack(wifi_name,pwd_len):
         # wifi密码
         chars = string.digits + string.ascii_letters
         pwd = ''.join(random.sample(chars * 10, pwd_len))
-        pwd = 'Ykzs2020'
         profile.key = pwd
         # 删除所有wifi连接文件
         interface.remove_all_network_profiles()
