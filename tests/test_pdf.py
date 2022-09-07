@@ -16,7 +16,7 @@ class TestExcel(unittest.TestCase):
         )
 
     def test_add_img_water(self):
-        add_img_water(pdf_file_in='./pdf/add_img.pdf', pdf_file_mark='./pdf/in.pdf', pdf_file_out='add_img.pdf')
+        add_img_water(pdf_file_in='test_files/pdf/add_img.pdf', pdf_file_mark='test_files/pdf/in.pdf', pdf_file_out='add_img.pdf')
 
     def test_add_watermark_by_parameters(self):
         add_watermark_by_parameters(

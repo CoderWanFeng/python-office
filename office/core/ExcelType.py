@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 from openpyxl import load_workbook
 import warnings
+from tqdm import tqdm
 
 # 忽略waring警告
 warnings.filterwarnings("ignore")
@@ -88,7 +89,7 @@ class MainExcel():
 
         if len(origin_sheet_names) > 1:  # 如果sheetnames小于1，报错：该文件不需要拆分
 
-            for j in range(len(origin_sheet_names)):
+            for j in tqdm(range(len(origin_sheet_names))):
 
                 wb = load_workbook(filename=file_path)  # 再读取一次文件，由于每次删除后需要保存一次，所以不能与上一次一样
                 sheet = wb[origin_sheet_names[j]]

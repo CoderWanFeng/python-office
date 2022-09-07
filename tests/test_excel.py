@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 import pandas as pd
-from office.api.excel import fake2excel, find_excel_data, split_excel_by_column
+from office.api.excel import fake2excel, find_excel_data, split_excel_by_column, sheet2excel
 import os
 
 
@@ -15,7 +15,7 @@ class TestExcel(unittest.TestCase):
         https://blog.csdn.net/xue_11/article/details/118424380
         https://www.jb51.net/article/214868.htm
         """
-        dir_path = './excel'
+        dir_path = 'test_files/excel'
         for root, dirs, files in os.walk(dir_path):
             path = Path(dir_path)
             print(files)
@@ -49,3 +49,6 @@ class TestExcel(unittest.TestCase):
     def test_split_excel_by_column(self):
         split_excel_by_column(filepath=r'D:\workplace\code\gitee\python-office\contributors\bulabean\sedemo.xls',
                               column=6)
+
+    def test_sheet2excel(self):
+        sheet2excel(file_path=r'/tests/excel/fake2excel.xlsx')

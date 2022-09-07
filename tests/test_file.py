@@ -9,7 +9,7 @@ class TestFile(unittest.TestCase):
         file_name_add_prefix(file_path=r'D:\workplace\code\test\output\test', prefix_content='2022')
 
     def test_search_specify_type_file(self):
-        search_specify_type_file(file_path=r'./pdf', file_type='.pdf')
+        search_specify_type_file(file_path=r'test_files/pdf', file_type='.pdf')
 
     def test_file_name_insert_content(self):
         file_name_insert_content(file_path=r"C:\Users\37386\PycharmProjects\python-office\testfile\file",
