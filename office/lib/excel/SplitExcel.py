@@ -31,7 +31,7 @@ def process_xls(filepath, column: int, worksheet_name: str = None):
     rows = worksheet.nrows
     cols = worksheet.ncols
     split_data_dict = {}
-    for r in range(rows):
+    for r in tqdm(range(rows)):
         row_data = [worksheet.cell(r, c).value if worksheet.cell(r, c).value else ' ' for c in range(cols)]
         temp_data = row_data[column - 1]
         temp_data_list = split_data_dict.get(temp_data, [])

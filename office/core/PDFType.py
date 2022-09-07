@@ -7,6 +7,8 @@ import os
 from pathlib import Path
 import fitz  # fitz就是pip install PyMuPDF
 
+from tqdm import tqdm
+
 
 class MainPDF():
 
@@ -66,7 +68,7 @@ class MainPDF():
 
         for path in one_by_one:
             pdf_reader = PdfFileReader(path)
-            for page in range(pdf_reader.getNumPages()):
+            for page in tqdm(range(pdf_reader.getNumPages())):
                 # 把每张PDF页面加入到这个可读取对象中
                 pdf_writer.addPage(pdf_reader.getPage(page))
 
@@ -118,7 +120,7 @@ class MainPDF():
         pdfDoc = fitz.open(pdf_path)
         if pdfDoc.page_count > 50:
             print('少年，你的PDF页数有点多哟，请耐心等待~')
-        for pg in range(pdfDoc.page_count):
+        for pg in tqdm(range(pdfDoc.page_count)):
             page = pdfDoc[pg]
             rotate = int(0)
             # 每个尺寸的缩放系数为1.3，这将为我们生成分辨率提高2.6的图像。

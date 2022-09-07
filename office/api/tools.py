@@ -26,7 +26,7 @@ def weather():
 
 
 # 通过url，获取ip地址
-@except_dec()
+# @except_dec()
 def url2ip(url):
     mainTools.url2ip(url)
 

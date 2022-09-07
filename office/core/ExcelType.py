@@ -97,7 +97,7 @@ class MainExcel():
 
                 new_filename = origin_sheet_names[j] + '.xlsx'  # 新建一个sheet命名的excel文件
 
-                for i in range(len(origin_sheet_names)):
+                for i in tqdm(range(len(origin_sheet_names))):
                     sheet1 = wb[origin_sheet_names[i]]
                     wb.remove(sheet1)
 
