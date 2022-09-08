@@ -1,11 +1,10 @@
 import os
-import time
 import aspose.words as aw
 from win32com.client import constants, gencache
 
 
 # requirements
-# pywin32==2.2.5
+# ppypiwin32==223
 # aspose-words==22.8.0
 
 class MainWord():
@@ -27,6 +26,7 @@ class MainWord():
             print("不存在有效的word文件")
             return
         print(word_files)
+        remove_files = []
         for file in word_files:
             # 源文件
             file_path = os.path.abspath(file)
@@ -37,13 +37,16 @@ class MainWord():
                 docx = aw.Document(file_path)
                 file_path = file_path.split(".")[0] + self.docx
                 docx.save(file_path)
+                remove_files.append(file_path)
                 self.createpdf(file_path, pdf_path)
-                os.remove(file_pathe)
                 continue
+            self.createpdf(file_path, pdf_path)
+        for f in remove_files:
+            os.remove(f)
 
     def createpdf(self, word_path, pdf_path):
+        print(word_path)
         word = gencache.EnsureDispatch('Word.Application')
-        time.sleep(1)
         doc = word.Documents.Open(word_path, ReadOnly=1)
         # 转换方法
         doc.ExportAsFixedFormat(pdf_path, constants.wdExportFormatPDF)
@@ -51,4 +54,4 @@ class MainWord():
 
 
 m = MainWord()
-m.file2pdf(r"C:\Users\PHL\Desktop")
+m.file2pdf(r"C:\Users\PHL\Desktop\测试文档")
