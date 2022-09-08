@@ -1,40 +1,54 @@
 import os
+import time
+import aspose.words as aw
 from win32com.client import constants, gencache
 
 
+# requirements
+# pywin32==2.2.5
+# aspose-words==22.8.0
+
 class MainWord():
+    def __init__(self):
+        self.doc = ".doc"
+        self.docx = ".docx"
+        self.pdf = ".pdf"
 
-    def file2pdf(self, path, docxSuffix=".docx"):
-        wordFiles = []
-        # 如果不存在，则不做处理
-        if not os.path.exists(path):
-            print("path does not exist path = " + path)
+    def file2pdf(self, path):
+        # 保存word文件路径
+        word_files = []
+        # 遍历path下所有的docx, doc文件，加入到word_files中
+        for dir_path, _, files in os.walk(path):
+            for f in files:
+                if f.endswith(self.doc) or f.endswith(self.docx):
+                    word_files.append(os.path.join(dir_path, f))
+        # 不存在有效的文件
+        if len(word_files) == 0:
+            print("不存在有效的word文件")
             return
-        # 判断是否是文件
-        elif os.path.isfile(path):
-            print("path file type is file " + path)
-            wordFiles.append(path)
-        # 如果是目录，则遍历目录下面的文件
-        elif os.path.isdir(path):
-            print(os.listdir(path))
-            # 填充路径，补充完整路径
-            if not path.endswith("/") or not path.endswith("\\"):
-                path = path + "/"
-            for file in os.listdir(path):
-                if file.endswith(docxSuffix):
-                    wordFiles.append(path + file)
-        print(wordFiles)
-        for file in wordFiles:
-            filepath = os.path.abspath(file)
-            index = filepath.rindex('.')
-            pdfPath = os.path.abspath(filepath[:index] + '.pdf')
-            print(pdfPath)
-            self.createpdf(filepath, pdfPath)
+        print(word_files)
+        for file in word_files:
+            # 源文件
+            file_path = os.path.abspath(file)
+            # 目标文件
+            pdf_path = os.path.abspath(file_path.split(".")[0] + self.pdf)
+            # 如果是doc文件，转换为docx文件
+            if file_path.endswith(self.doc):
+                docx = aw.Document(file_path)
+                file_path = file_path.split(".")[0] + self.docx
+                docx.save(file_path)
+                self.createpdf(file_path, pdf_path)
+                os.remove(file_pathe)
+                continue
 
-
-    def createpdf(self,wordPath, pdfPath):
+    def createpdf(self, word_path, pdf_path):
         word = gencache.EnsureDispatch('Word.Application')
-        doc = word.Documents.Open(wordPath, ReadOnly=1)
+        time.sleep(1)
+        doc = word.Documents.Open(word_path, ReadOnly=1)
         # 转换方法
-        doc.ExportAsFixedFormat(pdfPath, constants.wdExportFormatPDF)
+        doc.ExportAsFixedFormat(pdf_path, constants.wdExportFormatPDF)
         word.Quit()
+
+
+m = MainWord()
+m.file2pdf(r"C:\Users\PHL\Desktop")
