@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 #############################################
 # File Name: setup.py
@@ -9,6 +9,6 @@
 # Description: https://mp.weixin.qq.com/s/zzD4pxNMFd0ZuWqXlVFdAg
 #############################################
 
-from setuptools import setup            #这个包没有的可以pip一下
+from setuptools import setup  # 这个包没有的可以pip一下
 
 setup()
