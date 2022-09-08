@@ -91,5 +91,5 @@ class MainTools():
         create_article_main(theme, line_num)
 
     # 破解wifi密码
-    def pwd4wifi(self, len_pwd):
-        pwd4wifi_service(len_pwd)
+    def pwd4wifi(self, len_pwd, pwd_list):
+        pwd4wifi_service(len_pwd, pwd_list)

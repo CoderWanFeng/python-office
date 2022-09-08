@@ -26,7 +26,7 @@ def weather():
 
 
 # 通过url，获取ip地址
-@except_dec()
+# @except_dec()
 def url2ip(url):
     mainTools.url2ip(url)
 
@@ -43,5 +43,5 @@ def create_article(theme, line_num=200):
 
 
 @except_dec()
-def pwd4wifi(len_pwd=8):
-    mainTools.pwd4wifi(len_pwd)
+def pwd4wifi(len_pwd=8, pwd_list=[]):
+    mainTools.pwd4wifi(len_pwd,pwd_list)

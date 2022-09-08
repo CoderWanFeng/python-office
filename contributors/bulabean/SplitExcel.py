@@ -31,7 +31,7 @@ def process_xls(filepath, column: int, worksheet_name: str = None):
     rows = worksheet.nrows
     cols = worksheet.ncols
     split_data_dict = {}
-    for r in tqdm(range(rows)):
+    for r in range(rows):
         row_data = [worksheet.cell(r, c).value if worksheet.cell(r, c).value else ' ' for c in range(cols)]
         temp_data = row_data[column - 1]
         temp_data_list = split_data_dict.get(temp_data, [])
@@ -76,20 +76,18 @@ def process_xlsx(filepath: str, column: int, worksheet_name: str = None):
     return "数据保存在新文件中，文件名：{}".format(new_filepath)
 
 
-def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None):
+def split_excel(filepath: str, column: int, worksheet_name: str = None):
     if filepath.endswith('.xlsx'):
         result = process_xlsx(filepath, column, worksheet_name)
     elif filepath.endswith('.xls'):
         result = process_xls(filepath, column, worksheet_name)
     else:
-        print("文件格式不对，不进行处理")
         return "文件格式不对，不进行处理"
-    print(result)
     return result
 
 
 if __name__ == "__main__":
     filename = 'sedemo.xls'
     # filename = 'SEdemo.xlsx'
-    result = split_excel_by_column(filename, 6)  # 处理文件，表格的第六列，worksheet_name指定工作表，不指定则读取文件默认工作表
+    result = split_excel(filename, 6)  # 处理文件，表格的第六列，worksheet_name指定工作表，不指定则读取文件默认工作表
     print(result)

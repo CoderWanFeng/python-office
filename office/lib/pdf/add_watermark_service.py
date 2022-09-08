@@ -44,7 +44,7 @@ def pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out):
     mark_stream = open(pdf_file_mark, mode='rb')
     pdf_watermark = PdfFileReader(mark_stream, strict=False)
     # 给每一页打水印
-    for i in range(pageNum):
+    for i in tqdm(range(pageNum)):
         page = pdf_input.getPage(i)
         page.mergePage(pdf_watermark.getPage(0))
         page.compressContentStreams()  # 压缩内容
