@@ -1,6 +1,7 @@
 import pathlib
 import shutil
 import xml.etree.ElementTree
+import json
 
 
 class MainRuiming():
@@ -69,3 +70,22 @@ class MainRuiming():
                     xml_file.write(str(file), encoding="utf-8")
         else:
             print("请输入正确的路径！")
+
+    def screen_without_label_json_file(self, dir_path):
+        dir_path = pathlib.Path(dir_path).resolve()
+        if dir_path.is_dir():
+            print("正在筛选无标签内容的json文件")
+            without_label_json_storage_path = dir_path.joinpath("无标签json文件")
+            self.__make_dir(dir_path, "无标签json文件")
+            dir_path_file_list = list(dir_path.iterdir())
+            for file_name in dir_path_file_list:
+                if file_name.is_file() and file_name.suffix == ".json":
+                    json_file = open(file_name, "r")
+                    json_file_text = json.load(json_file)
+                    json_file.close()
+                    if json_file_text["shapes"] == []:
+                        shutil.move(dir_path.joinpath(file_name.name),
+                                    without_label_json_storage_path.joinpath(file_name.name))
+            print("筛选完成")
+        else:
+            print("路径输入有误，请检查！")
