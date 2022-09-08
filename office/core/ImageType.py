@@ -11,7 +11,7 @@ import requests
 
 class MainImage():
 
-    # 自动生成gif
+    #TODO:自动生成gif
     def image2gif(self):
         im = Image.open("1.jpg")
         images = []

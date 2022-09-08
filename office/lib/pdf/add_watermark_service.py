@@ -4,6 +4,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import registerFont
+from tqdm import tqdm
 
 def create_watermark(content):
     """创建PDF水印模板
