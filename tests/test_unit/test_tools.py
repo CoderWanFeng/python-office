@@ -1,12 +1,13 @@
 import unittest
 
-from office.api.image import add_watermark
+import pytest
+
 from office.api.tools import *
 from tests.test_utils.test_input import stub_stdin
 
 
 class TestTools(unittest.TestCase):
-
+    @pytest.mark.skip(reason="交互式功能，暂时跳过")
     def test_weather(self):
         stub_stdin(self, '北京\ny\nq\n')  # 依次输入
         weather()
@@ -14,9 +15,7 @@ class TestTools(unittest.TestCase):
     def test_url2ip(self):
         url2ip('www.python-office.com')
 
-    def test_image_watermark(self):
-        add_watermark(file=r'../test_files/images/0816.jpg', mark='公众号：程序员晚枫')
-
+    @pytest.mark.skip(reason="交互式功能，暂时跳过")
     def test_lottery8ticket(self):
         stub_stdin(self, '12\n0\n')  # 依次输入
         lottery8ticket()

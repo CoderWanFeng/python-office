@@ -1,7 +1,7 @@
 from fpdf import FPDF
 from office.lib.pdf import add_watermark_service
 import pikepdf
-from PyPDF2 import PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfFileReader, PdfFileWriter, PdfReader, PdfWriter
 from pdf2docx import Converter
 import os
 from pathlib import Path
@@ -64,13 +64,15 @@ class MainPDF():
         @Author & Date  : CoderWanFeng 2022/5/16 23:33
         @Desc  : merge_pdfs(paths=['开篇词.pdf', '中国元宇宙白皮书 (送审稿).pdf'], output='merge.pdf')
         """
-        pdf_writer = PdfFileWriter()
+        pdf_writer = PdfWriter()
 
         for path in one_by_one:
-            pdf_reader = PdfFileReader(path)
-            for page in tqdm(range(pdf_reader.getNumPages())):
+            pdf_reader = PdfReader(path)
+            # for page in tqdm(range(pdf_reader.getNumPages())):
+            for page in tqdm(range(len(pdf_reader.pages))):
                 # 把每张PDF页面加入到这个可读取对象中
-                pdf_writer.addPage(pdf_reader.getPage(page))
+                # pdf_writer.addPage(pdf_reader.getPage(page))
+                pdf_writer.add_page(pdf_reader.pages[page])
 
         # 把这个已合并了的PDF文档存储起来
         with open(output, 'wb') as out:
