@@ -4,7 +4,7 @@ from win32com.client import constants
 
 
 # requirements
-# ppypiwin32==223
+# pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pypiwin32
 
 class MainWord():
     def __init__(self):
