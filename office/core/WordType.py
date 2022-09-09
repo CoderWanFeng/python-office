@@ -37,4 +37,5 @@ class MainWord():
         doc = word.Documents.Open(wordPath, ReadOnly=1)
         # 转换方法
         doc.ExportAsFixedFormat(pdfPath, constants.wdExportFormatPDF)
+
         word.Quit()
