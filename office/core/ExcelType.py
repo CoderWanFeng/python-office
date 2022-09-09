@@ -114,6 +114,7 @@ class MainExcel():
             raise Exception(f"你的文件只有一个sheet，难道还要拆分吗？我做不到啊~~~，你的文件名{file_path}")
 
     def merge2sheet(self, dir_path, output_sheet_name: str, output_excel_name):
+        # 多个excel文件，合并到一个sheet里面
         for root, dirs, files in os.walk(dir_path):
             path = Path(dir_path)
             print(f'正在合并的文件有：{files}')

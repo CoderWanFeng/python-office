@@ -15,10 +15,10 @@ class TestExcel(unittest.TestCase):
                               column=6)
 
     def test_sheet2excel(self):
-        sheet2excel(file_path=r'../test_files/excel/fake2excel.xlsx')
+        sheet2excel(file_path=r'./test_files/excel/fake2excel.xlsx')
 
-    def test_split_excel_by_column(self):
-        split_excel_by_column(filepath='../../contributors/bulabean/SEdemo.xlsx', column=5)
+    def test_merge2sheet(self):
+        merge2sheet(dir_path=r'./test_files/excel/merge2sheet')
 
     def test_merge2excel(self):
         merge2excel(dir_path=r'../../contributors/bulabean', output_file='test_merge2excel.xlsx', )

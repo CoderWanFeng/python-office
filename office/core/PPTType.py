@@ -9,8 +9,11 @@ class MainPPT():
     def ppt2pdf(self, path):
         """
         @Author & Date  : CoderWanFeng 2022/5/9 23:34
-        @Desc  : path:存放ppt的路径，必须写绝对路径~！
+        @Desc  : path:存放ppt的路径
         """
+        # 如果是相对路径，转为绝对路径
+        if not os.path.isabs(path):
+            path = os.path.abspath(path)
         # 列出指定目录的内容
         filenames = os.listdir(path)
         # for循环依次访问指定目录的所有文件名

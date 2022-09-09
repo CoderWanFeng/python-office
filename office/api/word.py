@@ -19,6 +19,6 @@ mainWord = MainWord()
 # 1、文件的批量转换
 # 自己指定路径，
 # 为了适配wps不能转换doc的问题，这里限定：只能转换docx
-@except_dec()
+# @except_dec()
 def docx2pdf(path):
     mainWord.file2pdf(path)

@@ -42,7 +42,7 @@ def stub_stdout(testcase_inst):
 #     print(x + 5)
 #
 #
-# class UnitTest(unittest.TestCase):
+# class UnitTest():
 #     def test_fun(self):
 #         print('请输入数字')
 #         stub_stdin(self, '2\n4\n')  # 依次输入2,4

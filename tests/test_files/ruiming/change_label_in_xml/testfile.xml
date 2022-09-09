@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>测试</name>
+		<name>测试1</name>
 		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
@@ -24,7 +24,7 @@
 		</bndbox>
 	</object>
 	<object>
-		<name>测试</name>
+		<name>测试1</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>

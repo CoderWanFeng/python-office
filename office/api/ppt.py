@@ -15,6 +15,6 @@ mainPPT = MainPPT()
 
 
 # todo：输入文件路径
-@except_dec()
+# @except_dec()
 def ppt2pdf(path: str):
     mainPPT.ppt2pdf(path)
