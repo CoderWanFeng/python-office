@@ -84,7 +84,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 [📘官网：https://www.python-office.com/](https://www.python-office.com/)
 
-## 视频教程
+### 视频教程
 
 以下[绿色](https://mp.weixin.qq.com/s/_01V8I7rVkgvIIo7ygwwQA)文字，均可点击直达👇
 
@@ -107,17 +107,12 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 - 免费读者群👉[传送门](http://www.python4office.cn/wechat-group/)
 
 
-## 文字教程
+### 文字教程
 
 全部功能的文字教程👉[传送门](https://www.python-office.com/guide/allFunc.html)
 
-## 犀利吐槽
+### 犀利吐槽
 
-你好，这里是程序员晚枫，人到中年，才转行程序员。
-
-业余时间做编程博主，同时运营python-office这个python的功能库，以下是读者经常问我的一些问题。
-
-💻我录制成了视频的形式，大家看看吧~
 
 - [学会编程，能拿高薪？别再被洗脑了](https://www.bilibili.com/video/BV19d4y197EP?spm_id_from=333.999.0.0)
 
