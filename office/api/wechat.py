@@ -1,11 +1,13 @@
-from office.core.WeChatType import MainWeChat
+# from office.core.WeChatType import MainWeChat
+#
+# mainwx = MainWeChat()
 
-mainwx = MainWeChat()
+import PyOfficeRobot
 
 
 def send_message(who, message):
-    mainwx.send_message(who, message)
+    PyOfficeRobot.chat.send_message(who, message)
 
 
 def send_file(who, file):
-    mainwx.send_file(who, file)
+    PyOfficeRobot.file.send_file(who, file)

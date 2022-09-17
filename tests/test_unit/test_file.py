@@ -3,7 +3,7 @@ import unittest
 from office.api.file import *
 
 
-class TestFile():
+class TestFile(unittest.TestCase):
     def test_replace4filename(self):
         replace4filename(path='./test_files/file/add_fix', del_content='dd', replace_content='pp')
 
@@ -22,4 +22,4 @@ class TestFile():
         search_specify_type_file(file_path=r'./test_files/pdf', file_type='.pdf')
 
     def test_output_file_list_to_excel(self):
-        output_file_list_to_excel("../testfile")
+        output_file_list_to_excel("./test_files")

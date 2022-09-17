@@ -3,7 +3,7 @@ import unittest
 from office.api.image import *
 
 
-class TestImage():
+class TestImage(unittest.TestCase):
     def test_add_watermark(self):
         add_watermark(file='./test_files/images/0816.jpg', mark='python-office')
 
