@@ -12,3 +12,7 @@ class TestImage(unittest.TestCase):
 
     # def test_img2Cartoon(self):
     #     img2Cartoon()
+
+    def test_txt2wordcloud(self):
+        txt2wordcloud(filename=r'D:\workplace\code\test\wordcloud\test.txt', color="white",
+                      result_file="your_wordcloud.png")

@@ -9,6 +9,7 @@
 #############################################
 import poimage
 
+
 # from office.core.ImageType import MainImage
 # from office.lib.utils.except_utils import except_dec
 
@@ -38,3 +39,7 @@ def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQ
 def down4img(url, output_name='down4img', type='jpg'):
     poimage.down4img(url, output_name, type)
     # mainImage.down4img(url, output_name, type)
+
+
+def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
+    poimage.txt2wordcloud(filename, color, result_file)

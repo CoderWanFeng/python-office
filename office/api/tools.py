@@ -6,7 +6,6 @@ from office.lib.utils.except_utils import except_dec
 
 import wftools
 
-
 # @except_dec()
 def transtools(to_lang, content):
     wftools.transtools(to_lang, content)
