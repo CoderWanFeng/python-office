@@ -88,19 +88,23 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 以下[绿色](https://mp.weixin.qq.com/s/_01V8I7rVkgvIIo7ygwwQA)文字，均可点击直达👇
 
-- [第1讲：项目发布](https://www.bilibili.com/video/BV1pT4y1k7FH)
+- [第0讲：项目发布](https://www.bilibili.com/video/BV1pT4y1k7FH)
 
-- [第2讲：项目安装](https://www.bilibili.com/video/BV1Q44y1u7rV)
+- [第1讲：项目安装](https://www.bilibili.com/video/BV1Q44y1u7rV)
 
-- [第3讲：批量重命名](https://www.bilibili.com/video/BV12r4y187Yj)
+- [第2讲：批量重命名](https://www.bilibili.com/video/BV12r4y187Yj)
 
-- [第4讲：PPT转PDF](https://www.bilibili.com/video/BV17Y411c792)
+- [第3讲：PPT转PDF](https://www.bilibili.com/video/BV17Y411c792)
 
-- [第5讲：批量生成Excel数据](https://www.bilibili.com/video/BV1wr4y1b7uk)
+- [第4讲：批量生成Excel数据](https://www.bilibili.com/video/BV1wr4y1b7uk)
 
-- [第6讲：合并Excel](https://www.bilibili.com/video/BV1714y147Ao)
+- [第5讲：合并Excel](https://www.bilibili.com/video/BV1714y147Ao)
 
-- [第7讲：微信机器人](https://www.bilibili.com/video/BV1Xa411u7yU)
+- ⭐[特别刊：微信机器人](https://www.python-office.com/office/robot.html)
+
+- [第6讲：PDF 加水印](https://www.bilibili.com/video/BV1Se411T7au)
+
+- [第7讲：数据可视化 - 词云](https://www.bilibili.com/video/BV1Me4y1h7Ku)
 
 - 持续更新中🚀
 
