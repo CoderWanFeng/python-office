@@ -106,6 +106,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 - [第7讲：数据可视化 - 词云](https://www.bilibili.com/video/BV1Me4y1h7Ku)
 
+- [第8讲：查询Excel（疫情管理专题）](https://www.bilibili.com/video/BV1Bd4y1B7yr)
+
 - 持续更新中🚀
 
 - 免费读者群👉[传送门](http://www.python4office.cn/wechat-group/)
