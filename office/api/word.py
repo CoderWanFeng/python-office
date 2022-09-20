@@ -20,4 +20,4 @@ import poword
 # 为了适配wps不能转换doc的问题，这里限定：只能转换docx
 # @except_dec()
 def docx2pdf(path):
-    poword.file2pdf(path)
+    poword.docx2pdf(path)
