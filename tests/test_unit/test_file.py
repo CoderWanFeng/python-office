@@ -23,3 +23,6 @@ class TestFile(unittest.TestCase):
 
     def test_output_file_list_to_excel(self):
         output_file_list_to_excel("./test_files")
+
+    def test_search_by_content(self):
+        search_by_content(search_path=r'D:\workplace\code\github\search4file\tests\docs', content='小')
