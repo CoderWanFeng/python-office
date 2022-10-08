@@ -112,6 +112,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 - 👩[第10讲：图片 加 水印](https://www.bilibili.com/video/BV1jT411T7n9)
 
+- [第11讲：根据内容，查找文件](https://www.bilibili.com/video/BV13P411n77G)
 
 
 - 持续更新中🚀
