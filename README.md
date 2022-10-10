@@ -145,17 +145,19 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 | 模块                   |     介绍                                                                          |GitHub地址|
 | ----------------------|---------------------------------------------------------------------------------- |-----|
-| poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel
-| word                  |     word处理                                              |
-| ppt                   |     ppt处理                                                                     |
-| pdf                   |     pdf处理                                              |
-| file                  |     文件和文件夹的操作                                          |
-| tools                 |     便捷小工具                                        |
-| web                   |     网站快捷搭建                                         |
-| email                 |     邮件功能                                                        |
-| image                 |     图片处理            |
-| video                 |     视频处理                                          |
-| ocr                   |     识别功能：文字识别、语音识别                                                         |
+| poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel |
+| word                  |     word处理                                              |https://github.com/CoderWanFeng/poword |
+| ppt                   |     ppt处理                                                                     |https://github.com/CoderWanFeng/poppt |
+| pdf                   |     pdf处理                                              |https://github.com/CoderWanFeng/popdf |
+| file                  |     文件和文件夹的操作                                          |https://github.com/CoderWanFeng/pofile |
+| tools                 |     便捷小工具                                        |https://github.com/CoderWanFeng/wftools |
+| image                 |     图片处理            |https://github.com/CoderWanFeng/poimage |
+| video                 |     视频处理                                          |https://github.com/CoderWanFeng/povideo |
+| PyOfficeRobot                   |     聊天机器人                                                        | https://github.com/CoderWanFeng/PyOfficeRobot |
+| search4file                   |     文档搜索                                                        | https://github.com/CoderWanFeng/search4file |
+| web                   |     网站快捷搭建                                         | |
+| email                 |     邮件功能                                                        | |
+| ocr                   |     识别功能：文字识别、语音识别                                                         | |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
@@ -167,41 +169,14 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 ### 📐PR的建议
 
-python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）符合一些规范，规范如下：
+python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）放在一个单独的文件夹下：
 
-参与项目建设的步骤：
-- 例如：你需要给python-office添加一个add方法。
-   1. 你的Github账户名为：demo
-   2. 于是你在./contributors新建了文件夹./demo
-   3. 新建了add.py文件，编辑你的代码
-   4. 编辑完成，提交pr到master分支（gitee或者GitHub，都可以）。可以注明你对自己功能的取名建议
-   5. 晚枫收到后，会对各位的代码进行测试后，合并后打包上传到python官方库
-
-### 📐代码规范
-
-1. 注释完备，尤其每个新增的方法应按照Google Python文档规范标明方法说明、参数说明、返回值说明等信息，必要时请添加单元测试，如果愿意，也可以加上你的大名。
-2. python-office的文档，需要进行格式化。注意：只能格式化你自己的代码
-3. 请直接pull request到`master`分支。`master`是主分支，表示已经发布pypi库的版本。**未来参与人数增多，会开辟新的分支，请留意本文档的更新。**
-4. 我们如果关闭了你的issue或pr，请不要诧异，这是我们保持问题处理整洁的一种方式，你依旧可以继续讨论，当有讨论结果时我们会重新打开。
+- 在[contributors](https://github.com/CoderWanFeng/python-office/tree/master/contributors)文件夹中，用自己的GitHub名字建一个文件夹；
+- 把自己的所有代码，都提交到这个自己的文件夹里；
+- 不要改其它任何文件夹里的代码！不要改别人的代码！
+- 对别人的代码有疑问，可以直接提issue。
 
 
-### 🧬贡献代码的步骤
-
-1. 在Gitee或者Github上fork项目到自己的repo
-2. 把fork过去的项目也就是你的项目clone到你的本地
-3. 修改代码
-4. commit后push到自己的库
-5. 登录Gitee或Github在你首页可以看到一个 pull request 按钮，点击它，填写一些说明信息，然后提交到master分支即可。
-6. 等待维护者合并
-
-### 🎋分支说明
-
-python-office的源码分为两个分支，功能如下：
-
-| 分支       | 作用                                                          |
-|-----------|---------------------------------------------------------------|
-| master | 主分支，pypi发布版本使用的分支,可以直接pr |
-| develop    | 开发分支，供大家各自开发使用                 |
 
 ### 🐞提供bug反馈或建议
 
@@ -219,8 +194,6 @@ python-office的源码分为两个分支，功能如下：
 如果你觉得python-office不错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
 
 [捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
-
-[捐赠给程序员晚枫](http://python4office.cn/images/wechat-pay.jpg)
 
 
 -------------------------------------------------------------------------------
