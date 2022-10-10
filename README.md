@@ -95,7 +95,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 | 模块                   |     介绍                                                                          |GitHub地址| star|
 | ----------------------|---------------------------------------------------------------------------------- |-----|-----|
-| PyOfficeRobot                   |     聊天机器人                                                        | https://github.com/CoderWanFeng/PyOfficeRobot |<img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg?style=social" alt="github star"/>|
+| PyOfficeRobot                   |     聊天机器人                                                        | https://github.com/CoderWanFeng/PyOfficeRobot |<img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/>|
 | search4file                   |     文档搜索                                                        | https://github.com/CoderWanFeng/search4file |<img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg?style=social" alt="github star"/>|
 | poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel |<img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg?style=social" alt="github star"/>|
 | word                  |     word处理                                              |https://github.com/CoderWanFeng/poword |<img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg?style=social" alt="github star"/>|
