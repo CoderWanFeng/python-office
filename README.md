@@ -143,9 +143,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 
 以下所有功能，都在逐步搭建中。
 
-| 模块                   |     介绍                                                                          |
-| ----------------------|---------------------------------------------------------------------------------- |
-| excel                 |     excel处理                                              |
+| 模块                   |     介绍                                                                          |GitHub地址|
+| ----------------------|---------------------------------------------------------------------------------- |-----|
+| poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel
 | word                  |     word处理                                              |
 | ppt                   |     ppt处理                                                                     |
 | pdf                   |     pdf处理                                              |
