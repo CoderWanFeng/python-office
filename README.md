@@ -96,18 +96,18 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | 模块                   |     介绍                                                                          |GitHub地址| star|
 | ----------------------|---------------------------------------------------------------------------------- |-----|-----|
 | PyOfficeRobot                   |     聊天机器人                                                        | https://github.com/CoderWanFeng/PyOfficeRobot |<img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/>|
-| search4file                   |     文档搜索                                                        | https://github.com/CoderWanFeng/search4file |<img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg?style=social" alt="github star"/>|
-| poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel |<img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg?style=social" alt="github star"/>|
-| poword                  |     word处理                                              |https://github.com/CoderWanFeng/poword |<img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg?style=social" alt="github star"/>|
-| poppt                   |     ppt处理                                                                     |https://github.com/CoderWanFeng/poppt |<img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg?style=social" alt="github star"/>|
-| popdf                   |     pdf处理                                              |https://github.com/CoderWanFeng/popdf |<img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg?style=social" alt="github star"/>|
-| pofile                  |     文件和文件夹的操作                                          |https://github.com/CoderWanFeng/pofile |<img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg?style=social" alt="github star"/>|
-| wftools                 |     便捷小工具                                        |https://github.com/CoderWanFeng/wftools |<img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg?style=social" alt="github star"/>|
-| poimage                 |     图片处理            |https://github.com/CoderWanFeng/poimage |<img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg?style=social" alt="github star"/>|
-| povideo                 |     视频处理                                          |https://github.com/CoderWanFeng/povideo |<img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg?style=social" alt="github star"/>|
-| web                   |     网站快捷搭建                                         | | |
-| email                 |     邮件功能                                                        | | |
-| ocr                   |     识别功能：文字识别、语音识别                                                         | | |
+| search4file                   |     文档搜索                                                        | https://github.com/CoderWanFeng/search4file |<img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>|
+| poexcel                 |     excel处理                                              |https://github.com/CoderWanFeng/poexcel |<img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg" alt="github star"/>|
+| poword                  |     word处理                                              |https://github.com/CoderWanFeng/poword |<img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>|
+| poppt                   |     ppt处理                                                                     |https://github.com/CoderWanFeng/poppt |<img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>|
+| popdf                   |     pdf处理                                              |https://github.com/CoderWanFeng/popdf |<img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>|
+| pofile                  |     文件和文件夹的操作                                          |https://github.com/CoderWanFeng/pofile |<img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>|
+| wftools                 |     便捷小工具                                        |https://github.com/CoderWanFeng/wftools |<img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>|
+| poimage                 |     图片处理            |https://github.com/CoderWanFeng/poimage |<img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>|
+| povideo                 |     视频处理                                          |https://github.com/CoderWanFeng/povideo |<img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>|
+| web（名称待定）                   |     网站快捷搭建                                         | | |
+| email（名称待定）                  |     邮件功能                                                        | | |
+| ocr（名称待定）     |     识别功能：文字识别、语音识别                                                         | | |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
