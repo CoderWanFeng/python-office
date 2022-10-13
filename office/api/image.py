@@ -36,8 +36,8 @@ def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQ
 
 
 # @except_dec()
-def down4img(url, output_name='down4img', type='jpg'):
-    poimage.down4img(url, output_name, type)
+def down4img(url, output_path='.', output_name='down4img', type='jpg'):
+    poimage.down4img(url, output_path, output_name, type)
     # mainImage.down4img(url, output_name, type)
 
 
