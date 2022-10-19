@@ -11,3 +11,9 @@ def chat_by_keywords(who, keywords):
 
 def send_file(who, file):
     PyOfficeRobot.file.send_file(who, file)
+
+
+# 保存指定人的消息
+# BY：盖飞
+def receive_message(who='文件传输助手', txt='userMessage.txt', output_path='./'):
+    PyOfficeRobot.chat.receive_message(who, txt, output_path)
