@@ -16,3 +16,6 @@ class TestImage(unittest.TestCase):
     def test_txt2wordcloud(self):
         txt2wordcloud(filename=r'D:\workplace\code\test\wordcloud\test.txt', color="white",
                       result_file="your_wordcloud.png")
+
+    def test_pencil4img(self):
+        pencil4img(input_img=r'D:\workplace\code\test\down4img\girl.jpg')

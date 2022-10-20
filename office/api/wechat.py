@@ -17,3 +17,5 @@ def send_file(who, file):
 # BY：盖飞
 def receive_message(who='文件传输助手', txt='userMessage.txt', output_path='./'):
     PyOfficeRobot.chat.receive_message(who, txt, output_path)
+
+

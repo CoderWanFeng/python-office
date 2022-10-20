@@ -43,3 +43,7 @@ def down4img(url, output_path='.', output_name='down4img', type='jpg'):
 
 def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
     poimage.txt2wordcloud(filename, color, result_file)
+
+
+def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
+    poimage.pencil4img(input_img, output_path, output_name)
