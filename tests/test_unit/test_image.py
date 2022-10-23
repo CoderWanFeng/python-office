@@ -5,7 +5,7 @@ from office.api.image import *
 
 class TestImage(unittest.TestCase):
     def test_add_watermark(self):
-        add_watermark(file='./test_files/images/0816.jpg', mark='python-office')
+        add_watermark(file='../test_files/images/0816.jpg', mark='python-office',output_path=r'../test_output/img_output')
 
     def test_down4img(self):
         down4img(url='https://www.python-office.com/api/img-cdn/python-office/find_excel_data/group.jpg',output_path=r'D:\download\xunlei')

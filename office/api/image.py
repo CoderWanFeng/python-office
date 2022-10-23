@@ -23,8 +23,9 @@ def image2gif():
 
 # todo：输出文件路径
 # @except_dec()
-def add_watermark(file, mark, out="output", color="#8B8B1B", size=30, opacity=0.15, space=75, angle=30):
-    poimage.add_watermark(file, mark, out, color, size, opacity, space, angle)
+def add_watermark(file, mark, output_path=r'./', out="mark_img", color="#8B8B1B", size=30, opacity=0.15, space=75,
+                  angle=30):
+    poimage.add_watermark(file, mark, output_path, out, color, size, opacity, space, angle)
     # mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
 
 
