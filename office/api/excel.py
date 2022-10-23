@@ -32,8 +32,8 @@ def merge2excel(dir_path, output_file='merge2excel.xlsx'):
 
 # 同一个excel里的不同sheet，拆分为不同的excel文件
 # @except_dec()
-def sheet2excel(file_path):
-    poexcel.sheet2excel(file_path)
+def sheet2excel(file_path, output_path='./'):
+    poexcel.sheet2excel(file_path, output_path)
 
 
 # @except_dec()
