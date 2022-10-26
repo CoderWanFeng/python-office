@@ -1,6 +1,6 @@
 <p align="center">
     <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://www.python-office.com/api/img-cdn/github-nav.jpg" alt="github license"/>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/github-nav.jpg" alt="github license"/>
     </a>   
 </p>
 <p align="center">
@@ -157,4 +157,4 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 ## 📌联系作者
 
 
-![CoderWanFeng](https://www.python-office.com/api/img-cdn/group/qr-code.jpg)
+![CoderWanFeng](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg)
