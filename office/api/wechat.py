@@ -4,6 +4,8 @@ import PyOfficeRobot
 def send_message(who, message):
     PyOfficeRobot.chat.send_message(who, message)
 
+def send_message_by_time(who, message, time):
+    PyOfficeRobot.chat.send_message_by_time(who, message, time)
 
 def chat_by_keywords(who, keywords):
     PyOfficeRobot.chat.chat_by_keywords(who, keywords)

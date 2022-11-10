@@ -8,7 +8,7 @@ class TestImage(unittest.TestCase):
         add_watermark(file='../test_files/images/0816.jpg', mark='python-office',output_path=r'../test_output/img_output')
 
     def test_down4img(self):
-        down4img(url='https://www.python-office.com/api/img-cdn/python-office/find_excel_data/group.jpg',output_path=r'D:\download\xunlei')
+        down4img(url='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg',output_path=r'D:\download\xunlei')
 
     # def test_img2Cartoon(self):
     #     img2Cartoon()
