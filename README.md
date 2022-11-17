@@ -14,38 +14,20 @@
 <p align="center">
 	👉 <a target="_blank" href="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg">本开源项目的交流群</a> 👈
 </p>
-
-
-<p align="center" name="'github">
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+<p align="center" name="gitee">
+  <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
     <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
     </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/contributors/CoderWanFeng/python-office" alt="github contributors"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/forks/CoderWanFeng/python-office" alt="github forks"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/issues/CoderWanFeng/python-office" alt="github issues"/>
-    </a>	
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/issues-pr/CoderWanFeng/python-office" alt="github license"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/license/CoderWanFeng/python-office" alt="github license"/>
-    </a>   
-</p>
-
-<p align="center" name="gitee">
 	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
 		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
-	<a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
-	</a>
-	<a target="_blank" href="http://www.python4office.cn/images/qq.jpg">
-	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
+  	<a href="https://mp.weixin.qq.com/s/Jf_EVdKlVnHhK68fW5OA6A">
+	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/>
+  </a>
+    	<a href="https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w">
+	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
+  </a>
+  
 </p>
 
 
