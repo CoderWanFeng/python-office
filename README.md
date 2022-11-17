@@ -1,4 +1,9 @@
 <p align="center">
+    <a target="_blank" href='https://url.cn/Z4lzPLaF'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F1040x100-tencent.jpg" width="100%"/>
+    </a>   
+</p>
+<p align="center">
     <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
     <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/github-nav.jpg" alt="github license"/>
     </a>   
