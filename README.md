@@ -94,6 +94,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | wftools                 |     便捷小工具                                        |https://github.com/CoderWanFeng/wftools |<img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>|
 | poimage                 |     图片处理            |https://github.com/CoderWanFeng/poimage |<img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>|
 | povideo                 |     视频处理                                          |https://github.com/CoderWanFeng/povideo |<img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>|
+| pydatav                 |     数据可视化                                          |https://github.com/CoderWanFeng/pydatav |<img src="https://img.shields.io/github/stars/CoderWanFeng/pydatav.svg" alt="github star"/>|
 | web（名称待定）                   |     网站快捷搭建                                         | | |
 | email（名称待定）                  |     邮件功能                                                        | | |
 | ocr（名称待定）     |     识别功能：文字识别、语音识别                                                         | | |
