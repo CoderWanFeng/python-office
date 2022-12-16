@@ -18,3 +18,5 @@ RUN chmod +x start.sh
 EXPOSE 8000
 
 ENTRYPOINT ["sh", "./start.sh"]
+
+#https://www.idc1680.com/1090.html
