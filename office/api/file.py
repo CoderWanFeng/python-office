@@ -17,12 +17,16 @@ import pofile
 
 # todo：输入文件路径
 # @except_dec()
+from office.lib.decorator_utils.instruction_url import instruction
+
+
 def replace4filename(path, del_content, replace_content=None):
     pofile.replace4filename(path, del_content, replace_content)
 
 
 # todo：输入文件路径
 # @except_dec()
+@instruction
 def search_by_content(search_path, content):  # 定义 search() 函数，传入 "path" 文件路径， "target" 要查找的目标文件
     pofile.search_by_content(search_path, content)
 
@@ -54,6 +58,7 @@ def search_specify_type_file(file_path, file_type):
 # @except_dec()
 def output_file_list_to_excel(dir_path):
     pofile.output_file_list_to_excel(dir_path)
+
 
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
     pofile.add_line_by_type(add_line_dict, file_path, file_type, output_path)

@@ -17,12 +17,16 @@ import poimage
 
 
 # @except_dec()
+from office.lib.decorator_utils.instruction_url import instruction
+
+
 def image2gif():
     poimage.image2gif()
 
 
 # todo：输出文件路径
 # @except_dec()
+@instruction
 def add_watermark(file, mark, output_path=r'./', out="mark_img", color="#8B8B1B", size=30, opacity=0.15, space=75,
                   angle=30):
     poimage.add_watermark(file, mark, output_path, out, color, size, opacity, space, angle)
@@ -37,6 +41,7 @@ def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQ
 
 
 # @except_dec()
+@instruction
 def down4img(url, output_path='.', output_name='down4img', type='jpg'):
     poimage.down4img(url, output_path, output_name, type)
     # mainImage.down4img(url, output_name, type)
@@ -49,7 +54,7 @@ def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
 def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
     poimage.pencil4img(input_img, output_path, output_name)
 
-
+@instruction
 def decode_qrcode(qrcode_path):
     """
     解析二维码

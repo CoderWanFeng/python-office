@@ -1,3 +1,5 @@
+from office.lib.decorator_utils.instruction_url import instruction
+
 from office.lib.utils.except_utils import except_dec
 
 # from office.core.ToolsType import wftools
@@ -22,6 +24,7 @@ def passwordtools(len=8):
 
 
 # @except_dec()
+@instruction
 def weather():
     wftools.weather()
 
