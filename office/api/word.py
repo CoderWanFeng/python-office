@@ -19,5 +19,9 @@ import poword
 # 自己指定路径，
 # 为了适配wps不能转换doc的问题，这里限定：只能转换docx
 # @except_dec()
+from office.lib.decorator_utils.instruction_url import instruction
+
+
+@instruction
 def docx2pdf(path):
     poword.docx2pdf(path)

@@ -4,6 +4,9 @@ from functools import wraps
 
 
 # 统一的异常输出
+from office.lib.conf.CONST import SPLIT_LINE
+
+
 def except_dec(msg='异常原因'):
     # msg用于自定义函数的提示信息
     def except_execute(func):
@@ -22,7 +25,7 @@ def except_dec(msg='异常原因'):
                 print('当然，也可以免费【加入星球，向我提问】 → http://t.cn/A6qeZpVt')
 
 
-                print('=' * 30)
+                print(SPLIT_LINE)
 
                 # print(f'{sign}{traceback.format_exc()}{sign}')
 

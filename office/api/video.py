@@ -6,7 +6,7 @@ import povideo
 # 从视频里提取音频
 from office.lib.decorator_utils.instruction_url import instruction
 
-
+@instruction
 def video2mp3(path, mp3_name=None, output_path=r'./'):
     povideo.video2mp3(path, mp3_name, output_path)
 

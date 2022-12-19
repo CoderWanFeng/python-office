@@ -19,7 +19,7 @@ import poimage
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
-
+@instruction
 def image2gif():
     poimage.image2gif()
 
@@ -35,6 +35,7 @@ def add_watermark(file, mark, output_path=r'./', out="mark_img", color="#8B8B1B"
 
 # todo：输入文件路径
 # @except_dec()
+@instruction
 def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN'):
     poimage.img2Cartoon(path, client_api, client_secret)
     # mainImage.img2Cartoon(path, client_api, client_secret)
@@ -46,11 +47,11 @@ def down4img(url, output_path='.', output_name='down4img', type='jpg'):
     poimage.down4img(url, output_path, output_name, type)
     # mainImage.down4img(url, output_name, type)
 
-
+@instruction
 def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
     poimage.txt2wordcloud(filename, color, result_file)
 
-
+@instruction
 def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
     poimage.pencil4img(input_img, output_path, output_name)
 

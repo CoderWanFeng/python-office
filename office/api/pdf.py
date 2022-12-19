@@ -7,14 +7,17 @@
 # 给pdf加水印-无参数
 # @except_dec()
 import popdf
+from office.lib.decorator_utils.instruction_url import instruction
 
 
+@instruction
 def add_watermark() -> None:
     popdf.add_watermark()
 
 
 # 给pdf加水印-有参数
 # @except_dec()
+@instruction
 def add_watermark_by_parameters(pdf_file, mark_str, output_file_name='添加了水印的文件.pdf') -> None:
     """
     必填参数：
@@ -28,39 +31,46 @@ def add_watermark_by_parameters(pdf_file, mark_str, output_file_name='添加了�
 
 # txt转pdf
 # @except_dec()
+@instruction
 def txt2pdf(path: str, res_pdf='txt2pdf.pdf'):
     popdf.file2pdf(path, res_pdf)
 
 
 # PDF加密
 # @except_dec()
+@instruction
 def encrypt4pdf(path, password, res_pdf='encrypt.pdf'):
     popdf.encrypt4pdf(path, password, res_pdf)
 
 
 # PDF解密
 # @except_dec()
+@instruction
 def decrypt4pdf(path, password, res_pdf='decrypt.pdf'):
     popdf.decrypt4pdf(path, password, res_pdf)
 
 
 # 合并pdf
 # @except_dec()
+@instruction
 def merge2pdf(one_by_one, output):
     popdf.merge2pdf(one_by_one, output)
 
 
 # todo：输入文件路径
 # @except_dec()
+@instruction
 def pdf2docx(file_path, output_path='.'):
     popdf.pdf2docx(file_path, output_path)
 
 
 # @except_dec()
+@instruction
 def pdf2imgs(pdf_path, out_dir):
     popdf.pdf2imgs(pdf_path, out_dir)
 
 
 # @except_dec()
+@instruction
 def add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out):
     popdf.add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out)

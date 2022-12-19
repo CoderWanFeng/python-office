@@ -19,7 +19,7 @@ import pofile
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
-
+@instruction
 def replace4filename(path, del_content, replace_content=None):
     pofile.replace4filename(path, del_content, replace_content)
 
@@ -33,32 +33,37 @@ def search_by_content(search_path, content):  # 定义 search() 函数，传入 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
+@instruction
 def file_name_insert_content(file_path, insert_position: int, insert_content: str):
     pofile.file_name_insert_content(file_path, insert_position, insert_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
+@instruction
 def file_name_add_prefix(file_path, prefix_content):
     pofile.file_name_add_prefix(file_path, prefix_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
+@instruction
 def file_name_add_postfix(file_path, postfix_content):
     pofile.file_name_add_postfix(file_path, postfix_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/74
 # @except_dec()
+@instruction
 def search_specify_type_file(file_path, file_type):
     pofile.search_specify_type_file(file_path, file_type)
 
 
 # @except_dec()
+@instruction
 def output_file_list_to_excel(dir_path):
     pofile.output_file_list_to_excel(dir_path)
 
-
+@instruction
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
     pofile.add_line_by_type(add_line_dict, file_path, file_type, output_path)
