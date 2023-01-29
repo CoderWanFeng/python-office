@@ -23,7 +23,7 @@ def qrcodetools(url):
 # @except_dec()
 @instruction
 def passwordtools(len=8):
-    wftools.passwordtools(len)
+    return wftools.passwordtools(len)
 
 
 # @except_dec()
