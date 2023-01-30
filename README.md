@@ -98,7 +98,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
 | potime                 |     时间工具                                          |https://github.com/CoderWanFeng/potime |<img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>|
 | web（名称待定）                   |     网站快捷搭建                                         | | |
 | email（名称待定）                  |     邮件功能                                                        | | |
-| ocr（名称待定）     |     识别功能：文字识别、语音识别                                                         | | |
+| potencent     |     识别功能：文字识别、语音识别                                                         | https://github.com/CoderWanFeng/potencent |<img src="https://img.shields.io/github/stars/CoderWanFeng/potencent.svg" alt="github star"/> |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
