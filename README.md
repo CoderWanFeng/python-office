@@ -146,7 +146,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 ## 📌联系作者
 
 
-![CoderWanFeng](https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fqrcode2web.jpg)
+![CoderWanFeng](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg)
 
 ## 📕拓展资料
 
