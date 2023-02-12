@@ -1,2 +1,13 @@
 python-office
 pytest
+rich >= 9.13.0
+you-get
+PyOfficeRobot
+poimage
+poexcel
+pofile
+popdf
+poppt
+wftools
+povideo
+poword
