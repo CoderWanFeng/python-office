@@ -66,8 +66,8 @@ word_dict = {"docx2pdf": "https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg", }
 
 file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z4pew",
              "add_line_by_type": "",
-             "file_name_add_postfix": "",
-             "file_name_add_prefix": "",
+             "file_name_add_postfix": "https://blog.csdn.net/shangdafen_GD/article/details/129273450",
+             "file_name_add_prefix": "https://blog.csdn.net/shangdafen_GD/article/details/129229642",
              "file_name_insert_content": "",
              "output_file_list_to_excel": "",
              "replace4filename": "https://www.bilibili.com/video/BV12r4y187Yj",
