@@ -42,7 +42,9 @@ pdf_dict = {"add_img_water": "",
             "pdf2docx": "https://mp.weixin.qq.com/s/eTwtTXLAudRQmyhE4LY_Dg",
             "pdf2imgs": "https://mp.weixin.qq.com/s/tvHZIBGcrMBLTLB4u23Mow",
             "txt2pdf": "", }
-ppt_dict = {"ppt2pdf": "https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg", }
+ppt_dict = {"ppt2pdf": "https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg",
+            "ppt2img": "https://mp.weixin.qq.com/s/KtxI8H0RVJEnYtB18T6XiQ",
+            }
 tools_dict = {"create_article": "https://mp.weixin.qq.com/s/guBtZHyUyybGNOqzZke1kQ",
               "lottery8ticket": "https://mp.weixin.qq.com/s/Q6JgW06hMUSik0DqGD0rOA",
               "net_speed_test": "https://www.bilibili.com/video/BV1fD4y1x7ZE",

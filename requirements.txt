@@ -177,7 +177,6 @@ moviepy
 pywin32
 rich >= 9.13.0
 you-get
-PyOfficeRobot
 uiautomation
 schedule
 

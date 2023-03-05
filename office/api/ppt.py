@@ -21,3 +21,8 @@ from office.lib.decorator_utils.instruction_url import instruction
 @instruction
 def ppt2pdf(path: str):
     poppt.ppt2pdf(path)
+
+
+@instruction
+def ppt2img(input_path, output_path=r'./', img_type='jpg'):
+    poppt.ppt2img(input_path, output_path, img_type)
