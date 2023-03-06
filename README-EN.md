@@ -40,7 +40,7 @@
 		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
 	</a>
 	<a href="http://www.python4office.cn/images/qq.jpg">
-	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
+	<img src="https://img.shields.io/badge/QQ-163434413-orange"/></a>
 </p>
 
 
