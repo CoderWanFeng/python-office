@@ -11,7 +11,7 @@
 # mainExcel = MainExcel()
 
 import poexcel
-
+from win32com.client import DispatchEx
 
 # todo:输出文件路径
 # @except_dec()
@@ -62,3 +62,17 @@ def find_excel_data(search_key: str, target_dir: str):
 @instruction
 def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None):
     poexcel.split_excel_by_column(filepath, column, worksheet_name)
+
+
+@instruction
+def excel2pdf(excel_path, pdf_path):
+    """
+    https://blog.csdn.net/qq_57187936/article/details/125605967
+    """
+    xlApp = DispatchEx("Excel.Application")
+    xlApp.Visible = False
+    xlApp.DisplayAlerts = 0
+    books = xlApp.Workbooks.Open(excel_path, False)
+    books.ExportAsFixedFormat(0, pdf_path)
+    books.Close(False)
+    xlApp.Quit()

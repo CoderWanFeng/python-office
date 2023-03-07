@@ -22,6 +22,7 @@ excel_dict = {"fake2excel": "https://www.bilibili.com/video/BV1wr4y1b7uk",
               "merge2sheet": "",
               "sheet2excel": "https://mp.weixin.qq.com/s/dAx6JEbj5OlVnCcxokCzTQ",
               "split_excel_by_column": "",
+              "excel2pdf": "https://www.zhihu.com/question/303009968/answer/2926093618",
               }
 image_dict = {"add_watermark": "https://www.bilibili.com/video/BV1jT411T7n9",
               "decode_qrcode": "https://mp.weixin.qq.com/s/Z_RcTRYxUFpCQBGpShO0ig",
