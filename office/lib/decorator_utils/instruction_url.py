@@ -75,6 +75,7 @@ file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z
              "output_file_list_to_excel": "",
              "replace4filename": "https://www.bilibili.com/video/BV12r4y187Yj",
              "search_specify_type_file": "",
+             "group_by_name": "http://www.python4office.cn/python-office/group-by-name/",
              }
 
 # 有多少文件需要说明
