@@ -65,7 +65,10 @@ wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju"
                "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
                "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
                "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ", }
-word_dict = {"docx2pdf": "https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg", }
+word_dict = {
+    "docx2pdf": "https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg",
+    "merge4docx": "http://www.python4office.cn/python-office/merge4docx/",
+             }
 
 file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z4pew",
              "add_line_by_type": "",
@@ -75,7 +78,7 @@ file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z
              "output_file_list_to_excel": "",
              "replace4filename": "https://www.bilibili.com/video/BV12r4y187Yj",
              "search_specify_type_file": "",
-             "group_by_name": "http://www.python4office.cn/python-office/group-by-name/",
+             "group_by_name": "https://www.zhihu.com/question/34633472/answer/2936506900",
              }
 
 # 有多少文件需要说明
