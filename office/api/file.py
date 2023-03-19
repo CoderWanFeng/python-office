@@ -19,6 +19,7 @@ import pofile
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
+
 @instruction
 def replace4filename(path, del_content, replace_content=None):
     pofile.replace4filename(path, del_content, replace_content)
@@ -64,9 +65,12 @@ def search_specify_type_file(file_path, file_type):
 def output_file_list_to_excel(dir_path):
     pofile.output_file_list_to_excel(dir_path)
 
+
 @instruction
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
     pofile.add_line_by_type(add_line_dict, file_path, file_type, output_path)
+
+
 @instruction
-def group_by_name(path):
-    pofile.group_by_name(path)
+def group_by_name(path, output_path=None, del_old_file=None):
+    pofile.group_by_name(path, output_path, del_old_file)
