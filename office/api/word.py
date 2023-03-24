@@ -21,10 +21,11 @@ import poword
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
-
 @instruction
-def docx2pdf(path):
-    poword.docx2pdf(path)
+def docx2pdf(path, output_path=None):
+    if output_path == None:
+        output_path = path
+    poword.docx2pdf(path, output_path)
 
 
 @instruction

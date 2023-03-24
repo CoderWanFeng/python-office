@@ -22,7 +22,7 @@ excel_dict = {"fake2excel": "https://www.bilibili.com/video/BV1wr4y1b7uk",
               "merge2sheet": "",
               "sheet2excel": "https://mp.weixin.qq.com/s/dAx6JEbj5OlVnCcxokCzTQ",
               "split_excel_by_column": "",
-              "excel2pdf": "https://www.zhihu.com/question/303009968/answer/2926093618",
+              "excel2pdf": "https://mp.weixin.qq.com/s/9cobekrIrR7BnUzfepv6Tg",
               }
 image_dict = {"add_watermark": "https://www.bilibili.com/video/BV1jT411T7n9",
               "decode_qrcode": "https://mp.weixin.qq.com/s/Z_RcTRYxUFpCQBGpShO0ig",
@@ -36,7 +36,7 @@ md_dict = {}
 ocr_dict = {}
 pdf_dict = {"add_img_water": "",
             "add_watermark": "https://www.bilibili.com/video/BV1Se411T7au",
-            "add_watermark_by_parameters": "",
+            "add_watermark_by_parameters": "https://www.bilibili.com/video/BV1Se411T7au",
             "decrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
             "encrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
             "merge2pdf": "https://mp.weixin.qq.com/s/9erh3W3WCD36Axj70pRvog",
