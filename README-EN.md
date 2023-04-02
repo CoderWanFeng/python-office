@@ -76,7 +76,7 @@ without any knowledge requirements on the python language.
 ### 🍊 using pip
 
 ```shell
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
+pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 ```
 
 -------------------------------------------------------------------------------

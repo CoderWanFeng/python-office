@@ -10,7 +10,6 @@ from office.api import wechat
 # 以下是beta版本
 from office.api.testApi import ruiming
 from office.lib.conf.CONST import SPLIT_LINE
-
 print(SPLIT_LINE)
 print('【python-office库】，功能持续更新中')
 print('使用有问题 or 提交你的功能需求 or 参与项目开发')

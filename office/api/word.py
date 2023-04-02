@@ -21,6 +21,7 @@ import poword
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
+
 @instruction
 def docx2pdf(path, output_path=None):
     if output_path == None:
@@ -31,3 +32,11 @@ def docx2pdf(path, output_path=None):
 @instruction
 def merge4docx(input_path, output_path, new_word_name='merge4docx'):
     poword.merge4docx(input_path, output_path, new_word_name)
+
+@instruction
+def doc2docx(input_path, output_path=r'./'):
+    poword.doc2docx(input_path, output_path)
+
+@instruction
+def docx2doc(input_path, output_path=r'./'):
+    poword.docx2doc(input_path, output_path)

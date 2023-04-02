@@ -61,7 +61,7 @@ Python-office 是一个 Python 自动化办公第三方库，能解决大部分�
 ### 🍊pip 自动下载&更新
 
 ```
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-office -U
+pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 ```
 
 

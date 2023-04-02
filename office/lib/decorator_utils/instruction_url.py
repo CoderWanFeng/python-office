@@ -68,6 +68,8 @@ wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju"
 word_dict = {
     "docx2pdf": "https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg",
     "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
+    "docx2doc": "https://www.bilibili.com/video/BV1so4y1H7rj",
+    "doc2docx": "https://www.bilibili.com/video/BV1so4y1H7rj",
              }
 
 file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z4pew",
