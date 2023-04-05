@@ -69,10 +69,4 @@ def excel2pdf(excel_path, pdf_path):
     """
     https://blog.csdn.net/qq_57187936/article/details/125605967
     """
-    xlApp = DispatchEx("Excel.Application")
-    xlApp.Visible = False
-    xlApp.DisplayAlerts = 0
-    books = xlApp.Workbooks.Open(excel_path, False)
-    books.ExportAsFixedFormat(0, pdf_path)
-    books.Close(False)
-    xlApp.Quit()
+    poexcel.excel2pdf(excel_path, pdf_path)
