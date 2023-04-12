@@ -13,14 +13,15 @@
 # mainPPT = MainPPT()
 
 import poppt
+
 # todo：输入文件路径
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
 
 @instruction
-def ppt2pdf(path: str):
-    poppt.ppt2pdf(path)
+def ppt2pdf(path: str, output_path=r'./'):
+    poppt.ppt2pdf(path, output_path)
 
 
 @instruction

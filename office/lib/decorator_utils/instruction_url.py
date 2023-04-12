@@ -38,7 +38,7 @@ pdf_dict = {"add_img_water": "",
             "add_watermark": "https://www.bilibili.com/video/BV1Se411T7au",
             "add_watermark_by_parameters": "https://www.bilibili.com/video/BV1Se411T7au",
             "decrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
-            "encrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
+            "encrypt4pdf": "https://mp.weixin.qq.com/s/AArhAHKk3pRC4ks0UI96Tw",
             "merge2pdf": "https://mp.weixin.qq.com/s/9erh3W3WCD36Axj70pRvog",
             "pdf2docx": "https://mp.weixin.qq.com/s/eTwtTXLAudRQmyhE4LY_Dg",
             "pdf2imgs": "https://mp.weixin.qq.com/s/tvHZIBGcrMBLTLB4u23Mow",
@@ -81,6 +81,7 @@ file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z
              "replace4filename": "https://www.bilibili.com/video/BV12r4y187Yj",
              "search_specify_type_file": "",
              "group_by_name": "https://www.bilibili.com/video/BV1RX4y1o7HF",
+             "get_files": "https://www.bilibili.com/video/BV1ua4y1M7ya",
              }
 
 # 有多少文件需要说明

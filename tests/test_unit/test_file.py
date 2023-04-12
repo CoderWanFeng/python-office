@@ -26,3 +26,7 @@ class TestFile(unittest.TestCase):
 
     def test_search_by_content(self):
         search_by_content(search_path=r'D:\workplace\code\github\search4file\tests\docs', content='小')
+
+    def test_get_files(self):
+        f = get_files(path=r'D:\workplace\code\github\search4file\tests\docs')
+        print(f)

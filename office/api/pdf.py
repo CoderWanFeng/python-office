@@ -39,8 +39,8 @@ def txt2pdf(path: str, res_pdf='txt2pdf.pdf'):
 # PDF加密
 # @except_dec()
 @instruction
-def encrypt4pdf(path, password, res_pdf='encrypt.pdf'):
-    popdf.encrypt4pdf(path, password, res_pdf)
+def encrypt4pdf(path, password, output_path=None):
+    popdf.encrypt4pdf(path, password, output_path)
 
 
 # PDF解密
