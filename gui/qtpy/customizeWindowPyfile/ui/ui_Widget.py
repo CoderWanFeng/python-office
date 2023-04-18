@@ -22,6 +22,7 @@ class Ui_Widget(object):
         print(f'已完成，输出文件夹：{output_path}')
         # QMessageBox.information(self, '提示框', 'ppt已经转换成pdf！')
 
+
     def setupUi(self, Widget):
         Widget.setObjectName("Widget")
         Widget.resize(667, 424)

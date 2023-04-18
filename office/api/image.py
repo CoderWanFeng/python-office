@@ -9,15 +9,13 @@
 #############################################
 import poimage
 
+# @except_dec()
+from office.lib.decorator_utils.instruction_url import instruction
+
 
 # from office.core.ImageType import MainImage
 # from office.lib.utils.except_utils import except_dec
-
 # mainImage = MainImage()
-
-
-# @except_dec()
-from office.lib.decorator_utils.instruction_url import instruction
 
 @instruction
 def image2gif():
@@ -27,9 +25,9 @@ def image2gif():
 # todo：输出文件路径
 # @except_dec()
 @instruction
-def add_watermark(file, mark, output_path=r'./', out="mark_img", color="#8B8B1B", size=30, opacity=0.15, space=75,
+def add_watermark(file, mark, output_path=r'./mark_img', color="#8B8B1B", size=30, opacity=0.15, space=75,
                   angle=30):
-    poimage.add_watermark(file, mark, output_path, out, color, size, opacity, space, angle)
+    poimage.add_watermark(file, mark, output_path, color, size, opacity, space, angle)
     # mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
 
 
@@ -47,13 +45,16 @@ def down4img(url, output_path='.', output_name='down4img', type='jpg'):
     poimage.down4img(url, output_path, output_name, type)
     # mainImage.down4img(url, output_name, type)
 
+
 @instruction
 def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
     poimage.txt2wordcloud(filename, color, result_file)
 
+
 @instruction
 def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
     poimage.pencil4img(input_img, output_path, output_name)
+
 
 @instruction
 def decode_qrcode(qrcode_path):

@@ -16,7 +16,7 @@ class FinalWidget(QWidget):
 
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
-        self.setWindowTitle('Author：TownBoats V1.5')
+        self.setWindowTitle('python-office')
 
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("./resource/picture/office365.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
