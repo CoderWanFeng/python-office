@@ -10,5 +10,5 @@ venv/
 build/
 dist/
 *.egg-info
-
+**/qtpy/**
 __pycache__
