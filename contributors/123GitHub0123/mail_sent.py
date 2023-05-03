@@ -4,9 +4,6 @@
 # @Time      : 2023/2/10 13:11
 
 
-# my_sender = 'onetop99@outlook.com'  # 发件人邮箱账号
-# my_pass = 'Wcl201314'  # 发件人邮箱密码
-# my_user = '18142510250@163.com'  # 收件人邮箱账号，我这边发送给自己
 
 import smtplib
 import winsound
