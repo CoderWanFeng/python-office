@@ -7,6 +7,7 @@
 # 给pdf加水印-无参数
 # @except_dec()
 import popdf
+
 from office.lib.decorator_utils.instruction_url import instruction
 
 
@@ -32,8 +33,8 @@ def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_fil
 # txt转pdf
 # @except_dec()
 @instruction
-def txt2pdf(path: str, res_pdf='txt2pdf.pdf'):
-    popdf.file2pdf(path, res_pdf)
+def txt2pdf(path: str, res_pdf='txt2pdf.pdf', output_path=r'./'):
+    popdf.txt2pdf(path, res_pdf, output_path)
 
 
 # PDF加密
