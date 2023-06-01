@@ -136,7 +136,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 如果你觉得python-office不错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
 
-[捐赠给项目](https://gitee.com/CoderWanFeng/python-office) 👈该项捐赠仅用于支持本项目发展使用
+[捐赠给项目](https://mp.weixin.qq.com/s/WArb-brDHhdBYHyZ4cU8_Q) 👈该项捐赠仅用于支持本项目发展使用
 
 
 -------------------------------------------------------------------------------
