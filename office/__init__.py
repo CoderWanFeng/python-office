@@ -8,6 +8,7 @@ from office.api import tools
 from office.api import ppt
 from office.api import excel
 from office.api import wechat
+from office.api import finance
 # 以下是beta版本
 from office.api.testApi import ruiming
 from office.lib.conf.CONST import SPLIT_LINE
