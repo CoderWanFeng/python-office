@@ -25,9 +25,10 @@ def ppt2pdf(path: str, output_path=r'./'):
 
 
 @instruction
-def ppt2img(input_path, output_path=r'./', img_type='jpg'):
-    poppt.ppt2img(input_path, output_path, img_type)
+def ppt2img(input_path, output_path=r'./', img_type='jpg',merge=False):
+    poppt.ppt2img(input_path, output_path, img_type,merge)
 
 
 def merge4ppt(input_path, output_path=r'./', output_name='merge4ppt.pptx'):
     poppt.merge4ppt(input_path, output_path, output_name)
+
