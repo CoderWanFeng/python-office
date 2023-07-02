@@ -67,8 +67,8 @@ def pdf2docx(file_path, output_path='.'):
 
 # @except_dec()
 @instruction
-def pdf2imgs(pdf_path, out_dir):
-    popdf.pdf2imgs(pdf_path, out_dir)
+def pdf2imgs(pdf_path, out_dir, merge=False):
+    popdf.pdf2imgs(pdf_path, out_dir, merge)
 
 
 # @except_dec()
