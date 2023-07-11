@@ -46,9 +46,9 @@ Python-office 是一个 Python 自动化办公第三方库，能解决大部分�
 > 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/FgKB-9XEG_KunLfjJbvdYw)
 
 
-![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
+![group](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
 ### 🍺特点
-- 一键搭建所有 Python + 自动化办公的编程环境。
+- 一键搭建所有 Python + 自动化办公的编程环境
 - 使用一行代码解决大部分自动化办公的问题，不需要小白学习 Python 知识
 - 贴合职场办公需求
 - 极简编程，学习成本极低，工作效率提升显著
