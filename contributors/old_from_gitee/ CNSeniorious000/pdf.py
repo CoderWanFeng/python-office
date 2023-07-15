@@ -5,7 +5,7 @@
 # # noinspection PyPackageRequirements
 # class PDF:
 #     """
-#     a pdf document with optimized lazy processing
+#     a popdf document with optimized lazy processing
 #     @Author & Date: CNSeniorious000 2022/5/17
 #     """
 #

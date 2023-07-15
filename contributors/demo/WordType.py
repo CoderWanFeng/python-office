@@ -10,7 +10,7 @@ class MainWord():
     def __init__(self):
         self.doc = ".doc"
         self.docx = ".docx"
-        self.pdf = ".pdf"
+        self.pdf = ".popdf"
         # 打开word应用程序
         self.word = client.Dispatch("Word.Application")
 

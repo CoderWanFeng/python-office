@@ -22,10 +22,10 @@ def add_watermark() -> None:
 def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_file_name=None) -> None:
     """
     必填参数：
-    pdf_file:pdf的位置，例如：d:/code/程序员晚枫.pdf
+    pdf_file:pdf的位置，例如：d:/code/程序员晚枫.popdf
     mark_str:需要添加的水印内容，例如：百度一下：程序员晚枫
     选填参数：
-    output_file_name：指定添加了水印的文件名称，可以不指定，默认是：添加了水印的文件.pdf
+    output_file_name：指定添加了水印的文件名称，可以不指定，默认是：添加了水印的文件.popdf
     """
     popdf.add_watermark_by_parameters(pdf_file, mark_str, output_path, output_file_name)
 
@@ -33,7 +33,7 @@ def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_fil
 # txt转pdf
 # @except_dec()
 @instruction
-def txt2pdf(path: str, res_pdf='txt2pdf.pdf', output_path=r'./'):
+def txt2pdf(path: str, res_pdf='txt2pdf.popdf', output_path=r'./'):
     popdf.txt2pdf(path, res_pdf, output_path)
 
 
@@ -47,7 +47,7 @@ def encrypt4pdf(path, password, output_path=None):
 # PDF解密
 # @except_dec()
 @instruction
-def decrypt4pdf(path, password, res_pdf='decrypt.pdf'):
+def decrypt4pdf(path, password, res_pdf='decrypt.popdf'):
     popdf.decrypt4pdf(path, password, res_pdf)
 
 

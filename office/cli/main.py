@@ -16,9 +16,9 @@ app = Typer(name="python-office CLI")
 # def ppt2pdf(dir_path: str):
 #     """ppt导出为PDF，需要Microsoft Office环境"""
 #     try:
-#         from office.ppt import ppt2pdf
+#         from office.poppt import ppt2pdf
 #     except ImportError:
-#         from office.ppt import ppt2pdf
+#         from office.poppt import ppt2pdf
 #     return ppt2pdf(dir_path)
 #
 
@@ -41,9 +41,9 @@ def hello():
 # def pdf_encrypt(input_path: str, password: str, output_path: str = None):
 #     """加密PDF 输入路径 密码 [输出路径(默认与输入相同)]"""
 #     try:
-#         from .pdf import encrypt4pdf
+#         from .popdf import encrypt4pdf
 #     except ImportError:
-#         from pdf import encrypt4pdf
+#         from popdf import encrypt4pdf
 #     return encrypt4pdf(input_path, password, output_path or input_path)
 #
 #
@@ -51,9 +51,9 @@ def hello():
 # def pdf_decrypt(input_path: str, password: str, output_path: str = None):
 #     """解密PDF 输入路径 密码 [输出路径(默认与输入相同)]"""
 #     try:
-#         from .pdf import decrypt4pdf
+#         from .popdf import decrypt4pdf
 #     except ImportError:
-#         from pdf import decrypt4pdf
+#         from popdf import decrypt4pdf
 #     return decrypt4pdf(input_path, password, output_path or input_path)
 #
 #
@@ -61,9 +61,9 @@ def hello():
 # def pdf_merge(paths: list[str], output_path: str):
 #     """合并PDF 若干pdf路径 最后一个参数为合并后的PDF的路径"""
 #     try:
-#         from .pdf import merge2pdf
+#         from .popdf import merge2pdf
 #     except ImportError:
-#         from pdf import merge2pdf
+#         from popdf import merge2pdf
 #     return merge2pdf(paths, output_path)
 #
 #
@@ -81,9 +81,9 @@ def hello():
 # def txt2pdf(txt_path: str, pdf_path: str):
 #     """创建纯文本PDF 输入路径 输出路径"""
 #     try:
-#         from .pdf import txt2pdf
+#         from .popdf import txt2pdf
 #     except ImportError:
-#         from pdf import txt2pdf
+#         from popdf import txt2pdf
 #     return txt2pdf(txt_path, pdf_path)
 #
 #

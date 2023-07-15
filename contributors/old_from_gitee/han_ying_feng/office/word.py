@@ -12,4 +12,4 @@ from pypandoc import convert_file
 
 
 def createpdf(wordPath, pdfPath):
-    convert_file(wordPath, 'pdf', pdfPath)
+    convert_file(wordPath, 'popdf', pdfPath)

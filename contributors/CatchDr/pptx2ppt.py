@@ -49,6 +49,6 @@ def pptx2ppt(path, docxSuffix=".pptx"):
     for file in pptxFiles:
         filepath = os.path.abspath(file)
         index = filepath.rindex('.')
-        pptPath = filepath[:index] + '.ppt'
+        pptPath = filepath[:index] + '.poppt'
         print(pptPath)
         createppt(filepath, pptPath)

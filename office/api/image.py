@@ -17,6 +17,10 @@ from office.lib.decorator_utils.instruction_url import instruction
 # from office.lib.utils.except_utils import except_dec
 # mainImage = MainImage()
 
+def compress_image(input_file: str, output_file: str, quality: int):
+    poimage.compress_image(input_file, output_file, quality)
+
+
 @instruction
 def image2gif():
     poimage.image2gif()

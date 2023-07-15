@@ -88,8 +88,8 @@ file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z
 instruction_file_dict = {
     "excel.py": excel_dict,
     "image.py": image_dict,
-    "pdf.py": pdf_dict,
-    "ppt.py": ppt_dict,
+    "popdf.py": pdf_dict,
+    "poppt.py": ppt_dict,
     "tools.py": tools_dict,
     "video.py": video_dict,
     "wechat.py": wechat_dict,

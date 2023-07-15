@@ -21,8 +21,8 @@ def ppt2pdf_single(filename, output_filename):
     # ppt_app.Visible = True  # 程序操作应用程序的过程是否可视化
 
     # 3). 通过PPT的应用程序打开指定的PPT文件
-    # filename = "C:/Users/Administrator/Desktop/PPT办公自动化/ppt/PPT素材1.pptx"
-    # output_filename = "C:/Users/Administrator/Desktop/PPT办公自动化/ppt/PPT素材1.pdf"
+    # filename = "C:/Users/Administrator/Desktop/PPT办公自动化/poppt/PPT素材1.pptx"
+    # output_filename = "C:/Users/Administrator/Desktop/PPT办公自动化/poppt/PPT素材1.popdf"
     ppt = ppt_app.Presentations.Open(filename)
 
     # 4). 打开的PPT另存为pdf文件。17数字是ppt转图片，32数字是ppt转pdf。

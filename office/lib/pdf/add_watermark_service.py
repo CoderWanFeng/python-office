@@ -11,7 +11,7 @@ def create_watermark(content):
     """创建PDF水印模板
     """
     # 创建一个PDF文件来作为一个水印文件
-    c = canvas.Canvas('watermark.pdf')
+    c = canvas.Canvas('watermark.popdf')
     reportlab.pdfbase.pdfmetrics.registerFont(
         reportlab.pdfbase.ttfonts.TTFont('simfang', 'C:/Windows/Fonts/simfang.ttf'))
     c.setFont('simfang', 20)
@@ -21,7 +21,7 @@ def create_watermark(content):
     c.drawCentredString(0, 0, content)
     c.restoreState()
     c.save()
-    pdf_watermark = PdfReader('watermark.pdf')
+    pdf_watermark = PdfReader('watermark.popdf')
     return pdf_watermark
 
 

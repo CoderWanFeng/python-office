@@ -19,7 +19,7 @@ class TestFile(unittest.TestCase):
                               postfix_content="添加后缀测试")
 
     def test_search_specify_type_file(self):
-        search_specify_type_file(file_path=r'./test_files/pdf', file_type='.pdf')
+        search_specify_type_file(file_path=r'./test_files/popdf', file_type='.popdf')
 
     def test_output_file_list_to_excel(self):
         output_file_list_to_excel("./test_files")

@@ -24,7 +24,7 @@
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
-    	<a href="https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w">
+    	<a href="https://mp.weixin.qq.com/s/K2qx_L12n-VIJBIHScPFGQ">
 	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
   </a>
   
@@ -43,7 +43,7 @@
 ## 📚简介
 
 Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识，做到了真正的开箱即用。
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/FgKB-9XEG_KunLfjJbvdYw)
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/HYOWV7ImvTXImyYWtwADog)
 
 
 ![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
@@ -80,27 +80,27 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 
 ## 🛠️包含组件
 
-以下所有功能，都在逐步搭建中。
+以下所有功能，都在持续开发中。
 
-| 模块            | 介绍           |GitHub地址| star|
-|---------------|--------------|-----|-----|
-| PyOfficeRobot | 聊天机器人        | https://github.com/CoderWanFeng/PyOfficeRobot |<img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/>|
-| search4file   | 文档搜索         | https://github.com/CoderWanFeng/search4file |<img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>|
-| poexcel       | excel处理      |https://github.com/CoderWanFeng/poexcel |<img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg" alt="github star"/>|
-| poword        | word处理       |https://github.com/CoderWanFeng/poword |<img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>|
-| poppt         | ppt处理        |https://github.com/CoderWanFeng/poppt |<img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>|
-| popdf         | pdf处理        |https://github.com/CoderWanFeng/popdf |<img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>|
-| pofile        | 文件和文件夹的操作    |https://github.com/CoderWanFeng/pofile |<img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>|
-| wftools       | 便捷小工具        |https://github.com/CoderWanFeng/wftools |<img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>|
-| poimage       | 图片处理         |https://github.com/CoderWanFeng/poimage |<img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>|
-| povideo       | 视频处理         |https://github.com/CoderWanFeng/povideo |<img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>|
-| pydatav       | 数据可视化        |https://github.com/CoderWanFeng/pydatav |<img src="https://img.shields.io/github/stars/CoderWanFeng/pydatav.svg" alt="github star"/>|
-| potime        | 时间工具         |https://github.com/CoderWanFeng/potime |<img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>|
-| pofile        | 文件管理         |https://github.com/CoderWanFeng/pofile |<img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>|
-| poprogress    | 进度条工具        |https://github.com/CoderWanFeng/poprogress |<img src="https://img.shields.io/github/stars/CoderWanFeng/poprogress.svg" alt="github star"/>|
-| poocr         | 识别功能，例如：发票识别 | https://github.com/CoderWanFeng/poocr |<img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/> |
-| web（名称待定）     | 网站快捷搭建       | | |
-| email（名称待定）   | 邮件功能         | | |
+| 模块            | 介绍           | 源码                                            | 教程                                                                                                |
+|---------------|--------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
+| PyOfficeRobot | 聊天机器人        | https://github.com/CoderWanFeng/PyOfficeRobot | <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/> |
+| search4file   | 文档搜索         | https://github.com/CoderWanFeng/search4file   | <img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>   |
+| poexcel       | excel处理      | https://github.com/CoderWanFeng/poexcel       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg" alt="github star"/>       |
+| poword        | word处理       | https://github.com/CoderWanFeng/poword        | <img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>        |
+| poppt         | ppt处理        | https://github.com/CoderWanFeng/poppt         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>         |
+| popdf         | pdf处理        | https://github.com/CoderWanFeng/popdf         | <img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>         |
+| pofile        | 文件和文件夹的操作    | https://github.com/CoderWanFeng/pofile        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>        |
+| wftools       | 便捷小工具        | https://github.com/CoderWanFeng/wftools       | <img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>       |
+| poimage       | 图片处理         | https://github.com/CoderWanFeng/poimage       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>       |
+| povideo       | 视频处理         | https://github.com/CoderWanFeng/povideo       | <img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>       |
+| pydatav       | 数据可视化        | https://github.com/CoderWanFeng/pydatav       | <img src="https://img.shields.io/github/stars/CoderWanFeng/pydatav.svg" alt="github star"/>       |
+| potime        | 时间工具         | https://github.com/CoderWanFeng/potime        | <img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>        |
+| pofile        | 文件管理         | https://github.com/CoderWanFeng/pofile        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>        |
+| poprogress    | 进度条工具        | https://github.com/CoderWanFeng/poprogress    | <img src="https://img.shields.io/github/stars/CoderWanFeng/poprogress.svg" alt="github star"/>    |
+| poocr         | 识别功能，例如：发票识别 | https://github.com/CoderWanFeng/poocr         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/>         |
+| web（名称待定）     | 网站快捷搭建       |                                               |                                                                                                   |
+| email（名称待定）   | 邮件功能         |                                               |                                                                                                   |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
