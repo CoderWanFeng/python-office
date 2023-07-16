@@ -148,13 +148,25 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 ## 📌联系作者
 
 
-![CoderWanFeng](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg)
+
+
+<p align="center" id='vlog横-banner'>
+    <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg" width="100%"/>
+    </a>   
+</p>
+
+<p align="center" id='vlog横-banner'>
+    <a target="_blank" href='http://python4office.cn/vlog-all/vlog-all/'>
+    <img src="https://vlog-1300615378.cos.ap-chongqing.myqcloud.com/ads%2Fheng.jpg" width="100%"/>
+    </a>   
+</p>
 
 ## 📕拓展资料
 
 
 <p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='http://gk.link/a/10E3B'>
+    <a target="_blank" href='https://www.python-office.com/video/video.html'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
     </a>   
 </p>
