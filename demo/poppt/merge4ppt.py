@@ -10,11 +10,10 @@
 # 集成使用
 import office
 
-input_path = r"D:\workplace\code\github\poppt\dev\docs"
+input_path = r"./test_files/merge4ppt"
 office.ppt.merge4ppt(input_path)
 
 # 独立使用
 import poppt
 
-input_path = r"D:\小破站\程序员晚枫\github\poppt\dev\docs"
 poppt.merge4ppt(input_path)
