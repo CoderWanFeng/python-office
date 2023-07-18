@@ -9,4 +9,5 @@
 
 import poword
 
-poword.docx2pdf(path=r'd://程序员晚枫的Word.docx', output_path=r'e://晚枫的文档.popdf')
+poword.docx2pdf(path=r'./test_files/程序员晚枫（作品合集）.docx',
+                output_path=r'./test_files/docx2pdf/程序员晚枫（作品合集）.pdf')
