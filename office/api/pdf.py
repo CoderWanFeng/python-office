@@ -19,6 +19,20 @@ def add_watermark() -> None:
 # 给pdf加水印-有参数
 # @except_dec()
 @instruction
+def add_mark(pdf_file, mark_str, output_path=None, output_file_name=None) -> None:
+    """
+    必填参数：
+    pdf_file:pdf的位置，例如：d:/code/程序员晚枫.popdf
+    mark_str:需要添加的水印内容，例如：百度一下：程序员晚枫
+    选填参数：
+    output_file_name：指定添加了水印的文件名称，可以不指定，默认是：添加了水印的文件.popdf
+    """
+    popdf.add_watermark_by_parameters(pdf_file, mark_str, output_path, output_file_name)
+
+
+# 给pdf加水印-有参数
+# @except_dec()
+@instruction
 def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_file_name=None) -> None:
     """
     必填参数：
