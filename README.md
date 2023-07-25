@@ -24,7 +24,7 @@
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
-    	<a href="https://mp.weixin.qq.com/s/K2qx_L12n-VIJBIHScPFGQ">
+    	<a href="https://mp.weixin.qq.com/s/NN2pX2bQPpczOeGF4ARNtw">
 	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
   </a>
   
@@ -43,10 +43,14 @@
 ## 📚简介
 
 Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识，做到了真正的开箱即用。
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/HYOWV7ImvTXImyYWtwADog)
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/yFcocJbfS9Hs375NhE8Gbw)
 
+<p align="center" id='开源交流群-banner'>
+    <a target="_blank" href='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg'>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg" width="100%"/>
+    </a>   
+</p>
 
-![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
 ### 🍺特点
 - 一键搭建所有 Python + 自动化办公的编程环境。
 - 使用一行代码解决大部分自动化办公的问题，不需要小白学习 Python 知识
@@ -150,7 +154,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 
 
-<p align="center" id='vlog横-banner'>
+<p align="center" id='个人微信-banner'>
     <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
     <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg" width="100%"/>
     </a>   
@@ -164,6 +168,11 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 ## 📕拓展资料
 
+<p align="center" id='AI绘画-banner'>
+    <a target="_blank" href='http://gk.link/a/1277m'>
+    <img src="https://ads-1300615378.cos.ap-guangzhou.myqcloud.com/geek/AI%E7%BB%98%E7%94%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98.png" width="100%"/>
+    </a>   
+</p>
 
 <p align="center" id='30讲自动化办公-banner'>
     <a target="_blank" href='https://www.python-office.com/video/video.html'>
