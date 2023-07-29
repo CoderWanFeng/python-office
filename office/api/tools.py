@@ -1,22 +1,20 @@
+import wftools
+
 from office.lib.decorator_utils.instruction_url import instruction
 
-from office.lib.utils.except_utils import except_dec
 
 # from office.core.ToolsType import wftools
-
 # wftools = wftools()
-
-import wftools
 
 # @except_dec()
 @instruction
-def transtools(to_lang, content):
+def transtools(to_lang: str, content: str):
     wftools.transtools(to_lang, content)
 
 
 # @except_dec()
 @instruction
-def qrcodetools(url):
+def qrcodetools(url: str):
     wftools.qrcodetools(url)
 
 
@@ -35,7 +33,7 @@ def weather():
 # 通过url，获取ip地址
 # # @except_dec()
 @instruction
-def url2ip(url):
+def url2ip(url: str):
     wftools.url2ip(url)
 
 
@@ -54,8 +52,9 @@ def create_article(theme, line_num=200):
 
 # @except_dec()
 @instruction
-def pwd4wifi(len_pwd=8, pwd_list=[]):
+def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
     wftools.pwd4wifi(len_pwd, pwd_list)
+
 
 # 测试网速
 @instruction

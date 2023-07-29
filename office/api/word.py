@@ -23,20 +23,22 @@ from office.lib.decorator_utils.instruction_url import instruction
 
 
 @instruction
-def docx2pdf(path, output_path=None):
+def docx2pdf(path: str, output_path: str = None):
     if output_path == None:
         output_path = path
     poword.docx2pdf(path, output_path)
 
 
 @instruction
-def merge4docx(input_path, output_path, new_word_name='merge4docx'):
+def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
     poword.merge4docx(input_path, output_path, new_word_name)
 
-@instruction
-def doc2docx(input_path, output_path=r'./'):
-    poword.doc2docx(input_path, output_path)
 
 @instruction
-def docx2doc(input_path, output_path=r'./'):
+def doc2docx(input_path: str, output_path: str = r'./'):
+    poword.doc2docx(input_path, output_path)
+
+
+@instruction
+def docx2doc(input_path: str, output_path: str = r'./'):
     poword.docx2doc(input_path, output_path)

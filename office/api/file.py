@@ -22,28 +22,28 @@ from office.lib.decorator_utils.instruction_url import instruction
 
 
 @instruction
-def replace4filename(path, del_content, replace_content=None):
+def replace4filename(path: str, del_content, replace_content=None):
     pofile.replace4filename(path, del_content, replace_content)
 
 
 # todo：输入文件路径
 # @except_dec()
 @instruction
-def search_by_content(search_path, content):  # 定义 search() 函数，传入 "path" 文件路径， "target" 要查找的目标文件
+def search_by_content(search_path: str, content: str):  # 定义 search() 函数，传入 "path" 文件路径， "target" 要查找的目标文件
     search4file.search_by_content(search_path=search_path, search_content=content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
 @instruction
-def file_name_insert_content(file_path, insert_position: int, insert_content: str):
+def file_name_insert_content(file_path: str, insert_position: int, insert_content: str):
     pofile.file_name_insert_content(file_path, insert_position, insert_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
 @instruction
-def file_name_add_prefix(file_path, prefix_content):
+def file_name_add_prefix(file_path: str, prefix_content: str):
     pofile.file_name_add_prefix(file_path, prefix_content)
 
 

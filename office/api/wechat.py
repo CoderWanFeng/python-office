@@ -6,7 +6,7 @@ single_video = "该方法目前已经独立出去，详情请看视频：https:/
 
 
 @instruction
-def send_message(who, message):
+def send_message(who: str, message: str):
     # print(single_video)
     PyOfficeRobot.chat.send_message(who, message)
 
