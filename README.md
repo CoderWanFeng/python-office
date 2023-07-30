@@ -75,11 +75,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 
 [📘官网：https://www.python-office.com/](https://www.python-office.com/)
 
-全部功能的说明
-
-- 文字教程👉[传送门](https://www.python-office.com/guide/allFunc.html)
-
-- 视频教程👉[传送门](https://www.python-office.com/video/video.html)
+全部功能 的 视频教程👉[传送门](https://www.python-office.com/video/video.html)
 
 
 ## 🛠️包含组件
