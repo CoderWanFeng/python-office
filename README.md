@@ -1,6 +1,6 @@
-<p align="center">
-    <a target="_blank" href='https://url.cn/Z4lzPLaF'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F1040x100-tencent.jpg" width="100%"/>
+<p align="center" id='大礼包-banner'>
+    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
+    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
     </a>   
 </p>
 <p align="center">
@@ -136,7 +136,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 如果你觉得python-office不错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
 
-[捐赠给项目](https://mp.weixin.qq.com/s/WArb-brDHhdBYHyZ4cU8_Q) 👈该项捐赠仅用于支持本项目发展使用
+[捐赠给项目](https://mp.weixin.qq.com/s/yMl9-06DSmjLTobyJNrJJw) 👈该项捐赠仅用于支持本项目发展使用
 
 
 -------------------------------------------------------------------------------
@@ -164,11 +164,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 ## 📕拓展资料
 
-<p align="center" id='AI绘画-banner'>
-    <a target="_blank" href='http://gk.link/a/1277m'>
-    <img src="https://ads-1300615378.cos.ap-guangzhou.myqcloud.com/geek/AI%E7%BB%98%E7%94%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98.png" width="100%"/>
-    </a>   
-</p>
+
 
 <p align="center" id='30讲自动化办公-banner'>
     <a target="_blank" href='https://www.python-office.com/video/video.html'>
