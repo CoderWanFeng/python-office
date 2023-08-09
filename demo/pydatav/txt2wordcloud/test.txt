@@ -1,0 +1,127 @@
+Owner avatar
+PyOfficeRobot
+Public
+CoderWanFeng/PyOfficeRobot
+ 2 branches
+ 10 tags
+Your main branch isn't protected
+Protect this branch from force pushing or deletion, or require status checks before merging. Learn more
+
+Latest commit
+@heyWFeng
+heyWFeng add 收集群消息
+f88b34d
+13 minutes ago
+Git stats
+ 88 commits
+Files
+Type
+Name
+Latest commit message
+Commit time
+.idea
+publish 0.1.3 ： 修复微信发文件崩溃的问题
+4 months ago
+PR
+publish 0.1.12👉智能聊天：https://mp.weixin.qq.com/s/vJXMChkO2tCUEXpq8LlNCg
+2 weeks ago
+PyOfficeRobot
+update README.md
+last week
+demo
+update README.md
+last week
+dev
+add 收集群消息
+13 minutes ago
+docs/文章配图
+publish 0.1.12👉智能聊天：https://mp.weixin.qq.com/s/vJXMChkO2tCUEXpq8LlNCg
+2 weeks ago
+tests
+publish 0.1.9 : 解决了微信更新后，不能发消息和文件的问题
+last month
+.gitignore
+忽略script文件夹
+last year
+LICENSE
+Initial commit
+last year
+README.md
+update README.md
+1 hour ago
+requirements.txt
+publish 0.1.12👉智能聊天：https://mp.weixin.qq.com/s/vJXMChkO2tCUEXpq8LlNCg
+2 weeks ago
+setup.cfg
+update README.md
+last week
+setup.py
+update author info
+10 months ago
+README.md
+
+
+👉 项目官网 👈
+
+👉 本开源项目的交流群 👈
+
+github star gitee star
+
+又一个微信聊天机器人横空出世了，人人可用！
+之前给大家分享过一个微信机器人：一个15分钟的视频，教你用Python创建自己的微信聊天机器人！
+
+但是之前这个机器人，需要基于网页版才能用(有网页版微信的同学，还可以去继续用)；然而很多朋友的微信，是不能登录网页版微信的。
+
+有没有一种微信机器人，任何人的微信都可以用，不需要网页微信功能呢？
+
+在经过技术检索和开发以后，支持所有微信使用的：PyOfficeRobot来啦~
+
+1、安装PyOfficeRobot
+1行命令，安装PyOfficeRobot这个库。安装视频
+
+pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
+2、功能演示
+⭐本机器人完全免费，全部功能的演示视频 + 项目源码：Github、gitee
+序号	方法名	功能	视频	文档	代码
+1		🔥项目发布	播放	待编辑	打开
+2	send_message	自动发消息	播放	待编辑	打开
+3	send_file	自动发文件	播放	待编辑	打开
+4	chat_by_keywords	根据关键词，自动回复	播放	待编辑	打开
+5	send_message_by_time	⌚定时自动发消息	播放	待编辑	打开
+6		自己加功能	播放	待编辑	打开
+7		⭐独立使用	播放	待编辑	打开
+8	get_group_list	收集群信息	播放	有BUG，待修复	打开
+9		发消息如何换行？	播放	待编辑	打开
+10	chat_by_gpt	微信 + ChatGPT	播放	待编辑	打开
+11	add	批量加好友	播放	有BUG，待修复	打开
+12	send	批量群发	播放	待编辑	打开
+13	chat_robot	智能聊天	播放	待编辑	打开
+持续更新中，交流群：点我加入
+
+微信机器人-其它实现方式
+功能说明	视频	代码
+机器人.exe	点我直达
+ChatGPT版本	点我直达	点我直达
+⌚wxpy-24小时，后台运行	点我直达	点我直达
+企业微信机器人		点我直达
+3、功能Demo
+我最近开源了这个库的全部源代码，功能正在开发中，欢迎大家参与开发~
+
+演示代码
+4、开发者
+昵称	贡献	时间
+雷杰	解决了微信更新后，不能发送消息和文件的问题	2023/7/6 00：30
+
+
+⭐Star
+Stargazers over time
+
+📕拓展资料
+
+
+
+
+
+
+
+
