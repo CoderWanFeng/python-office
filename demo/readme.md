@@ -18,7 +18,7 @@
 	</a>
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
-  </a>
+  </a> 
     	<a href="https://mp.weixin.qq.com/s/NN2pX2bQPpczOeGF4ARNtw">
 	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
   </a>
@@ -91,12 +91,14 @@
 
 ## 6、图片 + 自动化办公 = poimage
 
-| 序号 | 方法名           | 功能            | 视频                                                   | 文档                                                      | 演示代码                                                                                                                                                                        |
-|----|---------------|---------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | add_watermark | 👩给图片 加 水印    | 👩 [播放](https://www.bilibili.com/video/BV1jT411T7n9) | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/poimage/%E5%9B%BE%E7%89%87%E5%8A%A0%E6%B0%B4%E5%8D%B0.py)                                               |
-| 2  | down4img      | 下载图片          | [播放](https://www.bilibili.com/video/BV1i8411s7Mq)    | [查看](https://mp.weixin.qq.com/s/H9NVBxwo_po8WsqsIRJ7YQ) | [打开](https://github.com/CoderWanFeng/python-office/tree/master/demo/poimage/下载图片.py)                                                                                        |
-| 3  | del_watermark | 图片去水印         | 待录制                                                  | [查看](https://mp.weixin.qq.com/s/6RS0oo6dNa3mov_5XwNurg) | [打开](https://github.com/CoderWanFeng/python-office/tree/master/demo/poimage/图片去水印.py)                                                                                       |
-| 4  | txt2wordcloud | 根据文档内容，生成词云图片 | [播放](https://www.bilibili.com/video/BV1Me4y1h7Ku)    | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/pydatav/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96-%E6%96%87%E7%AB%A0%E8%BD%AC%E5%9B%BE%E4%BA%91.py) |
+| 序号 | 方法名            | 功能            | 视频                                                   | 文档                                                      | 演示代码                                                                                                                                                                        |
+|----|----------------|---------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | add_watermark  | 👩给图片 加 水印    | 👩 [播放](https://www.bilibili.com/video/BV1jT411T7n9) | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/poimage/%E5%9B%BE%E7%89%87%E5%8A%A0%E6%B0%B4%E5%8D%B0.py)                                               |
+| 2  | down4img       | 下载图片          | [播放](https://www.bilibili.com/video/BV1i8411s7Mq)    | [查看](https://mp.weixin.qq.com/s/H9NVBxwo_po8WsqsIRJ7YQ) | [打开](https://github.com/CoderWanFeng/python-office/tree/master/demo/poimage/下载图片.py)                                                                                        |
+| 3  | del_watermark  | 图片去水印         | 待录制                                                  | [查看](https://mp.weixin.qq.com/s/6RS0oo6dNa3mov_5XwNurg) | [打开](https://github.com/CoderWanFeng/python-office/tree/master/demo/poimage/图片去水印.py)                                                                                       |
+| 4  | txt2wordcloud  | 根据文档内容，生成词云图片 | [播放](https://www.bilibili.com/video/BV1Me4y1h7Ku)    | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/pydatav/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96-%E6%96%87%E7%AB%A0%E8%BD%AC%E5%9B%BE%E4%BA%91.py) |
+| 4  | compress_image | 压缩图片          | 待录制                                                  | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/pydatav/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96-%E6%96%87%E7%AB%A0%E8%BD%AC%E5%9B%BE%E4%BA%91.py) |
+| 4  | image2gif      | 图片转Gif        | 待录制                                                  | 待编辑                                                     | [打开](https://github.com/CoderWanFeng/python-office/blob/master/demo/pydatav/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96-%E6%96%87%E7%AB%A0%E8%BD%AC%E5%9B%BE%E4%BA%91.py) |
 
 ## 7、文字识别 + 自动化办公 = poocr
 
@@ -147,10 +149,11 @@
 
 ## 12、AI + 自动化办公
 
-| 序号 | 方法名        | 功能        | 视频                                                | 文档                                                      | 演示代码 |
-|----|------------|-----------|---------------------------------------------------|---------------------------------------------------------|------|
-| 1  | pencil4img | AI画素描     | [播放](https://www.bilibili.com/video/BV1rP411N7ao) | [查看](https://mp.weixin.qq.com/s/h-3oL7wFE84P6-BwJqR2tg) | 待开发  |
-| 2  |            | 还原黑白照片的颜色 | 待录制                                               | [查看](https://mp.weixin.qq.com/s/fJLtyTCWBU767xieRTohIQ) | 待开发  |
+| 序号 | 方法名         | 功能        | 视频                                                | 文档                                                      | 演示代码 |
+|----|-------------|-----------|---------------------------------------------------|---------------------------------------------------------|------|
+| 1  | pencil4img  | AI画素描     | [播放](https://www.bilibili.com/video/BV1rP411N7ao) | [查看](https://mp.weixin.qq.com/s/h-3oL7wFE84P6-BwJqR2tg) | 待开发  |
+| 2  |             | 还原黑白照片的颜色 | 待录制                                               | [查看](https://mp.weixin.qq.com/s/fJLtyTCWBU767xieRTohIQ) | 待开发  |
+| 2  | img2Cartoon | 生成动漫头像    | 待录制                                               | 待编辑 | 待开发  |
 
 ## 13、中文编程 + 自动化办公 = pohan
 

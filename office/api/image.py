@@ -29,8 +29,23 @@ def image2gif():
 # todo：输出文件路径
 # @except_dec()
 @instruction
-def add_watermark(file, mark, output_path=r'./mark_img', color="#8B8B1B", size=30, opacity=0.15, space=75,
+def add_watermark(file, mark, output_path='./mark_img', color="#8B8B1B", size=50, opacity=0.02, space=200,
                   angle=30):
+    """
+    给图片加水印
+    Args:
+        file: 图片位置
+        mark: 水印内容
+        output_path: 输出位置
+        color: 水印颜色
+        size: 水印大小
+        opacity: 不透明度，0.01~1
+        space: 水印间距
+        angle: 水印角度
+
+    Returns:
+
+    """
     poimage.add_watermark(file, mark, output_path, color, size, opacity, space, angle)
     # mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
 

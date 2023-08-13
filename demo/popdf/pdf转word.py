@@ -7,7 +7,8 @@
 @本段代码的视频说明     ：
 '''
 
-import popdf
+# pip install python-office
+import office
 
-popdf.pdf2docx(file_path=r'./test_files/pdf2docx/程序员晚枫（作品合集）.pdf',
-               output_path=r'./test_files/pdf2docx/output')
+office.pdf.pdf2docx(file_path=r'./test_files/pdf2docx/程序员晚枫（作品合集）.pdf',
+                    output_path=r'./test_files/pdf2docx/output')
