@@ -7,7 +7,9 @@
 @本段代码的视频说明     ：
 '''
 
-import poword
+# pip install python-office
+import office
 
-poword.docx2pdf(path=r'./test_files/程序员晚枫（作品合集）.docx',
-                output_path=r'./test_files/docx2pdf/程序员晚枫（作品合集）.pdf')
+office.word.docx2pdf(
+    path=r'D:\workplace\code\github\python-office\demo\poword\test_files',
+    output_path=r'D:\workplace\code\github\python-office\demo\poword\test_files\docx2pdf')

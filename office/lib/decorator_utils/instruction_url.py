@@ -40,7 +40,7 @@ pdf_dict = {"add_img_water": "",
             "decrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
             "encrypt4pdf": "https://mp.weixin.qq.com/s/AArhAHKk3pRC4ks0UI96Tw",
             "merge2pdf": "https://mp.weixin.qq.com/s/9erh3W3WCD36Axj70pRvog",
-            "pdf2docx": "https://mp.weixin.qq.com/s/eTwtTXLAudRQmyhE4LY_Dg",
+            "pdf2docx": "https://www.bilibili.com/video/BV1em4y1H7ir",
             "pdf2imgs": "https://mp.weixin.qq.com/s/tvHZIBGcrMBLTLB4u23Mow",
             "txt2pdf": "", }
 ppt_dict = {"ppt2pdf": "https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg",
@@ -58,6 +58,7 @@ tools_dict = {"create_article": "https://mp.weixin.qq.com/s/guBtZHyUyybGNOqzZke1
               }
 video_dict = {"audio2txt": "https://mp.weixin.qq.com/s/Ug_IFSEQBzDshe7KuFckTQ",
               "video2mp3": "https://mp.weixin.qq.com/s/Ug_IFSEQBzDshe7KuFckTQ",
+              "mark2video": "https://my.oschina.net/u/3888978/blog/10104400",
               }
 web_dict = {}
 wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju",
@@ -66,7 +67,7 @@ wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju"
                "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
                "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ", }
 word_dict = {
-    "docx2pdf": "https://mp.weixin.qq.com/s/eBn3N_FEx1dlC_-ttmlOwg",
+    "docx2pdf": "https://www.bilibili.com/video/BV1K84y1Z7n6",
     "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
     "docx2doc": "https://www.bilibili.com/video/BV1so4y1H7rj",
     "doc2docx": "https://www.bilibili.com/video/BV1so4y1H7rj",
