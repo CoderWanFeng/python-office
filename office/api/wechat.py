@@ -35,3 +35,7 @@ def send_file(who, file):
 def receive_message(who='文件传输助手', txt='userMessage.txt', output_path='./'):
     # print(single_video)
     PyOfficeRobot.chat.receive_message(who, txt, output_path)
+
+@instruction
+def chat_robot(who='程序员晚枫'):
+    PyOfficeRobot.chat.chat_robot(who)

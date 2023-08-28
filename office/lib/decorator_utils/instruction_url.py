@@ -65,7 +65,8 @@ wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju"
                "receive_message": "",
                "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
                "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
-               "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ", }
+               "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
+               "chat_robot": "https://www.bilibili.com/video/BV1394y1e787/", }
 word_dict = {
     "docx2pdf": "https://www.bilibili.com/video/BV1K84y1Z7n6",
     "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
