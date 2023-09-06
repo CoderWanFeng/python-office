@@ -1,29 +1,27 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
+# -*- coding: UTF-8 -*-
+'''
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
+@微信     ：CoderWanFeng : https://mp.weixin.qq.com/s/B1V6KeXc7IOEB8DgXLWv3g
+@个人网站      ：www.python-office.com
+@代码日期    ：2023/8/22 23:28
+'''
 
-#############################################
-# File Name: word.py
-# 公众号/B站/小红书/抖音: 程序员晚枫
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关word的自动化操作
-#############################################
-# from office.lib.utils.except_utils import except_dec
-# from office.core.WordType import MainWord
-
-# 创建对象
-# mainWord = MainWord()
 import poword
 
-# 1、文件的批量转换
-# 自己指定路径，
-# 为了适配wps不能转换doc的问题，这里限定：只能转换docx
-# @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
 
 @instruction
 def docx2pdf(path: str, output_path: str = None):
+    """
+    word转pdf
+    Args:
+        path: word文件的位置。支持批量处理：填写文件夹位置。
+        output_path: 转换后的输出位置，如果不存在会自动创建。
+
+    Returns:
+
+    """
     if output_path == None:
         output_path = path
     poword.docx2pdf(path, output_path)

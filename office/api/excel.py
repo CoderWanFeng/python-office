@@ -1,17 +1,12 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
-#############################################
-# File Name: excel.py
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关 excel 的自动化操作
-#############################################
-# from office.core.ExcelType import MainExcel
-# mainExcel = MainExcel()
+# -*- coding: UTF-8 -*-
+'''
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
+@微信     ：CoderWanFeng : https://mp.weixin.qq.com/s/B1V6KeXc7IOEB8DgXLWv3g
+@个人网站      ：www.python-office.com
+@代码日期    ：2023/8/22 23:28
+'''
 
 import poexcel
-from win32com.client import DispatchEx
 
 # todo:输出文件路径
 # @except_dec()
@@ -20,6 +15,17 @@ from office.lib.decorator_utils.instruction_url import instruction
 
 @instruction
 def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_CN'):
+    """
+    自动创建Excel，并且模拟数据
+    Args:
+        columns: 列名。可以模拟的列有：http://python4office.cn/python-office/fake2excel/
+        rows: 生成多少行数据。默认值：1
+        path: 生成的Excel的位置和名称。
+        language: 数据用什么语言，默认是中文，可以填english，
+
+    Returns:
+
+    """
     poexcel.fake2excel(columns, rows, path, language)
 
 

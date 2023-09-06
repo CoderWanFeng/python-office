@@ -1,21 +1,15 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
-#############################################
-# File Name: 图片.py
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关 图片 的自动化操作
-#############################################
+# -*- coding: UTF-8 -*-
+'''
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
+@微信     ：CoderWanFeng : https://mp.weixin.qq.com/s/B1V6KeXc7IOEB8DgXLWv3g
+@个人网站      ：www.python-office.com
+@代码日期    ：2023/8/22 23:28
+'''
 import poimage
 
 # @except_dec()
 from office.lib.decorator_utils.instruction_url import instruction
 
-
-# from office.core.ImageType import MainImage
-# from office.lib.utils.except_utils import except_dec
-# mainImage = MainImage()
 
 def compress_image(input_file: str, output_file: str, quality: int):
     poimage.compress_image(input_file, output_file, quality)

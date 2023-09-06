@@ -16,7 +16,7 @@ from office.lib.conf.CONST import SPLIT_LINE
 email_dict = {}
 import os
 
-excel_dict = {"fake2excel": "https://www.bilibili.com/video/BV1wr4y1b7uk",
+excel_dict = {"fake2excel": "https://www.bilibili.com/video/BV18m4y1u7Kq/",
               "find_excel_data": "https://www.bilibili.com/video/BV1Bd4y1B7yr",
               "merge2excel": "https://www.bilibili.com/video/BV1714y147Ao",
               "merge2sheet": "",
@@ -24,7 +24,7 @@ excel_dict = {"fake2excel": "https://www.bilibili.com/video/BV1wr4y1b7uk",
               "split_excel_by_column": "",
               "excel2pdf": "https://mp.weixin.qq.com/s/9cobekrIrR7BnUzfepv6Tg",
               }
-image_dict = {"add_watermark": "https://www.bilibili.com/video/BV1jT411T7n9",
+image_dict = {"add_watermark": "https://www.bilibili.com/video/BV1Em4y1T7aH/",
               "decode_qrcode": "https://mp.weixin.qq.com/s/Z_RcTRYxUFpCQBGpShO0ig",
               "down4img": "https://mp.weixin.qq.com/s/P6pRm1VX8bGYepC8O4Bt4Q",
               "image2gif": "",
@@ -36,7 +36,7 @@ md_dict = {}
 ocr_dict = {}
 pdf_dict = {"add_img_water": "",
             "add_watermark": "https://www.bilibili.com/video/BV1Se411T7au",
-            "add_watermark_by_parameters": "https://www.bilibili.com/video/BV1Se411T7au",
+            "add_watermark_by_parameters": "https://www.bilibili.com/video/BV13N411q7W2",
             "decrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
             "encrypt4pdf": "https://mp.weixin.qq.com/s/AArhAHKk3pRC4ks0UI96Tw",
             "merge2pdf": "https://mp.weixin.qq.com/s/9erh3W3WCD36Axj70pRvog",
@@ -44,7 +44,7 @@ pdf_dict = {"add_img_water": "",
             "pdf2imgs": "https://mp.weixin.qq.com/s/tvHZIBGcrMBLTLB4u23Mow",
             "txt2pdf": "", }
 ppt_dict = {"ppt2pdf": "https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg",
-            "ppt2img": "https://www.bilibili.com/video/BV1pu411Y7zz",
+            "ppt2img": "https://www.bilibili.com/video/BV1QG411o7Xb/",
             }
 tools_dict = {"create_article": "https://mp.weixin.qq.com/s/guBtZHyUyybGNOqzZke1kQ",
               "lottery8ticket": "https://mp.weixin.qq.com/s/Q6JgW06hMUSik0DqGD0rOA",
@@ -66,13 +66,13 @@ wechat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju"
                "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
                "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
                "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
-               "chat_robot": "https://www.bilibili.com/video/BV1394y1e787/", }
+               "chat_robot": "https://www.bilibili.com/video/BV1Fu4y1v7xH", }
 word_dict = {
     "docx2pdf": "https://www.bilibili.com/video/BV1K84y1Z7n6",
     "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
     "docx2doc": "https://www.bilibili.com/video/BV1so4y1H7rj",
     "doc2docx": "https://www.bilibili.com/video/BV1so4y1H7rj",
-             }
+}
 
 file_dict = {"search_by_content": "https://mp.weixin.qq.com/s/rvU7O3zHJ-YEd2YU0Z4pew",
              "add_line_by_type": "",
@@ -117,7 +117,7 @@ def instruction(func):
 
 #############################################
 # 以下是本文件的工具模块，用来更新方法和链接
-from inspect import getmembers, isfunction, ismethod, isclass
+from inspect import getmembers, isfunction
 
 
 # 获取模块包含的方法名

@@ -1,18 +1,11 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
+# -*- coding: UTF-8 -*-
+'''
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
+@微信     ：CoderWanFeng : https://mp.weixin.qq.com/s/B1V6KeXc7IOEB8DgXLWv3g
+@个人网站      ：www.python-office.com
+@代码日期    ：2023/8/22 23:28
+'''
 
-#############################################
-# File Name: 文件.py
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关 文件 的自动化操作
-#############################################
-# from office.lib.utils.except_utils import except_dec
-# from office.core.FileType import pofile
-# from office.core.SearchByContentType import MainSearchByContent
-
-# pofile = pofile()
-# mainSearchByContent = MainSearchByContent()
 import pofile
 import search4file
 
@@ -40,7 +33,16 @@ def replace4filename(path: str, del_content, replace_content='', dir_rename: boo
 # todo：输入文件路径
 # @except_dec()
 @instruction
-def search_by_content(search_path: str, content: str):  # 定义 search() 函数，传入 "path" 文件路径， "target" 要查找的目标文件
+def search_by_content(search_path: str, content: str):
+    """
+    通过内容搜索文件
+    Args:
+        search_path: 需要搜索的目录
+        content: 搜索的内容
+
+    Returns:
+
+    """
     search4file.search_by_content(search_path=search_path, search_content=content)
 
 
