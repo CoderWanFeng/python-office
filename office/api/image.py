@@ -77,3 +77,7 @@ def decode_qrcode(qrcode_path):
     :return:
     """
     poimage.decode_qrcode(qrcode_path)
+
+@instruction
+def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):
+    poimage.del_watermark(input_image, output_image)
