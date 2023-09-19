@@ -29,8 +29,7 @@ def chat_by_keywords(who, keywords):
 
 @instruction
 def send_file(who, file):
-    print(single_video)
-    # PyOfficeRobot.file.send_file(who, file)
+    PyOfficeRobot.file.send_file(who, file)
 
 
 # 保存指定人的消息
