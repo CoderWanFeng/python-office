@@ -75,3 +75,7 @@ def excel2pdf(excel_path, pdf_path):
     https://blog.csdn.net/qq_57187936/article/details/125605967
     """
     poexcel.excel2pdf(excel_path, pdf_path)
+
+@instruction
+def merge2excel(excel_path, output='merge2excel.xlsx'):
+    poexcel.merge2excel(excel_path, output)
