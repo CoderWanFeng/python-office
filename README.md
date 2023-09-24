@@ -4,7 +4,7 @@
     </a>   
 </p>
 <p align="center">
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
+    <a target="_blank" href='https://pypi.org/project/python-office/'>
     <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/github-nav.jpg" alt="github license"/>
     </a>   
 </p>
