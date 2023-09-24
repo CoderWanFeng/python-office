@@ -40,3 +40,16 @@ def doc2docx(input_path: str, output_path: str = r'./'):
 @instruction
 def docx2doc(input_path: str, output_path: str = r'./'):
     poword.docx2doc(input_path, output_path)
+
+@instruction
+def docx4imgs(word_path, img_path):
+    """
+    从Word里提取图片
+    Args:
+        word_path:word文档的路径
+        img_path: 提取图片的存储位置，会自动根据word名称，在指定文件夹下，生成一个子目录
+
+    Returns:
+
+    """
+    poword.docx4imgs(word_path, img_path)

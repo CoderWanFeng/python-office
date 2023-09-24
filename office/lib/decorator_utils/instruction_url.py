@@ -20,8 +20,8 @@ excel_dict = {
     "fake2excel": "https://www.python-office.com/course/docs/50-07-fake2excel.html",
     "excel2pdf": "https://www.python-office.com/course/docs/50-10-excel2pdf.html",
     "sheet2excel": "https://www.python-office.com/course/docs/50-14-sheet2excel.html",
+    "merge2excel": "https://www.python-office.com/course/docs/50-22-merge2excel.html",
     "find_excel_data": "https://www.bilibili.com/video/BV1Bd4y1B7yr",
-    "merge2excel": "https://www.bilibili.com/video/BV1714y147Ao",
     "merge2sheet": "",
     "split_excel_by_column": "",
 }
@@ -80,6 +80,7 @@ wechat_dict = {
 }
 word_dict = {
     "docx2pdf": "https://www.python-office.com/course/docs/50-05-docx2pdf.html",
+    "docx4imgs": "https://cloud.tencent.com/developer/article/2332498",
     "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
     "docx2doc": "https://www.bilibili.com/video/BV1so4y1H7rj",
     "doc2docx": "https://www.bilibili.com/video/BV1so4y1H7rj",
@@ -87,12 +88,12 @@ word_dict = {
 
 file_dict = {
     "search_by_content": "https://www.python-office.com/course/docs/50-09-search4content.html",
+    "replace4filename": "https://www.python-office.com/course/docs/50-23-replace4filename.html",
     "add_line_by_type": "",
     "file_name_add_postfix": "https://blog.csdn.net/shangdafen_GD/article/details/129273450",
     "file_name_add_prefix": "https://blog.csdn.net/shangdafen_GD/article/details/129229642",
     "file_name_insert_content": "",
     "output_file_list_to_excel": "",
-    "replace4filename": "https://www.bilibili.com/video/BV12r4y187Yj",
     "search_specify_type_file": "",
     "group_by_name": "https://www.bilibili.com/video/BV1RX4y1o7HF",
     "get_files": "https://www.bilibili.com/video/BV1ua4y1M7ya",
