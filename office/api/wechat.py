@@ -11,7 +11,6 @@ import PyOfficeRobot
 from office.lib.decorator_utils.instruction_url import instruction
 
 
-
 @instruction
 def send_message(who: str, message: str):
     PyOfficeRobot.chat.send_message(who, message)
@@ -30,6 +29,10 @@ def chat_by_keywords(who, keywords):
 @instruction
 def send_file(who, file):
     PyOfficeRobot.file.send_file(who, file)
+
+
+def group_send():
+    PyOfficeRobot.group.send()
 
 
 # 保存指定人的消息
