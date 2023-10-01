@@ -8,14 +8,14 @@ from office.lib.decorator_utils.instruction_url import instruction
 
 # @except_dec()
 @instruction
-def transtools(to_lang: str, content: str):
-    wftools.transtools(to_lang, content)
+def transtools(to_lang: str, content: str, from_lang:str='zh'):
+    return wftools.transtools(to_lang=to_lang, content=content, from_lang=from_lang)
 
 
 # @except_dec()
 @instruction
-def qrcodetools(url: str):
-    wftools.qrcodetools(url)
+def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
+    wftools.qrcodetools(url, output)
 
 
 # @except_dec()
@@ -33,8 +33,8 @@ def weather():
 # 通过url，获取ip地址
 # # @except_dec()
 @instruction
-def url2ip(url: str):
-    wftools.url2ip(url)
+def url2ip(url: str) -> str:
+    return wftools.url2ip(url)
 
 
 # 通过url，获取ip地址
