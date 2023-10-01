@@ -39,34 +39,35 @@ md_dict = {}
 ocr_dict = {}
 pdf_dict = {
     "pdf2docx": "https://www.python-office.com/course/docs/50-04-pdf2docx.html",
+    "add_watermark_by_parameters": "https://www.python-office.com/course/docs/50-37-add_watermark_by_parameters.html",
+    "encrypt4pdf": "https://www.python-office.com/course/docs/50-38-encrypt4pdf.html",
+    "decrypt4pdf": "https://www.python-office.com/course/docs/50-39-decrypt4pdf.html",
+    "merge2pdf": "https://www.python-office.com/course/docs/50-40-merge2pdf.html",
+    "pdf2imgs": "https://www.python-office.com/course/docs/50-41-pdf2imgs.html",
     "add_img_water": "",
     "add_watermark": "https://www.bilibili.com/video/BV1Se411T7au",
-    "add_watermark_by_parameters": "https://www.bilibili.com/video/BV13N411q7W2",
-    "decrypt4pdf": "https://mp.weixin.qq.com/s/GiXYB_xZdlsYv5AIeIELkA",
-    "encrypt4pdf": "https://mp.weixin.qq.com/s/AArhAHKk3pRC4ks0UI96Tw",
-    "merge2pdf": "https://mp.weixin.qq.com/s/9erh3W3WCD36Axj70pRvog",
-    "pdf2imgs": "https://mp.weixin.qq.com/s/tvHZIBGcrMBLTLB4u23Mow",
     "txt2pdf": ""
 }
 ppt_dict = {
-    "ppt2pdf": "https://mp.weixin.qq.com/s/T31F-U5AdDd3D-61b_K5Qg",
+    "ppt2pdf": "https://www.python-office.com/course/docs/50-29-ppt2pdf.html",
     "ppt2img": "https://www.python-office.com/course/docs/50-06-ppt2img.html",
+    "merge4ppt": "https://www.python-office.com/course/docs/50-30-merge4ppt.html",
 }
 tools_dict = {
+    "passwordtools": "https://www.python-office.com/course/docs/50-33-passwordtools.html",
+    "qrcodetools": "https://www.python-office.com/course/docs/50-34-qrcodetools.html",
+    "transtools": "https://www.python-office.com/course/docs/50-48-translate.html",
+    "net_speed_test": "https://www.python-office.com/course/docs/50-49-net_speed_test.html",
+    "url2ip": "https://www.python-office.com/course/docs/50-35-url2ip.html",
     "create_article": "https://mp.weixin.qq.com/s/guBtZHyUyybGNOqzZke1kQ",
     "lottery8ticket": "https://mp.weixin.qq.com/s/Q6JgW06hMUSik0DqGD0rOA",
-    "net_speed_test": "https://www.bilibili.com/video/BV1fD4y1x7ZE",
-    "passwordtools": "https://www.bilibili.com/video/BV1Ce4y1p7iV",
     "pwd4wifi": "https://blog.csdn.net/weixin_42321517/article/details/126677254",
-    "qrcodetools": "https://www.bilibili.com/video/BV1pd4y1b716/?spm_id_from=333.999.0.0",
-    "transtools": "https://www.bilibili.com/video/BV11d4y1k7Mn",
-    "url2ip": "https://cloud.tencent.com/developer/article/2022777",
     "weather": "https://mp.weixin.qq.com/s/NVn8NNtOS3AfOyl75JTaNg",
 }
 video_dict = {
+    "video2mp3": "https://www.python-office.com/course/docs/50-47-video2mp3.html",
     "txt2mp3": "https://www.python-office.com/course/docs/50-12-txt2mp3.html",
     "audio2txt": "https://mp.weixin.qq.com/s/Ug_IFSEQBzDshe7KuFckTQ",
-    "video2mp3": "https://mp.weixin.qq.com/s/Ug_IFSEQBzDshe7KuFckTQ",
     "mark2video": "https://my.oschina.net/u/3888978/blog/10104400",
 }
 web_dict = {}
@@ -80,22 +81,22 @@ wechat_dict = {
 }
 word_dict = {
     "docx2pdf": "https://www.python-office.com/course/docs/50-05-docx2pdf.html",
-    "docx4imgs": "https://cloud.tencent.com/developer/article/2332498",
-    "merge4docx": "https://www.bilibili.com/video/BV1Vo4y1q7i3",
-    "docx2doc": "https://www.bilibili.com/video/BV1so4y1H7rj",
-    "doc2docx": "https://www.bilibili.com/video/BV1so4y1H7rj",
+    "merge4docx": "https://www.python-office.com/course/docs/50-25-merge4docx.html",
+    "docx2doc": "https://www.python-office.com/course/docs/50-43-doc2docx.html",
+    "doc2docx": "https://www.python-office.com/course/docs/50-43-doc2docx.html",
+    "docx4imgs": "https://www.python-office.com/course/docs/50-24-docx4imgs.html",
 }
 
 file_dict = {
     "search_by_content": "https://www.python-office.com/course/docs/50-09-search4content.html",
     "replace4filename": "https://www.python-office.com/course/docs/50-23-replace4filename.html",
+    "group_by_name": "https://www.python-office.com/course/docs/50-26-group_by_name.html",
     "add_line_by_type": "",
     "file_name_add_postfix": "https://blog.csdn.net/shangdafen_GD/article/details/129273450",
     "file_name_add_prefix": "https://blog.csdn.net/shangdafen_GD/article/details/129229642",
     "file_name_insert_content": "",
     "output_file_list_to_excel": "",
     "search_specify_type_file": "",
-    "group_by_name": "https://www.bilibili.com/video/BV1RX4y1o7HF",
     "get_files": "https://www.bilibili.com/video/BV1ua4y1M7ya",
 }
 
