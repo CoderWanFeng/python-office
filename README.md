@@ -129,11 +129,13 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 ## 🪙支持python-office
 
-### 💳捐赠
+o基础的朋友，想快速入门自动化办公，可以学习下面这套原创课程，👇。
 
-如果你觉得python-office不错，可以捐赠请维护者喝杯咖啡~，在此表示感谢^_^。
-
-[捐赠给项目](https://mp.weixin.qq.com/s/yMl9-06DSmjLTobyJNrJJw) 👈该项捐赠仅用于支持本项目发展使用
+<p align="center" id='30讲自动化办公-banner'>
+    <a target="_blank" href='https://www.python-office.com/video/video.html'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
+    </a>   
+</p>
 
 
 -------------------------------------------------------------------------------
@@ -158,11 +160,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 ## 📕拓展资料
 
-<p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='https://www.python-office.com/video/video.html'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
-    </a>   
-</p>
+
 
 <p align="center" id='100本电子书-banner'>
     <a target="_blank" href='https://mp.weixin.qq.com/s/6bM_3tROqdY_2WbBShzqyw'>
@@ -186,5 +184,11 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 <p align="center" id='25个学习资源-banner'>
     <a target="_blank" href='https://mp.weixin.qq.com/s/-mlsV7PFc27JElOTCskMsg'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fpy-25-source.jpg" width="100%"/>
+    </a>   
+</p>
+
+<p align="center" id='10讲机器人-banner'>
+    <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/course/10%E8%AE%B2%E6%9C%BA%E5%99%A8%E4%BA%BA-%E6%A8%AA.jpg" width="100%"/>
     </a>   
 </p>
