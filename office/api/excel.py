@@ -70,11 +70,11 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
 
 
 @instruction
-def excel2pdf(excel_path, pdf_path):
+def excel2pdf(excel_path, pdf_path,sheet_id: int or list or None = None):
     """
     https://blog.csdn.net/qq_57187936/article/details/125605967
     """
-    poexcel.excel2pdf(excel_path, pdf_path)
+    poexcel.excel2pdf(excel_path, pdf_path,sheet_id)
 
 @instruction
 def merge2excel(excel_path, output='merge2excel.xlsx'):
