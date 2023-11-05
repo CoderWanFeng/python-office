@@ -70,11 +70,17 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
 
 
 @instruction
-def excel2pdf(excel_path, pdf_path,sheet_id: int or list or None = None):
+def excel2pdf(excel_path, pdf_path, include: int or str or [int] or [str] or None = None,
+              exclude: int or str or [int] or [str] or None = None):
     """
     https://blog.csdn.net/qq_57187936/article/details/125605967
+
+    include: 要包括的工作表,可以为工作表名(str),工作表索引号(int,从1开始),或由上述两者组成的列表,默认为None,当为None时,不生效.
+    exclude: 要排除的工作表,与include参数类似.
+    详见官方文档:    https://docs.xlwings.org/en/latest/api/book.html#xlwings.Book.to_pdf
+
     """
-    poexcel.excel2pdf(excel_path, pdf_path,sheet_id)
+    poexcel.excel2pdf(excel_path, pdf_path, include, exclude)
 
 @instruction
 def merge2excel(excel_path, output='merge2excel.xlsx'):
