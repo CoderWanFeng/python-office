@@ -70,11 +70,17 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
 
 
 @instruction
-def excel2pdf(excel_path, pdf_path):
+def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
     """
-    https://blog.csdn.net/qq_57187936/article/details/125605967
+    将指定的Excel文件的指定工作表转换为PDF文件。
+    视频：https://www.bilibili.com/video/BV1A84y1N7or/
+    :param excel_path: str, Excel文件的路径。
+    :param pdf_path: str, 转换后生成的PDF文件的路径。
+    :param sheet_id: int, 工作表的索引，默认为0，表示第一个工作表。
+    :return: None
     """
-    poexcel.excel2pdf(excel_path, pdf_path)
+    poexcel.excel2pdf(excel_path, pdf_path, sheet_id)
+
 
 @instruction
 def merge2excel(excel_path, output='merge2excel.xlsx'):

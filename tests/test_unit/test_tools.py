@@ -26,3 +26,6 @@ class TestTools(unittest.TestCase):
     # def test_pwd4wifi(self):
     #     stub_stdin(self, '1\ny\n')  #依次输入
     #     pwd4wifi(pwd_list=['12345678', 'CoderWanFeng'])
+    def test_open_soft(self):
+        soft_path = r'D:\software\wechat\WeChat.exe'
+        wftools.open_soft(soft_path, num=2)
