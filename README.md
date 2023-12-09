@@ -92,6 +92,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 | search4file   | 文档搜索         | https://github.com/CoderWanFeng/search4file   | <img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>   |
 | poimage       | 图片处理         | https://github.com/CoderWanFeng/poimage       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>       |
 | poocr         | 识别功能，例如：发票识别 | https://github.com/CoderWanFeng/poocr         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/>         |
+| poai          | AI工具         | https://github.com/CoderWanFeng/poai         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poai.svg" alt="github star"/>         |
 | wftools       | 便捷小工具        | https://github.com/CoderWanFeng/wftools       | <img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>       |
 | povideo       | 视频处理         | https://github.com/CoderWanFeng/povideo       | <img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>       |
 | potime        | 时间工具         | https://github.com/CoderWanFeng/potime        | <img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>        |
