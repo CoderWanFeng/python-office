@@ -84,15 +84,16 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 
 | 模块            | 介绍           | 源码                                            | 教程                                                                                                |
 |---------------|--------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
-| poword        | word处理       | https://github.com/CoderWanFeng/poword        | <img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>        |
+| PyOfficeRobot | 微信机器人        | https://github.com/CoderWanFeng/PyOfficeRobot | <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/> |
+| poimage       | 图片处理         | https://github.com/CoderWanFeng/poimage       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>       |
+| poai          | AI工具         | https://github.com/CoderWanFeng/poai         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poai.svg" alt="github star"/>         |
 | poexcel       | excel处理      | https://github.com/CoderWanFeng/poexcel       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg" alt="github star"/>       |
-| popdf         | pdf处理        | https://github.com/CoderWanFeng/popdf         | <img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>         |
-| poppt         | ppt处理        | https://github.com/CoderWanFeng/poppt         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>         |
+| poword        | word处理       | https://github.com/CoderWanFeng/poword        | <img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>        |
+| poocr         | 识别功能，例如：发票识别 | https://github.com/CoderWanFeng/poocr         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/>         |
 | pofile        | 文件管理         | https://github.com/CoderWanFeng/pofile        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>        |
 | search4file   | 文档搜索         | https://github.com/CoderWanFeng/search4file   | <img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>   |
-| poimage       | 图片处理         | https://github.com/CoderWanFeng/poimage       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>       |
-| poocr         | 识别功能，例如：发票识别 | https://github.com/CoderWanFeng/poocr         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/>         |
-| poai          | AI工具         | https://github.com/CoderWanFeng/poai         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poai.svg" alt="github star"/>         |
+| popdf         | pdf处理        | https://github.com/CoderWanFeng/popdf         | <img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>         |
+| poppt         | ppt处理        | https://github.com/CoderWanFeng/poppt         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>         |
 | wftools       | 便捷小工具        | https://github.com/CoderWanFeng/wftools       | <img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>       |
 | povideo       | 视频处理         | https://github.com/CoderWanFeng/povideo       | <img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>       |
 | potime        | 时间工具         | https://github.com/CoderWanFeng/potime        | <img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>        |
@@ -100,7 +101,6 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 | pocode        | 代码管理         | https://github.com/CoderWanFeng/pocode        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pocode.svg" alt="github star"/>        |
 | pofinance     | 炒股工具         | https://github.com/CoderWanFeng/pofinance     | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofinance.svg" alt="github star"/>     |
 | pohan         | 中文编程         | https://github.com/CoderWanFeng/pohan         | <img src="https://img.shields.io/github/stars/CoderWanFeng/pohan.svg" alt="github star"/>         |
-| PyOfficeRobot | 微信机器人        | https://github.com/CoderWanFeng/PyOfficeRobot | <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/> |
 | porobot       | AI机器人        | https://github.com/CoderWanFeng/porobot       | <img src="https://img.shields.io/github/stars/CoderWanFeng/porobot.svg" alt="github star"/>       |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
