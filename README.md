@@ -95,13 +95,14 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 | popdf         | pdf处理        | https://github.com/CoderWanFeng/popdf         | <img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>         |
 | poppt         | ppt处理        | https://github.com/CoderWanFeng/poppt         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>         |
 | wftools       | 便捷小工具        | https://github.com/CoderWanFeng/wftools       | <img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>       |
+| pofinance     | 炒股工具         | https://github.com/CoderWanFeng/pofinance     | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofinance.svg" alt="github star"/>     |
+| pohan         | 中文编程         | https://github.com/CoderWanFeng/pohan         | <img src="https://img.shields.io/github/stars/CoderWanFeng/pohan.svg" alt="github star"/>         |
 | povideo       | 视频处理         | https://github.com/CoderWanFeng/povideo       | <img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>       |
 | potime        | 时间工具         | https://github.com/CoderWanFeng/potime        | <img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>        |
 | poprogress    | 进度条工具        | https://github.com/CoderWanFeng/poprogress    | <img src="https://img.shields.io/github/stars/CoderWanFeng/poprogress.svg" alt="github star"/>    |
 | pocode        | 代码管理         | https://github.com/CoderWanFeng/pocode        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pocode.svg" alt="github star"/>        |
-| pofinance     | 炒股工具         | https://github.com/CoderWanFeng/pofinance     | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofinance.svg" alt="github star"/>     |
-| pohan         | 中文编程         | https://github.com/CoderWanFeng/pohan         | <img src="https://img.shields.io/github/stars/CoderWanFeng/pohan.svg" alt="github star"/>         |
 | porobot       | AI机器人        | https://github.com/CoderWanFeng/porobot       | <img src="https://img.shields.io/github/stars/CoderWanFeng/porobot.svg" alt="github star"/>       |
+| poemail       | 自动发邮件        | https://github.com/CoderWanFeng/poemail       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poemail.svg" alt="github star"/>       |
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
