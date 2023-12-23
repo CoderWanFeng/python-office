@@ -1,6 +1,7 @@
 from pocode.api.color import random_color_print
 
 from office.api import excel
+from office.api import email
 from office.api import file
 from office.api import finance
 from office.api import image
