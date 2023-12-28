@@ -23,7 +23,7 @@ def image2gif():
 # todo：输出文件路径
 # @except_dec()
 @instruction
-def add_watermark(file, mark, output_path='./mark_img', color="#8B8B1B", size=50, opacity=0.02, space=200,
+def add_watermark(file, mark, output_path='./', color="#eaeaea", size=30, opacity=0.35, space=200,
                   angle=30):
     """
     给图片加水印
@@ -77,6 +77,7 @@ def decode_qrcode(qrcode_path):
     :return:
     """
     poimage.decode_qrcode(qrcode_path)
+
 
 @instruction
 def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):

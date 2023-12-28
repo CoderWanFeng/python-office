@@ -11,6 +11,8 @@
 # 每个文件的具体方法说明
 from functools import wraps
 
+from pocode.api.color import random_color_print
+
 from office.lib.conf.CONST import SPLIT_LINE
 
 email_dict = {}
@@ -29,7 +31,7 @@ image_dict = {
     "down4img": "https://www.python-office.com/course/docs/50-16-down4img.html",
     "txt2wordcloud": "https://www.python-office.com/course/docs/50-11-txt2wordcloud.html",
     "del_watermark": "https://www.python-office.com/course/docs/50-17-del_watermark.html",
-    "add_watermark": "https://www.bilibili.com/video/BV1Em4y1T7aH/",
+    "add_watermark": "https://www.python-office.com/course/docs/50-42-add_watermark.html",
     "decode_qrcode": "https://mp.weixin.qq.com/s/Z_RcTRYxUFpCQBGpShO0ig",
     "image2gif": "",
     "img2Cartoon": "https://mp.weixin.qq.com/s/5Eyk2j20jzSaVcr1DTsfvw",
@@ -120,9 +122,9 @@ def instruction(func):
         func_filename = os.path.basename(func.__code__.co_filename)  # 取出方法所在的文件名
         # 如果有这个文件，并且已经配置了方法名对应的说明链接，则打印出来
         if func_filename in instruction_file_dict.keys() and instruction_file_dict[func_filename][func.__name__]:
-            print(
+            random_color_print(
                 f'正在运行：office.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')
-            print(SPLIT_LINE)
+            random_color_print(SPLIT_LINE)
         instruction_res = func(*args, **kwargs)
         return instruction_res
 
@@ -138,7 +140,7 @@ from inspect import getmembers, isfunction
 def get_method_name(file):
     for method_name in getmembers(file):
         if isfunction(method_name[1]):
-            print(f'"{method_name[0]}":"",')
+            random_color_print(f'"{method_name[0]}":"",')
 
 
 from office import api
