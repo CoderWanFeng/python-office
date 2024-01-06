@@ -131,7 +131,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 ## 🪙支持python-office
 
-o基础的朋友，想快速入门自动化办公，可以学习下面这2套原创课程，👇。
+o基础的朋友，想快速入门自动化办公，还可以学习下面这几套原创课程，👇。
 
 <p align="center" id='30讲自动化办公-banner'>
     <a target="_blank" href='https://www.python-office.com/video/video.html'>
@@ -144,6 +144,10 @@ o基础的朋友，想快速入门自动化办公，可以学习下面这2套原
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/course/10%E8%AE%B2%E6%9C%BA%E5%99%A8%E4%BA%BA-%E6%A8%AA.jpg" width="100%"/>
     </a>   
 </p>
+
+
+![](https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poemail/poemail-course.jpg)
+
 
 -------------------------------------------------------------------------------
 
