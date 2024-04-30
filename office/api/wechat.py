@@ -6,6 +6,11 @@
 @代码日期    ：2023/8/22 23:28
 '''
 
+"""
+🤖10讲Python微信机器人，小白也能学会
+https://www.bilibili.com/video/BV1S84y1m7xd/
+"""
+
 import PyOfficeRobot
 
 from office.lib.decorator_utils.instruction_url import instruction
