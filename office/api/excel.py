@@ -6,6 +6,10 @@
 @代码日期    ：2023/8/22 23:28
 '''
 
+"""
+🌈Python自动化办公--Pandas玩转Excel（全30集）
+https://www.bilibili.com/video/BV1hk4y1C73S/
+"""
 import poexcel
 
 # @except_dec()
