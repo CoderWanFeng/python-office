@@ -134,7 +134,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 o基础的朋友，想快速入门自动化办公，还可以学习下面这几套原创课程，👇。
 
 <p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='https://www.python-office.com/video/video.html'>
+    <a target="_blank" href='https://www.python-office.com/course/50-python-office.html'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
     </a>   
 </p>
