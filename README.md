@@ -146,7 +146,20 @@ o基础的朋友，想快速入门自动化办公，还可以学习下面这几�
 </p>
 
 
-![](https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poemail/poemail-course.jpg)
+
+<p align="center" id='5讲OCR-banner'>
+    <a target="_blank" href='https://www.python-office.com/course-002/5-poocr/5-poocr.html'>
+    <img src="https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poocr%2F%E5%B0%81%E9%9D%A2-%E6%A8%AA.jpg" width="100%"/>
+    </a>   
+</p>
+
+
+
+<p align="center" id='6讲邮件自动化-banner'>
+    <a target="_blank" href='https://www.python-office.com/course-002/poemail/poemail.html'>
+    <img src="https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poemail/poemail-course.jpg" width="100%"/>
+    </a>   
+</p>
 
 
 -------------------------------------------------------------------------------
