@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>report.html</h1>
+    <p>Report generated on 17-Sep-2022 at 19:41:27 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.3"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.22622-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"Faker": "14.2.0", "html": "3.1.1", "metadata": "2.0.2"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.9.9</td></tr></table>
+    <h2>Summary</h2>
+    <p>30 tests ran in 21.53 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">29 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">2 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_merge2excel</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;tests.test_unit.test_excel.TestExcel testMethod=test_merge2excel&gt;<br/><br/>    def test_merge2excel(self):<br/>&gt;       merge2excel(dir_path=r&#x27;../../contributors/bulabean&#x27;, output_file=&#x27;test_merge2excel.xlsx&#x27;, )<br/><br/>test_unit\test_excel.py:24: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/>..\office\api\excel.py:30: in merge2excel<br/>    poexcel.merge2excel(dir_path, output_file)<br/>D:\software\python\py399\lib\site-packages\poexcel\api\excel.py:29: in merge2excel<br/>    mainExcel.merge2excel(dir_path, output_file)<br/>D:\software\python\py399\lib\site-packages\poexcel\core\ExcelType.py:72: in merge2excel<br/>    writer.save()<br/>D:\software\python\py399\lib\site-packages\pandas\io\excel\_openpyxl.py:81: in save<br/>    self.book.save(self.handles.handle)<br/>D:\software\python\py399\lib\site-packages\openpyxl\workbook\workbook.py:407: in save<br/>    save_workbook(self, filename)<br/>D:\software\python\py399\lib\site-packages\openpyxl\writer\excel.py:293: in save_workbook<br/>    writer.save()<br/>D:\software\python\py399\lib\site-packages\openpyxl\writer\excel.py:275: in save<br/>    self.write_data()<br/>D:\software\python\py399\lib\site-packages\openpyxl\writer\excel.py:89: in write_data<br/>    archive.writestr(ARC_WORKBOOK, writer.write())<br/>D:\software\python\py399\lib\site-packages\openpyxl\workbook\_writer.py:148: in write<br/>    self.write_views()<br/>D:\software\python\py399\lib\site-packages\openpyxl\workbook\_writer.py:135: in write_views<br/>    active = get_active_sheet(self.wb)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>wb = &lt;openpyxl.workbook.workbook.Workbook object at 0x000001AC69734FD0&gt;<br/><br/>    def get_active_sheet(wb):<br/>        &quot;&quot;&quot;<br/>        Return the index of the active sheet.<br/>        If the sheet set to active is hidden return the next visible sheet or None<br/>        &quot;&quot;&quot;<br/>        visible_sheets = [idx for idx, sheet in enumerate(wb._sheets) if sheet.sheet_state == &quot;visible&quot;]<br/>        if not visible_sheets:<br/>&gt;           raise IndexError(&quot;At least one sheet must be visible&quot;)<br/><span class="error">E           IndexError: At least one sheet must be visible</span><br/><br/>D:\software\python\py399\lib\site-packages\openpyxl\workbook\_writer.py:33: IndexError<br/> ------------------------------Captured stdout call------------------------------ <br/>您指定的Excel文件已经合并完毕，合并后的文件名是test_merge2excel.xlsx
+<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">tests/test_unit/test_tools.py::TestTools::test_lottery8ticket</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;D:\\workplace\\code\\github\\python-office\\tests\\test_unit\\test_tools.py&#x27;, 18, &#x27;Skipped: 交互式功能，暂时跳过&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">tests/test_unit/test_tools.py::TestTools::test_weather</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;D:\\workplace\\code\\github\\python-office\\tests\\test_unit\\test_tools.py&#x27;, 10, &#x27;Skipped: 交互式功能，暂时跳过&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_fake2excel</td>
+          <td class="col-duration">0.36</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>|████████████████████████████████████████| 1/1 [100%] in 0.0s (40.36/s) 
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_find_excel_data</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_merge2sheet</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>正在合并的文件有：[&#x27;fake2excel-1.xlsx&#x27;, &#x27;fake2excel.xlsx&#x27;, &#x27;merge2sheet.xlsx&#x27;]
+合并后的文件名是：merge2sheet
+合并后的sheet名是：Sheet1
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_sheet2excel</td>
+          <td class="col-duration">0.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>一共有2个sheet，名称分别为：[&#x27;Sheet1&#x27;, &#x27;Sheet2&#x27;]
+拆分开始
+拆分结束
+<br/> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/2 [00:00&lt;?, ?it/s]
+  0%|          | 0/2 [00:00&lt;?, ?it/s][A100%|██████████| 2/2 [00:00&lt;?, ?it/s]
+ 50%|█████     | 1/2 [00:00&lt;00:00,  8.61it/s]
+  0%|          | 0/2 [00:00&lt;?, ?it/s][A100%|██████████| 2/2 [00:00&lt;?, ?it/s]
+100%|██████████| 2/2 [00:00&lt;00:00, 11.68it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_excel.py::TestExcel::test_split_excel_by_column</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>文件读取异常：../../contributors/bulabean/sedemo.xls
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_file_name_add_postfix</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_file_name_add_prefix</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_file_name_insert_content</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_output_file_list_to_excel</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_replace4filename</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>|████████████████████████████████████████| 2/2 [100%] in 0.0s (39682.54/s) 
+当前目录下，共有2个文件/文件夹，本次运行共进行了0个文件/文件夹的重命名
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_file.py::TestFile::test_search_specify_type_file</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>开始查找
+add_img.pdf，D:\workplace\code\github\python-office\tests\test_files\pdf
+encrypt.pdf，D:\workplace\code\github\python-office\tests\test_files\pdf
+in.pdf，D:\workplace\code\github\python-office\tests\test_files\pdf
+merge2pdf.pdf，D:\workplace\code\github\python-office\tests\test_files\pdf
+查找完成，共找到4个文件
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_image.py::TestImage::test_add_watermark</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>output\0816.jpg 保存成功。
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_image.py::TestImage::test_down4img</td>
+          <td class="col-duration">0.62</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>下载成功，图片名称：down4img.jpg
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_add_img_water</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;00:00, 79.61it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_add_watermark</td>
+          <td class="col-duration">0.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>请输入需要添加水印的文件位置：请输入需要添加的水印内容：====================
+正在按要求，给你的PDF文件添加水印，请让程序飞一会儿~
+====================
+水印添加结束，请打开电脑上的这个位置，查看结果文件：D:\workplace\code\github\python-office\tests
+<br/> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;00:00, 123.90it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_add_watermark_by_parameters</td>
+          <td class="col-duration">0.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>====================
+正在按要求，给你的PDF文件添加水印，请让程序飞一会儿~
+====================
+水印添加结束，请打开电脑上的这个位置，查看结果文件：D:\workplace\code\github\python-office\tests
+<br/> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;00:00, 141.10it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_decrypt4pdf</td>
+          <td class="col-duration">0.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_encrypt4pdf</td>
+          <td class="col-duration">0.20</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_merge2pdf</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;?, ?it/s]
+  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;?, ?it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_pdf2docx</td>
+          <td class="col-duration">0.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_pdf.py::TestPDF::test_pdf2imgs</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>PDF开始转换，你可以加入交流群唠唠嗑：http://www.python4office.cn/wechat-group/
+PDF转换Image完成，图片在你指定的output文件夹./test_files/pdf，如果没有指定，默认是PDF同一个文件夹
+<br/> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/1 [00:00&lt;?, ?it/s]100%|██████████| 1/1 [00:00&lt;00:00, 45.73it/s]
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_ppt.py::TestPPT::test_ppt2pdf</td>
+          <td class="col-duration">10.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_ruiming.py::TestRuiming::test_change_label_in_xml</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_ruiming.py::TestRuiming::test_screen_unmarked_image</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>筛选完成
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_ruiming.py::TestRuiming::test_screen_without_label_json_file</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>正在筛选无标签内容的json文件
+筛选完成
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_search_by_content.py::TestSBC::test_search_by_content</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_tools.py::TestTools::test_create_article</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.经过上述讨论, 既然如此, 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 培根曾经提到过, 合理安排时间，就等于节约时间。这句话看似简单，但其中的阴郁不禁让人深思. 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 生日快乐, 到底应该如何实现. 生日快乐, 到底应该如何实现. 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 在这种困难的抉择下, 本人思来想去, 寝食难安.从这个角度来看, 而这些并不是完全重要, 更加重要的问题是, 生日快乐, 发生了会如何, 不发生又会如何. 从这个角度来看, 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 王阳明曾经说过, 故立志者，为学之心也；为学者，立志之事也。这不禁令我深思. 歌德说过一句富有哲理的话, 没有人事先了解自己到底有多大的力量，直到他试过以后才知道。这似乎解答了我的疑惑. 我认为, 佚名说过一句著名的话, 感激每一个新的挑战，因为它会锻造你的意志和品格。这句话看似简单，但其中的阴郁不禁让人深思. 生日快乐, 发生了会如何, 不发生又会如何. 一般来说, 我们不得不面对一个非常尴尬的事实, 那就是, 苏轼说过一句富有哲理的话, 古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。带着这句话, 我们还要更加慎重的审视这个问题: 这样看来, 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 杰纳勒尔·乔治·S·巴顿曾经提到过, 接受挑战，就可以享受胜利的喜悦。这句话把我们带到了一个新的维度去思考这个问题: 达尔文曾经说过, 敢于浪费哪怕一个钟头时间的人，说明他还不懂得珍惜生命的全部价值。带着这句话, 我们还要更加慎重的审视这个问题: 经过上述讨论, 这样看来, . 
+    在这种困难的抉择下, 本人思来想去, 寝食难安.总结的来说, 一般来讲, 我们都必须务必慎重的考虑考虑. 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 这是不可避免的. 我们不妨可以这样来想: 一般来说, 这是不可避免的. 拉罗什福科在不经意间这样说过, 我们唯一不会改正的缺点是软弱。这不禁令我深思. 罗曼·罗兰说过一句富有哲理的话, 只有把抱怨环境的心情，化为上进的力量，才是成功的保证。这句话语虽然很短, 但令我浮想联翩. 现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 那么, 既然如此, 每个人都不得不面对这些问题.  在面对这种问题时, 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.问题的关键究竟为何? 塞涅卡在不经意间这样说过, 真正的人生，只有在经过艰难卓绝的斗争之后才能实现。这启发了我. 生日快乐因何而发生?带着这些问题, 我们来审视一下生日快乐. 一般来讲, 我们都必须务必慎重的考虑考虑. 现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 要想清楚, 生日快乐, 到底是一种怎么样的存在. 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 既然如何, 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.在这种不可避免的冲突下，我们必须解决这个问题. 在这种不可避免的冲突下，我们必须解决这个问题. 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 卡莱尔曾经提到过, 过去一切时代的精华尽在书中。这句话语虽然很短, 但令我浮想联翩. 我们都知道, 只要有意义, 那么就必须慎重考虑.这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 生日快乐因何而发生?卡耐基说过一句富有哲理的话, 我们若已接受最坏的，就再没有什么损失。这句话语虽然很短, 但令我浮想联翩. 那么, 带着这些问题, 我们来审视一下生日快乐. 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.. 
+    问题的关键究竟为何? 每个人都不得不面对这些问题.  在面对这种问题时, 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 我认为, 所谓生日快乐, 关键是生日快乐需要如何写. 既然如何, 总结的来说, 我们都知道, 只要有意义, 那么就必须慎重考虑.了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.我们不得不面对一个非常尴尬的事实, 那就是, 美华纳说过一句富有哲理的话, 勿问成功的秘诀为何，且尽全力做你应该做的事吧。带着这句话, 我们还要更加慎重的审视这个问题: 所谓生日快乐, 关键是生日快乐需要如何写. 而这些并不是完全重要, 更加重要的问题是, 莎士比亚曾经说过，那脑袋里的智慧，就像打火石里的火花一样，不去打它是不肯出来的。我希望诸位也能好好地体会这句话. 
+我们不妨可以这样来想: 要想清楚, 生日快乐, 到底是一种怎么样的存在. 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 带着这些问题, 我们来审视一下生日快乐. 这样看来, 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 我认为, 总结的来说, 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 一般来讲, 我们都必须务必慎重的考虑考虑. 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 经过上述讨论, 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 带着这些问题, 我们来审视一下生日快乐. 生日快乐, 发生了会如何, 不发生又会如何. 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.要想清楚, 生日快乐, 到底是一种怎么样的存在. 那么, 现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 从这个角度来看, 了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.生日快乐, 到底应该如何实现. 要想清楚, 生日快乐, 到底是一种怎么样的存在. 我们都知道, 只要有意义, 那么就必须慎重考虑.在这种困难的抉择下, 本人思来想去, 寝食难安.了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.既然如何, 莎士比亚在不经意间这样说过, 人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话, 我们还要更加慎重的审视这个问题: 我认为, 总结的来说, 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 戴尔·卡耐基在不经意间这样说过，多数人都拥有自己不了解的能力和机会，都有可能做到未曾梦想的事情。这句话看似简单，但其中的阴郁不禁让人深思. 生日快乐因何而发生?一般来说, 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 迈克尔·F·斯特利说过一句著名的话, 最具挑战性的挑战莫过于提升自我。带着这句话, 我们还要更加慎重的审视这个问题: 在这种不可避免的冲突下，我们必须解决这个问题. . 
+    从这个角度来看, 这是不可避免的. 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 我们不妨可以这样来想: 每个人都不得不面对这些问题.  在面对这种问题时, 生日快乐, 到底应该如何实现. 问题的关键究竟为何? 达·芬奇说过一句富有哲理的话, 大胆和坚定的决心能够抵得上武器的精良。我希望诸位也能好好地体会这句话. 既然如此, 我们不得不面对一个非常尴尬的事实, 那就是, 所谓生日快乐, 关键是生日快乐需要如何写. 一般来讲, 我们都必须务必慎重的考虑考虑. 而这些并不是完全重要, 更加重要的问题是, 在这种困难的抉择下, 本人思来想去, 寝食难安.生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 经过上述讨论, 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 富勒曾经在不经意间这样说过, 苦难磨炼一些人，也毁灭另一些人。这不禁令我深思. 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 裴斯泰洛齐曾经提到过, 今天应做的事没有做，明天再早也是耽误了。这句话把我们带到了一个新的维度去思考这个问题: 这是不可避免的. 那么, 而这些并不是完全重要, 更加重要的问题是, 每个人都不得不面对这些问题.  在面对这种问题时, 拿破仑·希尔曾经提到过, 不要等待，时机永远不会恰到好处。这不禁令我深思. 这样看来, 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.我们不得不面对一个非常尴尬的事实, 那就是, 洛克在不经意间这样说过, 学到很多东西的诀窍，就是一下子不要学很多。这启发了我. 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 在这种不可避免的冲突下，我们必须解决这个问题. 既然如此, 生日快乐, 发生了会如何, 不发生又会如何. 生日快乐因何而发生?一般来说, 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.问题的关键究竟为何? 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 我们不妨可以这样来想: 我们都知道, 只要有意义, 那么就必须慎重考虑.培根在不经意间这样说过, 要知道对好事的称颂过于夸大，也会招来人们的反感轻蔑和嫉妒。这句话语虽然很短, 但令我浮想联翩. 既然如何, . 
+    所谓生日快乐, 关键是生日快乐需要如何写. 我们都知道, 只要有意义, 那么就必须慎重考虑.. 
+    既然如何, 要想清楚, 生日快乐, 到底是一种怎么样的存在. 罗素·贝克曾经提到过, 一个人即使已登上顶峰，也仍要自强不息。这启发了我. 
+现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 我认为, 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 德谟克利特说过一句富有哲理的话, 节制使快乐增加并使享受加强。这句话语虽然很短, 但令我浮想联翩. 笛卡儿曾经提到过, 读一切好书，就是和许多高尚的人谈话。这句话看似简单，但其中的阴郁不禁让人深思. . 
+    康德在不经意间这样说过, 既然我已经踏上这条道路，那么，任何东西都不应妨碍我沿着这条路走下去。这句话看似简单，但其中的阴郁不禁让人深思. 我们不妨可以这样来想: 现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 生日快乐, 发生了会如何, 不发生又会如何. 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 问题的关键究竟为何? 经过上述讨论, 每个人都不得不面对这些问题.  在面对这种问题时, . 
+    既然如此, 既然如何, 从这个角度来看, 总结的来说, 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 一般来讲, 我们都必须务必慎重的考虑考虑. 所谓生日快乐, 关键是生日快乐需要如何写. 我们都知道, 只要有意义, 那么就必须慎重考虑.每个人都不得不面对这些问题.  在面对这种问题时, 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.这样看来, 在这种不可避免的冲突下，我们必须解决这个问题. . 
+    韩非说过一句富有哲理的话, 内外相应，言行相称。这句话看似简单，但其中的阴郁不禁让人深思. 带着这些问题, 我们来审视一下生日快乐. 我们不妨可以这样来想: 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 那么, 生日快乐, 到底应该如何实现. 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 这样看来, 在这种困难的抉择下, 本人思来想去, 寝食难安.生日快乐因何而发生?而这些并不是完全重要, 更加重要的问题是, 生日快乐, 到底应该如何实现. 在这种不可避免的冲突下，我们必须解决这个问题. 了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.这是不可避免的. 这是不可避免的. 我认为, 问题的关键究竟为何? 从这个角度来看, 要想清楚, 生日快乐, 到底是一种怎么样的存在. 总结的来说, 所谓生日快乐, 关键是生日快乐需要如何写. 邓拓曾经提到过, 越是没有本领的就越加自命不凡。这句话语虽然很短, 但令我浮想联翩. 冯学峰曾经提到过, 当一个人用工作去迎接光明，光明很快就会来照耀着他。这句话看似简单，但其中的阴郁不禁让人深思. 而这些并不是完全重要, 更加重要的问题是, 带着这些问题, 我们来审视一下生日快乐. 我们不得不面对一个非常尴尬的事实, 那就是, 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.我们不得不面对一个非常尴尬的事实, 那就是, 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 生日快乐因何而发生?可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 培根曾经说过, 阅读使人充实，会谈使人敏捷，写作使人精确。这句话看似简单，但其中的阴郁不禁让人深思. 一般来说, 生日快乐, 发生了会如何, 不发生又会如何. 一般来说, . 
+    拉罗什夫科说过一句富有哲理的话, 取得成就时坚持不懈，要比遭到失败时顽强不屈更重要。带着这句话, 我们还要更加慎重的审视这个问题: 洛克说过一句著名的话, 学到很多东西的诀窍，就是一下子不要学很多。这不禁令我深思. 经过上述讨论, . 
+    了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.既然如此, 在这种困难的抉择下, 本人思来想去, 寝食难安.那么, 一般来讲, 我们都必须务必慎重的考虑考虑. 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.培根说过，深窥自己的心，而后发觉一切的奇迹在你自己。这不禁令我深思. 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 卡耐基说过一句富有哲理的话, 一个不注意小事情的人，永远不会成就大事业。这句话看似简单，但其中的阴郁不禁让人深思. . 
+    可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 我认为, 从这个角度来看, 这样看来, 了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.在这种困难的抉择下, 本人思来想去, 寝食难安.
+对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 歌德曾经曾经提到过，流水在碰到底处时才会释放活力。这不禁令我深思. 所谓生日快乐, 关键是生日快乐需要如何写. 现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.既然如何, 塞涅卡曾经说过, 生命如同寓言，其价值不在与长短，而在与内容。这句话看似简单，但其中的阴郁不禁让人深思. 既然如何, . 
+    这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.而这些并不是完全重要, 更加重要的问题是, 经过上述讨论, 既然如此, 我们一般认为, 抓住了问题的关键, 其他一切则会迎刃而解.西班牙说过一句著名的话, 自己的鞋子，自己知道紧在哪里。这句话语虽然很短, 但令我浮想联翩. 了解清楚生日快乐到底是一种怎么样的存在, 是解决一切问题的关键.那么, . 
+    总结的来说, 在这种困难的抉择下, 本人思来想去, 寝食难安.生日快乐, 到底应该如何实现. 爱尔兰说过一句富有哲理的话, 越是无能的人，越喜欢挑剔别人的错儿。这句话语虽然很短, 但令我浮想联翩. 伏尔泰在不经意间这样说过, 不经巨大的困难，不会有伟大的事业。这似乎解答了我的疑惑. 我们不得不面对一个非常尴尬的事实, 那就是, 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 一般来说, 苏轼说过一句富有哲理的话, 古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。我希望诸位也能好好地体会这句话. 总结的来说, 问题的关键究竟为何? 所谓生日快乐, 关键是生日快乐需要如何写. 要想清楚, 生日快乐, 到底是一种怎么样的存在. 生日快乐, 发生了会如何, 不发生又会如何. 每个人都不得不面对这些问题.  在面对这种问题时, 带着这些问题, 我们来审视一下生日快乐. 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 奥普拉·温弗瑞曾经提到过, 你相信什么，你就成为什么样的人。这句话把我们带到了一个新的维度去思考这个问题: 我们不妨可以这样来想: 黑格尔说过一句富有哲理的话, 只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我. 莎士比亚在不经意间这样说过, 本来无望的事，大胆尝试，往往能成功。我希望诸位也能好好地体会这句话. 我们都知道, 只要有意义, 那么就必须慎重考虑.一般来讲, 我们都必须务必慎重的考虑考虑. 雷锋曾经说过, 自己活着，就是为了使别人过得更美好。这启发了我. 我们不妨可以这样来想: 一般来说, 生活中, 若生日快乐出现了, 我们就不得不考虑它出现了的事实. 生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 生日快乐因何而发生?爱迪生曾经说过, 失败也是我需要的，它和成功对我一样有价值。这句话语虽然很短, 但令我浮想联翩. 生日快乐因何而发生?斯宾诺莎说过一句富有哲理的话, 最大的骄傲于最大的自卑都表示心灵的最软弱无力。我希望诸位也能好好地体会这句话. 我们不得不面对一个非常尴尬的事实, 那就是, 这是不可避免的. 塞涅卡说过一句富有哲理的话, 真正的人生，只有在经过艰难卓绝的斗争之后才能实现。带着这句话, 我们还要更加慎重的审视这个问题: 那么, . 
+    现在, 解决生日快乐的问题, 是非常非常重要的. 所以, 乌申斯基在不经意间这样说过, 学习是劳动，是充满思想的劳动。这句话把我们带到了一个新的维度去思考这个问题: . 
+    生日快乐似乎是一种巧合，但如果我们从一个更大的角度看待问题，这似乎是一种不可避免的事实. 既然如此, 生日快乐, 发生了会如何, 不发生又会如何. 本人也是经过了深思熟虑,在每个日日夜夜思考这个问题. 左拉曾经说过, 生活的道路一旦选定，就要勇敢地走到底，决不回头。这启发了我. 吉姆·罗恩曾经说过, 要么你主宰生活，要么你被生活主宰。这启发了我. 生日快乐的发生, 到底需要如何做到, 不生日快乐的发生, 又会如何产生. 生日快乐, 到底应该如何实现. 这种事实对本人来说意义重大, 相信对这个世界也是有一定意义的.在这种不可避免的冲突下，我们必须解决这个问题. 布尔沃说过一句富有哲理的话, 要掌握书，莫被书掌握；要为生而读，莫为读而生。这启发了我. 我认为, 这样看来, 要想清楚, 生日快乐, 到底是一种怎么样的存在. 在这种不可避免的冲突下，我们必须解决这个问题. 这是不可避免的. 可是，即使是这样，生日快乐的出现仍然代表了一定的意义. 一般来讲, 我们都必须务必慎重的考虑考虑. 对我个人而言，生日快乐不仅仅是一个重大的事件，还可能会改变我的人生. 带着这些问题, 我们来审视一下生日快乐. 经过上述讨论, . 
+    就我个人来说, 生日快乐对我的意义, 不能不说非常重大. 从这个角度来看, 我们都知道, 只要有意义, 那么就必须慎重考虑.
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_tools.py::TestTools::test_url2ip</td>
+          <td class="col-duration">0.24</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>【www.python-office.com】 这个网址对应的IP地址是：114.112.221.170
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_unit/test_wechat.py::TestWechat::test_send_file</td>
+          <td class="col-duration">5.28</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>开始：发送文件
+结束：发送文件
+<br/></div></td></tr></tbody></table></body></html>

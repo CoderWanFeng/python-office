@@ -1,0 +1,14 @@
+
+# demo
+script/
+.idea/
+.gitee/
+node_modules
+.cache
+.temp
+venv/
+build/
+dist/
+*.egg-info
+**/qtpy/**
+__pycache__
