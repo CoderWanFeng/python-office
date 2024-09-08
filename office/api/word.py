@@ -11,7 +11,7 @@ import poword
 from office.lib.decorator_utils.instruction_url import instruction
 
 
-@instruction
+# @instruction
 def docx2pdf(path: str, output_path: str = None):
     """
     word转pdf
@@ -27,21 +27,21 @@ def docx2pdf(path: str, output_path: str = None):
     poword.docx2pdf(path, output_path)
 
 
-@instruction
+# @instruction
 def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
     poword.merge4docx(input_path, output_path, new_word_name)
 
 
-@instruction
-def doc2docx(input_path: str, output_path: str = r'./'):
-    poword.doc2docx(input_path, output_path)
+# @instruction
+def doc2docx(input_path: str, output_path: str = r'./',output_name: str = None):
+    poword.doc2docx(input_path, output_path,output_name)
 
 
-@instruction
-def docx2doc(input_path: str, output_path: str = r'./'):
-    poword.docx2doc(input_path, output_path)
+# @instruction
+def docx2doc(input_path: str, output_path: str = r'./',output_name: str = None):
+    poword.docx2doc(input_path, output_path,output_name)
 
-@instruction
+# @instruction
 def docx4imgs(word_path, img_path):
     """
     从Word里提取图片

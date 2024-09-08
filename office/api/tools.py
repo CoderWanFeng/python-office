@@ -7,7 +7,7 @@ from office.lib.decorator_utils.instruction_url import instruction
 # wftools = wftools()
 
 # @except_dec()
-@instruction
+# # @instruction
 def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
     """
     将内容从一种语言翻译为另一种语言。
@@ -26,7 +26,7 @@ def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
 
 
 # @except_dec()
-@instruction
+# @instruction
 def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
     """
     生成二维码图片。
@@ -44,7 +44,7 @@ def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
 
 
 # @except_dec()
-@instruction
+# @instruction
 def passwordtools(len=8):
     """
     生成一个指定长度的密码。
@@ -59,7 +59,7 @@ def passwordtools(len=8):
 
 
 # @except_dec()
-@instruction
+# @instruction
 def weather():
     wftools.weather()
 
@@ -67,21 +67,21 @@ def weather():
 
 # 通过url，获取ip地址
 # # @except_dec()
-@instruction
+# @instruction
 def url2ip(url: str) -> str:
     return wftools.url2ip(url)
 
 
 # 通过url，获取ip地址
 # @except_dec()
-@instruction
+# @instruction
 def lottery8ticket():
     wftools.lottery8ticket()
 
 
 
 # @except_dec()
-@instruction
+# @instruction
 def create_article(theme, line_num=200):
     """
     创建文章
@@ -99,13 +99,13 @@ def create_article(theme, line_num=200):
 
 
 # @except_dec()
-@instruction
+# @instruction
 def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
     wftools.pwd4wifi(len_pwd, pwd_list)
 
 
 # 测试网速
-@instruction
+# @instruction
 def net_speed_test():
     """
     网络速度测试函数

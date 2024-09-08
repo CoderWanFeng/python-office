@@ -21,7 +21,7 @@ def except_dec(msg='异常原因'):
                 print(
                     f'>>>异常时间：\t{datetime.now()}\n>>>异常函数：\t{func.__name__}\n>>>{msg}：\t{e}')
 
-                print('别慌，你的异常也许【群友也遇到过】 → http://t.cn/A65MiFvH')
+                print('别慌，你的异常也许【群友也遇到过】 → http://www.python4office.cn/wechat-group/')
                 print('当然，也可以免费【加入星球，向我提问】 → http://t.cn/A6qeZpVt')
 
 

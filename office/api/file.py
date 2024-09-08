@@ -14,7 +14,7 @@ import search4file
 from office.lib.decorator_utils.instruction_url import instruction
 
 
-@instruction
+# @instruction
 def replace4filename(path: str, del_content, replace_content='', dir_rename: bool = True,
                      file_rename: bool = True, suffix=None):
     """
@@ -32,7 +32,7 @@ def replace4filename(path: str, del_content, replace_content='', dir_rename: boo
 
 # todo：输入文件路径
 # @except_dec()
-@instruction
+# @instruction
 def search_by_content(search_path: str, content: str):
     """
     通过内容搜索文件
@@ -48,48 +48,48 @@ def search_by_content(search_path: str, content: str):
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
-@instruction
+# @instruction
 def file_name_insert_content(file_path: str, insert_position: int, insert_content: str):
     pofile.file_name_insert_content(file_path, insert_position, insert_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
-@instruction
+# @instruction
 def file_name_add_prefix(file_path: str, prefix_content: str):
     pofile.file_name_add_prefix(file_path, prefix_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 # @except_dec()
-@instruction
+# @instruction
 def file_name_add_postfix(file_path, postfix_content):
     pofile.file_name_add_postfix(file_path, postfix_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/74
 # @except_dec()
-@instruction
+# @instruction
 def search_specify_type_file(file_path, file_type):
     pofile.search_specify_type_file(file_path, file_type)
 
 
 # @except_dec()
-@instruction
+# @instruction
 def output_file_list_to_excel(dir_path):
     pofile.output_file_list_to_excel(dir_path)
 
 
-@instruction
+# @instruction
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
     pofile.add_line_by_type(add_line_dict, file_path, file_type, output_path)
 
 
-@instruction
+# @instruction
 def group_by_name(path, output_path=None, del_old_file=None):
     pofile.group_by_name(path, output_path, del_old_file)
 
 
-@instruction
+# @instruction
 def get_files(path: str, name: str = '', suffix: str = None, sub: bool = False, level: int = 0) -> list:
     return pofile.get_files(path, name, suffix, sub, level)

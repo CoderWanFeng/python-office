@@ -6,19 +6,19 @@ import povideo
 from office.lib.decorator_utils.instruction_url import instruction
 
 
-@instruction
+# @instruction
 def video2mp3(path, mp3_name=None, output_path=r'./'):
     povideo.video2mp3(path, mp3_name, output_path)
 
 
 # 从音频里，提取文字
 # 本地语音文件不能大于5MB
-@instruction
+# @instruction
 def audio2txt(audio_path, appid, secret_id, secret_key):
     povideo.audio2txt(audio_path, appid, secret_id, secret_key)
 
 
-@instruction
+# @instruction
 def mark2video(video_path, output_path=r'./', output_name=r'mark2video.mp4', mark_str: str = "www.python-office.com",
                font_size=28,
                font_type='Arial', font_color='white'):
@@ -35,7 +35,7 @@ def mark2video(video_path, output_path=r'./', output_name=r'mark2video.mp4', mar
     """
     povideo.mark2video(video_path, output_path, output_name, mark_str, font_size, font_type, font_color)
 
-@instruction
+# @instruction
 def txt2mp3(content='程序员晚枫', file=None, mp3=r'./程序员晚枫.mp3', speak=True):
     """
     文本转语音

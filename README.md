@@ -211,8 +211,4 @@ o基础的朋友，想快速入门自动化办公，还可以学习下面这几�
     </a>   
 </p>
 
-<p align="center" id='10讲机器人-banner'>
-    <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/course/10%E8%AE%B2%E6%9C%BA%E5%99%A8%E4%BA%BA-%E6%A8%AA.jpg" width="100%"/>
-    </a>   
-</p>
+

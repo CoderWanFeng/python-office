@@ -15,14 +15,14 @@ def compress_image(input_file: str, output_file: str, quality: int):
     poimage.compress_image(input_file, output_file, quality)
 
 
-@instruction
+# @instruction
 def image2gif():
     poimage.image2gif()
 
 
 # todo：输出文件路径
 # @except_dec()
-@instruction
+# @instruction
 def add_watermark(file, mark, output_path='./', color="#eaeaea", size=30, opacity=0.35, space=200,
                   angle=30):
     """
@@ -46,30 +46,30 @@ def add_watermark(file, mark, output_path='./', color="#eaeaea", size=30, opacit
 
 # todo：输入文件路径
 # @except_dec()
-@instruction
+# @instruction
 def img2Cartoon(path, client_api='OVALewIvPyLmiNITnceIhrYf', client_secret='rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN'):
     poimage.img2Cartoon(path, client_api, client_secret)
     # mainImage.img2Cartoon(path, client_api, client_secret)
 
 
 # @except_dec()
-@instruction
+# @instruction
 def down4img(url, output_path='.', output_name='down4img', type='jpg'):
     poimage.down4img(url, output_path, output_name, type)
     # mainImage.down4img(url, output_name, type)
 
 
-@instruction
+# @instruction
 def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
     poimage.txt2wordcloud(filename, color, result_file)
 
 
-@instruction
+# @instruction
 def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
     poimage.pencil4img(input_img, output_path, output_name)
 
 
-@instruction
+# @instruction
 def decode_qrcode(qrcode_path):
     """
     解析二维码
@@ -79,6 +79,6 @@ def decode_qrcode(qrcode_path):
     poimage.decode_qrcode(qrcode_path)
 
 
-@instruction
+# @instruction
 def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):
     poimage.del_watermark(input_image, output_image)

@@ -15,12 +15,12 @@ import poppt
 from office.lib.decorator_utils.instruction_url import instruction
 
 
-@instruction
+# @instruction
 def ppt2pdf(path: str, output_path=r'./'):
     poppt.ppt2pdf(path, output_path)
 
 
-@instruction
+# @instruction
 def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     """
     PPT转图片，可以转为长图
@@ -37,6 +37,6 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     """
     poppt.ppt2img(input_path, output_path, merge)
 
-@instruction
+# @instruction
 def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.pptx'):
     poppt.merge4ppt(input_path, output_path, output_name)
