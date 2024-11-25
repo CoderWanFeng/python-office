@@ -24,7 +24,7 @@ class TestExcel(unittest.TestCase):
         merge2excel(dir_path=r'../../contributors/bulabean', output_file='test_merge2excel.xlsx', )
 
     def test_find_excel_data(self):
-        find_excel_data(search_key='刘家站垦殖场', target_dir=r'../../contributors/bulabean')
+        find_excel_data(search_key='程序员晚枫', target_dir=r'../../contributors/bulabean')
 
     # def test_merge2sheet(self):
     #     """
