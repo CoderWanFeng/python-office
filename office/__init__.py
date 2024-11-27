@@ -13,8 +13,5 @@ from office.api import wechat
 from office.api import word
 # 以下是beta版本
 from office.api.testApi import ruiming
-from office.lib.conf.CONST import SPLIT_LINE
-
-
 
 logger.info('github : https://github.com/CoderWanFeng/python-office')

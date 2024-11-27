@@ -1,7 +1,7 @@
 import wftools
-from office.lib.conf.CONST import SPLIT_LINE
 from pocode.api.color import random_color_print
 
+from office.lib.conf.CONST import SPLIT_LINE
 
 
 # from office.core.ToolsType import wftools
@@ -117,7 +117,7 @@ def net_speed_test():
     wftools.net_speed_test()
 
 
-def help():
+def course():
     random_color_print(SPLIT_LINE)
     random_color_print('【python-office库】，功能持续更新中')
     random_color_print('使用有问题 or 提交你的功能需求 or 参与项目开发')
