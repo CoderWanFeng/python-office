@@ -6,9 +6,9 @@
 @代码日期    ：2023/7/20 0:08 
 @本段代码的视频说明     ：
 '''
-
+# 给图片加水印
 import office
 
 office.image.add_watermark(file='./test_files/add_watermark/程序员晚枫-2.jpg',
-                           mark='公众号：程序员晚枫',
+                           mark='程序员晚枫',
                            output_path=r'./test_files/add_watermark/mark_img')

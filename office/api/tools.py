@@ -1,6 +1,7 @@
 import wftools
+from pocode.api.color import random_color_print
 
-from office.lib.decorator_utils.instruction_url import instruction
+from office.lib.conf.CONST import SPLIT_LINE
 
 
 # from office.core.ToolsType import wftools
@@ -24,7 +25,6 @@ def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
     return wftools.transtools(to_lang=to_lang, content=content, from_lang=from_lang)
 
 
-
 # @except_dec()
 # @instruction
 def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
@@ -40,7 +40,6 @@ def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
 
     """
     wftools.qrcodetools(url, output)
-
 
 
 # @except_dec()
@@ -64,7 +63,6 @@ def weather():
     wftools.weather()
 
 
-
 # 通过url，获取ip地址
 # # @except_dec()
 # @instruction
@@ -77,7 +75,6 @@ def url2ip(url: str) -> str:
 # @instruction
 def lottery8ticket():
     wftools.lottery8ticket()
-
 
 
 # @except_dec()
@@ -95,7 +92,6 @@ def create_article(theme, line_num=200):
 
     """
     wftools.create_article(theme, line_num)
-
 
 
 # @except_dec()
@@ -120,3 +116,12 @@ def net_speed_test():
     """
     wftools.net_speed_test()
 
+
+def course():
+    random_color_print(SPLIT_LINE)
+    random_color_print('【python-office库】，功能持续更新中')
+    random_color_print('使用有问题 or 提交你的功能需求 or 参与项目开发')
+    random_color_print('1、给小白的【50讲Python自动化办公】：https://www.python-office.com/course/50-python-office.html')
+    random_color_print('2、请+【项目交流群】：http://www.python4office.cn/wechat-group/')
+    random_color_print('3、本开源项目的【源代码】：https://github.com/CoderWanFeng/python-office')
+    random_color_print(SPLIT_LINE)

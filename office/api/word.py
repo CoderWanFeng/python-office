@@ -33,13 +33,13 @@ def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4do
 
 
 # @instruction
-def doc2docx(input_path: str, output_path: str = r'./'):
-    poword.doc2docx(input_path, output_path)
+def doc2docx(input_path: str, output_path: str = r'./',output_name: str = None):
+    poword.doc2docx(input_path, output_path,output_name)
 
 
 # @instruction
-def docx2doc(input_path: str, output_path: str = r'./'):
-    poword.docx2doc(input_path, output_path)
+def docx2doc(input_path: str, output_path: str = r'./',output_name: str = None):
+    poword.docx2doc(input_path, output_path,output_name)
 
 # @instruction
 def docx4imgs(word_path, img_path):
