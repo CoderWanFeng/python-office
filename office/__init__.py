@@ -1,5 +1,3 @@
-from loguru import logger
-
 from office.api import email
 from office.api import excel
 from office.api import file
@@ -14,4 +12,4 @@ from office.api import word
 # 以下是beta版本
 from office.api.testApi import ruiming
 
-logger.info('github : https://github.com/CoderWanFeng/python-office')
+# logger.info('github : https://github.com/CoderWanFeng/python-office')
