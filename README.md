@@ -21,6 +21,9 @@
 	<a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
 		<img src='https://gitcode.com/CoderWanFeng1/python-office/star/badge.svg?theme=dark' alt='gitcode star'/>
 	</a>	
+	<a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
+<img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads">
+</a>
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
@@ -181,8 +184,6 @@ o基础的朋友，想快速入门自动化办公，还可以学习下面这几�
 </p>
 
 ## 📕拓展资料
-
-
 
 <p align="center" id='100本电子书-banner'>
     <a target="_blank" href='https://mp.weixin.qq.com/s/6bM_3tROqdY_2WbBShzqyw'>
