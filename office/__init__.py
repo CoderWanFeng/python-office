@@ -11,5 +11,3 @@ from office.api import wechat
 from office.api import word
 # 以下是beta版本
 from office.api.testApi import ruiming
-
-# logger.info('github : https://github.com/CoderWanFeng/python-office')
