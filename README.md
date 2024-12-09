@@ -49,7 +49,7 @@ Python 知识，做到了真正的开箱即用。
     </a>   
 </p>
 
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](https://mp.weixin.qq.com/s/8x7c9qiAneTsDJq9JnWLgA)
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](http://www.python4office.cn/wechat-qrcode/)
 
 ### 🍺特点
 
