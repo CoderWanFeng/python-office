@@ -47,7 +47,7 @@ def split4pdf(input_file, output_file=r'./output_path/split_pdf.pdf', from_page=
     popdf.split4pdf(input_file, output_file, from_page, to_page)
 
 
-def encrypt4pdf(input_file, password, output_file):
+def encrypt4pdf(input_file, output_file, password):
     """
     加密pdf
     文档：http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/5-encrypt4pdf/
@@ -82,6 +82,15 @@ def merge2pdf(input_file_list, output_file):
     演示代码：
     """
     popdf.merge2pdf(input_file_list, output_file)
+
+
+def del4pdf(input_file, output_file, page_nums):
+    """
+    删除pdf页面
+    文档：http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/9-del4pdf
+    演示代码：
+    """
+    popdf.del4pdf(input_file, output_file, page_nums)
 
 
 # @except_dec()
