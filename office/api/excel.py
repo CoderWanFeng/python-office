@@ -87,5 +87,5 @@ def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
 
 
 # @instruction
-def merge2excel(excel_path, output='merge2excel.xlsx'):
-    poexcel.merge2excel(excel_path, output)
+# def merge2excel(excel_path, output='merge2excel.xlsx'):
+#     poexcel.merge2excel(excel_path, output)
