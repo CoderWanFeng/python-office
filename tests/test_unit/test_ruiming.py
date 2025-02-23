@@ -5,7 +5,7 @@ from office.api.testApi.ruiming import screen_unmarked_image, change_label_in_xm
 
 class TestRuiming(unittest.TestCase):
     def test_screen_unmarked_image(self):
-        screen_unmarked_image(dir_path='./test_files/ruiming/screen_unmarked_image')
+        screen_unmarked_image(dir_path='../test_files/ruiming/screen_unmarked_image')
         # 预期结果：2.jpg被移动到“未标注图片”目录下
 
     def test_change_label_in_xml(self):

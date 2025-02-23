@@ -37,6 +37,7 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     """
     poppt.ppt2img(input_path, output_path, merge)
 
+
 # @instruction
 def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.pptx'):
     poppt.merge4ppt(input_path, output_path, output_name)

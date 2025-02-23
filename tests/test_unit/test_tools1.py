@@ -13,7 +13,8 @@ class TestTools(unittest.TestCase):
         weather()
 
     def test_url2ip(self):
-        url2ip('www.python-office.com')
+        ip_str = url2ip('www.python-office.com')
+        self.assertEqual(ip_str, "2408:877a:2000:f::11")
 
     @pytest.mark.skip(reason="交互式功能，暂时跳过")
     def test_lottery8ticket(self):
