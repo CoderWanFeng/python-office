@@ -22,7 +22,7 @@ def docx2pdf(path: str, output_path: str = None):
     Returns:
 
     """
-    if output_path == None:
+    if output_path is None:
         output_path = path
     poword.docx2pdf(path, output_path)
 
@@ -33,13 +33,14 @@ def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4do
 
 
 # @instruction
-def doc2docx(input_path: str, output_path: str = r'./',output_name: str = None):
-    poword.doc2docx(input_path, output_path,output_name)
+def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None):
+    poword.doc2docx(input_path, output_path, output_name)
 
 
 # @instruction
-def docx2doc(input_path: str, output_path: str = r'./',output_name: str = None):
-    poword.docx2doc(input_path, output_path,output_name)
+def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None):
+    poword.docx2doc(input_path, output_path, output_name)
+
 
 # @instruction
 def docx4imgs(word_path, img_path):
