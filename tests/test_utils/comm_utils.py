@@ -1,10 +1,10 @@
-import pandas as pd
+"""
+    此类为测试用例的通用工具类
+"""
 import os
 import re
-
-"""
-    此类为excel测试用例的工具类
-"""
+import pandas as pd
+import xml.etree.ElementTree as ET
 
 
 def file_exist(file_path):
@@ -15,6 +15,83 @@ def file_exist(file_path):
         file_path: 文件路径  str
     """
     return os.path.exists(file_path)
+
+
+def is_chinese_chars_regex(s):
+    """
+    字符串是否是全中文
+
+    Args:
+        s: 字符串 str
+    """
+    pattern = re.compile(r'[\u4e00-\u9fff]')
+    matches = pattern.findall(s)
+    return len(matches) > 1
+
+
+def delete_file(file_path):
+    """
+    删除文件
+
+    Args:
+        file_path: 需要删除的文件路径  str
+    """
+    os.remove(file_path)
+
+
+def get_file_context(file_path):
+    """
+    获取文件中的内容
+
+    Args:
+        file_path: 文件路径  str
+    """
+    res = ""
+    with open(file_path, 'r', encoding='utf-8') as file:
+        res = file.read()
+    return res
+
+
+def touch_file(file_path):
+    """
+    创建文件
+
+    Args:
+        file_path: 文件路径  str
+    """
+    with open(file_path, 'w'):
+        pass
+
+
+def get_all_name_values(file_path):
+    """
+    获取所有xml中name的值
+
+    Args:
+        file_path: 文件路径  str
+    """
+    xml_data = get_file_context(file_path)
+    root = ET.fromstring(xml_data)
+    res_list = []
+    for obj in root.findall('object'):
+        res_list.append(obj.find('name').text)
+    return res_list
+
+
+def get_file_by_suffix(dir_path, suffix):
+    """
+    获取目录下固定后缀的文件名
+
+    Args:
+        dir_path: 目录名称 str
+        suffix: 后缀名称 str
+    """
+    xlsx_files = []
+    file_names = os.listdir(dir_path)
+    for file_name in file_names:
+        if file_name.endswith(suffix):
+            xlsx_files.append(file_name)
+    return xlsx_files
 
 
 def get_colum_content(file_path, column_index, sheet_name='Sheet1'):
@@ -31,18 +108,6 @@ def get_colum_content(file_path, column_index, sheet_name='Sheet1'):
     return headers[column_index]
 
 
-def is_chinese_chars_regex(s):
-    """
-    字符串是否是全中文
-
-    Args:
-        s: 字符串 str
-    """
-    pattern = re.compile(r'[\u4e00-\u9fff]')
-    matches = pattern.findall(s)
-    return len(matches) > 1
-
-
 def get_content(file_path, row_index, col_index, sheet_name='Sheet1'):
     """
     获取excel文件具体行列的值
@@ -56,16 +121,6 @@ def get_content(file_path, row_index, col_index, sheet_name='Sheet1'):
     df = pd.read_excel(file_path, sheet_name)
     first_value = df.iloc[row_index, col_index]
     return first_value
-
-
-def delete_file(file_path):
-    """
-    删除文件
-
-    Args:
-        file_path: 需要删除的文件路径  str
-    """
-    os.remove(file_path)
 
 
 def get_file_by_suffix(dir_path, suffix):
@@ -129,4 +184,3 @@ def get_latest_file(dir_path):
                 latest_ctime = ctime
                 latest_file = file_path
     return latest_file
-

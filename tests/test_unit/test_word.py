@@ -1,7 +1,7 @@
 import unittest
 
 from office.api.word import *
-from test_excel_utils import *
+from tests.test_utils.comm_utils import *
 
 
 class TestWechat(unittest.TestCase):
@@ -13,9 +13,11 @@ class TestWechat(unittest.TestCase):
                  output_name='abcd.docx')
         # 检查文件是否存在
         self.assertTrue(file_exist('../test_output/word/abcd.docx'))
+        delete_file('../test_output/word/abcd.docx')
 
     def test_docx2doc(self):
         docx2doc(input_path=r'../test_output/word/abcd.docx', output_path=r'../test_output/word',
                  output_name='abce')
         # 检查文件是否存在
         self.assertTrue(file_exist('../test_output/word/abce.doc'))
+        delete_file('../test_output/word/abce.doc')
