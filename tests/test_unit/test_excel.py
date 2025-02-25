@@ -1,5 +1,5 @@
 import unittest
-from test_excel_utils import *
+from tests.test_utils.comm_utils import *
 from office.api.excel import *
 
 

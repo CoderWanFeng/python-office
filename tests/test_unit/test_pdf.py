@@ -55,6 +55,7 @@ class TestPDF(unittest.TestCase):
             path=r'./test_files/popdf/encrypt.popdf',
             password='123456'
         )
+
     def test_pdf2imgs(self):
         pdf2imgs(
              pdf_path =r'./test_files/popdf/in.popdf',
