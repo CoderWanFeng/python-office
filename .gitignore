@@ -9,6 +9,7 @@ node_modules
 venv/
 build/
 dist/
+.history/
 *.egg-info
 **/qtpy/**
 __pycache__
