@@ -21,6 +21,9 @@
 	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
 		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
+    <a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
+		<img src='https://gitcode.com/CoderWanFeng1/python-office/star/badge.svg?theme=dark' alt='gitcode star'/>
+	</a>
  <a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
 <img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads">
 </a>
@@ -64,9 +67,30 @@ Python 知识，做到了真正的开箱即用。
 
 ### 🍊pip 自动下载&更新
 
+
+> 注意，本仓库支持的Python版本有**3.10和3.11**，目前不支持3.12和最新的3.13，原因是部分本项目依赖的第三方库没有支持，我们解决不了。
+
 ```
 pip install  python-office -U
 ```
+
+### 💻Demo
+
+本库里所有功能，都可以通过1行代码使用，对于小白来说，不需要修改代码，只需要修改参数。
+
+例如：
+
+```python
+
+import office
+
+# word文档批量转换成pdf
+office.word.docx2pdf(path=r'D:\程序员晚枫的文件夹\word.docx', output_path=r'D:\out')  # 程序就可以自动将该目录下的所有word文档，自动转换成pdf文档了
+
+# 图片添加水印
+office.image.add_watermark(file='你的图片目录', mark='你的水印文字')
+```
+
 
 -------------------------------------------------------------------------------
 
