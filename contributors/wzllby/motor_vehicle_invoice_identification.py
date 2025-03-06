@@ -156,8 +156,29 @@ class MotorVehicleInvoiceIdentificaion():
             if process_file_path:
                 shutil.rmtree(process_file_path)
 
+    def main_exec_single(self, origin_zip_file, result_excel_file):
+        if not os.path.exists(origin_zip_file):
+            print("需要识别的文件不存在！")
+            return
+        # 删除上次生成的excel文件
+        if os.path.exists(result_excel_file):
+            os.remove(result_excel_file)
+        # 参数为秘钥文件,在官网控制台 https://console.cloud.tencent.com/cam/capi 点击新建密钥,然后点击下载CSV文件,不需要可以注释
+        secrets = self.get_tencent_secret("SecretKey.csv")
+        if secrets is None or len(secrets) != 2:
+            print("获取密钥有误,请检查密钥文件！")
+            return
+        # 解析文件获取信息 第二个和第三个参数可直接在网站复制
+        result_info = self.get_img_info(origin_zip_file, secrets[0], secrets[1])
+        df = pd.DataFrame([result_info])
+        # 写入excel
+        df.to_excel(result_excel_file, index=False)
+
 
 if __name__ == '__main__':
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(base_dir)
     mon = MotorVehicleInvoiceIdentificaion()
     # 第一个参数为zip文件的路径  第二个文件为生成的excel的文件路径
     mon.main_exec("file/样例.zip", "./result/output_result.xlsx")
+    mon.main_exec_single("file/样例.jpg", "./result/output.xlsx")
