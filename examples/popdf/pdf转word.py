@@ -18,5 +18,5 @@ office.pdf.pdf2docx(file_path=r'D:\pdf\程序员晚枫.pdf',
 # 尊贵的Mac和Linux用户
 # pip install popdf
 # import popdf
-# popdf.pdf2docx(file_path=r'D:\workplace\code\github\python-office\demo\popdf\test_files\pdf2docx\程序员晚枫.pdf',
+# popdf.pdf2docx(file_path=r'D:\workplace\code\github\python-office\examples\popdf\test_files\pdf2docx\程序员晚枫.pdf',
 #                output_path=r'./test_files/pdf2docx/output')
