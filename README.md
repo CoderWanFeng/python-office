@@ -5,7 +5,7 @@
 </p>
 <p align="center">
     <a target="_blank" href='https://pypi.org/project/python-office/'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/github-nav.jpg" alt="github license"/>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/logo/github-nav.jpg" alt="github license"/>
     </a>   
 </p>
 <p align="center">
@@ -50,7 +50,7 @@ Python 知识，做到了真正的开箱即用。
 
 <p align="center" id='开源交流群-banner'>
     <a target="_blank" href='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg" width="100%"/>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/group/python-office-qr.jpg" width="100%"/>
     </a>   
 </p>
 
@@ -173,7 +173,7 @@ o基础的朋友，想快速入门自动化办公，还可以学习下面这几�
 
 <p align="center" id='个人微信-banner'>
     <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg" width="100%"/>
+    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/wechat/qr-code.jpg" width="100%"/>
     </a>   
 </p>
 
