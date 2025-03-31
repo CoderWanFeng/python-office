@@ -71,7 +71,7 @@ def add_text_watermark(input_file, point, text='python-office',
     在PDF文档中添加文本水印。
     文档：http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/7-add_watermark
     """
-    popdf.add_watermark(input_file, point, text,
+    popdf.add_text_watermark(input_file, point, text,
                         output_file, fontname, fontsize, color)
 
 
