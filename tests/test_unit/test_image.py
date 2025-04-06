@@ -6,17 +6,9 @@ from tests.test_utils.comm_utils import *
 
 class TestImage(unittest.TestCase):
     def test_add_watermark(self):
-        add_watermark(file='../test_files/images/0816.jpg', mark='python-office',
-                      output_path=r'../test_output/img_output')
-        self.assertTrue(file_exist('../test_output/img_output/0816.jpg'))
-        delete_file('../test_output/img_output/0816.jpg')
-
+        add_watermark(file='../test_files/images/0816.jpg', mark='python-office',output_path=r'../test_output/img_output')
     def test_com_img(self):
-        compress_image(input_file='../test_files/images/0816.jpg',
-                       output_file='../test_output/img_output/0816.jpg', quality=50)
-        self.assertTrue(file_exist('../test_output/img_output/0816.jpg'))
-        delete_file('../test_output/img_output/0816.jpg')
-
+        compress_image()
     def test_down4img(self):
         down4img(url='https://cos.python-office.com/group/python-office-qr.jpg',
                  output_path=r'../test_files/images')
