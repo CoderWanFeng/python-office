@@ -18,7 +18,7 @@ class TestImage(unittest.TestCase):
         delete_file('../test_output/img_output/0816.jpg')
 
     def test_down4img(self):
-        down4img(url='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/group/python-office-qr.jpg',
+        down4img(url='https://cos.python-office.com/group/python-office-qr.jpg',
                  output_path=r'../test_files/images')
         self.assertTrue(file_exist('../test_files/images/down4img.jpg'))
         delete_file('../test_files/images/down4img.jpg')
