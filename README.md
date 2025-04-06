@@ -5,7 +5,7 @@
 </p>
 <p align="center">
     <a target="_blank" href='https://pypi.org/project/python-office/'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/github-nav.jpg" alt="github license"/>
+    <img src="https://cos.python-office.com/logo/github-nav.jpg" alt="github license"/>
     </a>   
 </p>
 <p align="center">
@@ -14,20 +14,22 @@
 <p align="center">
 	👉 <a target="_blank" href="http://www.python4office.cn/wechat-group/">本开源项目的交流群</a> 👈
 </p>
-<p align="center" name="gitee">
-  <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
-    </a>
-	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
-		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
-	</a>
-    <a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
+
+
+
+<p align="center" name="gitcode">
+	<a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
 		<img src='https://gitcode.com/CoderWanFeng1/python-office/star/badge.svg?theme=dark' alt='gitcode star'/>
-	</a>
- <a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
+	</a>	
+	<a target="_blank" href='https://gitcode.com/CoderWanFeng1/python-office'>
 <img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads">
 </a>
-
+  	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
+	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
+  </a>
+    	<a href="http://www.python4office.cn/wechat-group/">
+	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
+  </a>
 
 </p>
 
@@ -35,9 +37,8 @@
 
 
 
--------------------------------------------------------------------------------
 
-[**🌎English Documentation**](README-EN.md)
+
 
 -------------------------------------------------------------------------------
 
@@ -45,14 +46,13 @@
 
 Python-office 是一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习
 Python 知识，做到了真正的开箱即用。
+> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](http://www.python4office.cn/wechat-qrcode/)
 
 <p align="center" id='开源交流群-banner'>
-    <a target="_blank" href='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg" width="100%"/>
+    <a target="_blank" href='https://cos.python-office.com/group/free-group.jpg'>
+    <img src="https://cos.python-office.com/group/python-office-qr.jpg" width="100%"/>
     </a>   
 </p>
-
-> 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](http://www.python4office.cn/wechat-qrcode/)
 
 ### 🍺特点
 
@@ -67,30 +67,9 @@ Python 知识，做到了真正的开箱即用。
 
 ### 🍊pip 自动下载&更新
 
-
-> 注意，本仓库支持的Python版本有**3.10和3.11**，目前不支持3.12和最新的3.13，原因是部分本项目依赖的第三方库没有支持，我们解决不了。
-
 ```
-pip install  python-office -U
+pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 ```
-
-### 💻Demo
-
-本库里所有功能，都可以通过1行代码使用，对于小白来说，不需要修改代码，只需要修改参数。
-
-例如：
-
-```python
-
-import office
-
-# word文档批量转换成pdf
-office.word.docx2pdf(path=r'D:\程序员晚枫的文件夹\word.docx', output_path=r'D:\out')  # 程序就可以自动将该目录下的所有word文档，自动转换成pdf文档了
-
-# 图片添加水印
-office.image.add_watermark(file='你的图片目录', mark='你的水印文字')
-```
-
 
 -------------------------------------------------------------------------------
 
@@ -98,34 +77,34 @@ office.image.add_watermark(file='你的图片目录', mark='你的水印文字')
 
 [📘官网：https://www.python-office.com/](https://www.python-office.com/)
 
-全部功能 的 视频教程👉[传送门](https://www.python-office.com/course/50-python-office.html)
+全部功能 的 视频教程👉[传送门](https://www.python-office.com/video/video.html)
 
 ## 🛠️包含组件
 
 很多朋友发现``python-office``这个库，下载很慢很大，是因为它集成了以下这些库，你可以去挑自己需要功能，单独下载对应的第三方库。
 > 以下所有独立的子库，也都在持续地开发和维护中。
 
-| 模块            | 介绍                                                             | 源码                                            | 教程                                                                                                |
-|---------------|----------------------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
-| PyOfficeRobot | 微信机器人                                                          | https://github.com/CoderWanFeng/PyOfficeRobot | <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg" alt="github star"/> |
-| poimage       | 图片处理                                                           | https://github.com/CoderWanFeng/poimage       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poimage.svg" alt="github star"/>       |
-| poai          | AI工具                                                           | https://github.com/CoderWanFeng/poai          | <img src="https://img.shields.io/github/stars/CoderWanFeng/poai.svg" alt="github star"/>          |
-| poexcel       | excel处理                                                        | https://github.com/CoderWanFeng/poexcel       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poexcel.svg" alt="github star"/>       |
-| poword        | word处理                                                         | https://github.com/CoderWanFeng/poword        | <img src="https://img.shields.io/github/stars/CoderWanFeng/poword.svg" alt="github star"/>        |
-| poocr         | 识别文字，例如：[发票批量识别](https://www.bilibili.com/video/BV13J4m1s7L7/) | https://github.com/CoderWanFeng/poocr         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poocr.svg" alt="github star"/>         |
-| pofile        | 文件管理                                                           | https://github.com/CoderWanFeng/pofile        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofile.svg" alt="github star"/>        |
-| search4file   | 文档搜索                                                           | https://github.com/CoderWanFeng/search4file   | <img src="https://img.shields.io/github/stars/CoderWanFeng/search4file.svg" alt="github star"/>   |
-| popdf         | pdf处理                                                          | https://github.com/CoderWanFeng/popdf         | <img src="https://img.shields.io/github/stars/CoderWanFeng/popdf.svg" alt="github star"/>         |
-| poppt         | ppt处理                                                          | https://github.com/CoderWanFeng/poppt         | <img src="https://img.shields.io/github/stars/CoderWanFeng/poppt.svg" alt="github star"/>         |
-| wftools       | 便捷小工具                                                          | https://github.com/CoderWanFeng/wftools       | <img src="https://img.shields.io/github/stars/CoderWanFeng/wftools.svg" alt="github star"/>       |
-| pofinance     | 炒股工具                                                           | https://github.com/CoderWanFeng/pofinance     | <img src="https://img.shields.io/github/stars/CoderWanFeng/pofinance.svg" alt="github star"/>     |
-| pohan         | 中文编程                                                           | https://github.com/CoderWanFeng/pohan         | <img src="https://img.shields.io/github/stars/CoderWanFeng/pohan.svg" alt="github star"/>         |
-| povideo       | 视频处理                                                           | https://github.com/CoderWanFeng/povideo       | <img src="https://img.shields.io/github/stars/CoderWanFeng/povideo.svg" alt="github star"/>       |
-| potime        | 时间工具                                                           | https://github.com/CoderWanFeng/potime        | <img src="https://img.shields.io/github/stars/CoderWanFeng/potime.svg" alt="github star"/>        |
-| poprogress    | 进度条工具                                                          | https://github.com/CoderWanFeng/poprogress    | <img src="https://img.shields.io/github/stars/CoderWanFeng/poprogress.svg" alt="github star"/>    |
-| pocode        | 代码管理                                                           | https://github.com/CoderWanFeng/pocode        | <img src="https://img.shields.io/github/stars/CoderWanFeng/pocode.svg" alt="github star"/>        |
-| porobot       | AI机器人                                                          | https://github.com/CoderWanFeng/porobot       | <img src="https://img.shields.io/github/stars/CoderWanFeng/porobot.svg" alt="github star"/>       |
-| poemail       | 自动发邮件                                                          | https://github.com/CoderWanFeng/poemail       | <img src="https://img.shields.io/github/stars/CoderWanFeng/poemail.svg" alt="github star"/>       |
+| 模块            | 介绍           | 
+|---------------|--------------|
+| PyOfficeRobot | 微信机器人        | 
+| poimage       | 图片处理         | 
+| poai          | AI工具         | 
+| poexcel       | excel处理      | 
+| poword        | word处理       | 
+| poocr         | 识别功能，例如：发票识别 | 
+| pofile        | 文件管理         | 
+| search4file   | 文档搜索         | 
+| popdf         | pdf处理        | 
+| poppt         | ppt处理        | 
+| wftools       | 便捷小工具        | 
+| pofinance     | 炒股工具         | 
+| pohan         | 中文编程         | 
+| povideo       | 视频处理         | 
+| potime        | 时间工具         | 
+| poprogress    | 进度条工具        |
+| pocode        | 代码管理         | 
+| porobot       | AI机器人        | 
+| poemail       | 自动发邮件        | 
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
@@ -138,7 +117,7 @@ office.image.add_watermark(file='你的图片目录', mark='你的水印文字')
 
 python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr（pull request）放在一个单独的文件夹下：
 
-- 在[contributors](https://github.com/CoderWanFeng/python-office/tree/master/contributors)文件夹中，用自己的GitHub名字建一个文件夹；
+- 在[contributors](https://gitcode.com/CoderWanFeng1/python-office/tree/main/contributors)文件夹中，用自己的GitHub名字建一个文件夹；
 - 把自己的所有代码，都提交到这个自己的文件夹里；
 - 不要改其它任何文件夹里的代码！不要改别人的代码！
 - 对别人的代码有疑问，可以直接提issue。
@@ -147,8 +126,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 提交问题反馈时，请务必填写和python-office代码本身有关的问题，不进行有关python学习，甚至是个人练习的知识答疑和讨论。
 
-- [Gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
-- [Github issue](https://github.com/CoderWanFeng/python-office/issues)
+- [GitCode issue](https://gitcode.com/CoderWanFeng1/python-office/issues)
 
 -------------------------------------------------------------------------------
 
@@ -195,7 +173,7 @@ o基础的朋友，想快速入门自动化办公，还可以学习下面这几�
 
 <p align="center" id='个人微信-banner'>
     <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
-    <img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/qr-code.jpg" width="100%"/>
+    <img src="https://cos.python-office.com/wechat/qr-code.jpg" width="100%"/>
     </a>   
 </p>
 
