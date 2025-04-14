@@ -11,3 +11,4 @@ dist/
 *.egg-info
 **/qtpy/**
 __pycache__
+.DS_Store
