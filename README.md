@@ -49,7 +49,7 @@ Python 知识，做到了真正的开箱即用。
 > 功能持续更新中，提交你的功能需求/参与项目开发，联系👉[开发者微信](http://www.python4office.cn/wechat-qrcode/)
 
 <p align="center" id='开源交流群-banner'>
-    <a target="_blank" href='https://cos.python-office.com/group/free-group.jpg'>
+    <a target="_blank" href='https://cos.python-office.com/group%2Ffree-group.jpg'>
     <img src="https://cos.python-office.com/group/python-office-qr.jpg" width="100%"/>
     </a>   
 </p>
