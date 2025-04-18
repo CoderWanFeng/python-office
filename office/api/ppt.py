@@ -1,26 +1,14 @@
 # -*- coding:utf-8 -*-
 
-#############################################
-# File Name: poppt.py
-# 公众号/B站/小红书/抖音/知乎: 程序员晚枫
-# Mail: 1957875073@qq.com
-# Created Time:  2022-4-25 10:17:34
-# Description: 有关 poppt 的自动化操作
-#############################################
 
 import poppt
 
+
 # todo：输入文件路径
-# @except_dec()
-from office.lib.decorator_utils.instruction_url import instruction
-
-
-# @instruction
 def ppt2pdf(path: str, output_path=r'./'):
     poppt.ppt2pdf(path, output_path)
 
 
-# @instruction
 def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     """
     PPT转图片，可以转为长图
@@ -38,6 +26,5 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     poppt.ppt2img(input_path, output_path, merge)
 
 
-# @instruction
 def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.pptx'):
     poppt.merge4ppt(input_path, output_path, output_name)

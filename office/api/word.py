@@ -1,17 +1,8 @@
 # -*- coding: UTF-8 -*-
-'''
-@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：CoderWanFeng
-@读者群     ：http://www.python4office.cn/wechat-group/
-@学习网站      ：https://www.python-office.com
-@代码日期    ：2023/8/22 23:28
-'''
 
 import poword
 
-from office.lib.decorator_utils.instruction_url import instruction
 
-
-# @instruction
 def docx2pdf(path: str, output_path: str = None):
     """
     word转pdf
@@ -27,22 +18,18 @@ def docx2pdf(path: str, output_path: str = None):
     poword.docx2pdf(path, output_path)
 
 
-# @instruction
 def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
     poword.merge4docx(input_path, output_path, new_word_name)
 
 
-# @instruction
 def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None):
     poword.doc2docx(input_path, output_path, output_name)
 
 
-# @instruction
 def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None):
     poword.docx2doc(input_path, output_path, output_name)
 
 
-# @instruction
 def docx4imgs(word_path, img_path):
     """
     从Word里提取图片

@@ -4,11 +4,7 @@ from pocode.api.color import random_color_print
 from office.lib.conf.CONST import SPLIT_LINE
 
 
-# from office.core.ToolsType import wftools
-# wftools = wftools()
-
-# @except_dec()
-# # @instruction
+#
 def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
     """
     将内容从一种语言翻译为另一种语言。
@@ -25,8 +21,6 @@ def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
     return wftools.transtools(to_lang=to_lang, content=content, from_lang=from_lang)
 
 
-# @except_dec()
-# @instruction
 def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
     """
     生成二维码图片。
@@ -42,8 +36,6 @@ def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
     wftools.qrcodetools(url, output)
 
 
-# @except_dec()
-# @instruction
 def passwordtools(len=8):
     """
     生成一个指定长度的密码。
@@ -57,28 +49,22 @@ def passwordtools(len=8):
     return wftools.passwordtools(len)
 
 
-# @except_dec()
-# @instruction
 def weather():
     wftools.weather()
 
 
 # 通过url，获取ip地址
-# # @except_dec()
-# @instruction
+# 
 def url2ip(url: str) -> str:
     return wftools.url2ip(url)
 
 
 # 通过url，获取ip地址
-# @except_dec()
-# @instruction
+
 def lottery8ticket():
     wftools.lottery8ticket()
 
 
-# @except_dec()
-# @instruction
 def create_article(theme, line_num=200):
     """
     创建文章
@@ -94,14 +80,12 @@ def create_article(theme, line_num=200):
     wftools.create_article(theme, line_num)
 
 
-# @except_dec()
-# @instruction
 def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
     wftools.pwd4wifi(len_pwd, pwd_list)
 
 
 # 测试网速
-# @instruction
+
 def net_speed_test():
     """
     网络速度测试函数

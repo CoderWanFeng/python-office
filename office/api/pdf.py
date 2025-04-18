@@ -1,18 +1,11 @@
 # -*- coding: UTF-8 -*-
-'''
-@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：CoderWanFeng
-@读者群     ：http://www.python4office.cn/wechat-group/
-@学习网站      ：https://www.python-office.com
-@代码日期    ：2023/8/22 23:28
-'''
 
-# 给pdf加水印-无参数
-# @except_dec()
+
+
 import popdf
 
 
 # todo：输入文件路径
-# @except_dec()
 def pdf2docx(input_file, output_path='.'):
     """
     PDF转Word
@@ -21,7 +14,6 @@ def pdf2docx(input_file, output_path='.'):
     popdf.pdf2docx(input_file, output_path)
 
 
-# @except_dec()
 def pdf2imgs(input_file, output_path, merge=False):
     """
     pdf转图片
@@ -93,20 +85,17 @@ def del4pdf(input_file, output_file, page_nums):
     popdf.del4pdf(input_file, output_file, page_nums)
 
 
-# @except_dec()
-# @instruction
 def add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out):
     popdf.add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out)
 
 
-# @instruction
+
 def add_watermark() -> None:
     popdf.add_watermark()
 
 
 # 给pdf加水印-有参数
-# @except_dec()
-# @instruction
+
 def add_mark(pdf_file, mark_str, output_path=None, output_file_name=None) -> None:
     """
     必填参数：
@@ -119,8 +108,7 @@ def add_mark(pdf_file, mark_str, output_path=None, output_file_name=None) -> Non
 
 
 # 给pdf加水印-有参数
-# @except_dec()
-# @instruction
+
 def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_file_name=None) -> None:
     """
     给PDF添加水印
