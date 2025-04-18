@@ -11,7 +11,7 @@
 import office
 
 office.image.down4img(
-    url='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/icon2.jpg',
+    url='https://cos.python-office.com/icon2.jpg',
     output_name='./test_files/下载图片/B站：程序员晚枫',
     type='jpg')
 # 参数说明：
