@@ -4,7 +4,6 @@ import openpyxl
 import datetime
 
 
-#
 
 def generate_xls(filepath: str, worksheet_data: dict):
     datetime_str = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
