@@ -86,15 +86,17 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 
 | 模块            | 介绍           | 
 |---------------|--------------|
-| PyOfficeRobot | 微信机器人        | 
-| poimage       | 图片处理         | 
+| PyOfficeRobot | 微信机器人        |
+| poocr         | 识别功能，例如：发票识别 | 
+| popdf         | pdf处理        | 
+| poemail       | 自动发邮件        | 
+| porobot       | AI机器人        | 
+| poimage       | 图片处理         |
 | poai          | AI工具         | 
 | poexcel       | excel处理      | 
 | poword        | word处理       | 
-| poocr         | 识别功能，例如：发票识别 | 
 | pofile        | 文件管理         | 
 | search4file   | 文档搜索         | 
-| popdf         | pdf处理        | 
 | poppt         | ppt处理        | 
 | wftools       | 便捷小工具        | 
 | pofinance     | 炒股工具         | 
@@ -103,8 +105,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 | potime        | 时间工具         | 
 | poprogress    | 进度条工具        |
 | pocode        | 代码管理         | 
-| porobot       | AI机器人        | 
-| poemail       | 自动发邮件        | 
+
 
 可以根据需求对每个模块单独引入，也可以通过`import office`方式引入所有模块。
 
@@ -127,6 +128,8 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 提交问题反馈时，请务必填写和python-office代码本身有关的问题，不进行有关python学习，甚至是个人练习的知识答疑和讨论。
 
 - [GitCode issue](https://gitcode.com/CoderWanFeng1/python-office/issues)
+- [Gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
+- [Github issue](https://github.com/CoderWanFeng/python-office/issues)
 
 -------------------------------------------------------------------------------
 

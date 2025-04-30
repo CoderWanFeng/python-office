@@ -277,7 +277,7 @@
 </p>
 
 <p align="center" id='django网站-banner'>
-    <a target="_blank" href='http://gk.link/a/10Wl1'>
+    <a target="_blank" href='https://www.bilibili.com/video/BV1zi4y1t7YU'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2FPython%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91.jpg" width="100%"/>
     </a>   
 </p>

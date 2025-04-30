@@ -174,7 +174,7 @@ Buy us a cup of coffee if you appreciate python-office. Thank you sincerely.
 [donate to this project](https://gitee.com/CoderWanFeng/python-office)
 👈 the donation will be used to support the development of this project
 
-[donate to @CoderWanFeng](http://python4office.cn/images/wechat-pay.jpg)
+[donate to @CoderWanFeng](http://www.python4office.cn/wechat-qrcode/)
 
 
 -------------------------------------------------------------------------------
