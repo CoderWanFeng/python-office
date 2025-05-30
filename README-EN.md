@@ -1,6 +1,6 @@
 <p align="center">
     <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://cos.python-office.com/logo/github-nav.jpg" alt="github license"/>
+    <img src="https://raw.gitcode.com/CoderWanFeng1/website/raw/main/github-nav.jpg" alt="github license"/>
     </a>   
 </p>
 <p align="center">
