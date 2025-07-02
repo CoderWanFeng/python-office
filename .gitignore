@@ -1,4 +1,3 @@
-
 script/
 .idea/
 .gitee/
@@ -9,5 +8,4 @@ venv/
 build/
 dist/
 *.egg-info
-**/qtpy/**
 __pycache__
