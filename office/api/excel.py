@@ -4,7 +4,6 @@
 import poexcel
 
 
-
 def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_CN'):
     """
     自动创建Excel，并且模拟数据
@@ -36,7 +35,6 @@ def sheet2excel(file_path, output_path='./'):
     poexcel.sheet2excel(file_path, output_path)
 
 
-
 def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: str = 'merge2sheet'):
     poexcel.merge2sheet(dir_path, output_sheet_name, output_excel_name)
 
@@ -55,7 +53,6 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
     poexcel.split_excel_by_column(filepath, column, worksheet_name)
 
 
-
 def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
     """
     将指定的Excel文件的指定工作表转换为PDF文件。
@@ -66,7 +63,6 @@ def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
     :return: None
     """
     poexcel.excel2pdf(excel_path, pdf_path, sheet_id)
-
 
 # def merge2excel(excel_path, output='merge2excel.xlsx'):
 #     poexcel.merge2excel(excel_path, output)

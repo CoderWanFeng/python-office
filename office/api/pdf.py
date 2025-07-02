@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
 
-
 import popdf
 
 
@@ -87,7 +86,6 @@ def del4pdf(input_file, output_file, page_nums):
 
 def add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out):
     popdf.add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out)
-
 
 
 def add_watermark() -> None:

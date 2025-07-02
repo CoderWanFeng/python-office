@@ -3,9 +3,8 @@
 import pofile
 import search4file
 
+
 # todo：输入文件路径
-
-
 
 
 def replace4filename(path: str, del_content, replace_content='', dir_rename: bool = True,

@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+"""
+关于这个功能的使用说明，见课程：
+"""
 import poemail
 from poemail.lib.Const import Mail_Type
 

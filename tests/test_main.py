@@ -1,5 +1,5 @@
 # if __name__ == '__main__':
-#     test_dir = './test_unit'
+#     test_dir = './test_code'
 #     suite = unittest.defaultTestLoader.discover(test_dir, pattern='test_*.py')
 #     # 创建测试runner，执行测试用例集
 #     with open('test_result.txt', 'w+') as f:
@@ -8,4 +8,4 @@
 import pytest
 
 if __name__ == '__main__':
-    pytest.main(['./test_unit', '--html=report.html'])
+    pytest.main(['./test_code', '--html=report.html'])
