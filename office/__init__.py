@@ -10,7 +10,6 @@ from office.api import video
 from office.api import wechat
 from office.api import word
 from office.api import markdown
-from office.api import ocr
 # 以下是beta版本
 from office.api.testApi import ruiming
 
@@ -20,4 +19,4 @@ __doc__ = """【python-office库】，功能持续更新中
 2、请+【项目交流群】：http://www.python4office.cn/wechat-group
 3、本开源项目的【源代码】：https://github.com/CoderWanFeng/python-office"""
 
-__version__ = '1.0.3'
+__version__ = '1.0.1'
