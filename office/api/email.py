@@ -9,7 +9,7 @@ from poemail.lib.Const import Mail_Type
 def send_email(key, msg_from, msg_to, msg_cc=None, attach_files=[], msg_subject='', content='', host=Mail_Type['qq'],
                port=465):
     """
-    发送邮件函数
+    自动发送邮件
 
     参数:
     key (str): 邮箱账户密钥

@@ -48,21 +48,48 @@ def passwordtools(len=8):
     """
     return wftools.passwordtools(len)
 
-
 def weather():
+    """
+    获取当前天气信息。
+
+    该函数调用了wftools库中的weather方法，以获取当前的天气信息。
+    请注意，此函数内部无参数且不返回任何值。它依赖于外部库wftools来完成实际的天气信息获取。
+
+    # TODO: 添加对wftools库的导入语句。
+    """
     wftools.weather()
 
 
+
 # 通过url，获取ip地址
-# 
+#
 def url2ip(url: str) -> str:
+    """
+    将URL转换为IP地址。
+
+    此函数调用了wftools库中的url2ip方法，用于解析给定的URL并返回相应的IP地址。
+
+    参数:
+    url (str): 需要转换的URL字符串。
+
+    返回:
+    str: 解析得到的IP地址字符串。
+    """
     return wftools.url2ip(url)
+
 
 
 # 通过url，获取ip地址
 
 def lottery8ticket():
+    """
+    该函数用于生成一张8位彩票号码。
+
+    调用了 `wftools` 库中的 [lottery8ticket](file://D:\workplace\code\gitcode\python-office\office\lib\tools\lottery8ticket.py#L0-L0) 方法，用于生成指定格式的彩票号码。
+    该函数不需要任何参数，也无返回值，所有逻辑都在内部完成。
+    """
     wftools.lottery8ticket()
+
 
 
 def create_article(theme, line_num=200):
@@ -81,8 +108,21 @@ def create_article(theme, line_num=200):
 
 
 def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
-    wftools.pwd4wifi(len_pwd, pwd_list)
+    """
+    生成WiFi密码列表。
 
+    该函数调用wftools模块中的pwd4wifi函数，以生成指定长度的WiFi密码列表。
+    如果没有提供密码列表，函数将使用空列表作为默认参数。
+
+    参数:
+    len_pwd (int): 密码长度，默认为8。
+    pwd_list (list): 密码列表，默认为空列表。
+
+    返回:
+    无直接返回值，但可能会通过修改pwd_list参数来间接返回结果。
+    """
+    # 调用wftools模块中的pwd4wifi函数，传递密码长度和密码列表参数
+    wftools.pwd4wifi(len_pwd, pwd_list)
 
 # 测试网速
 
