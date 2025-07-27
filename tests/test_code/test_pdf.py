@@ -46,7 +46,8 @@ class TestPDF(unittest.TestCase):
 
     def test_encrypt4pdf(self):
         encrypt4pdf(
-            path=r'D:\workplace\code\github\popdf\tests\test_files\pdf\32012356985422-watermark.popdf',
+            input_file=r'../test_files/pdf/in.pdf',
+            output_file=r'../test_files\pdf\encrypt.popdf',
             password='123456'
         )
 
@@ -58,7 +59,7 @@ class TestPDF(unittest.TestCase):
 
     def test_pdf2imgs(self):
         pdf2imgs(
-             pdf_path =r'./test_files/popdf/in.popdf',
+            pdf_path=r'./test_files/popdf/in.popdf',
             out_dir=r'./test_files/popdf'
         )
 
