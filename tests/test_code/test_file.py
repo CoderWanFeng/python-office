@@ -47,6 +47,7 @@ class TestFile(unittest.TestCase):
 
     def test_output_file_list_to_excel(self):
         output_file_list_to_excel("../test_files")
+        # 检查文件是否存在
         self.assertTrue(file_exist('../test_files/本目录文件列表.xlsx'))
         # 删除文件
         delete_file('../test_files/本目录文件列表.xlsx')
