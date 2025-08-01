@@ -38,13 +38,27 @@ def split4pdf(input_file, output_file=r'./output_path/split_pdf.pdf', from_page=
     popdf.split4pdf(input_file, output_file, from_page, to_page)
 
 
-def encrypt4pdf(input_file, output_file, password):
+def encrypt4pdf(password, input_file=None, output_file=None, input_path=None, output_path=None):
     """
-    加密pdf
+    加密PDF文件
+
+    该函数用于对PDF文件进行加密处理，支持设置用户密码保护PDF文件
+
+    参数:
+        password (str): PDF文件的加密密码
+        input_file (str, optional): 输入的PDF文件名（包含路径）
+        output_file (str, optional): 输出的加密PDF文件名（包含路径）
+        input_path (str, optional): 输入文件的完整路径
+        output_path (str, optional): 输出文件的完整路径
+
+    返回值:
+        None: 该函数不返回任何值，直接生成加密后的PDF文件
+
     文档：http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/5-encrypt4pdf/
-    演示代码：
     """
-    popdf.encrypt4pdf(input_file=input_file, output_file=output_file, password=password)
+
+    popdf.encrypt4pdf(password=password, input_file=input_file, output_file=output_file, input_path=input_path,
+                      output_path=output_path)
 
 
 def decrypt4pdf(input_file, password, output_file='decrypt.pdf'):
