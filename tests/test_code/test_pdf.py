@@ -44,11 +44,32 @@ class TestPDF(unittest.TestCase):
             output=r'./test_files/popdf/merge2pdf.popdf'
         )
 
-    def test_encrypt4pdf(self):
+    def test_single_encrypt4pdf(self):
+        """
+        测试单个PDF文件加密功能
+
+        该函数测试encrypt4pdf函数对单个PDF文件进行加密的能力，
+        将指定的输入PDF文件加密后保存到指定输出路径
+        """
         encrypt4pdf(
-            path=r'D:\workplace\code\github\popdf\tests\test_files\pdf\32012356985422-watermark.popdf',
+            input_file=r'../test_files\pdf\encrypt4pdf\in\程序员晚枫1.pdf',
+            output_file=r'../test_files\pdf\encrypt4pdf\out\a.pdf',
             password='123456'
         )
+
+    def test_batch_encrypt4pdf(self):
+        """
+        测试批量PDF文件加密功能
+
+        该函数测试encrypt4pdf函数对多个PDF文件进行批量加密的能力，
+        将指定输入目录下的所有PDF文件加密后保存到指定输出目录
+        """
+        encrypt4pdf(
+            input_path=r'../test_files\pdf\encrypt4pdf\in\o',
+            output_path=r'../test_files\pdf\encrypt4pdf\out',
+            password='123456'
+        )
+
 
     def test_decrypt4pdf(self):
         decrypt4pdf(
@@ -58,7 +79,7 @@ class TestPDF(unittest.TestCase):
 
     def test_pdf2imgs(self):
         pdf2imgs(
-             pdf_path =r'./test_files/popdf/in.popdf',
+            pdf_path=r'./test_files/popdf/in.popdf',
             out_dir=r'./test_files/popdf'
         )
 

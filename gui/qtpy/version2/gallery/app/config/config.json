@@ -1,0 +1,20 @@
+{
+    "Material": {
+        "AcrylicBlurRadius": 14
+    },
+    "Update": {
+        "CheckUpdateAtStartUp": true
+    },
+    "Folders": {
+        "Download": "D:/workplace/code/github/python-office/gui/qtpy/version2/gallery/app/download",
+        "LocalMusic": []
+    },
+    "MainWindow": {
+        "DpiScale": "Auto",
+        "Language": "Auto"
+    },
+    "QFluentWidgets": {
+        "ThemeColor": "#ff009faa",
+        "ThemeMode": "Auto"
+    }
+}

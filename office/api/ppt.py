@@ -1,14 +1,17 @@
 # -*- coding:utf-8 -*-
 
-
+# 导入处理PPT的模块
 import poppt
 
 
+# PPT转换为PDF的功能函数
 # todo：输入文件路径
 def ppt2pdf(path: str, output_path=r'./'):
+    # 调用poppt模块的ppt2pdf方法进行转换
     poppt.ppt2pdf(path, output_path)
 
 
+# PPT转换为图片的功能函数
 def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     """
     PPT转图片，可以转为长图
@@ -23,8 +26,11 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     Returns: None
 
     """
+    # 调用poppt模块的ppt2img方法进行转换
     poppt.ppt2img(input_path, output_path, merge)
 
 
+# 合并多个PPT文件的功能函数
 def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.pptx'):
+    # 调用poppt模块的merge4ppt方法进行合并
     poppt.merge4ppt(input_path, output_path, output_name)

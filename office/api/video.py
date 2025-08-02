@@ -6,8 +6,19 @@ import povideo
 
 
 def video2mp3(path, mp3_name=None, output_path=r'./'):
-    povideo.video2mp3(path, mp3_name, output_path)
+    """
+    将视频文件转换为mp3音频文件。
 
+    参数:
+    - path (str): 视频文件的路径。
+    - mp3_name (str, optional): 输出mp3文件的名称。如果未提供，默认为原视频文件名。
+    - output_path (str, optional): 输出mp3文件的路径。默认为当前目录('./')。
+
+    返回:
+    无返回值，但会在指定输出路径下生成mp3文件。
+    """
+    # 调用povideo模块中的video2mp3方法进行视频到mp3的转换
+    povideo.video2mp3(path, mp3_name, output_path)
 
 # 从音频里，提取文字
 # 本地语音文件不能大于5MB
