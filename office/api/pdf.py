@@ -61,13 +61,14 @@ def encrypt4pdf(password, input_file=None, output_file=None, input_path=None, ou
                       output_path=output_path)
 
 
-def decrypt4pdf(input_file, password, output_file='decrypt.pdf'):
+def decrypt4pdf(password, input_file=None, output_file=None, input_path=None, output_path=None):
     """
     解密pdf
     文档：http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/6-decrypt4pdf
     演示代码：
     """
-    popdf.decrypt4pdf(input_file, password, output_file)
+    popdf.decrypt4pdf(password=password, input_file=input_file, output_file=output_file, input_path=input_path,
+                      output_path=output_path)
 
 
 def add_text_watermark(input_file, point, text='python-office',
