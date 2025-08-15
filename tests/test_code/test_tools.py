@@ -29,3 +29,6 @@ class TestTools(unittest.TestCase):
     def test_open_soft(self):
         soft_path = r'D:\software\wechat\WeChat.exe'
         wftools.open_soft(soft_path, num=2)
+
+    def test_net_speed_test(self):
+        net_speed_test()
