@@ -1,7 +1,7 @@
 ## 视频教程
 
 <p align="center" id='进群-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/dfdNNrlnxGCOsDHV4fq6iQ'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/0GrWWSQ8sKs-WA8WoN3Ztg?payreadticket=HJQ0P0ghl1o6l4RwlzJmt7zZhBi5INLHmCiAxh4cAbAN-WDXJVV5362o-mT2uUND02_WcF0'>
     <img src="https://raw.gitcode.com/user-images/assets/5027920/326fcf6a-a93b-407b-b9b6-f8f3b0f9afe9/image.png" width="100%"/>
     </a>   
 </p>
@@ -242,7 +242,7 @@
 ## 交流群
 
 <p align="center">
-    <a target="_blank" href='https://mp.weixin.qq.com/s/dfdNNrlnxGCOsDHV4fq6iQ'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/0GrWWSQ8sKs-WA8WoN3Ztg?payreadticket=HJQ0P0ghl1o6l4RwlzJmt7zZhBi5INLHmCiAxh4cAbAN-WDXJVV5362o-mT2uUND02_WcF0'>
     <img src="https://raw.gitcode.com/user-images/assets/5027920/326fcf6a-a93b-407b-b9b6-f8f3b0f9afe9/image.png" width="100%"/>
     </a>   
 </p>
@@ -263,7 +263,7 @@
 
 
 <p align="center" id='进群-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/dfdNNrlnxGCOsDHV4fq6iQ'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/0GrWWSQ8sKs-WA8WoN3Ztg?payreadticket=HJQ0P0ghl1o6l4RwlzJmt7zZhBi5INLHmCiAxh4cAbAN-WDXJVV5362o-mT2uUND02_WcF0'>
     <img src="https://raw.gitcode.com/user-images/assets/5027920/326fcf6a-a93b-407b-b9b6-f8f3b0f9afe9/image.png" width="100%"/>
     </a>   
 </p>

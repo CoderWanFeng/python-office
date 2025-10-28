@@ -1,3 +1,9 @@
+# 导入兼容性检查模块（必须在其他导入之前）
+from office.compatibility import check_compatibility
+
+# 执行兼容性检查
+compatibility_checker = check_compatibility()
+
 from office.api import email
 from office.api import excel
 from office.api import file
