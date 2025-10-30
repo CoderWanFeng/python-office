@@ -70,19 +70,25 @@ class TestPDF(unittest.TestCase):
             password='123456'
         )
 
-
-    def test_decrypt4pdf(self):
+    def test_single_decrypt4pdf(self):
         decrypt4pdf(
-            path=r'./test_files/popdf/encrypt.popdf',
+            input_file=r'../test_files\pdf\encrypt4pdf\out\a.pdf',
+            output_file=r'../test_files\pdf\encrypt4pdf\in\a.pdf',
+            password='123456')
+
+    def test_batch_decrypt4pdf(self):
+        decrypt4pdf(
+            input_path=r'../test_files\pdf\encrypt4pdf\out',
+            output_path=r'../test_files\pdf\encrypt4pdf\in',
             password='123456'
         )
 
-    def test_pdf2imgs(self):
-        pdf2imgs(
-            pdf_path=r'./test_files/popdf/in.popdf',
-            out_dir=r'./test_files/popdf'
-        )
+        def test_pdf2imgs(self):
+            pdf2imgs(
+                pdf_path=r'./test_files/popdf/in.popdf',
+                out_dir=r'./test_files/popdf'
+            )
 
-    def test_add_img_water(self):
-        add_img_water(pdf_file_in='./test_files/popdf/add_img.popdf', pdf_file_mark='./test_files/popdf/in.popdf',
-                      pdf_file_out='add_img_res.popdf')
+        def test_add_img_water(self):
+            add_img_water(pdf_file_in='./test_files/popdf/add_img.popdf', pdf_file_mark='./test_files/popdf/in.popdf',
+                          pdf_file_out='add_img_res.popdf')

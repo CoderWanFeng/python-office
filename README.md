@@ -1,8 +1,4 @@
-<p align="center" id='大礼包-banner'>
-    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
-    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
-    </a>   
-</p>
+
 <p align="center">
     <a target="_blank" href='https://pypi.org/project/python-office/'>
     <img src="https://raw.gitcode.com/CoderWanFeng1/website/raw/main/github-nav.jpg" alt="github license"/>
@@ -139,84 +135,15 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 -------------------------------------------------------------------------------
 
-## 🪙支持python-office
-
-o基础的朋友，想快速入门自动化办公，还可以学习下面这几套原创课程，👇。
-
-<p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='https://www.python-office.com/course/50-python-office.html'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='10讲机器人-banner'>
-    <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/course/10%E8%AE%B2%E6%9C%BA%E5%99%A8%E4%BA%BA-%E6%A8%AA.jpg" width="100%"/>
-    </a>   
-</p>
-
-
-
-<p align="center" id='5讲OCR-banner'>
-    <a target="_blank" href='https://www.python-office.com/course-002/5-poocr/5-poocr.html'>
-    <img src="https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poocr%2F%E5%B0%81%E9%9D%A2-%E6%A8%AA.jpg" width="100%"/>
-    </a>   
-</p>
-
-
-
-<p align="center" id='6讲邮件自动化-banner'>
-    <a target="_blank" href='https://www.python-office.com/course-002/poemail/poemail.html'>
-    <img src="https://course-1300615378.cos.ap-guangzhou.myqcloud.com/poemail/poemail-course.jpg" width="100%"/>
-    </a>   
-</p>
-
-
--------------------------------------------------------------------------------
-
 ## ⭐Star python-office
 
 [![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
 
 ## 📌联系作者
 
-<p align="center" id='个人微信-banner'>
+<p align="center" id='B站-banner'>
     <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
-    <img src="https://cos.python-office.com/wechat/qr-code.jpg" width="100%"/>
+    <img src="https://raw.gitcode.com/CoderWanFeng1/website/raw/main/B-py-auto.jpg" width="100%"/>
     </a>   
 </p>
-
-<p align="center" id='vlog横-banner'>
-    <a target="_blank" href='http://python4office.cn/vlog-all/vlog-all/'>
-    <img src="https://vlog-1300615378.cos.ap-chongqing.myqcloud.com/ads%2Fheng.jpg" width="100%"/>
-    </a>   
-</p>
-
-## 📕拓展资料
-
-<p align="center" id='100本电子书-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/6bM_3tROqdY_2WbBShzqyw'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Febook.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='实战项目-banner'>
-    <a target="_blank" href='http://www.python4office.cn/python-project-list/'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fproject.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='11个软件-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/w9ITodQR3kzSXc4t1H92nw'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fsoft-11.jpg" width="100%"/>
-    </a>   
-</p>
-
-
-<p align="center" id='25个学习资源-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/-mlsV7PFc27JElOTCskMsg'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fpy-25-source.jpg" width="100%"/>
-    </a>   
-</p>
-
 
