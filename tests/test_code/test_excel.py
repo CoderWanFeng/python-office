@@ -1,10 +1,27 @@
+"""Excel功能测试模块。
+
+该模块包含对python-office库中Excel相关功能的单元测试。
+"""
+
 import unittest
 from tests.test_utils.comm_utils import *
 from office.api.excel import *
 
 
 class TestExcel(unittest.TestCase):
-    def test_fake2excel(self):
+    """Excel功能测试类。
+    
+    该类包含对Excel相关API的单元测试方法。
+    """
+    def test_fake2excel(self) -> None:
+        """测试fake2excel函数生成测试Excel文件的功能。
+        
+        Args:
+            无参数。
+            
+        Returns:
+            None: 无返回值。
+        """
         test_file_name = './fake2excel.xlsx'
         fake2excel(language='sdag')
         # 检查文件是否存在

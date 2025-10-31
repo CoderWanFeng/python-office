@@ -1,7 +1,12 @@
 import random
 
 
-def SSL():
+def SSL() -> str:
+    """生成双色球号码。
+    
+    Returns:
+        str: 双色球号码字符串
+    """
     red_ball = random.sample(range(1, 34), 6)
     blue_ball = random.sample(range(1, 17), 1)
     return f'双色球的号码是：红色球{red_ball}，蓝色球{blue_ball}'
@@ -39,17 +44,32 @@ def QWS():
     pass
 
 
-def X_22_5():
+def X_22_5() -> list:
+    """生成22选5彩票号码。
+    
+    Returns:
+        list: 22选5号码列表
+    """
     res = random.sample(range(1, 33), 5)  # 1到22，不重复的5个数
     return res
 
 
-def X_36_7():
+def X_36_7() -> list:
+    """生成36选7彩票号码。
+    
+    Returns:
+        list: 36选7号码列表
+    """
     res = random.sample(range(1, 37), 7)  # 1到36，不重复的7个数
     return res
 
 
-def X_26_5():
+def X_26_5() -> list:
+    """生成26选5彩票号码。
+    
+    Returns:
+        list: 26选5号码列表
+    """
     res = random.sample(range(1, 27), 5)
     return res
 

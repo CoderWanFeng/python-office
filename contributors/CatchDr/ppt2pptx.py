@@ -12,7 +12,16 @@ from win32com.client import constants
 import win32com
 import os  # 目录的操作
 
-def createpptx(pptPath, pptxPath):
+def createpptx(pptPath: str, pptxPath: str) -> None:
+    """将PPT文档转换为PPTX格式。
+    
+    Args:
+        pptPath (str): 源PPT文档路径
+        pptxPath (str): 目标PPTX文档路径
+    
+    Returns:
+        None
+    """
     powerpoint = win32com.client.Dispatch('PowerPoint.Application')
     win32com.client.gencache.EnsureDispatch('PowerPoint.Application')
     # powerpoint.Visible = 1
@@ -22,10 +31,16 @@ def createpptx(pptPath, pptxPath):
     powerpoint.Quit()
 
 
-# 1、文件的批量转换
-# 自己指定路径，
-# 转换ppt到pptx
-def ppt2pptx(path, docxSuffix=".poppt"):
+def ppt2pptx(path: str, docxSuffix: str = ".poppt") -> None:
+    """批量将PPT文档转换为PPTX格式。
+    
+    Args:
+        path (str): 文件路径或目录路径
+        docxSuffix (str, optional): PPT文件后缀名，默认为".poppt"
+    
+    Returns:
+        None
+    """
     pptFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):

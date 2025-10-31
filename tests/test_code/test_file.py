@@ -1,3 +1,8 @@
+"""文件功能测试模块。
+
+该模块包含对python-office库中文件相关功能的单元测试。
+"""
+
 import unittest
 
 from office.api.file import *
@@ -7,6 +12,10 @@ ORIGIN_FILE_NAME = '../test_files/file/add_fix/aabbccddeeffgghhppddaacc.docx'
 
 
 class TestFile(unittest.TestCase):
+    """文件功能测试类。
+    
+    该类包含对文件相关API的单元测试方法。
+    """
 
     def test_replace4filename(self):
         touch_file(ORIGIN_FILE_NAME)

@@ -6,18 +6,18 @@ RATE_LINE = 10000 * 2
 
 def t0(buy_price: float, sale_price: float, shares: int, w_rate: float = 2.5 / 10000, min_rate: int = 5,
        stamp_tax=1 / 1000, ) -> float:
-    """
-    计算做T的收益
+    """计算做T的收益。
+    
     Args:
-        buy_price: 买入成本
-        sale_price: 卖出价格
-        shares: 单笔数量
-        w_rate: 手续费，默认万2.5
-        min_rate: 单笔最低手续费，默认5元
-        stamp_tax: 印花税，默认千1
-
-    Returns: 做T后的收益金额
-
+        buy_price (float): 买入成本
+        sale_price (float): 卖出价格
+        shares (int): 单笔数量
+        w_rate (float, optional): 手续费，默认万2.5
+        min_rate (int, optional): 单笔最低手续费，默认5元
+        stamp_tax (float, optional): 印花税，默认千1
+    
+    Returns:
+        float: 做T后的收益金额
     """
     buy_money = Decimal(str(buy_price)) * shares  # 买入的价格
     base_rate = min_rate if buy_money <= RATE_LINE else buy_money * w_rate

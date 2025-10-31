@@ -17,13 +17,14 @@ def _hex_to_rgb(hex):
         b = int('0x' + hex[5:7], 16)
         return (r, g, b)
 
-def eliminate_bc(src_img_path, save_img_path, margin=30, bc_color=None):
-    """
-    将图片的背景变成透明色
-    参数：
-        src_img_path: string, 原始图片存储路径
-        margin: int, 和背景颜色的差异值
-        bc_color, string or tuple 背景颜色值（十六进制或RGB值）
+def eliminate_bc(src_img_path: str, save_img_path: str, margin: int = 30, bc_color: str = None) -> None:
+    """将图片的背景变成透明色。
+    
+    Args:
+        src_img_path (str): 原始图片存储路径
+        save_img_path (str): 保存图片的路径
+        margin (int, optional): 和背景颜色的差异值，默认为30
+        bc_color (str, optional): 背景颜色值（十六进制或RGB值），默认为None
     """
     img = Image.open(src_img_path)
     width, height = img.size

@@ -1,3 +1,8 @@
+"""PDF功能测试模块。
+
+该模块包含对python-office库中PDF相关功能的单元测试。
+"""
+
 import unittest
 
 from office.api.pdf import *
@@ -5,6 +10,10 @@ from tests.test_utils.test_input import stub_stdin
 
 
 class TestPDF(unittest.TestCase):
+    """PDF功能测试类。
+    
+    该类包含对PDF相关API的单元测试方法。
+    """
     def test_add_watermark(self):
         stub_stdin(self, './test_files/popdf/in.popdf\npython-office\n')  # 依次输入
         add_watermark()

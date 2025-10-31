@@ -1,3 +1,8 @@
+"""Word功能测试模块。
+
+该模块包含对python-office库中Word相关功能的单元测试。
+"""
+
 import unittest
 
 from office.api.word import *
@@ -5,6 +10,10 @@ from tests.test_utils.comm_utils import *
 
 
 class TestWechat(unittest.TestCase):
+    """Word功能测试类。
+    
+    该类包含对Word相关API的单元测试方法。
+    """
     def test_docx2pdf(self):
         docx2pdf(path=r'../test_files/docx/demo.docx')
 

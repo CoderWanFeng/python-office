@@ -14,7 +14,16 @@ import os  # 目录的操作
 
 
 
-def createdoc(wordPath, docxPath):
+def createdoc(wordPath: str, docxPath: str) -> None:
+    """将Word文档转换为DOC格式。
+    
+    Args:
+        wordPath (str): 源Word文档路径
+        docxPath (str): 目标DOC文档路径
+    
+    Returns:
+        None
+    """
     # word = gencache.EnsureDispatch('Word.Application')
     # doc = word.Documents.Open(wordPath, ReadOnly=1)
     # # 转换方法
@@ -28,10 +37,16 @@ def createdoc(wordPath, docxPath):
     word.Quit()
 
 
-# 1、文件的批量转换
-# 自己指定路径，
-# 转换docx到doc
-def docx2doc(path, docxSuffix=".docx"):
+def docx2doc(path: str, docxSuffix: str = ".docx") -> None:
+    """批量将DOCX文档转换为DOC格式。
+    
+    Args:
+        path (str): 文件路径或目录路径
+        docxSuffix (str, optional): DOCX文件后缀名，默认为".docx"
+    
+    Returns:
+        None
+    """
     wordFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):

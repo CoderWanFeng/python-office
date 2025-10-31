@@ -7,7 +7,10 @@ from win32com.client import constants
 # pip install -i https://mirrors.aliyun.com/pypi/simple/ pypiwin32
 
 class MainWord():
-    def __init__(self):
+    """Word文档处理类，用于将Word文档转换为PDF格式。"""
+    
+    def __init__(self) -> None:
+        """初始化Word应用程序连接。"""
         self.doc = ".doc"
         self.docx = ".docx"
         self.pdf = ".popdf"
@@ -15,7 +18,15 @@ class MainWord():
         self.word = client.Dispatch("Word.Application")
 
 
-    def file2pdf(self, path):
+    def file2pdf(self, path: str) -> None:
+        """将指定目录下的所有Word文档转换为PDF格式。
+        
+        Args:
+            path (str): 包含Word文档的目录路径
+        
+        Returns:
+            None
+        """
         # 保存待转换的word文件
         word_files = []
 
@@ -53,7 +64,16 @@ class MainWord():
         for f in remove_files:
             os.remove(f)
 
-    def createpdf(self, word_path, pdf_path):
+    def createpdf(self, word_path: str, pdf_path: str) -> None:
+        """将单个Word文档转换为PDF格式。
+        
+        Args:
+            word_path (str): 源Word文档路径
+            pdf_path (str): 目标PDF文档路径
+        
+        Returns:
+            None
+        """
         print(word_path)
         try:
             doc = self.word.Documents.Open(word_path, ReadOnly=1)

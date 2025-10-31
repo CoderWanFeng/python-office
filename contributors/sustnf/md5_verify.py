@@ -4,10 +4,13 @@ import hashlib
 import os
 
 
-# 文件md5校验
-# source_file:文件1
-# target_file:文件2
-def file_compare(source_file,target_file):
+def file_compare(source_file: str, target_file: str) -> None:
+    """比较两个文件的MD5值。
+    
+    Args:
+        source_file (str): 源文件路径
+        target_file (str): 目标文件路径
+    """
     s = open(source_file, "br")
     t = open(target_file, "br")
     md5_source_file = hashlib.md5(s.read()).hexdigest()

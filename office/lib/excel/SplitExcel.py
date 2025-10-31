@@ -6,7 +6,16 @@ import datetime
 
 #
 
-def generate_xls(filepath: str, worksheet_data: dict):
+def generate_xls(filepath: str, worksheet_data: dict) -> str:
+    """生成XLS格式的拆分文件。
+    
+    Args:
+        filepath (str): 原始文件路径
+        worksheet_data (dict): 工作表数据字典
+    
+    Returns:
+        str: 新生成的文件路径
+    """
     datetime_str = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
     new_filepath = filepath.replace('.xls', '_Split_{}.xls'.format(datetime_str))
     new_workbook = xlwt.Workbook(encoding='utf-8')
@@ -19,7 +28,17 @@ def generate_xls(filepath: str, worksheet_data: dict):
     return new_filepath
 
 
-def process_xls(filepath, column: int, worksheet_name: str = None):
+def process_xls(filepath: str, column: int, worksheet_name: str = None) -> str:
+    """处理XLS格式的Excel文件拆分。
+    
+    Args:
+        filepath (str): Excel文件路径
+        column (int): 拆分依据的列号
+        worksheet_name (str, optional): 工作表名称，默认为None
+    
+    Returns:
+        str: 处理结果信息
+    """
     try:
         workbook = xlrd.open_workbook(filepath, formatting_info=True)
     except:
@@ -41,7 +60,16 @@ def process_xls(filepath, column: int, worksheet_name: str = None):
     return "数据保存在新文件中，文件名：{}".format(new_filepath)
 
 
-def generate_xlsx(filepath: str, worksheet_data: dict):
+def generate_xlsx(filepath: str, worksheet_data: dict) -> str:
+    """生成XLSX格式的拆分文件。
+    
+    Args:
+        filepath (str): 原始文件路径
+        worksheet_data (dict): 工作表数据字典
+    
+    Returns:
+        str: 新生成的文件路径
+    """
     datetime_str = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
     new_filepath = filepath.replace('.xlsx', '_Split_{}.xlsx'.format(datetime_str))
     new_workbook = openpyxl.Workbook()
@@ -53,7 +81,17 @@ def generate_xlsx(filepath: str, worksheet_data: dict):
     return new_filepath
 
 
-def process_xlsx(filepath: str, column: int, worksheet_name: str = None):
+def process_xlsx(filepath: str, column: int, worksheet_name: str = None) -> str:
+    """处理XLSX格式的Excel文件拆分。
+    
+    Args:
+        filepath (str): Excel文件路径
+        column (int): 拆分依据的列号
+        worksheet_name (str, optional): 工作表名称，默认为None
+    
+    Returns:
+        str: 处理结果信息
+    """
     try:
         workbook = openpyxl.load_workbook(filepath, read_only=True, data_only=True)
     except:
@@ -76,7 +114,17 @@ def process_xlsx(filepath: str, column: int, worksheet_name: str = None):
     return "数据保存在新文件中，文件名：{}".format(new_filepath)
 
 
-def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None):
+def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None) -> str:
+    """根据指定列拆分Excel文件。
+    
+    Args:
+        filepath (str): Excel文件路径
+        column (int): 拆分依据的列号
+        worksheet_name (str, optional): 工作表名称，默认为None
+    
+    Returns:
+        str: 处理结果信息
+    """
     if filepath.endswith('.xlsx'):
         result = process_xlsx(filepath, column, worksheet_name)
     elif filepath.endswith('.xls'):

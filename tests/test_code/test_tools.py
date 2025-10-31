@@ -1,3 +1,8 @@
+"""工具功能测试模块。
+
+该模块包含对python-office库中工具相关功能的单元测试。
+"""
+
 import unittest
 
 import pytest
@@ -7,6 +12,10 @@ from tests.test_utils.test_input import stub_stdin
 
 
 class TestTools(unittest.TestCase):
+    """工具功能测试类。
+    
+    该类包含对工具相关API的单元测试方法。
+    """
     @pytest.mark.skip(reason="交互式功能，暂时跳过")
     def test_weather(self):
         stub_stdin(self, '北京\ny\nq\n')  # 依次输入
