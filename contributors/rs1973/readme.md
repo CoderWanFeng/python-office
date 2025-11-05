@@ -30,7 +30,7 @@
 ##  基本使用示例
 
 ```python
-from your_module_name import main
+from contributors.rs1973.process_img1.py import main
 
 src = r"C:\path\to\input_dir"
 out = r"C:\path\to\output_dir"
