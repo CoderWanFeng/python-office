@@ -9,3 +9,10 @@ build/
 dist/
 *.egg-info
 __pycache__
+
+# PyInstaller
+*.spec
+*.manifest
+*.exe
+*.app
+*.dmg
