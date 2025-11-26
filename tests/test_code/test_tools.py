@@ -13,12 +13,12 @@ from tests.test_utils.test_input import stub_stdin
 
 class TestTools(unittest.TestCase):
     """工具功能测试类。
-    
+
     该类包含对工具相关API的单元测试方法。
     """
     @pytest.mark.skip(reason="交互式功能，暂时跳过")
     def test_weather(self):
-        stub_stdin(self, '北京\ny\nq\n')  # 依次输入
+        stub_stdin(self, '重庆\ny\nq\n')  # 依次输入
         weather()
 
     def test_url2ip(self):
@@ -32,9 +32,6 @@ class TestTools(unittest.TestCase):
     def test_create_article(self):
         create_article('生日快乐', line_num=2000)
 
-    # def test_pwd4wifi(self):
-    #     stub_stdin(self, '1\ny\n')  #依次输入
-    #     pwd4wifi(pwd_list=['12345678', 'CoderWanFeng'])
     def test_open_soft(self):
         soft_path = r'D:\software\wechat\WeChat.exe'
         wftools.open_soft(soft_path, num=2)
