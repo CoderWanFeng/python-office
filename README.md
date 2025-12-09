@@ -78,8 +78,8 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 ## 📝文档
 
 
-- [中文文档](.qoder\repowiki\zh)
-- [English Document](.qoder\repowiki\en)
+- [中文文档](https://github.com/CoderWanFeng/python-office/tree/develop/.qoder/repowiki/zh/content)
+- [English Document](https://github.com/CoderWanFeng/python-office/tree/develop/.qoder/repowiki/en/content)
 - [视频教程](https://www.python-office.com/video/video.html)
 
 
