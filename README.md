@@ -27,11 +27,11 @@
 <img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads">
 </a>
 <a href="https://mp.weixin.qq.com/s/o98F_h_m6g4u5haPkbBtGg">
-  <img src="https://img.shields.io/badge/加入-AI编程训练营-red" alt="AI编程训练营">
+  <img src="https://img.shields.io/badge/学习-AI编程-red" alt="AI编程">
 </a>
-    	<a href="http://www.python4office.cn/wechat-group/">
-	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
-  </a>
+    	<a href="https://mp.weixin.qq.com/s/h0MExYJag6hLnQg26yx98w">
+  <img src="https://img.shields.io/badge/加入-AI交流群-brightgreen" alt="AI交流群">
+</a>
 
 </p>
 
@@ -77,9 +77,11 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
 
 ## 📝文档
 
-[📘官网：https://www.python-office.com/](https://www.python-office.com/)
 
-全部功能 的 视频教程👉[传送门](https://www.python-office.com/video/video.html)
+- [中文文档](.qoder\repowiki\zh)
+- [English Document](.qoder\repowiki\en)
+- [视频教程](https://www.python-office.com/video/video.html)
+
 
 ## 🛠️包含组件
 
