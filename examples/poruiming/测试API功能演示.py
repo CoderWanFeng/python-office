@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-"""
-测试API功能演示
-作者：程序员晚枫
-项目官网：https://www.python-office.com
+"""Test API functionality demonstration.
+
+Author:
+    程序员晚枫
+
+Project:
+    https://www.python-office.com
 """
 
 import office
@@ -10,7 +13,17 @@ import os
 import json
 
 def create_test_files(test_dir):
-    """创建测试所需的文件"""
+    """Create necessary test files for demonstration.
+    
+    This function creates sample image files, XML annotation files, and JSON
+    annotation files to demonstrate the test API functionality.
+    
+    Args:
+        test_dir (str): directory path where test files will be created
+    
+    Returns:
+        None
+    """
     # 创建测试图片文件
     with open(os.path.join(test_dir, "image1.jpg"), 'w') as f:
         f.write("# 模拟图片文件")
@@ -51,8 +64,18 @@ def create_test_files(test_dir):
         json.dump(empty_json, f, ensure_ascii=False)
 
 def ruiming_api_demo():
-    """
-    演示测试API功能
+    """Demonstrate test API functionality.
+    
+    This function showcases the ruiming API features including:
+    - Screening unmarked images
+    - Modifying XML labels in batch
+    - Filtering JSON files without labels
+    
+    The demonstration creates a test directory with sample files and
+    executes various operations to show the API capabilities.
+    
+    Returns:
+        None
     """
     print("🧪 测试API功能演示 - 程序员晚枫")
     print("=" * 50)

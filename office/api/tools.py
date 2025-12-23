@@ -1,3 +1,19 @@
+"""Utility tools functionality module.
+
+工具类功能模块。
+
+This module provides various utility tools including translation, QR code generation,
+password generation, weather query, URL to IP conversion, article generation, and more.
+
+该模块提供了各种工具类功能，包括翻译、二维码生成、密码生成、天气查询、URL转IP、文章生成等。
+
+Author:
+    程序员晚枫
+
+Project:
+    https://www.python-office.com
+"""
+
 import wftools
 from pocode.api.color import random_color_print
 
@@ -6,25 +22,29 @@ from office.lib.conf.CONST import SPLIT_LINE
 
 #
 def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
-    """将内容从一种语言翻译为另一种语言。
+    """Translate content from one language to another.
+    
+    将内容从一种语言翻译为另一种语言。
     
     Args:
-        to_lang (str): 目标语言
-        content (str): 待翻译的内容
-        from_lang (str, optional): 源语言，默认为'zh'（中文）
+        to_lang (str): target language / 目标语言
+        content (str): content to translate / 待翻译的内容
+        from_lang (str, optional): source language / 源语言。Default / 默认: 'zh' (Chinese / 中文)
     
     Returns:
-        str: 翻译后的结果
+        str: translated result / 翻译后的结果
     """
     return wftools.transtools(to_lang=to_lang, content=content, from_lang=from_lang)
 
 
 def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
-    """生成二维码图片。
+    """Generate QR code image.
+    
+    生成二维码图片。
     
     Args:
-        url (str): 用于生成二维码的URL地址
-        output (str, optional): 生成的二维码图片保存路径，默认为当前目录下的'./qrcode_img.png'
+        url (str): URL address for generating QR code / 用于生成二维码的URL地址
+        output (str, optional): save path for generated QR code image / 生成的二维码图片保存路径。Default / 默认: './qrcode_img.png' in current directory / 当前目录下的'./qrcode_img.png'
     
     Returns:
         None
@@ -33,18 +53,25 @@ def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
 
 
 def passwordtools(len=8):
-    """生成一个指定长度的密码。
+    """Generate password of specified length.
+    
+    生成一个指定长度的密码。
     
     Args:
-        len (int, optional): 密码长度，默认为8
+        len (int, optional): password length / 密码长度。Default / 默认: 8
     
     Returns:
-        str: 生成的密码
+        str: generated password / 生成的密码
     """
     return wftools.passwordtools(len)
 
 def weather():
-    """获取当前天气信息。
+    """Get current weather information.
+    
+    获取当前天气信息。
+    
+    This function calls the weather method in wftools library to get current weather information.
+    Note that this function has no parameters and returns no value. It depends on external library wftools to complete actual weather information retrieval.
     
     该函数调用了wftools库中的weather方法，以获取当前的天气信息。
     请注意，此函数内部无参数且不返回任何值。它依赖于外部库wftools来完成实际的天气信息获取。
@@ -59,15 +86,19 @@ def weather():
 # 通过url，获取ip地址
 #
 def url2ip(url: str) -> str:
-    """将URL转换为IP地址。
+    """Convert URL to IP address.
+    
+    将URL转换为IP地址。
+    
+    This function calls url2ip method in wftools library to parse given URL and return corresponding IP address.
     
     此函数调用了wftools库中的url2ip方法，用于解析给定的URL并返回相应的IP地址。
     
     Args:
-        url (str): 需要转换的URL字符串
+        url (str): URL string to convert / 需要转换的URL字符串
     
     Returns:
-        str: 解析得到的IP地址字符串
+        str: parsed IP address string / 解析得到的IP地址字符串
     """
     return wftools.url2ip(url)
 
@@ -76,9 +107,14 @@ def url2ip(url: str) -> str:
 # 通过url，获取ip地址
 
 def lottery8ticket():
-    """生成一张8位彩票号码。
+    """Generate 8-digit lottery ticket number.
     
-    调用了 `wftools` 库中的 lottery8ticket 方法，用于生成指定格式的彩票号码。
+    生成一张8位彩票号码。
+    
+    Calls lottery8ticket method in `wftools` library to generate lottery ticket number in specified format.
+    This function requires no parameters and has no return value, all logic is completed internally.
+    
+    调用了`wftools`库中的lottery8ticket方法，用于生成指定格式的彩票号码。
     该函数不需要任何参数，也无返回值，所有逻辑都在内部完成。
     
     Returns:
@@ -89,11 +125,13 @@ def lottery8ticket():
 
 
 def create_article(theme, line_num=200):
-    """创建文章。
+    """Create article.
+    
+    创建文章。
     
     Args:
-        theme (str): 文章的主题
-        line_num (int, optional): 文章的行数，默认为200行
+        theme (str): article theme / 文章的主题
+        line_num (int, optional): number of lines in article / 文章的行数。Default / 默认: 200 lines / 200行
     
     Returns:
         None
@@ -102,14 +140,19 @@ def create_article(theme, line_num=200):
 
 
 def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
-    """生成WiFi密码列表。
+    """Generate WiFi password list.
+    
+    生成WiFi密码列表。
+    
+    This function calls pwd4wifi function in wftools module to generate WiFi password list of specified length.
+    If no password list provided, function will use empty list as default parameter.
     
     该函数调用wftools模块中的pwd4wifi函数，以生成指定长度的WiFi密码列表。
     如果没有提供密码列表，函数将使用空列表作为默认参数。
     
     Args:
-        len_pwd (int, optional): 密码长度，默认为8
-        pwd_list (list, optional): 密码列表，默认为空列表
+        len_pwd (int, optional): password length / 密码长度。Default / 默认: 8
+        pwd_list (list, optional): password list / 密码列表。Default / 默认: empty list / 空列表
     
     Returns:
         None
@@ -120,9 +163,13 @@ def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
 # 测试网速
 
 def net_speed_test():
-    """网络速度测试函数。
+    """Network speed test function.
     
-    该函数用于测试网络的上传和下载速度
+    网络速度测试函数。
+    
+    This function is used to test network upload and download speed.
+    
+    该函数用于测试网络的上传和下载速度。
     
     Returns:
         None
@@ -131,7 +178,9 @@ def net_speed_test():
 
 
 def course():
-    """显示python-office库的相关信息和资源链接。
+    """Display information and resource links for python-office library.
+    
+    显示python-office库的相关信息和资源链接。
     
     Returns:
         None

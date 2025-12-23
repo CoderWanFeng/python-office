@@ -1,7 +1,22 @@
 # -*- coding: UTF-8 -*-
-"""文件处理功能模块。
+"""File processing functionality module.
+
+文件处理功能模块。
+
+This module provides rich file management capabilities including batch renaming,
+file searching, directory organizing, and more.
 
 该模块提供了丰富的文件管理功能，包括批量重命名、文件搜索、目录整理等。
+
+Main Features:
+- replace4filename: Batch modify file/folder names
+- file_name_insert_content: Insert characters in the middle of filename
+- file_name_add_prefix: Add prefix to filename
+- file_name_add_postfix: Add postfix to filename
+- output_file_list_to_excel: Organize filenames to Excel
+- search_specify_type_file: Search for files of specified type
+- group_by_name: Group and organize files by name
+- get_files: Search for files of specified type and return list
 
 主要功能：
 - replace4filename: 批量修改文件/文件夹名称
@@ -28,15 +43,17 @@ import pofile
 
 def replace4filename(path: str, del_content, replace_content='', dir_rename: bool = True,
                      file_rename: bool = True, suffix=None):
-    """批量重命名 1：批量修改文件/文件夹名称。
+    """Batch rename: batch modify file/folder names.
+    
+    批量重命名：批量修改文件/文件夹名称。
     
     Args:
-        path (str): 需要修改文件夹/文件名称的根目录，注意：该根目录名称不会被修改
-        del_content (str): 需要替换/删除的内容
-        replace_content (str, optional): 替换后的内容，不填则实现删除效果
-        dir_rename (bool, optional): 是否修改文件夹名称，默认：修改
-        file_rename (bool, optional): 是否修改文件名称，默认：修改
-        suffix (str, optional): 指定修改的文件类型，默认：所有
+        path (str): root directory for files/folders to be renamed / 需要修改文件夹/文件名称的根目录。Note / 注意: the root directory name will not be modified / 该根目录名称不会被修改
+        del_content (str): content to be replaced/deleted / 需要替换/删除的内容
+        replace_content (str, optional): replacement content / 替换后的内容。If empty, implements deletion / 不填则实现删除效果
+        dir_rename (bool, optional): whether to rename directories / 是否修改文件夹名称。Default / 默认: True / 修改
+        file_rename (bool, optional): whether to rename files / 是否修改文件名称。Default / 默认: True / 修改
+        suffix (str, optional): specify file type to modify / 指定修改的文件类型。Default / 默认: all / 所有
     
     Returns:
         None
@@ -46,12 +63,14 @@ def replace4filename(path: str, del_content, replace_content='', dir_rename: boo
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 def file_name_insert_content(file_path: str, insert_position: int, insert_content: str):
-    """批量重命名 2：在文件名中间插入字符。
+    """Batch rename: insert characters in the middle of filename.
+    
+    批量重命名：在文件名中间插入字符。
     
     Args:
-        file_path (str): 文件路径
-        insert_position (int): 插入位置
-        insert_content (str): 插入的内容
+        file_path (str): file path / 文件路径
+        insert_position (int): insert position / 插入位置
+        insert_content (str): content to insert / 插入的内容
     
     Returns:
         None
@@ -61,11 +80,13 @@ def file_name_insert_content(file_path: str, insert_position: int, insert_conten
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 def file_name_add_prefix(file_path: str, prefix_content: str):
-    """批量重命名 3：给文件名给增加前缀。
+    """Batch rename: add prefix to filename.
+    
+    批量重命名：给文件名增加前缀。
     
     Args:
-        file_path (str): 文件路径
-        prefix_content (str): 前缀内容
+        file_path (str): file path / 文件路径
+        prefix_content (str): prefix content / 前缀内容
     
     Returns:
         None
@@ -75,11 +96,13 @@ def file_name_add_prefix(file_path: str, prefix_content: str):
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
 def file_name_add_postfix(file_path, postfix_content):
-    """批量重命名 4：给文件名给增加后缀。
+    """Batch rename: add postfix to filename.
+    
+    批量重命名：给文件名增加后缀。
     
     Args:
-        file_path (str): 文件路径
-        postfix_content (str): 后缀内容
+        file_path (str): file path / 文件路径
+        postfix_content (str): postfix content / 后缀内容
     
     Returns:
         None
@@ -88,10 +111,12 @@ def file_name_add_postfix(file_path, postfix_content):
 
 
 def output_file_list_to_excel(dir_path):
-    """整理当前文件夹下的文件名，到一个Excel里。
+    """Organize filenames in current folder into an Excel file.
+    
+    整理当前文件夹下的文件名到一个Excel里。
     
     Args:
-        dir_path (str): 目录路径
+        dir_path (str): directory path / 目录路径
     
     Returns:
         None
@@ -100,15 +125,18 @@ def output_file_list_to_excel(dir_path):
 
 
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
-    """根据类型添加行。
+    """Add lines by type.
     
-    TODO：忘记功能了，待测试
+    根据类型添加行。
+    
+    TODO: Forgotten functionality, needs testing.
+    TODO：忘记功能了，待测试。
     
     Args:
-        add_line_dict (dict): 添加行的字典
-        file_path (str): 文件路径
-        file_type (str, optional): 文件类型，默认为'.py'
-        output_path (str, optional): 输出路径，默认为'add_line'
+        add_line_dict (dict): dictionary of lines to add / 添加行的字典
+        file_path (str): file path / 文件路径
+        file_type (str, optional): file type / 文件类型。Default / 默认: '.py'
+        output_path (str, optional): output path / 输出路径。Default / 默认: 'add_line'
     
     Returns:
         None
@@ -118,11 +146,13 @@ def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_pat
 
 # author：https://github.com/CoderWanFeng/python-office/pull/74
 def search_specify_type_file(file_path, file_type):
-    """当前路径下，搜索指定类型的文件。
+    """Search for files of specified type in current path.
+    
+    在当前路径下搜索指定类型的文件。
     
     Args:
-        file_path (str): 文件路径
-        file_type (str): 文件类型
+        file_path (str): file path / 文件路径
+        file_type (str): file type / 文件类型
     
     Returns:
         None
@@ -131,14 +161,17 @@ def search_specify_type_file(file_path, file_type):
 
 
 def group_by_name(path, output_path=None, del_old_file=None):
-    """按名称分组。
+    """Group by name.
     
-    TODO：忘记功能了，待测试
+    按名称分组。
+    
+    TODO: Forgotten functionality, needs testing.
+    TODO：忘记功能了，待测试。
     
     Args:
-        path (str): 路径
-        output_path (str, optional): 输出路径
-        del_old_file (bool, optional): 是否删除旧文件
+        path (str): path / 路径
+        output_path (str, optional): output path / 输出路径
+        del_old_file (bool, optional): whether to delete old files / 是否删除旧文件
     
     Returns:
         None
@@ -147,16 +180,18 @@ def group_by_name(path, output_path=None, del_old_file=None):
 
 
 def get_files(path: str, name: str = '', suffix: str = None, sub: bool = False, level: int = 0) -> list:
-    """搜索当前路径下，所有指定类型的文件，并以列表的形式返回。
+    """Search all files of specified type in current path and return as list.
+    
+    搜索当前路径下所有指定类型的文件，并以列表形式返回。
     
     Args:
-        path (str): 路径
-        name (str, optional): 文件名
-        suffix (str, optional): 文件后缀
-        sub (bool, optional): 是否搜索子目录
-        level (int, optional): 搜索层级
+        path (str): path / 路径
+        name (str, optional): filename / 文件名
+        suffix (str, optional): file suffix / 文件后缀
+        sub (bool, optional): whether to search subdirectories / 是否搜索子目录
+        level (int, optional): search level / 搜索层级
     
     Returns:
-        list: 文件路径列表
+        list: list of file paths / 文件路径列表
     """
     return pofile.get_files(path, name, suffix, sub, level)

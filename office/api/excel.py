@@ -1,7 +1,21 @@
 # -*- coding: UTF-8 -*-
-"""Excel处理功能模块。
+"""Excel processing functionality module.
+
+Excel处理功能模块。
+
+This module provides rich Excel file processing capabilities including data simulation,
+file merging/splitting, format conversion, and more.
 
 该模块提供了丰富的Excel文件处理功能，包括数据模拟、文件合并拆分、格式转换等。
+
+Main Features:
+- fake2excel: Automatically create Excel files with mock data
+- merge2excel: Merge multiple Excel files into different sheets
+- sheet2excel: Split different sheets from one Excel into separate files
+- merge2sheet: Merge multiple sheets from multiple Excel files
+- find_excel_data: Search for specific content in Excel files
+- split_excel_by_column: Split Excel by specified column values
+- excel2pdf: Convert Excel to PDF format
 
 主要功能：
 - fake2excel: 自动创建Excel并模拟数据
@@ -23,15 +37,17 @@ import poexcel
 
 
 def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_CN'):
-    """自动创建Excel，并且模拟数据。
+    """Automatically create Excel file with mock data.
     
-    视频：https://www.bilibili.com/video/BV1wr4y1b7uk/
+    自动创建Excel文件并模拟数据。
+    
+    Video tutorial: https://www.bilibili.com/video/BV1wr4y1b7uk/
     
     Args:
-        columns (list): 列名。可以模拟的列有：http://python4office.cn/python-office/fake2excel/
-        rows (int): 生成多少行数据。默认值：1
-        path (str): 生成的Excel的位置和名称
-        language (str): 数据用什么语言，默认是中文，可以填english
+        columns (list): column names to generate / 需要生成的列名。Available columns / 可以模拟的列：http://python4office.cn/python-office/fake2excel/
+        rows (int): number of rows to generate / 生成的行数。Default / 默认值: 1
+        path (str): output file path and name / 生成的Excel文件路径和名称
+        language (str): language for generated data / 数据语言。Default / 默认: 'zh_CN' (Chinese / 中文), can be 'english' / 可以填 'english'
     
     Returns:
         None
@@ -40,14 +56,16 @@ def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_
 
 
 def merge2excel(dir_path, output_file='merge2excel.xlsx'):
-    """多个excel，合并到一个excel的不同sheet中。
+    """Merge multiple Excel files into different sheets of one Excel file.
     
-    文档：https://mp.weixin.qq.com/s/3ZhZZfGlpNhszCWnOBeklg
-    视频：https://www.bilibili.com/video/BV1Th4y1Y7kd/
+    将多个Excel文件合并到一个Excel的不同sheet中。
+    
+    Documentation: https://mp.weixin.qq.com/s/3ZhZZfGlpNhszCWnOBeklg
+    Video tutorial: https://www.bilibili.com/video/BV1Th4y1Y7kd/
     
     Args:
-        dir_path (str): 包含多个Excel文件的目录路径
-        output_file (str): 合并后的Excel文件路径，默认为'merge2excel.xlsx'
+        dir_path (str): directory path containing multiple Excel files / 包含多个Excel文件的目录路径
+        output_file (str): output merged Excel file path / 合并后的Excel文件路径。Default / 默认: 'merge2excel.xlsx'
     
     Returns:
         None
@@ -58,13 +76,15 @@ def merge2excel(dir_path, output_file='merge2excel.xlsx'):
 #
 
 def sheet2excel(file_path, output_path='./'):
-    """同一个excel里的不同sheet，拆分为不同的excel文件。
+    """Split different sheets from one Excel file into separate Excel files.
     
-    视频：https://www.bilibili.com/video/BV1714y147Ao/
+    将同一个Excel里的不同sheet拆分为不同的Excel文件。
+    
+    Video tutorial: https://www.bilibili.com/video/BV1714y147Ao/
     
     Args:
-        file_path (str): 需要拆分的Excel文件路径
-        output_path (str): 拆分后文件的输出目录，默认为当前目录
+        file_path (str): path to the Excel file to be split / 需要拆分的Excel文件路径
+        output_path (str): output directory for split files / 拆分后文件的输出目录。Default / 默认: current directory / 当前目录
     
     Returns:
         None
@@ -73,14 +93,16 @@ def sheet2excel(file_path, output_path='./'):
 
 
 def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: str = 'merge2sheet'):
-    """实现多个Excel的多个sheet的自动合并。
+    """Automatically merge multiple sheets from multiple Excel files.
     
-    文档：https://mp.weixin.qq.com/s/qQxIsSPHfILTCxZ8PBv6QA
+    自动合并多个Excel文件的多个sheet。
+    
+    Documentation: https://mp.weixin.qq.com/s/qQxIsSPHfILTCxZ8PBv6QA
     
     Args:
-        dir_path (str): 包含多个Excel文件的目录路径
-        output_sheet_name (str): 合并后的sheet名称，默认为'Sheet1'
-        output_excel_name (str): 合并后的Excel文件名，默认为'merge2sheet'
+        dir_path (str): directory path containing multiple Excel files / 包含多个Excel文件的目录路径
+        output_sheet_name (str): name of the merged sheet / 合并后的sheet名称。Default / 默认: 'Sheet1'
+        output_excel_name (str): name of the merged Excel file / 合并后的Excel文件名。Default / 默认: 'merge2sheet'
     
     Returns:
         None
@@ -90,13 +112,15 @@ def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: 
 
 # PR内容 & 作者：https://gitee.com/CoderWanFeng/python-office/pulls/10
 def find_excel_data(search_key: str, target_dir: str):
-    """搜索excel中指定内容的文件、行数、内容详情。
+    """Search for specific content in Excel files including file name, row number, and details.
     
-    视频：https://www.bilibili.com/video/BV1Bd4y1B7yr/
+    搜索Excel中指定内容的文件、行数、内容详情。
+    
+    Video tutorial: https://www.bilibili.com/video/BV1Bd4y1B7yr/
     
     Args:
-        search_key (str): 需要搜索的关键词
-        target_dir (str): 搜索的目录路径
+        search_key (str): keyword to search for / 需要搜索的关键词
+        target_dir (str): directory path to search in / 搜索的目录路径
     
     Returns:
         None
@@ -107,12 +131,14 @@ def find_excel_data(search_key: str, target_dir: str):
 # PR内容 & 作者：：https://gitee.com/CoderWanFeng/python-office/pulls/11
 
 def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None):
-    """按指定列的内容，拆分excel。
+    """Split Excel file based on the content of a specified column.
+    
+    按指定列的内容拆分Excel文件。
     
     Args:
-        filepath (str): 需要拆分的Excel文件路径
-        column (int): 按哪一列的内容进行拆分
-        worksheet_name (str, optional): 指定工作表名称，默认为None表示第一个工作表
+        filepath (str): path to the Excel file to be split / 需要拆分的Excel文件路径
+        column (int): column index to split by / 按哪一列的内容进行拆分
+        worksheet_name (str, optional): worksheet name to process / 指定工作表名称。Default / 默认: None (first worksheet / 第一个工作表)
     
     Returns:
         None
@@ -121,14 +147,16 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
 
 
 def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
-    """将指定的Excel文件的指定工作表转换为PDF文件。
+    """Convert specified worksheet from Excel file to PDF format.
     
-    视频：https://www.bilibili.com/video/BV1A84y1N7or/
+    将Excel文件的指定工作表转换为PDF格式。
+    
+    Video tutorial: https://www.bilibili.com/video/BV1A84y1N7or/
     
     Args:
-        excel_path (str): Excel文件的路径
-        pdf_path (str): 转换后生成的PDF文件的路径
-        sheet_id (int): 工作表的索引，默认为0，表示第一个工作表
+        excel_path (str): path to the Excel file / Excel文件的路径
+        pdf_path (str): path for the output PDF file / 转换后生成的PDF文件的路径
+        sheet_id (int): worksheet index / 工作表的索引。Default / 默认: 0 (first worksheet / 第一个工作表)
     
     Returns:
         None

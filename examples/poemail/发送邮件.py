@@ -1,17 +1,25 @@
 # -*- coding: utf-8 -*-
-"""
-邮件发送功能演示
-作者：程序员晚枫
-项目官网：https://www.python-office.com
+"""Email sending functionality demonstration.
+
+Author:
+    程序员晚枫
+
+Project:
+    https://www.python-office.com
 """
 
 import office
 
 # 发送邮件示例
 def send_email_demo():
-    """
-    演示如何使用python-office发送邮件
-    注意：需要配置邮箱的SMTP服务
+    """Demonstrate how to send emails using python-office.
+    
+    Note: SMTP service configuration is required for email functionality.
+    This example shows the code structure with placeholder values that need
+    to be replaced with actual email credentials before use.
+    
+    Returns:
+        None
     """
     print("📧 邮件发送功能演示 - 程序员晚枫")
     print("=" * 50)
