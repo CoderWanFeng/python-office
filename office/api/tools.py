@@ -49,7 +49,7 @@ def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
     Returns:
         None
     """
-    wftools.qrcodetools(url, output)
+    wftools.qrcodetools(url=url, output=output)
 
 
 def passwordtools(len=8):
@@ -63,7 +63,7 @@ def passwordtools(len=8):
     Returns:
         str: generated password / 生成的密码
     """
-    return wftools.passwordtools(len)
+    return wftools.passwordtools(len=len)
 
 def weather():
     """Get current weather information.
@@ -136,7 +136,7 @@ def create_article(theme, line_num=200):
     Returns:
         None
     """
-    wftools.create_article(theme, line_num)
+    wftools.create_article(theme=theme, line_num=line_num)
 
 
 def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
@@ -158,7 +158,7 @@ def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
         None
     """
     # 调用wftools模块中的pwd4wifi函数，传递密码长度和密码列表参数
-    wftools.pwd4wifi(len_pwd, pwd_list)
+    wftools.pwd4wifi(len_pwd=len_pwd, pwd_list=pwd_list)
 
 # 测试网速
 

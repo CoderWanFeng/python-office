@@ -14,4 +14,4 @@ def url2ebook(url, tile):
     Returns:
         None，但会生成电子书文件
     """
-    pospider.url.url2ebook(url, tile)
+    pospider.url.url2ebook(url=url, tile=tile)

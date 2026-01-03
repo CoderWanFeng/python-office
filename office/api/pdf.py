@@ -56,7 +56,7 @@ def pdf2docx(input_file, output_path='.'):
     Returns:
         None
     """
-    popdf.pdf2docx(input_file, output_path)
+    popdf.pdf2docx(input_file=input_file, output_path=output_path)
 
 
 def pdf2imgs(input_file, output_path, merge=False):
@@ -74,7 +74,7 @@ def pdf2imgs(input_file, output_path, merge=False):
     Returns:
         None
     """
-    popdf.pdf2imgs(input_file, output_path, merge)
+    popdf.pdf2imgs(input_file=input_file, output_path=output_path, merge=merge)
 
 
 def txt2pdf(input_file: str, output_file='txt2pdf.pdf'):
@@ -92,7 +92,7 @@ def txt2pdf(input_file: str, output_file='txt2pdf.pdf'):
         None
     """
 
-    popdf.txt2pdf(input_file, output_file)
+    popdf.txt2pdf(input_file=input_file, output_file=output_file)
 
 
 def split4pdf(input_file, output_file=r'./output_path/split_pdf.pdf', from_page=-1, to_page=-1):
@@ -111,7 +111,7 @@ def split4pdf(input_file, output_file=r'./output_path/split_pdf.pdf', from_page=
     Returns:
         None
     """
-    popdf.split4pdf(input_file, output_file, from_page, to_page)
+    popdf.split4pdf(input_file=input_file, output_file=output_file, from_page=from_page, to_page=to_page)
 
 
 def encrypt4pdf(password, input_file=None, output_file=None, input_path=None, output_path=None):
@@ -181,8 +181,8 @@ def add_text_watermark(input_file, point, text='python-office',
     Returns:
         None
     """
-    popdf.add_watermark(input_file, point, text,
-                        output_file, fontname, fontsize, color)
+    popdf.add_watermark(input_file=input_file, point=point, text=text,
+                        output_file=output_file, fontname=fontname, fontsize=fontsize, color=color)
 
 
 def merge2pdf(input_file_list, output_file):
@@ -199,7 +199,7 @@ def merge2pdf(input_file_list, output_file):
     Returns:
         None
     """
-    popdf.merge2pdf(input_file_list, output_file)
+    popdf.merge2pdf(input_file_list=input_file_list, output_file=output_file)
 
 
 def del4pdf(input_file, output_file, page_nums):
@@ -217,7 +217,7 @@ def del4pdf(input_file, output_file, page_nums):
     Returns:
         None
     """
-    popdf.del4pdf(input_file, output_file, page_nums)
+    popdf.del4pdf(page_nums=page_nums, input_file=input_file, output_file=output_file)
 
 
 def add_img_water(pdf_file_in, pdf_file_mark, pdf_file_out):
@@ -261,7 +261,7 @@ def add_mark(pdf_file, mark_str, output_path=None, output_file_name=None) -> Non
     Returns:
         None
     """
-    popdf.add_watermark_by_parameters(pdf_file, mark_str, output_path, output_file_name)
+    popdf.add_watermark_by_parameters(pdf_file=pdf_file, mark_str=mark_str, output_path=output_path, output_file_name=output_file_name)
 
 
 # 给pdf加水印-有参数
@@ -280,4 +280,4 @@ def add_watermark_by_parameters(pdf_file, mark_str, output_path=None, output_fil
     Returns:
         None
     """
-    popdf.add_watermark_by_parameters(pdf_file, mark_str, output_path, output_file_name)
+    popdf.add_watermark_by_parameters(pdf_file=pdf_file, mark_str=mark_str, output_path=output_path, output_file_name=output_file_name)

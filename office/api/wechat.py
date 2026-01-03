@@ -30,7 +30,7 @@ def send_message(who: str, message: str):
     Returns:
         None
     """
-    PyOfficeRobot.chat.send_message(who, message)
+    PyOfficeRobot.chat.send_message(who=who, message=message)
 
 
 def send_message_by_time(who, message, time):
@@ -46,7 +46,7 @@ def send_message_by_time(who, message, time):
     Returns:
         None
     """
-    PyOfficeRobot.chat.send_message_by_time(who, message, time)
+    PyOfficeRobot.chat.send_message_by_time(who=who, message=message, time=time)
 
 
 def chat_by_keywords(who, keywords):
@@ -61,7 +61,7 @@ def chat_by_keywords(who, keywords):
     Returns:
         None
     """
-    PyOfficeRobot.chat.chat_by_keywords(who, keywords)
+    PyOfficeRobot.chat.chat_by_keywords(who=who, keywords=keywords)
 
 
 def send_file(who, file):
@@ -76,7 +76,7 @@ def send_file(who, file):
     Returns:
         None
     """
-    PyOfficeRobot.file.send_file(who, file)
+    PyOfficeRobot.file.send_file(who=who, file=file)
 
 
 def group_send():
@@ -109,7 +109,7 @@ def receive_message(who='文件传输助手', txt='userMessage.txt', output_path
     Returns:
         None: function result is saving messages to specified file and path / 函数的执行结果是将消息保存到指定的文件和路径中
     """
-    PyOfficeRobot.chat.receive_message(who, txt, output_path)
+    PyOfficeRobot.chat.receive_message(who=who, txt=txt, output_path=output_path)
 
 
 def chat_robot(who='程序员晚枫'):
@@ -123,4 +123,4 @@ def chat_robot(who='程序员晚枫'):
     Returns:
         None
     """
-    PyOfficeRobot.chat.chat_robot(who)
+    PyOfficeRobot.chat.chat_robot(who=who)

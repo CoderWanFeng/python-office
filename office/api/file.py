@@ -58,7 +58,7 @@ def replace4filename(path: str, del_content, replace_content='', dir_rename: boo
     Returns:
         None
     """
-    pofile.replace4filename(path, del_content, replace_content, dir_rename, file_rename, suffix)
+    pofile.replace4filename(path=path, del_content=del_content, replace_content=replace_content, dir_rename=dir_rename, file_rename=file_rename, suffix=suffix)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
@@ -75,7 +75,7 @@ def file_name_insert_content(file_path: str, insert_position: int, insert_conten
     Returns:
         None
     """
-    pofile.file_name_insert_content(file_path, insert_position, insert_content)
+    pofile.file_name_insert_content(file_path=file_path, insert_position=insert_position, insert_content=insert_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
@@ -91,7 +91,7 @@ def file_name_add_prefix(file_path: str, prefix_content: str):
     Returns:
         None
     """
-    pofile.file_name_add_prefix(file_path, prefix_content)
+    pofile.file_name_add_prefix(file_path=file_path, prefix_content=prefix_content)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/72
@@ -107,7 +107,7 @@ def file_name_add_postfix(file_path, postfix_content):
     Returns:
         None
     """
-    pofile.file_name_add_postfix(file_path, postfix_content)
+    pofile.file_name_add_postfix(file_path=file_path, postfix_content=postfix_content)
 
 
 def output_file_list_to_excel(dir_path):
@@ -121,7 +121,7 @@ def output_file_list_to_excel(dir_path):
     Returns:
         None
     """
-    pofile.output_file_list_to_excel(dir_path)
+    pofile.output_file_list_to_excel(dir_path=dir_path)
 
 
 def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_path=r'add_line'):
@@ -141,7 +141,7 @@ def add_line_by_type(add_line_dict: dict, file_path, file_type='.py', output_pat
     Returns:
         None
     """
-    pofile.add_line_by_type(add_line_dict, file_path, file_type, output_path)
+    pofile.add_line_by_type(add_line_dict=add_line_dict, file_path=file_path, file_type=file_type, output_path=output_path)
 
 
 # author：https://github.com/CoderWanFeng/python-office/pull/74
@@ -157,7 +157,7 @@ def search_specify_type_file(file_path, file_type):
     Returns:
         None
     """
-    pofile.search_specify_type_file(file_path, file_type)
+    pofile.search_specify_type_file(file_path=file_path, file_type=file_type)
 
 
 def group_by_name(path, output_path=None, del_old_file=None):
@@ -176,7 +176,7 @@ def group_by_name(path, output_path=None, del_old_file=None):
     Returns:
         None
     """
-    pofile.group_by_name(path, output_path, del_old_file)
+    pofile.group_by_name(path=path, output_path=output_path, del_old_file=del_old_file)
 
 
 def get_files(path: str, name: str = '', suffix: str = None, sub: bool = False, level: int = 0) -> list:
@@ -194,4 +194,4 @@ def get_files(path: str, name: str = '', suffix: str = None, sub: bool = False, 
     Returns:
         list: list of file paths / 文件路径列表
     """
-    return pofile.get_files(path, name, suffix, sub, level)
+    return pofile.get_files(path=path, name=name, suffix=suffix, sub=sub, level=level)

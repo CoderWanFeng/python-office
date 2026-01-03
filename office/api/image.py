@@ -32,7 +32,7 @@ def compress_image(input_file: str, output_file: str, quality: int):
         None
     """
 
-    poimage.compress_image(input_file, output_file, quality)
+    poimage.compress_image(input_file=input_file, output_file=output_file, quality=quality)
 
 
 def image2gif():
@@ -74,7 +74,7 @@ def add_watermark(file, mark, output_path='./', color="#eaeaea", size=30, opacit
     Returns:
         None
     """
-    poimage.add_watermark(file, mark, output_path, color, size, opacity, space, angle)
+    poimage.add_watermark(file=file, mark=mark, output_path=output_path, color=color, size=size, opacity=opacity, space=space, angle=angle)
     # mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
 
 
@@ -100,7 +100,7 @@ def img2Cartoon(path, client_api='', client_secret=''):
         None
     """
     # 调用img2Cartoon函数处理图片，参数包括图片路径、API密钥和密钥秘密
-    poimage.img2Cartoon(path, client_api, client_secret)
+    poimage.img2Cartoon(path=path, client_api=client_api, client_secret=client_secret)
 
 
 
@@ -125,7 +125,7 @@ def down4img(url, output_path='.', output_name='down4img', type='jpg'):
         None
     """
     # 调用poimage模块中的down4img函数执行图片下载和保存操作
-    poimage.down4img(url, output_path, output_name, type)
+    poimage.down4img(url=url, output_path=output_path, output_name=output_name, type=type)
 
 
 def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
@@ -142,7 +142,7 @@ def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
         None
     """
     # 调用poimage模块的txt2wordcloud方法生成词云
-    poimage.txt2wordcloud(filename, color, result_file)
+    poimage.txt2wordcloud(filename=filename, color=color, result_file=result_file)
 
 
 
@@ -166,7 +166,7 @@ def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
         None
     """
     # 调用poimage库中的pencil4img函数处理图像
-    poimage.pencil4img(input_img, output_path, output_name)
+    poimage.pencil4img(input_img=input_img, output_path=output_path, output_name=output_name)
 
 
 
@@ -181,7 +181,7 @@ def decode_qrcode(qrcode_path):
     Returns:
         None
     """
-    poimage.decode_qrcode(qrcode_path)
+    poimage.decode_qrcode(qrcode_path=qrcode_path)
 
 
 def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):
@@ -197,5 +197,5 @@ def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):
         None
     """
     # 调用poimage库中的del_watermark函数来删除图片中的水印
-    poimage.del_watermark(input_image, output_image)
+    poimage.del_watermark(input_image=input_image, output_image=output_image)
 

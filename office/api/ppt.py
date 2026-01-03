@@ -31,7 +31,7 @@ def ppt2pdf(path: str, output_path=r'./'):
     Returns:
         None
     """
-    poppt.ppt2pdf(path, output_path)
+    poppt.ppt2pdf(path=path, output_path=output_path)
 
 
 def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
@@ -47,7 +47,7 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     Returns:
         None
     """
-    poppt.ppt2img(input_path, output_path, merge)
+    poppt.ppt2img(input_path=input_path, output_path=output_path, merge=merge)
 
 
 def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.pptx'):
@@ -63,4 +63,4 @@ def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.
     Returns:
         None
     """
-    poppt.merge4ppt(input_path, output_path, output_name)
+    poppt.merge4ppt(input_path=input_path, output_path=output_path, output_name=output_name)

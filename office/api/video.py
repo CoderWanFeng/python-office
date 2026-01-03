@@ -34,7 +34,7 @@ def video2mp3(path, mp3_name=None, output_path=r'./'):
     Returns:
         None: generates mp3 file in specified output path / 在指定输出路径下生成mp3文件
     """
-    povideo.video2mp3(path, mp3_name, output_path)
+    povideo.video2mp3(path=path, mp3_name=mp3_name, output_path=output_path)
 
 def audio2txt(audio_path, appid, secret_id, secret_key):
     """Extract text from audio.
@@ -53,7 +53,7 @@ def audio2txt(audio_path, appid, secret_id, secret_key):
     Returns:
         None
     """
-    povideo.audio2txt(audio_path, appid, secret_id, secret_key)
+    povideo.audio2txt(audio_path=audio_path, appid=appid, secret_id=secret_id, secret_key=secret_key)
 
 
 
@@ -76,7 +76,7 @@ def mark2video(video_path, output_path=r'./', output_name=r'mark2video.mp4', mar
     Returns:
         None
     """
-    povideo.mark2video(video_path, output_path, output_name, mark_str, font_size, font_type, font_color)
+    povideo.mark2video(video_path=video_path, output_path=output_path, output_name=output_name, mark_str=mark_str, font_size=font_size, font_type=font_type, font_color=font_color)
 
 
 
@@ -94,4 +94,4 @@ def txt2mp3(content='程序员晚枫', file=None, mp3=r'./程序员晚枫.mp3', 
     Returns:
         None
     """
-    return povideo.txt2mp3(content, file, mp3, speak)
+    return povideo.txt2mp3(content=content, file=file, mp3=mp3, speak=speak)

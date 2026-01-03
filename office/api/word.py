@@ -32,7 +32,7 @@ def docx2pdf(path: str, output_path: str = None):
     """
     if output_path is None:
         output_path = path
-    poword.docx2pdf(path, output_path)
+    poword.docx2pdf(path=path, output_path=output_path)
 
 def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
     """Merge multiple Docx files into one file.
@@ -47,7 +47,7 @@ def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4do
     Returns:
         None
     """
-    poword.merge4docx(input_path, output_path, new_word_name)
+    poword.merge4docx(input_path=input_path, output_path=output_path, new_word_name=new_word_name)
 
 
 def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None):
@@ -63,7 +63,7 @@ def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None)
     Returns:
         None
     """
-    poword.doc2docx(input_path, output_path, output_name)
+    poword.doc2docx(input_path=input_path, output_path=output_path, output_name=output_name)
 
 
 def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None):
@@ -79,7 +79,7 @@ def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None)
     Returns:
         None
     """
-    poword.docx2doc(input_path, output_path, output_name)
+    poword.docx2doc(input_path=input_path, output_path=output_path, output_name=output_name)
 
 def docx4imgs(word_path, img_path):
     """Extract images from Word document.
@@ -93,4 +93,4 @@ def docx4imgs(word_path, img_path):
     Returns:
         None
     """
-    poword.docx4imgs(word_path, img_path)
+    poword.docx4imgs(word_path=word_path, img_path=img_path)

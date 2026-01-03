@@ -36,5 +36,5 @@ def excel2markdown(input_file, output_file=r'./excel2markdown.md', sheet_name=No
         None
     """
     # 调用pomarkdown库中的excel2markdown函数执行Excel到Markdown的转换
-    pomarkdown.excel2markdown(input_file, output_file, sheet_name)
+    pomarkdown.excel2markdown(input_file=input_file, output_file=output_file, sheet_name=sheet_name)
 
