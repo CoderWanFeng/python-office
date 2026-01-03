@@ -13,7 +13,7 @@
 
 
 
-<p align="center" name="gitcode">
+<p align="center" name="atomgit">
     <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
     <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
     </a>
@@ -21,7 +21,7 @@
 		<img src='https://gitee.com/CoderWanFeng//python-office/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
 	<a target="_blank" href='https://atomgit.com/CoderWanFeng1/python-office'>
-		<img src='https://atomgit.com/CoderWanFeng1/python-office/star/2025top.svg?theme=dark' alt='gitcode star'/>
+		<img src='https://atomgit.com/CoderWanFeng1/python-office/star/2025top.svg?theme=dark' alt='atomgit star'/>
 	</a>	
 	<a target="_blank" href='https://atomgit.com/CoderWanFeng1/python-office'>
 <img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads">
@@ -131,7 +131,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 提交问题反馈时，请务必填写和python-office代码本身有关的问题，不进行有关python学习，甚至是个人练习的知识答疑和讨论。
 
-- [GitCode issue](https://atomgit.com/CoderWanFeng1/python-office/issues)
+- [atomgit issue](https://atomgit.com/CoderWanFeng1/python-office/issues)
 - [Gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
 - [Github issue](https://github.com/CoderWanFeng/python-office/issues)
 
@@ -145,7 +145,7 @@ python-office欢迎任何人来添砖加瓦，贡献代码，建议提交的pr�
 
 <p align="center" id='B站-banner'>
     <a target="_blank" href='http://python4office.cn/wechat-qrcode/'>
-    <img src="https://raw.gitcode.com/user-images/assets/5027920/c52fb12c-7cb7-4684-8a3e-020a4bec8888/f0501b73cd57eba391ab4fc5a6654669.jpg" width="100%"/>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/c52fb12c-7cb7-4684-8a3e-020a4bec8888/f0501b73cd57eba391ab4fc5a6654669.jpg" width="100%"/>
     </a>   
 </p>
 

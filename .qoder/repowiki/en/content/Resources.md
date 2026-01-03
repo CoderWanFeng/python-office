@@ -25,7 +25,7 @@
 10. [Appendices](#appendices)
 
 ## Introduction
-This document compiles comprehensive reference material for python-office resources. It consolidates official website links, video tutorials on Bilibili, community support channels, and the project’s presence across GitHub, Gitee, and GitCode. It also outlines related projects and sub-packages, external documentation and tutorials created by the community, and practical guidance for staying updated with new features and releases.
+This document compiles comprehensive reference material for python-office resources. It consolidates official website links, video tutorials on Bilibili, community support channels, and the project’s presence across GitHub, Gitee, and atomgit. It also outlines related projects and sub-packages, external documentation and tutorials created by the community, and practical guidance for staying updated with new features and releases.
 
 ## Project Structure
 The repository organizes learning and community resources primarily in the README files, examples documentation, and internal URL mapping utilities. The official documentation and tutorial links are prominently featured in both the Chinese and English READMEs, while the examples documentation aggregates Bilibili videos and WeChat articles for each functional module.
@@ -36,7 +36,7 @@ A["README.md"] --> B["Official Website"]
 A --> C["Community Group Link"]
 A --> D["GitHub Stars"]
 A --> E["Gitee Stars"]
-A --> F["GitCode Stars"]
+A --> F["atomgit Stars"]
 G["README-EN.md"] --> H["Chinese Documentation Link"]
 G --> I["Bilibili Video Introduction"]
 J["examples/readme.md"] --> K["Module-specific Bilibili Tutorials"]
@@ -168,7 +168,7 @@ Practical usage:
 - Official website: Subscribe to announcements on the official website for release notes and feature updates.
 - Bilibili: Follow the Bilibili playlists for video updates and new tutorials.
 - WeChat group: Join the WeChat group to receive timely updates and engage with the community.
-- Issue trackers: Use the issue trackers on GitHub, Gitee, and GitCode to track bugs and feature requests.
+- Issue trackers: Use the issue trackers on GitHub, Gitee, and atomgit to track bugs and feature requests.
 
 Practical usage:
 - Bookmark the official website and Bilibili playlists.
@@ -218,7 +218,7 @@ A --> R["loguru"]
 
 ## Troubleshooting Guide
 - Community support: Use the WeChat group QR banner and banners in the examples documentation to join the community and seek help.
-- Issue reporting: Report issues via the issue trackers on GitHub, Gitee, and GitCode as listed in the README.
+- Issue reporting: Report issues via the issue trackers on GitHub, Gitee, and atomgit as listed in the README.
 
 **Section sources**
 - [README.md](file://README.md#L132-L135)

@@ -52,7 +52,7 @@ def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_
     Returns:
         None
     """
-    poexcel.fake2excel(columns, rows, path, language)
+    poexcel.fake2excel(columns=columns, rows=rows, path=path, language=language)
 
 
 def merge2excel(dir_path, output_file='merge2excel.xlsx'):
@@ -70,10 +70,8 @@ def merge2excel(dir_path, output_file='merge2excel.xlsx'):
     Returns:
         None
     """
-    poexcel.merge2excel(dir_path, output_file)
+    poexcel.merge2excel(dir_path=dir_path, output_file=output_file)
 
-
-#
 
 def sheet2excel(file_path, output_path='./'):
     """Split different sheets from one Excel file into separate Excel files.
@@ -89,7 +87,7 @@ def sheet2excel(file_path, output_path='./'):
     Returns:
         None
     """
-    poexcel.sheet2excel(file_path, output_path)
+    poexcel.sheet2excel(file_path=file_path, output_path=output_path)
 
 
 def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: str = 'merge2sheet'):
@@ -107,7 +105,7 @@ def merge2sheet(dir_path, output_sheet_name: str = 'Sheet1', output_excel_name: 
     Returns:
         None
     """
-    poexcel.merge2sheet(dir_path, output_sheet_name, output_excel_name)
+    poexcel.merge2sheet(dir_path=dir_path, output_sheet_name=output_sheet_name, output_excel_name=output_excel_name)
 
 
 # PR内容 & 作者：https://gitee.com/CoderWanFeng/python-office/pulls/10
@@ -125,7 +123,7 @@ def find_excel_data(search_key: str, target_dir: str):
     Returns:
         None
     """
-    poexcel.find_excel_data(search_key, target_dir)
+    poexcel.find_excel_data(search_key=search_key, target_dir=target_dir)
 
 
 # PR内容 & 作者：：https://gitee.com/CoderWanFeng/python-office/pulls/11
@@ -143,7 +141,7 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
     Returns:
         None
     """
-    poexcel.split_excel_by_column(filepath, column, worksheet_name)
+    poexcel.split_excel_by_column(filepath=filepath, column=column, worksheet_name=worksheet_name)
 
 
 def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
@@ -161,4 +159,4 @@ def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):
     Returns:
         None
     """
-    poexcel.excel2pdf(excel_path, pdf_path, sheet_id)
+    poexcel.excel2pdf(excel_path=excel_path, pdf_path=pdf_path, sheet_id=sheet_id)
