@@ -10,6 +10,9 @@ dist/
 *.egg-info
 __pycache__
 
+# Test files
+tests/test_files/
+
 # PyInstaller
 *.spec
 *.manifest

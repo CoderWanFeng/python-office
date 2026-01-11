@@ -17,7 +17,7 @@
     	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office'>
 		<img src='https://gitee.com/CoderWanFeng//python-office/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
-<a href="https://mp.weixin.qq.com/s/7rH5U6s91hnTKCKZy4BHCg">
+<a href="https://mp.weixin.qq.com/s/b6fpU-oXSo8qKP_Nc8w0Zg">
   <img src="https://img.shields.io/badge/学习-AI编程-red" alt="AI编程">
 </a> 
     	<a href="http://www.python4office.cn/wechat-group/">
