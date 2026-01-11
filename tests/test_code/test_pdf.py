@@ -14,6 +14,7 @@ class TestPDF(unittest.TestCase):
     
     该类包含对PDF相关API的单元测试方法。
     """
+
     def test_add_watermark(self):
         stub_stdin(self, './test_files/popdf/in.popdf\npython-office\n')  # 依次输入
         add_watermark()
@@ -29,12 +30,6 @@ class TestPDF(unittest.TestCase):
             pdf_path=r'./test_files/popdf/in.popdf',
             out_dir='./images')
 
-    def test_pdf2docx(self):
-        pdf2docx(
-            file_path=r'./test_files/popdf/in.popdf',
-            output_path=r'./test_files/popdf/'
-        )
-
     # def test_file2pdf(self):
     #     file2pdf(
     #         file_type='txt',
@@ -43,8 +38,14 @@ class TestPDF(unittest.TestCase):
 
     def test_pdf2docx(self):
         pdf2docx(
-            file_path=r'./test_files/popdf/in.popdf',
-            output_path=r'./test_files/popdf/'
+            input_file=r'./tests/test_files/pdf/in.pdf',
+            output_file=r'./tests/test_files/popdf/out.docx'
+        )
+
+    def test_pdf2docx_path(self):
+        pdf2docx(
+            input_path=r'./tests/test_files/pdf/',
+            output_path=r'./tests/test_files/popdf/'
         )
 
     def test_merge2pdf(self):
