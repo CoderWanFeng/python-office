@@ -135,7 +135,7 @@ class CrossPlatformCompatibility:
             resources_text = Text("\n🔗 相关资源链接:")
             resources_text.append("\n• 官方文档: https://www.python-office.com")
             resources_text.append("\n• 问题反馈: https://github.com/CoderWanFeng/python-office/issues")
-            resources_text.append("\n• 交流群: http://www.python4office.cn/wechat-group")
+            resources_text.append("\n• 交流群: https://www.python4office.cn/wechat-group")
             
             console.print(Panel(
                 resources_text,
@@ -179,7 +179,7 @@ class CrossPlatformCompatibility:
         print("-" * 40)
         print("   • 官方文档: https://www.python-office.com")
         print("   • 问题反馈: https://github.com/CoderWanFeng/python-office/issues")
-        print("   • 交流群: http://www.python4office.cn/wechat-group")
+        print("   • 交流群: https://www.python4office.cn/wechat-group")
         print("\n" + "=" * 80)
     
     def check_module_compatibility(self, module_name: str) -> bool:

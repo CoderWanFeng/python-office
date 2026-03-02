@@ -50,7 +50,7 @@ def pdf2docx(input_file=None, output_file=None, input_path=None, output_path=Non
 
     将PDF转换为Word文档。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/1-pdf2docx/
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/1-pdf2docx/
 
     Args:
         input_file (str): path to the PDF file / PDF文件路径
@@ -92,7 +92,7 @@ def pdf2imgs(input_file=None, output_file=None, merge=False, pdf_path=None, out_
 
     将PDF转换为图片。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/2-pdf2imgs/
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/2-pdf2imgs/
 
     Args:
         input_file (str, optional): path to the PDF file / PDF文件路径
@@ -130,7 +130,7 @@ def txt2pdf(input_file=None, output_file=None):
 
     将文本文件转换为PDF文件。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/3-txt2pdf/
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/3-txt2pdf/
 
     Args:
         input_file (str, optional): path to the text file / 文本文件路径
@@ -150,7 +150,7 @@ def split4pdf(input_file=None, output_file=None, from_page=-1, to_page=-1):
 
     拆分PDF文件。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/4-split4pdf/
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/4-split4pdf/
 
     Args:
         input_file (str, optional): path to the PDF file / PDF文件路径
@@ -177,7 +177,7 @@ def encrypt4pdf(password, input_file=None, output_file=None, input_path=None, ou
 
     该函数用于对PDF文件进行加密处理，支持设置用户密码保护PDF文件。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/5-encrypt4pdf/
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/5-encrypt4pdf/
 
     Args:
         password (str): encryption password for the PDF file / PDF文件的加密密码
@@ -199,7 +199,7 @@ def decrypt4pdf(password, input_file=None, output_file=None, input_path=None, ou
 
     解密PDF文件。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/6-decrypt4pdf
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/6-decrypt4pdf
 
     Args:
         password (str): decryption password for the PDF file / PDF文件的解密密码
@@ -221,7 +221,7 @@ def add_text_watermark(input_file=None, point=None, text='python-office',
 
     在PDF文档中添加文本水印。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/7-add_watermark
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/7-add_watermark
 
     Args:
         input_file (str, optional): path to the PDF file / PDF文件路径
@@ -247,7 +247,7 @@ def merge2pdf(input_file_list=None, output_file=None, one_by_one=None, output=No
 
     合并多个PDF文件。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/8-merge2pdf
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/8-merge2pdf
 
     Args:
         input_file_list (list, optional): list of PDF file paths / PDF文件路径列表
@@ -284,7 +284,7 @@ def del4pdf(input_file=None, output_file=None, page_nums=None):
 
     删除PDF文件中的指定页面。
 
-    Documentation: http://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/9-del4pdf
+    Documentation: https://www.python4office.cn/python-office/popdf/%E8%AF%BE%E7%A8%8B/9-del4pdf
 
     Args:
         input_file (str, optional): path to the PDF file / PDF文件路径

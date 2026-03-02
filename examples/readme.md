@@ -1,7 +1,7 @@
 ## 视频教程
 
 <p align="center" id='进群-banner-AI'>
-    <a target="_blank" href='http://www.python4office.cn/wechat-group/'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
     <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
@@ -17,10 +17,10 @@
     	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office'>
 		<img src='https://gitee.com/CoderWanFeng//python-office/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
-<a href="https://mp.weixin.qq.com/s/b6fpU-oXSo8qKP_Nc8w0Zg">
+<a href="https://mp.weixin.qq.com/s/j8C-AsOGGM43vA0hXoCawg">
   <img src="https://img.shields.io/badge/学习-AI编程-red" alt="AI编程">
 </a> 
-    	<a href="http://www.python4office.cn/wechat-group/">
+    	<a href="https://www.python4office.cn/wechat-group/">
   <img src="https://img.shields.io/badge/加入-AI交流群-brightgreen" alt="AI交流群">
 </a>
 </p>
@@ -185,7 +185,7 @@
 | 13 | chat_robot           | 智能聊天         | [播放](https://www.bilibili.com/video/BV1394y1e787)  | 待编辑      | [打开](https://gitee.com/CoderWanFeng/python-office/blob/master/demo/PyOfficeRobot/012%E3%80%81%E6%99%BA%E8%83%BD%E8%81%8A%E5%A4%A9.py)                    |
 
 <p align="center" id='福利合集-banner'>
-    <a target="_blank" href='http://python4office.cn/sideline-pro-list/'>
+    <a target="_blank" href='https://www.python4office.cn/sideline-pro-list/'>
     <img src="https://cos.python-office.com/ads/fuli/all-1.jpg" width="100%"/>
     </a>   
 </p>
@@ -195,11 +195,14 @@
 全部功能的文字教程👉[传送门](https://www.python-office.com/guide/allFunc.html)
 
 
-<p align="center" id='大礼包-banner'>
-    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
-    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
+
+<p align="center" id='进群-banner-AI'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
+
+
 
 <p align="center" id='0基础数据分析-banner'>
     <a target="_blank" href='http://gk.link/a/10EfJ'>
@@ -218,7 +221,7 @@
 ### 生活VLOG
 
 <p align="center" id='vlog横-banner'>
-    <a target="_blank" href='http://python4office.cn/vlog-all/vlog-all/'>
+    <a target="_blank" href='https://www.python4office.cn/vlog-all/vlog-all/'>
     <img src="https://vlog-1300615378.cos.ap-chongqing.myqcloud.com/ads%2Fheng.jpg" width="100%"/>
     </a>   
 </p>
@@ -242,28 +245,34 @@
 ## 交流群
 
 <p align="center" id='进群-banner-AI'>
-    <a target="_blank" href='http://www.python4office.cn/wechat-group/'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
     <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
 
 ## 学习资源
 
-<p align="center" id='大礼包-banner'>
-    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
-    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
+
+<p align="center" id='进群-banner-AI'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
 
-<p align="center" id='大礼包-banner'>
-    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
-    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
-    </a>   
-</p>
+
 
 
 <p align="center" id='进群-banner-AI'>
-    <a target="_blank" href='http://www.python4office.cn/wechat-group/'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
+    </a>   
+</p>
+
+
+
+
+<p align="center" id='进群-banner-AI'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
     <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
@@ -304,7 +313,7 @@
 </p>
 
 <p align="center" id='实战项目-banner'>
-    <a target="_blank" href='http://www.python4office.cn/python-project-list/'>
+    <a target="_blank" href='https://www.python4office.cn/python-project-list/'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fproject.jpg" width="100%"/>
     </a>   
 </p>

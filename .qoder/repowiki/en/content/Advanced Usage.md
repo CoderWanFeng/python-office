@@ -143,7 +143,7 @@ except Exception as e:
     print(f'>>>异常时间：\t{datetime.now()}')
     print(f'>>>异常函数：\tmerge2pdf')
     print(f'>>>异常原因：\t{e}')
-    print('别慌，你的异常也许【群友也遇到过】 → http://www.python4office.cn/wechat-group/')
+    print('别慌，你的异常也许【群友也遇到过】 → https://www.python4office.cn/wechat-group/')
     print('当然，也可以免费【加入星球，向我提问】 → http://t.cn/A6qeZpVt')
     print('='*30)
 ```

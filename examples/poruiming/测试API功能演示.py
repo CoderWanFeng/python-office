@@ -145,8 +145,8 @@ def ruiming_api_demo():
     
     print("\n🔗 相关资源：")
     print("• 项目官网：https://www.python-office.com")
-    print("• 开发者博客：http://www.python4office.cn")
-    print("• 交流群：http://www.python4office.cn/wechat-group")
+    print("• 开发者博客：https://www.python4office.cn")
+    print("• 交流群：https://www.python4office.cn/wechat-group")
     print("• 开发者：程序员晚枫")
     
     print("\n📌 注意事项：")

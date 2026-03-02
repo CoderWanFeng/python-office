@@ -109,7 +109,7 @@ Excel API模块提供了丰富的Excel文件处理功能，包括数据模拟、
 自动创建Excel并模拟数据。
 
 **参数**
-- **columns** (list): 列名。可以模拟的列有：http://python4office.cn/python-office/fake2excel/，默认值：['name']
+- **columns** (list): 列名。可以模拟的列有：https://www.python4office.cn/python-office/fake2excel/，默认值：['name']
 - **rows** (int): 生成多少行数据，默认值：1
 - **path** (str): 生成的Excel的位置和名称
 - **language** (str): 数据用什么语言，默认是中文，可以填english

@@ -44,7 +44,7 @@ def fake2excel(columns=['name'], rows=1, path='./fake2excel.xlsx', language='zh_
     Video tutorial: https://www.bilibili.com/video/BV1wr4y1b7uk/
     
     Args:
-        columns (list): column names to generate / 需要生成的列名。Available columns / 可以模拟的列：http://python4office.cn/python-office/fake2excel/
+        columns (list): column names to generate / 需要生成的列名。Available columns / 可以模拟的列：https://www.python4office.cn/python-office/fake2excel/
         rows (int): number of rows to generate / 生成的行数。Default / 默认值: 1
         path (str): output file path and name / 生成的Excel文件路径和名称
         language (str): language for generated data / 数据语言。Default / 默认: 'zh_CN' (Chinese / 中文), can be 'english' / 可以填 'english'

@@ -109,7 +109,7 @@ def tools_demo():
     print("\n🔗 相关资源：")
     print("• 项目官网：https://www.python-office.com")
     print("• 视频教程：https://space.bilibili.com/259649365")
-    print("• 交流群：http://www.python4office.cn/wechat-group")
+    print("• 交流群：https://www.python4office.cn/wechat-group")
     print("• 开发者：程序员晚枫")
 
 if __name__ == "__main__":
