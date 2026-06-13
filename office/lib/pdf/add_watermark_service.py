@@ -7,8 +7,14 @@ from reportlab.pdfbase.pdfmetrics import registerFont
 from tqdm import tqdm
 
 
-def create_watermark(content):
-    """创建PDF水印模板
+def create_watermark(content: str) -> PdfReader:
+    """创建PDF水印模板。
+    
+    Args:
+        content (str): 水印文字内容
+    
+    Returns:
+        PdfReader: 水印PDF文件对象
     """
     # 创建一个PDF文件来作为一个水印文件
     c = canvas.Canvas('watermark.popdf')
@@ -25,7 +31,17 @@ def create_watermark(content):
     return pdf_watermark
 
 
-def pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out):
+def pdf_add_watermark(pdf_file_in: str, pdf_file_mark: str, pdf_file_out: str) -> bool:
+    """给PDF文件添加水印。
+    
+    Args:
+        pdf_file_in (str): 输入PDF文件路径
+        pdf_file_mark (str): 水印PDF文件路径
+        pdf_file_out (str): 输出PDF文件路径
+    
+    Returns:
+        bool: 操作是否成功
+    """
     # print(pdf_file_out)
     pdf_output = PdfWriter()
     input_stream = open(pdf_file_in, 'rb')
@@ -53,3 +69,4 @@ def pdf_add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out):
         pdf_output.add_page(page)
     with open(pdf_file_out, 'wb') as pdf_file_out_f:
         pdf_output.write(pdf_file_out_f)
+    return True

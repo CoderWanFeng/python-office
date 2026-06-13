@@ -6,21 +6,27 @@ import sys
 from typing import List
 
 class HiddenPrints:
+    """上下文管理器，用于隐藏print输出。"""
+    
     def __enter__(self):
+        """进入上下文时隐藏输出。"""
         self._original_stdout = sys.stdout
         sys.stdout = open(os.devnull, "w")
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """退出上下文时恢复输出。"""
         sys.stdout.close()
         sys.stdout = self._original_stdout
 
 
 
-# 判断文件夹中是否有超过固定大小的文件
-# 可对超过具体大小的文件做删除,移动等操作,后续优化
-# folder:文件夹
-# size:大小(M)
-def screen_file(folder, size:int):
+def screen_file(folder: str, size: int) -> None:
+    """筛选文件夹中超过指定大小的文件。
+    
+    Args:
+        folder (str): 文件夹路径
+        size (int): 文件大小阈值（单位：MB）
+    """
     size = size *1024 *1024
     res = []
     reslist = []
@@ -41,8 +47,13 @@ def screen_file(folder, size:int):
 
 
 
-# 判断文件夹中指定后缀的文件(后缀可多写List类型)['.exe','.txt','.md']
-def screen_suffix(folder, suffix:List):
+def screen_suffix(folder: str, suffix: List[str]) -> None:
+    """筛选文件夹中指定后缀的文件。
+    
+    Args:
+        folder (str): 文件夹路径
+        suffix (List[str]): 文件后缀列表
+    """
     reslist = []
     for s in range(len(suffix)):
             # with HiddenPrints():
@@ -51,8 +62,14 @@ def screen_suffix(folder, suffix:List):
         print(r)
         
 
-# 判断文件夹中指定后缀的文件
-def one_suffix(folder, suf, res=None):
+def one_suffix(folder: str, suf: str, res: list = None) -> None:
+    """筛选文件夹中指定后缀的文件（单个后缀）。
+    
+    Args:
+        folder (str): 文件夹路径
+        suf (str): 文件后缀
+        res (list, optional): 结果列表
+    """
     res = []
     datanames = os.listdir(folder)
     for dataname in datanames:

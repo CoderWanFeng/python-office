@@ -2,9 +2,11 @@ import pathlib
 import openpyxl
 
 
-def output_file_list_to_excel(dir_path: str):
-    """
-    :param dir_path: 需要生成文件列表的目录
+def output_file_list_to_excel(dir_path: str) -> None:
+    """将目录中的文件列表输出到Excel文件。
+    
+    Args:
+        dir_path (str): 需要生成文件列表的目录路径
     """
     dir_path = pathlib.Path(dir_path).resolve()
     if dir_path.is_dir():

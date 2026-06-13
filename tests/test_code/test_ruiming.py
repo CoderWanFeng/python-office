@@ -1,3 +1,8 @@
+"""瑞明功能测试模块。
+
+该模块包含对python-office库中瑞明相关功能的单元测试。
+"""
+
 import unittest
 
 from office.api.testApi.ruiming import screen_unmarked_image, change_label_in_xml, screen_without_label_json_file
@@ -5,6 +10,10 @@ from tests.test_utils.comm_utils import *
 
 
 class TestRuiming(unittest.TestCase):
+    """瑞明功能测试类。
+    
+    该类包含对瑞明相关API的单元测试方法。
+    """
     def test_screen_unmarked_image(self):
         screen_unmarked_image(dir_path='../test_files/ruiming/screen_unmarked_image')
         # 预期结果：2.jpg被移动到“未标注图片”目录下

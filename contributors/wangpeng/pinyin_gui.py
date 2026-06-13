@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 '''
 @作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：python-office
-@读者群     ：http://www.python4office.cn/wechat-group/
+@读者群     ：https://www.python4office.cn/wechat-group/
 @学习网站      ：https://www.python-office.com
 @代码日期    ：2023/9/26 21:46 
 @本段代码的视频说明     ：
@@ -14,11 +14,15 @@ from pohan.pinyin.pinyin import Style
 
 
 class PinyinConverter(QWidget):
-    def __init__(self):
+    """拼音转换器GUI类，用于将汉字转换为带声调的拼音。"""
+    
+    def __init__(self) -> None:
+        """初始化拼音转换器界面。"""
         super().__init__()
         self.initUI()
 
-    def initUI(self):
+    def initUI(self) -> None:
+        """初始化用户界面组件。"""
         # 创建布局
         layout = QVBoxLayout()
 
@@ -58,7 +62,8 @@ class PinyinConverter(QWidget):
         self.setWindowTitle('拼音转换器')
         self.setGeometry(300, 300, 300, 200)
 
-    def convert(self):
+    def convert(self) -> None:
+        """将输入的汉字转换为带声调的拼音。"""
         # 获取输入文本
         input_text = self.input_text.text()
 
@@ -68,12 +73,14 @@ class PinyinConverter(QWidget):
         # 设置输出文本框显示结果
         self.output_text.setPlainText(f'带声调的结果：{pinyin_list}')
 
-    def copy_output(self):
+    def copy_output(self) -> None:
+        """将输出文本复制到剪贴板。"""
         # 复制输出文本到剪贴板
         clipboard = QApplication.clipboard()
         clipboard.setText(self.output_text.toPlainText())
 
-    def show_about(self):
+    def show_about(self) -> None:
+        """显示关于对话框。"""
         QMessageBox.about(self, '关于', '谨献给一起学习的道友')
 
 

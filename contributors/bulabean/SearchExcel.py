@@ -6,10 +6,13 @@ import time
 
 
 def change_datatype(row_data: list):
-    """
-    excel单元格的内容类型检测和转换
-    参数：
-        row_data：行数据，列表格式
+    """Excel单元格的内容类型检测和转换。
+    
+    Args:
+        row_data (list): 行数据，列表格式
+    
+    Returns:
+        list: 转换后的行数据
     """
     result_data = []
     for rd in row_data:
@@ -30,11 +33,14 @@ def change_datatype(row_data: list):
 
 
 def find_key(search_key: str, row_content: str):
-    """
-    检测关键词和内容
-    参数：
-        search_key：关键词
-        row_content：行内容
+    """检测关键词和内容。
+    
+    Args:
+        search_key (str): 关键词
+        row_content (str): 行内容
+    
+    Returns:
+        bool: 如果包含关键词返回True，否则返回False
     """
     if search_key in row_content:
         return True
@@ -43,11 +49,14 @@ def find_key(search_key: str, row_content: str):
 
 
 def process_xls(path, file):
-    """
-    读取xls后缀的excel文件
-    参数：
-        path：文件所在路径
-        file：文件名
+    """读取xls后缀的Excel文件。
+    
+    Args:
+        path (str): 文件所在路径
+        file (str): 文件名
+    
+    Yields:
+        tuple: 包含文件路径、工作表名、行数、行内容的元组
     """
     filepath = os.path.join(path, file)
     try:
@@ -74,11 +83,14 @@ def process_xls(path, file):
 
 
 def process_xlsx(path, file):
-    """
-    读取xlsx后缀的excel文件
-    参数：
-        path：文件所在路径
-        file：文件名
+    """读取xlsx后缀的Excel文件。
+    
+    Args:
+        path (str): 文件所在路径
+        file (str): 文件名
+    
+    Yields:
+        tuple: 包含文件路径、工作表名、行数、行内容的元组
     """
     filepath = os.path.join(path, file)
     try:
@@ -103,11 +115,14 @@ def process_xlsx(path, file):
 
 
 def find_excel_data(search_key: str, target_dir: str):
-    """
-    检索指定目录下的excel文件和过滤
-    参数：
-        search_key：检索的关键词
-        target_dir：目标文件夹
+    """检索指定目录下的Excel文件和过滤。
+    
+    Args:
+        search_key (str): 检索的关键词
+        target_dir (str): 目标文件夹
+    
+    Yields:
+        tuple: 包含文件路径、工作表名、行数、行内容的元组
     """
     for path, dirs, files in os.walk(target_dir):
         files = [file for file in files if not file.startswith('~$')]  # 过滤掉正打开的excel文件

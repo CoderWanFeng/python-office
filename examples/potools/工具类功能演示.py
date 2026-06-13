@@ -1,15 +1,33 @@
 # -*- coding: utf-8 -*-
-"""
-工具类功能综合演示
-作者：程序员晚枫
-项目官网：https://www.python-office.com
+"""Comprehensive demonstration of utility tools functionality.
+
+工具类功能综合演示。
+
+This example demonstrates various utility tools provided by python-office library,
+including translation, QR code generation, password generation, weather query,
+URL to IP conversion, and more.
+
+该示例演示python-office库提供的各种工具类功能，
+包括翻译、二维码生成、密码生成、天气查询、URL转IP等。
+
+Author / 作者：程序员晚枫
+Project / 项目官网：https://www.python-office.com
 """
 
 import office
 
 def tools_demo():
-    """
-    演示python-office工具类功能
+    """Demonstrate python-office utility tools functionality.
+    
+    演示python-office工具类功能。
+    
+    This function demonstrates various utility tools including:
+    - Translation / 翻译
+    - QR code generation / 二维码生成
+    - Password generation / 密码生成
+    - Weather query / 天气查询
+    - URL to IP conversion / URL转IP
+    - And more / 等等
     """
     print("🛠️ 工具类功能演示 - 程序员晚枫")
     print("=" * 50)
@@ -91,7 +109,7 @@ def tools_demo():
     print("\n🔗 相关资源：")
     print("• 项目官网：https://www.python-office.com")
     print("• 视频教程：https://space.bilibili.com/259649365")
-    print("• 交流群：http://www.python4office.cn/wechat-group")
+    print("• 交流群：https://www.python4office.cn/wechat-group")
     print("• 开发者：程序员晚枫")
 
 if __name__ == "__main__":

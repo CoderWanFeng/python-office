@@ -1,9 +1,14 @@
 import numpy as np
 
 
-def reduce_pandas_mem_usage(df):
-    """ iterate through all the columns of a dataframe and modify the data type
-        to reduce memory usage.
+def reduce_pandas_mem_usage(df) -> object:
+    """遍历DataFrame的所有列并修改数据类型以减少内存使用。
+    
+    Args:
+        df: pandas DataFrame对象
+    
+    Returns:
+        object: 优化后的DataFrame对象
     """
     # start_mem = df.memory_usage().sum() / 1024 ** 2
     # print('Memory usage of dataframe is {:.2f} MB'.format(start_mem))

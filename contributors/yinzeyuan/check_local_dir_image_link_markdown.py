@@ -2,11 +2,12 @@
 import pathlib
 
 
-def check_local_dir_image_link_markdown(markdown_path, image_path):
-    """
-
-    :param markdown_path: markdown文件路径
-    :param image_path: 本地图片存放路径
+def check_local_dir_image_link_markdown(markdown_path: str, image_path: str) -> None:
+    """检查Markdown文件中图片链接与本地图片目录的对应关系。
+    
+    Args:
+        markdown_path (str): Markdown文件路径
+        image_path (str): 本地图片存放路径
     """
     markdown_path = pathlib.Path(markdown_path)
     image_path = pathlib.Path(image_path)

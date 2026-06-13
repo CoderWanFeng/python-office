@@ -1,0 +1,3 @@
+PyQt5>=5.15.0
+python-office
+popdf

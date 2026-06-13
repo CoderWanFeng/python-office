@@ -1,3 +1,8 @@
+"""图像功能测试模块。
+
+该模块包含对python-office库中图像相关功能的单元测试。
+"""
+
 import unittest
 
 from office.api.image import *
@@ -5,6 +10,10 @@ from tests.test_utils.comm_utils import *
 
 
 class TestImage(unittest.TestCase):
+    """图像功能测试类。
+    
+    该类包含对图像相关API的单元测试方法。
+    """
     def test_add_watermark(self):
         add_watermark(file='../test_files/images/0816.jpg', mark='python-office',
                       output_path=r'../test_output/img_output')

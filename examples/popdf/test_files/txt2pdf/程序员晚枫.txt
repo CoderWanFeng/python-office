@@ -8,4 +8,4 @@ B站：程序员晚枫
 
 个人网站：www.python-office.com
 
-技术答疑群：http://www.python4office.cn/wechat-group/
+技术答疑群：https://www.python4office.cn/wechat-group/

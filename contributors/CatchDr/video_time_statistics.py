@@ -11,7 +11,15 @@ import os
 import datetime
 from moviepy.editor import VideoFileClip
 from tqdm import tqdm
-def video_time_statistics(path):
+def video_time_statistics(path: str) -> None:
+    """统计指定目录下所有MP4视频文件的总时长。
+    
+    Args:
+        path (str): 要统计视频时长的目录路径
+    
+    Returns:
+        None
+    """
     filelist = []
     for a, b, c in os.walk(path):
         for name in c:

@@ -9,12 +9,12 @@ import win32com.client
 import os
 
 
-def ppt2pdf_single(filename, output_filename):
-    """
-    PPT文件导出为pdf格式
-    :param filename: PPT文件的名称
-    :param output_filename: 导出的pdf文件的名称
-    :return:
+def ppt2pdf_single(filename: str, output_filename: str) -> None:
+    """PPT文件导出为PDF格式。
+    
+    Args:
+        filename (str): PPT文件的名称
+        output_filename (str): 导出的PDF文件的名称
     """
     # 2). 打开PPT程序
     ppt_app = win32com.client.Dispatch('PowerPoint.Application')

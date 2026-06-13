@@ -14,8 +14,16 @@ import os  # 目录的操作
 
 
 
-def createxlsx(xlsPath, xlsxPath):
-
+def createxlsx(xlsPath: str, xlsxPath: str) -> None:
+    """将XLS文档转换为XLSX格式。
+    
+    Args:
+        xlsPath (str): 源XLS文档路径
+        xlsxPath (str): 目标XLSX文档路径
+    
+    Returns:
+        None
+    """
     excel = win32com.client.DispatchEx('Excel.Application')
     wb = excel.Workbooks.Open(xlsPath)
 
@@ -25,10 +33,16 @@ def createxlsx(xlsPath, xlsxPath):
 
 
 
-# 1、文件的批量转换
-# 自己指定路径，
-# 转换xls到xlsx
-def xls2xlsx(path, docxSuffix=".xls"):
+def xls2xlsx(path: str, docxSuffix: str = ".xls") -> None:
+    """批量将XLS文档转换为XLSX格式。
+    
+    Args:
+        path (str): 文件路径或目录路径
+        docxSuffix (str, optional): XLS文件后缀名，默认为".xls"
+    
+    Returns:
+        None
+    """
     excelFiles = []
     # 如果不存在，则不做处理
     if not os.path.exists(path):

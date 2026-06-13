@@ -12,7 +12,7 @@ from typing import Dict, List
 
 
 class CrossPlatformCompatibility:
-    """跨平台兼容性检查器"""
+    """跨平台兼容性检查器。"""
     
     def __init__(self):
         self.is_windows = platform.system() == 'Windows'
@@ -22,7 +22,11 @@ class CrossPlatformCompatibility:
         self.is_first_run = self._check_first_run()
     
     def _check_first_run(self) -> bool:
-        """检查是否是首次运行"""
+        """检查是否是首次运行。
+        
+        Returns:
+            bool: 如果是首次运行返回True，否则返回False
+        """
         # 创建标记目录
         self.mark_file.parent.mkdir(exist_ok=True)
         
@@ -34,7 +38,11 @@ class CrossPlatformCompatibility:
         return False
     
     def get_compatibility_info(self) -> Dict[str, List[str]]:
-        """获取兼容性信息"""
+        """获取兼容性信息。
+        
+        Returns:
+            Dict[str, List[str]]: 包含兼容性信息的字典
+        """
         return {
             "fully_supported": [
                 "Excel处理 (poexcel)",
@@ -64,7 +72,7 @@ class CrossPlatformCompatibility:
         }
     
     def display_warning(self):
-        """显示兼容性警告信息"""
+        """显示兼容性警告信息。"""
         if self.is_windows:
             return  # Windows系统不需要警告
         
@@ -127,7 +135,7 @@ class CrossPlatformCompatibility:
             resources_text = Text("\n🔗 相关资源链接:")
             resources_text.append("\n• 官方文档: https://www.python-office.com")
             resources_text.append("\n• 问题反馈: https://github.com/CoderWanFeng/python-office/issues")
-            resources_text.append("\n• 交流群: http://www.python4office.cn/wechat-group")
+            resources_text.append("\n• 交流群: https://www.python4office.cn/wechat-group")
             
             console.print(Panel(
                 resources_text,
@@ -140,7 +148,11 @@ class CrossPlatformCompatibility:
             self._display_plain_warning(compat_info)
     
     def _display_plain_warning(self, compat_info: Dict[str, List[str]]):
-        """使用普通文本显示警告"""
+        """使用普通文本显示警告。
+        
+        Args:
+            compat_info (Dict[str, List[str]]): 兼容性信息字典
+        """
         print("=" * 80)
         print("⚠️  Python-Office 跨平台兼容性提示")
         print("=" * 80)
@@ -167,11 +179,18 @@ class CrossPlatformCompatibility:
         print("-" * 40)
         print("   • 官方文档: https://www.python-office.com")
         print("   • 问题反馈: https://github.com/CoderWanFeng/python-office/issues")
-        print("   • 交流群: http://www.python4office.cn/wechat-group")
+        print("   • 交流群: https://www.python4office.cn/wechat-group")
         print("\n" + "=" * 80)
     
     def check_module_compatibility(self, module_name: str) -> bool:
-        """检查特定模块的兼容性"""
+        """检查特定模块的兼容性。
+        
+        Args:
+            module_name (str): 模块名称
+        
+        Returns:
+            bool: 如果模块兼容返回True，否则返回False
+        """
         windows_only_modules = {
             'poppt', 'poword', 'search4file', 'PyOfficeRobot',
             'ppt', 'word', 'wechat'
@@ -182,7 +201,11 @@ class CrossPlatformCompatibility:
         return True
     
     def get_platform_specific_advice(self) -> str:
-        """获取平台特定的建议"""
+        """获取平台特定的建议。
+        
+        Returns:
+            str: 平台特定的建议信息
+        """
         if self.is_macos:
             return """
 💻 macOS 用户建议:
@@ -202,7 +225,11 @@ class CrossPlatformCompatibility:
 
 
 def check_compatibility():
-    """检查兼容性的主函数"""
+    """检查兼容性的主函数。
+    
+    Returns:
+        CrossPlatformCompatibility: 兼容性检查器实例
+    """
     checker = CrossPlatformCompatibility()
     checker.display_warning()
     return checker
