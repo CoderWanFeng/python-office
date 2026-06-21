@@ -1,191 +1,287 @@
 <p align="center">
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://raw.atomgit.com/CoderWanFeng1/website/raw/main/github-nav.jpg" alt="github license"/>
-    </a>   
+    <a target="_blank" href='https://pypi.org/project/python-office/'>
+    <img src="https://raw.atomgit.com/CoderWanFeng1/website/raw/main/github-nav.jpg" alt="python-office"/>
+    </a>
 </p>
+
 <p align="center">
-	<strong>🍬python for office</strong>
+    👉 <a target="_blank" href="https://www.python-office.com/">Official Site</a> ·
+    <a target="_blank" href="https://www.python4office.cn/wechat-group/">Community</a> ·
+    <a target="_blank" href="https://www.python4office.cn/python-office/profile/">Documentation</a> ·
+    <a target="_blank" href="https://www.python-office.com/video/video.html">Video Tutorials</a> 👈
 </p>
+
 <p align="center">
-	👉 <a href="https://www.python4office.cn/">https://www.python4office.cn/</a> 👈
+    <a href="https://github.com/CoderWanFeng/python-office/stargazers">
+        <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="GitHub stars"/>
+    </a>
+    <a href="https://gitee.com/CoderWanFeng/python-office/stargazers">
+        <img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='Gitee stars'/>
+    </a>
+    <a href="https://static.pepy.tech/badge/python-office">
+        <img src="https://static.pepy.tech/badge/python-office" alt="PyPI Downloads"/>
+    </a>
+    <a href="https://www.python-office.com/">
+        <img src="https://img.shields.io/badge/python-3.7%2B-blue" alt="Python Version"/>
+    </a>
+    <a href="https://www.python4office.cn/wechat-group/">
+        <img src="https://img.shields.io/badge/Join-AI%20Group-brightgreen" alt="AI Community"/>
+    </a>
 </p>
 
+---
 
-<p align="center" name="'github">
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/contributors/CoderWanFeng/python-office" alt="github contributors"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/forks/CoderWanFeng/python-office" alt="github forks"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/issues/CoderWanFeng/python-office" alt="github issues"/>
-    </a>	
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/issues-pr/CoderWanFeng/python-office" alt="github license"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-    <img src="https://img.shields.io/github/license/CoderWanFeng/python-office" alt="github license"/>
-    </a>   
-</p>
+## 📚 Introduction
 
-<p align="center" name="gitee">
-	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
-		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
-	</a>
-	<a target="_blank" href='https://github.com/CoderWanFeng/python-office'>
-		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
-	</a>
-	<a href="https://www.python4office.cn/images/qq.jpg">
-	<img src="https://img.shields.io/badge/QQ-163434413-orange"/></a>
-</p>
+**python-office** is a Python third-party library focused on **office automation**.
+Every feature is just **one line of code** — automate your office work without even learning Python.
 
+> ✨ Features are continuously updated. Submit your feature requests → [Contact the developer](https://www.python4office.cn/wechat-qrcode/)
 
+### 🍺 Why python-office?
 
+| Feature | Description |
+|---------|-------------|
+| 🚀 **One-line code** | 90% of features require only a single line — zero learning curve |
+| 🎯 **Scenario-driven** | Covers PDF, Word, Excel, PPT, Email, WeChat, Images, Video, and more real office tasks |
+| 🧩 **Skills system** | 73 ready-to-use Skills, each independently importable |
+| 🤖 **AI-friendly** | Complete `SKILL.md` + YAML metadata, directly recognizable by Codex / Claude / Cursor |
+| 🛠️ **Modular** | `pip install popdf / poimage / poword ...` — install only what you need |
+| 💬 **Beginner-friendly** | Full tutorials, video guides, and an active WeChat community |
 
+---
 
--------------------------------------------------------------------------------
+## ✨ Skills System (73 ready-to-use Skills)
 
-[**🌎中文文档**](README.md)
+`python-office` ships with a built-in **Skill system**: the library's 73 methods are wrapped as 73 independently importable Skills, each with its own `SKILL.md` documentation.
 
--------------------------------------------------------------------------------
+```python
+# Option 1: Import a specific Skill
+from skills.image import compress_image
+compress_image(input_file='photo.jpg', output_file='photo_small.jpg', quality=30)
 
-## 📚 Description
+# Option 2: Import by category
+from skills.pdf import pdf2docx
+pdf2docx(input_file='report.pdf', output_file='report.docx')
+```
 
-*Python-office* is a third-party library on office automation,
-which do covers its most use cases.
+### 📋 13 Categories at a Glance
 
-We are devoted to provide functionalities out-of-the-box,
-allowing beginners to achieve their goals **in one line**,
-without any knowledge requirements on the python language.
+| Category | Skill Count | Typical Skills |
+|----------|-------------|----------------|
+| 📊 Excel | 7 | `fake2excel` / `merge2excel` / `excel2pdf` |
+| 📁 File | 9 | `replace4filename` / `get_files` |
+| 💰 Finance | 1 | `t0` (stock T+0 return calculator) |
+| 🖼️ Image | 9 | `compress_image` / `add_watermark` / `txt2wordcloud` |
+| 📝 Markdown | 1 | `excel2markdown` |
+| 🔍 OCR | 1 | `VatInvoiceOCR2Excel` (VAT invoice recognition) |
+| 📕 PDF | 13 | `pdf2docx` / `pdf2imgs` / `merge2pdf` / `encrypt4pdf` |
+| 🎬 PPT | 3 | `ppt2pdf` / `ppt2img` / `merge4ppt` |
+| 🛠️ Tools | 10 | `transtools` / `qrcodetools` / `passwordtools` |
+| 🎥 Video | 4 | `video2mp3` / `audio2txt` / `txt2mp3` |
+| 💬 WeChat | 7 | `send_message` / `chat_robot` / `receive_message` |
+| 📄 Word | 5 | `docx2pdf` / `merge4docx` / `docx4imgs` |
+| 🏷️ Ruiming | 3 | `screen_unmarked_image` / `change_label_in_xml` |
 
-### 🍺 Features
+👉 Full index: [`skills/README.md`](./skills/README.md)
 
-- Build your office automation environments **in one command**
-- Solve your problem in one line **without learning python**
-- Meet your need **right on your workplace**
-- Improve your efficiency **at zero cost**
-
--------------------------------------------------------------------------------
+---
 
 ## 📦 Installation
 
-### 🍊 using pip
-
-```shell
+```bash
+# Install everything (recommended)
 pip install -i https://mirrors.aliyun.com/pypi/simple/ python-office -U
+
+# Install only what you need (lighter)
+pip install popdf      # PDF processing only
+pip install poimage    # Image processing only
+pip install poword     # Word processing only
+pip install poexcel    # Excel processing only
 ```
 
--------------------------------------------------------------------------------
+> Python version: **Python 3.7+**
+
+---
+
+## 🚀 5-line Quick Start
+
+```python
+# 1. PDF → Word
+from skills.pdf import pdf2docx
+pdf2docx(input_file='report.pdf', output_file='report.docx')
+
+# 2. Compress an image
+from skills.image import compress_image
+compress_image(input_file='big.jpg', output_file='small.jpg', quality=30)
+
+# 3. Add a watermark to an image
+from skills.image import add_watermark
+add_watermark(file='photo.jpg', mark='@python-office')
+
+# 4. Generate a word cloud
+from skills.image import txt2wordcloud
+txt2wordcloud(filename='article.txt', result_file='wordcloud.png')
+
+# 5. Generate a QR code
+from skills.tools import qrcodetools
+qrcodetools(url='https://www.python-office.com', output='qrcode.png')
+```
+
+---
+
+## 🛠️ Components
+
+Each feature is accessible via the traditional `import office` style, or directly from `skills.xxx`.
+
+| Module | Description | Skills Path |
+|--------|-------------|-------------|
+| PyOfficeRobot | WeChat bot | `skills/wechat/` |
+| poocr | OCR (invoice, table, image) | `skills/ocr/` |
+| popdf | PDF → Word / image / split / merge / encrypt | `skills/pdf/` |
+| poemail | Auto-send emails | `office/api/email.py` |
+| porobot | AI bot | `office/api/tools.py` |
+| poimage | Image compress / watermark / word cloud / filters | `skills/image/` |
+| poai | AI utilities | `office/lib/` |
+| poexcel | Excel merge / split / mock data | `skills/excel/` |
+| poword | Word → PDF / extract images | `skills/word/` |
+| pofile | Batch file rename / organize | `skills/file/` |
+| search4file | Document search | `skills/file/` |
+| poppt | PPT → PDF / image | `skills/ppt/` |
+| wftools | Translation / QR code / password generator, etc. | `skills/tools/` |
+| pofinance | Stock T+0 calculator | `skills/finance/` |
+| pohan | Chinese programming | - |
+| povideo | Video → audio / speech recognition | `skills/video/` |
+| potime | Time utilities | - |
+| poprogress | Progress bar utilities | - |
+| pocode | Code management | - |
+
+---
+
+## 💡 Featured Skills
+
+<details>
+<summary>📊 <b>Excel Processing</b> (click to expand)</summary>
+
+```python
+from skills.excel import fake2excel
+fake2excel(columns=['name', 'phone'], rows=1000, path='test.xlsx')
+
+from skills.excel import merge2excel
+merge2excel(dir_path='./my_excels', output_file='all.xlsx')
+```
+</details>
+
+<details>
+<summary>📕 <b>PDF Processing</b> (click to expand)</summary>
+
+```python
+from skills.pdf import pdf2docx       # PDF → Word
+from skills.pdf import pdf2imgs        # PDF → images
+from skills.pdf import merge2pdf       # Merge multiple PDFs
+from skills.pdf import split4pdf       # Split a PDF
+from skills.pdf import encrypt4pdf     # Encrypt a PDF
+from skills.pdf import add_watermark_by_parameters  # PDF watermark
+```
+</details>
+
+<details>
+<summary>🖼️ <b>Image Processing</b> (click to expand)</summary>
+
+```python
+from skills.image import compress_image       # Compress images
+from skills.image import add_watermark        # Add watermark
+from skills.image import del_watermark        # Remove watermark
+from skills.image import txt2wordcloud        # Generate word cloud
+from skills.image import pencil4img           # Pencil-sketch style
+from skills.image import img2Cartoon          # Cartoon style
+from skills.image import decode_qrcode        # Decode QR code
+```
+</details>
+
+<details>
+<summary>💬 <b>WeChat Bot</b> (click to expand)</summary>
+
+```python
+from skills.wechat import send_message
+send_message(who='File Transfer', message='Hello!')
+
+from skills.wechat import send_message_by_time
+send_message_by_time(who='File Transfer', message='Good morning', time='08:00:00')
+```
+</details>
+
+<details>
+<summary>🎬 <b>Video Processing</b> (click to expand)</summary>
+
+```python
+from skills.video import video2mp3       # Video → MP3
+from skills.video import audio2txt       # Audio → text
+from skills.video import txt2mp3         # Text → speech
+from skills.video import mark2video      # Video watermark
+```
+</details>
+
+---
 
 ## 📝 Documentation
 
-[📘 Chinese Document](https://www.python4office.cn/python-office/profile/)
+- 📘 [Chinese Documentation](https://github.com/CoderWanFeng/python-office/tree/develop/.qoder/repowiki/zh/content)
+- 📗 [English Documentation](https://github.com/CoderWanFeng/python-office/tree/develop/.qoder/repowiki/en/content)
+- 🎬 [Video Tutorials](https://www.python-office.com/video/video.html)
+- 🤖 [Skills Index](./skills/README.md)
 
-[🎬 Video Introduction](https://space.bilibili.com/259649365/channel/collectiondetail?sid=378950)
+---
 
--------------------------------------------------------------------------------
+## 🤝 Contributing
 
-## 🛠 Components
+Contributions are welcome. Please submit your PR in a dedicated folder:
 
-All components bellow are under construction for now.
+- Create a folder with your GitHub username under [contributors](./contributors/)
+- Put all your code inside that folder
+- **Do not modify any other folders**
+- For questions about existing code, please open an issue
 
-| package | description                                |
-|---------|--------------------------------------------|
-| excel   | excel processing                           |
-| word    | word processing                            |
-| ppt     | ppt processing                             |
-| pdf     | pdf processing                             |
-| file    | file system processing                     |
-| tools   | efficient tools                            |
-| web     | website helpers                            |
-| email   | email processing                           |
-| image   | image processing                           |
-| video   | video processing                           |
-| ocr     | character recognition & speech recognition |
+### Code Style
 
-You can import each module separately according to your requirements,
-or simply `import office` to import everything (not recommended).
+1. **Comments**: Document every parameter and return value of new functions
+2. **Formatting**: Format only your own code
+3. **Tests**: Unit tests are optional but strongly recommended
+4. **Skills**: When adding a new method, also add a Skill wrapper under `skills/<category>/<method>/`
 
--------------------------------------------------------------------------------
+---
 
-## 🏗 How to contribute
+## 🐞 Bug Reports & Suggestions
 
-### 📐 Specifications
+Please only submit issues related to the python-office codebase itself. We don't answer general Python learning questions.
 
-You are welcome to commit your code, following the specifications below:
+- [GitHub Issues](https://github.com/CoderWanFeng/python-office/issues)
+- [Gitee Issues](https://gitee.com/CoderWanFeng/python-office/issues)
+- [AtomGit Issues](https://atomgit.com/CoderWanFeng1/python-office/issues)
 
-Steps to participate in developing
+---
 
-- For example, you ought to add a `add` function
-    1. your GitHub account is *demo*
-    2. you create the **demo** directory in `./contributors`
-    3. new `add.py`, in which you write your code
-    4. finish editing, you commit a PR to the `master` branch (no matter on GitHub or gitee) with your naming proposal
-    5. @CoderWanFeng receive it, test it, merge it and finally upload it to PyPI 🎉
-
-### 📐 Code style
-
-1. **Annotation.** you should explain each parameter and returns of every new function.
-   Unit test is alternative. You are allowed to sign it.
-2. **Formatting.** Note that you can only format *your* own code.
-3. Please pull request to `master` branch directly, which stands for the published version on PyPI.
-   *(This may change when contributors increase in the future)*
-4. If we close your issue/PR, ease it. This is our way to keep it clean.
-   You can still discuss it, and we would reopen it when there exists an acknowledged solution.
-
-### 🧬Steps to contribute
-
-1. **fork** this repo (on GitHub or gitee)
-2. **clone** it to your local file system
-3. **modify** your code
-4. **commit & push** your changes to the remote repo
-5. **pull request** to the `master` branch after logging in to GitHub/gitee and fill some information
-6. **wait** for maintainers merging it
-
-### 🎋 Instructions on the branches
-
-This Repository contains 2 branches, listing as follows:
-
-| branch    | functionality                                       |
-|-----------|-----------------------------------------------------|
-| `master`  | main branch, published on PyPI, you should PR here  |
-| `develop` | development branch, ~~idling in fact~~              |
-
-### 🐞 Provide bug feedback or suggestions
-
-Please ensure the relationship to this repo.
-Other issue (such as learning python) is not allowed.
-
-- [gitee issue](https://gitee.com/CoderWanFeng/python-office/issues)
-- [GitHub issue](https://github.com/CoderWanFeng/python-office/issues)
-
--------------------------------------------------------------------------------
-
-## 🪙 Support us
-
-### 💳 Donation
-
-Buy us a cup of coffee if you appreciate python-office. Thank you sincerely.
-
-[donate to this project](https://gitee.com/CoderWanFeng/python-office)
-👈 the donation will be used to support the development of this project
-
-[donate to @CoderWanFeng](https://www.python4office.cn/wechat-qrcode/)
-
-
--------------------------------------------------------------------------------
-
-## ⭐Star python-office
+## ⭐ Star History
 
 [![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
 
-## 📌 WeChat official & our open source group
+---
 
-<div align="center">
-	<img src="https://www.python4office.cn/images/account-display/10-gzh.jpg" height="150">
-	<img src="https://www.python-office.com/api/img-cdn/python-office.jpg" height="150">
-</div>
+## 📌 Contact the Author
+
+<p align="center">
+    <a target="_blank" href='https://www.python4office.cn/wechat-qrcode/'>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/c52fb12c-7cb7-4684-8a3e-020a4bec8888/f0501b73cd57eba391ab4fc5a6654669.jpg" width="60%"/>
+    </a>
+</p>
+
+<p align="center">
+    👉 <a target="_blank" href='https://www.python4office.cn/wechat-group/'>Join the open-source community</a> ·
+    <a target="_blank" href='https://www.python4office.cn/wechat-qrcode/'>WeChat the author</a> 👈
+</p>
+
+---
+
+<p align="center">
+    <sub>If this project helps you, a ⭐ Star is the best encouragement!</sub>
+</p>
