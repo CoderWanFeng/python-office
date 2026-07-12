@@ -16,7 +16,18 @@ Project:
 """
 
 
-import PyOfficeRobot
+def _load_py_office_robot():
+    try:
+        import PyOfficeRobot
+    except ModuleNotFoundError as exc:
+        if exc.name != "PyOfficeRobot":
+            raise
+        raise ModuleNotFoundError(
+            "微信自动化功能依赖 PyOfficeRobot，该功能仅支持安装了桌面微信 "
+            "和 PyOfficeRobot 的 Windows 环境。"
+        ) from exc
+    return PyOfficeRobot
+
 
 def send_message(who: str, message: str):
     """Send message to specified contact.
@@ -30,6 +41,7 @@ def send_message(who: str, message: str):
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.chat.send_message(who=who, message=message)
 
 
@@ -46,6 +58,7 @@ def send_message_by_time(who, message, time):
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.chat.send_message_by_time(who=who, message=message, time=time)
 
 
@@ -61,6 +74,7 @@ def chat_by_keywords(who, keywords):
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.chat.chat_by_keywords(who=who, keywords=keywords)
 
 
@@ -76,6 +90,7 @@ def send_file(who, file):
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.file.send_file(who=who, file=file)
 
 
@@ -87,6 +102,7 @@ def group_send():
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.group.send()
 
 
@@ -109,6 +125,7 @@ def receive_message(who='文件传输助手', txt='userMessage.txt', output_path
     Returns:
         None: function result is saving messages to specified file and path / 函数的执行结果是将消息保存到指定的文件和路径中
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.chat.receive_message(who=who, txt=txt, output_path=output_path)
 
 
@@ -123,4 +140,5 @@ def chat_robot(who='程序员晚枫'):
     Returns:
         None
     """
+    PyOfficeRobot = _load_py_office_robot()
     PyOfficeRobot.chat.chat_robot(who=who)
