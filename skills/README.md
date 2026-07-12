@@ -256,7 +256,7 @@ office/skills/<category>/<skill_name>/
 
 ## 统计
 
-- 总计：**73 个 Skill**，涵盖 12 个分类
+- 总计：**73 个 Skill**，涵盖 13 个分类
 - 各分类 Skill 数量：
   - Excel：7
   - File：9
