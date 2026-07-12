@@ -50,7 +50,8 @@ def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4do
     poword.merge4docx(input_path=input_path, output_path=output_path, new_word_name=new_word_name)
 
 
-def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None):
+def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None,
+             show_progress: bool = True):
     """Convert Doc file to Docx file.
     
     将Doc文件转换为Docx文件。
@@ -59,11 +60,19 @@ def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None)
         input_path (str): input Doc file path / 输入Doc文件的路径
         output_path (str, optional): output Docx file path / 输出Docx文件的路径。Default / 默认: current directory / 当前目录
         output_name (str, optional): output Docx file name / 输出Docx文件的名称。Default / 默认: original filename / 原文件名
+        show_progress (bool, optional): whether to show conversion progress / 是否显示转换进度条。Default / 默认: True
     
     Returns:
         None
     """
-    poword.doc2docx(input_path=input_path, output_path=output_path, output_name=output_name)
+    kwargs = {
+        'input_path': input_path,
+        'output_path': output_path,
+        'output_name': output_name,
+    }
+    if not show_progress:
+        kwargs['show_progress'] = False
+    poword.doc2docx(**kwargs)
 
 
 def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None):

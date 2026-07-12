@@ -23,7 +23,8 @@ from office.skills.word import doc2docx
 doc2docx(
     input_path='./old.doc',
     output_path='./',
-    output_name='new.docx'
+    output_name='new.docx',
+    show_progress=False
 )
 ```
 
@@ -34,6 +35,7 @@ doc2docx(
 | `input_path` | str | 是 | - | 输入 Doc 文件的路径 |
 | `output_path` | str | 否 | `'./'` | 输出 Docx 文件的路径 |
 | `output_name` | str | 否 | `None` | 输出 Docx 文件的名称。默认原文件名 |
+| `show_progress` | bool | 否 | `True` | 是否显示转换进度条 |
 
 ## 返回值
 
