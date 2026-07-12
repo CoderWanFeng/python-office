@@ -15,7 +15,17 @@ Project:
     https://www.python-office.com
 """
 
-import poword
+def _load_poword():
+    try:
+        import poword
+    except ModuleNotFoundError as exc:
+        if exc.name != "poword":
+            raise
+        raise ModuleNotFoundError(
+            "Word处理功能依赖 poword，该功能仅支持安装了 Microsoft Word "
+            "和 poword 的 Windows 环境。"
+        ) from exc
+    return poword
 
 
 def docx2pdf(path: str, output_path: str = None):
@@ -32,6 +42,7 @@ def docx2pdf(path: str, output_path: str = None):
     """
     if output_path is None:
         output_path = path
+    poword = _load_poword()
     poword.docx2pdf(path=path, output_path=output_path)
 
 def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
@@ -47,6 +58,7 @@ def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4do
     Returns:
         None
     """
+    poword = _load_poword()
     poword.merge4docx(input_path=input_path, output_path=output_path, new_word_name=new_word_name)
 
 
@@ -63,6 +75,7 @@ def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None)
     Returns:
         None
     """
+    poword = _load_poword()
     poword.doc2docx(input_path=input_path, output_path=output_path, output_name=output_name)
 
 
@@ -79,6 +92,7 @@ def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None)
     Returns:
         None
     """
+    poword = _load_poword()
     poword.docx2doc(input_path=input_path, output_path=output_path, output_name=output_name)
 
 def docx4imgs(word_path, img_path):
@@ -93,4 +107,5 @@ def docx4imgs(word_path, img_path):
     Returns:
         None
     """
+    poword = _load_poword()
     poword.docx4imgs(word_path=word_path, img_path=img_path)
