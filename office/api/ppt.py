@@ -15,8 +15,17 @@ Project:
     https://www.python-office.com
 """
 
-# 导入处理PPT的模块
-import poppt
+def _load_poppt():
+    try:
+        import poppt
+    except ModuleNotFoundError as exc:
+        if exc.name != "poppt":
+            raise
+        raise ModuleNotFoundError(
+            "PPT处理功能依赖 poppt，该功能仅支持安装了 Microsoft PowerPoint "
+            "和 poppt 的 Windows 环境。"
+        ) from exc
+    return poppt
 
 
 def ppt2pdf(path: str, output_path=r'./'):
@@ -31,6 +40,7 @@ def ppt2pdf(path: str, output_path=r'./'):
     Returns:
         None
     """
+    poppt = _load_poppt()
     poppt.ppt2pdf(path=path, output_path=output_path)
 
 
@@ -47,6 +57,7 @@ def ppt2img(input_path: str, output_path=r'./', merge: bool = False):
     Returns:
         None
     """
+    poppt = _load_poppt()
     poppt.ppt2img(input_path=input_path, output_path=output_path, merge=merge)
 
 
@@ -63,4 +74,5 @@ def merge4ppt(input_path: str, output_path=r'./', output_name: str = 'merge4ppt.
     Returns:
         None
     """
+    poppt = _load_poppt()
     poppt.merge4ppt(input_path=input_path, output_path=output_path, output_name=output_name)
