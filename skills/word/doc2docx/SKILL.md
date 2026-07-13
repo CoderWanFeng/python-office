@@ -27,12 +27,23 @@ doc2docx(
 )
 ```
 
+也可以直接把目标文件路径传给 `output_path`：
+
+```python
+from office.skills.word import doc2docx
+
+doc2docx(
+    input_path='./old.doc',
+    output_path='./new/new.docx'
+)
+```
+
 ## 参数说明
 
 | 参数 | 类型 | 必填 | 默认值 | 说明 |
 |------|------|------|--------|------|
 | `input_path` | str | 是 | - | 输入 Doc 文件的路径 |
-| `output_path` | str | 否 | `'./'` | 输出 Docx 文件的路径 |
+| `output_path` | str | 否 | `'./'` | 输出 Docx 文件的路径，可以是输出目录，也可以是完整的 `.docx` 文件路径 |
 | `output_name` | str | 否 | `None` | 输出 Docx 文件的名称。默认原文件名 |
 
 ## 返回值
@@ -44,6 +55,11 @@ doc2docx(
 ```python
 from office.skills.word import doc2docx
 doc2docx(input_path='./old.doc', output_path='./new/')
+```
+
+```python
+from office.skills.word import doc2docx
+doc2docx(input_path='./old.doc', output_path='./new/new.docx')
 ```
 
 ## 原始函数
