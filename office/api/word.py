@@ -14,6 +14,8 @@ Author:
 Project:
     https://www.python-office.com
 """
+from pathlib import Path
+
 
 def _load_poword():
     try:
@@ -69,12 +71,17 @@ def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None)
     
     Args:
         input_path (str): input Doc file path / 输入Doc文件的路径
-        output_path (str, optional): output Docx file path / 输出Docx文件的路径。Default / 默认: current directory / 当前目录
+        output_path (str, optional): output Docx file path / 输出Docx文件的路径。Can be a directory or a .docx file path / 可以是目录或 .docx 文件路径。Default / 默认: current directory / 当前目录
         output_name (str, optional): output Docx file name / 输出Docx文件的名称。Default / 默认: original filename / 原文件名
     
     Returns:
         None
     """
+    if output_name is None and Path(output_path).suffix.lower() == ".docx":
+        output_file = Path(output_path)
+        output_path = str(output_file.parent)
+        output_name = output_file.name
+
     poword = _load_poword()
     poword.doc2docx(input_path=input_path, output_path=output_path, output_name=output_name)
 
