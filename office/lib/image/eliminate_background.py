@@ -9,8 +9,7 @@ def _hex_to_rgb(hex):
     十六进制转RGB
     """
     if hex[0] != '#' or len(hex) != 7:   
-        print('注意：十六进制格式颜色错误，请输入7位以\'#\'开头的字符串\n')
-        return None
+        raise ValueError('十六进制格式颜色错误，请输入7位以\'#\'开头的字符串，例如 #FFFFFF')
     else:
         r = int('0x' + hex[1:3], 16)
         g = int('0x' + hex[3:5], 16)
@@ -38,11 +37,9 @@ def eliminate_bc(src_img_path: str, save_img_path: str, margin: int = 30, bc_col
             r, g, b = bc_color
     else:
         # 未给定背景色，拾取图片左上角颜色作为背景色
-        pix = img.load()
-        if src_img_path.endswith('.jpg'):
-            r, g, b = pix[int(width / 20), int(height / 20)]
-        elif src_img_path.endswith('.png'):
-            r, g, b, _ = pix[int(width / 20), int(height / 20)]
+        rgb_img = img.convert("RGB")
+        pix = rgb_img.load()
+        r, g, b = pix[int(width / 20), int(height / 20)]
 
     img = img.convert("RGBA")
     datas = img.getdata()

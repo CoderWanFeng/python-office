@@ -2,6 +2,7 @@ import os
 import xlrd, xlwt
 import openpyxl
 import datetime
+from tqdm import tqdm
 
 
 #
@@ -41,8 +42,8 @@ def process_xls(filepath: str, column: int, worksheet_name: str = None) -> str:
     """
     try:
         workbook = xlrd.open_workbook(filepath, formatting_info=True)
-    except:
-        return "文件读取异常：{}".format(filepath)
+    except Exception as e:
+        return "文件读取异常：{}，错误信息：{}".format(filepath, str(e))
     if worksheet_name:
         worksheet = workbook.sheet_by_name(worksheet_name)
     else:
@@ -94,22 +95,26 @@ def process_xlsx(filepath: str, column: int, worksheet_name: str = None) -> str:
     """
     try:
         workbook = openpyxl.load_workbook(filepath, read_only=True, data_only=True)
-    except:
-        return "文件读取异常：{}".format(filepath)
-    if worksheet_name:
-        worksheet = workbook.get_sheet_by_name(worksheet_name)
-    else:
-        worksheet = workbook.active
-    if worksheet.max_column < column:
-        return "最大列数是{}，取不到第{}列".format(worksheet.max_column, column)
+        try:
+            if worksheet_name:
+                worksheet = workbook[worksheet_name]
+            else:
+                worksheet = workbook.active
+            if worksheet.max_column < column:
+                return "最大列数是{}，取不到第{}列".format(worksheet.max_column, column)
 
-    split_data_dict = {}
-    for row in worksheet.rows:
-        row_data = [cell.value if cell.value else ' ' for cell in row]
-        temp_data = row_data[column - 1]
-        temp_data_list = split_data_dict.get(temp_data, [])
-        temp_data_list.append(row_data)
-        split_data_dict[temp_data] = temp_data_list
+            split_data_dict = {}
+            for row in worksheet.rows:
+                row_data = [cell.value if cell.value else ' ' for cell in row]
+                temp_data = row_data[column - 1]
+                temp_data_list = split_data_dict.get(temp_data, [])
+                temp_data_list.append(row_data)
+                split_data_dict[temp_data] = temp_data_list
+        finally:
+            workbook.close()
+    except Exception as e:
+        return "处理异常：{}，错误信息：{}".format(filepath, str(e))
+    
     new_filepath = generate_xlsx(filepath, split_data_dict)
     return "数据保存在新文件中，文件名：{}".format(new_filepath)
 
