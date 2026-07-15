@@ -27,15 +27,19 @@ class CrossPlatformCompatibility:
         Returns:
             bool: 如果是首次运行返回True，否则返回False
         """
-        # 创建标记目录
-        self.mark_file.parent.mkdir(exist_ok=True)
-        
-        # 如果标记文件不存在，则是首次运行
-        if not self.mark_file.exists():
-            # 创建标记文件
-            self.mark_file.write_text(f"First run on {platform.system()} at {platform.platform()}")
-            return True
-        return False
+        try:
+            # 创建标记目录
+            self.mark_file.parent.mkdir(exist_ok=True)
+            # 如果标记文件不存在，则是首次运行
+            if not self.mark_file.exists():
+                # 创建标记文件
+                self.mark_file.write_text(f"First run on {platform.system()} at {platform.platform()}")
+                return True
+            return False
+        except (PermissionError, OSError):
+            # 只读或无法写入的 HOME 目录（部分 CI 容器、锁定的企业账户）下，
+            # 跳过首次运行标记，不应影响 office 的正常导入。
+            return False
     
     def get_compatibility_info(self) -> Dict[str, List[str]]:
         """获取兼容性信息。
