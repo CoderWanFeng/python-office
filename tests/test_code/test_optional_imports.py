@@ -123,6 +123,15 @@ class TestOptionalImports(unittest.TestCase):
         with self._optional_import_test_environment():
             importlib.import_module("office")
 
+    def test_compatibility_check_does_not_fail_when_mark_file_cannot_be_written(self):
+        with self._optional_import_test_environment():
+            compatibility = importlib.import_module("office.compatibility")
+
+            with mock.patch.object(compatibility.Path, "mkdir", side_effect=PermissionError("readonly")):
+                checker = compatibility.CrossPlatformCompatibility()
+
+            self.assertFalse(checker.is_first_run)
+
     def test_loader_preserves_dependency_internal_import_errors(self):
         with self._optional_import_test_environment():
             importlib.import_module("office")
