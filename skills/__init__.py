@@ -6,10 +6,10 @@ python-office Skills 模块
 每个 Skill 都是一个独立的子目录，可以单独调用。
 
 使用方式：
-    from office.skills.excel import fake2excel
+    from skills.excel import fake2excel
     fake2excel(rows=10)
 
-    from office.skills.image import add_watermark
+    from skills.image import add_watermark
     add_watermark(file='test.png', mark='python-office')
 
 详细功能列表见本目录下的 README.md。

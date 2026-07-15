@@ -28,11 +28,11 @@
 
 ```python
 # 方式 1：直接导入函数
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 fake2excel(rows=10)
 
 # 方式 2：导入子模块
-from office.skills.excel import fake2excel as fe
+from skills.excel import fake2excel as fe
 fe(rows=10, columns=['name', 'phone'])
 ```
 
@@ -63,7 +63,7 @@ fe(rows=10, columns=['name', 'phone'])
 
 调用示例：
 ```python
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 fake2excel(columns=['name', 'phone'], rows=100, path='./test.xlsx')
 ```
 
@@ -85,7 +85,7 @@ fake2excel(columns=['name', 'phone'], rows=100, path='./test.xlsx')
 
 调用示例：
 ```python
-from office.skills.file import replace4filename
+from skills.file import replace4filename
 replace4filename(path='./test_dir', del_content='old', replace_content='new')
 ```
 
@@ -99,7 +99,7 @@ replace4filename(path='./test_dir', del_content='old', replace_content='new')
 
 调用示例：
 ```python
-from office.skills.finance import t0
+from skills.finance import t0
 profit = t0(buy_price=11.99, sale_price=12.26, shares=700)
 print(profit)
 ```
@@ -122,7 +122,7 @@ print(profit)
 
 调用示例：
 ```python
-from office.skills.image import add_watermark
+from skills.image import add_watermark
 add_watermark(file='test.png', mark='python-office')
 ```
 
@@ -249,7 +249,7 @@ office/skills/<category>/<skill_name>/
 ```
 
 - **细粒度**：每个方法对应一个独立 Skill
-- **可单独调用**：每个 Skill 都可通过 `from office.skills.<category> import <skill_name>` 单独使用
+- **可单独调用**：每个 Skill 都可通过 `from skills.<category> import <skill_name>` 单独使用
 - **文档齐全**：每个 Skill 都有对应的 `SKILL.md` 详细说明
 
 ---

@@ -18,7 +18,7 @@ description: 在指定目录下筛选没有对应标注文件（.xml）的图片
 ## 调用方式
 
 ```python
-from office.skills.ruiming import screen_unmarked_image
+from skills.ruiming import screen_unmarked_image
 
 screen_unmarked_image(dir_path='./dataset')
 ```
@@ -38,7 +38,7 @@ screen_unmarked_image(dir_path='./dataset')
 ## 使用示例
 
 ```python
-from office.skills.ruiming import screen_unmarked_image
+from skills.ruiming import screen_unmarked_image
 screen_unmarked_image(dir_path='./my_dataset')
 ```
 

@@ -18,7 +18,7 @@ description: 按指定页码范围拆分 PDF 文件。当用户提到 PDF 拆分
 ## 调用方式
 
 ```python
-from office.skills.pdf import split4pdf
+from skills.pdf import split4pdf
 
 split4pdf(
     input_file='./test.pdf',
@@ -44,7 +44,7 @@ split4pdf(
 ## 使用示例
 
 ```python
-from office.skills.pdf import split4pdf
+from skills.pdf import split4pdf
 # 拆分第 1-5 页
 split4pdf(input_file='./report.pdf', output_file='./part1.pdf', from_page=0, to_page=4)
 ```

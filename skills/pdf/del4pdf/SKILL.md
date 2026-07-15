@@ -18,7 +18,7 @@ description: 删除 PDF 文件中指定的页面。当用户提到 PDF 删除页
 ## 调用方式
 
 ```python
-from office.skills.pdf import del4pdf
+from skills.pdf import del4pdf
 
 del4pdf(
     input_file='./test.pdf',
@@ -42,7 +42,7 @@ del4pdf(
 ## 使用示例
 
 ```python
-from office.skills.pdf import del4pdf
+from skills.pdf import del4pdf
 # 删除第 1 页和第 3 页
 del4pdf(input_file='./report.pdf', output_file='./new.pdf', page_nums=[0, 2])
 ```

@@ -18,7 +18,7 @@ description: 通过微信与指定联系人进行智能聊天（基于 AI 回复
 ## 调用方式
 
 ```python
-from office.skills.wechat import chat_robot
+from skills.wechat import chat_robot
 
 chat_robot(who='程序员晚枫')
 ```
@@ -36,7 +36,7 @@ chat_robot(who='程序员晚枫')
 ## 使用示例
 
 ```python
-from office.skills.wechat import chat_robot
+from skills.wechat import chat_robot
 chat_robot(who='文件传输助手')
 ```
 
