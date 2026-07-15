@@ -119,10 +119,11 @@ def instruction(func):
     @wraps(func)
     def instruction_wrapper(*args, **kwargs):
         func_filename = os.path.basename(func.__code__.co_filename)  # 取出方法所在的文件名
+        instruction_url = instruction_file_dict.get(func_filename, {}).get(func.__name__)
         # 如果有这个文件，并且已经配置了方法名对应的说明链接，则打印出来
-        if func_filename in instruction_file_dict.keys() and instruction_file_dict[func_filename][func.__name__]:
+        if instruction_url:
             random_color_print(
-                f'正在运行：office.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')
+                f'正在运行：office.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_url}')
             random_color_print(SPLIT_LINE)
         instruction_res = func(*args, **kwargs)
         return instruction_res
