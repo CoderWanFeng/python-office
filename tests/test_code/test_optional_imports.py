@@ -1,4 +1,4 @@
-"""Tests for optional platform-specific imports."""
+"""Tests for optional dependency imports."""
 
 from contextlib import contextmanager
 import importlib
@@ -19,13 +19,13 @@ SUPPORTED_DEPENDENCIES = [
     "poocr",
     "pomarkdown",
     "wftools",
-    "pospider",
 ]
 
-WINDOWS_ONLY_DEPENDENCIES = [
+OPTIONAL_DEPENDENCIES = [
     "poppt",
     "poword",
     "PyOfficeRobot",
+    "pospider",
 ]
 
 MANAGED_MODULE_PREFIXES = (
@@ -33,7 +33,7 @@ MANAGED_MODULE_PREFIXES = (
     "pocode",
 )
 
-WINDOWS_ONLY_LOADERS = [
+OPTIONAL_LOADERS = [
     (
         "office.api.word",
         "_load_poword",
@@ -55,6 +55,13 @@ WINDOWS_ONLY_LOADERS = [
         "uiautomation",
         "微信自动化功能依赖 PyOfficeRobot",
     ),
+    (
+        "office.api.web",
+        "_load_pospider",
+        "pospider",
+        "requests",
+        "网页转电子书功能依赖 pospider",
+    ),
 ]
 
 
@@ -63,13 +70,13 @@ def _is_managed_module(name):
 
 
 class TestOptionalImports(unittest.TestCase):
-    """Check that Windows-only dependencies do not break package imports."""
+    """Check that optional dependencies do not break package imports."""
 
     @contextmanager
     def _optional_import_test_environment(self):
         module_names = (
             SUPPORTED_DEPENDENCIES
-            + WINDOWS_ONLY_DEPENDENCIES
+            + OPTIONAL_DEPENDENCIES
             + ["pocode", "pocode.api", "pocode.api.color"]
         )
         original_modules = {
@@ -101,7 +108,7 @@ class TestOptionalImports(unittest.TestCase):
                 color_module.random_color_print = lambda *args, **kwargs: None
                 sys.modules["pocode.api.color"] = color_module
 
-                for name in WINDOWS_ONLY_DEPENDENCIES:
+                for name in OPTIONAL_DEPENDENCIES:
                     sys.modules.pop(name, None)
 
                 yield
@@ -119,16 +126,18 @@ class TestOptionalImports(unittest.TestCase):
                 if module is not None:
                     sys.modules[name] = module
 
-    def test_import_office_without_windows_only_dependencies(self):
+    def test_import_office_without_optional_dependencies(self):
         with self._optional_import_test_environment():
-            importlib.import_module("office")
+            office = importlib.import_module("office")
+
+            self.assertIsNotNone(office.web)
 
     def test_loader_preserves_dependency_internal_import_errors(self):
         with self._optional_import_test_environment():
             importlib.import_module("office")
             original_import = __import__
 
-            for module_name, loader_name, dependency_name, internal_name, message in WINDOWS_ONLY_LOADERS:
+            for module_name, loader_name, dependency_name, internal_name, message in OPTIONAL_LOADERS:
                 with self.subTest(dependency_name=dependency_name):
                     api_module = importlib.import_module(module_name)
                     loader = getattr(api_module, loader_name)
@@ -150,11 +159,11 @@ class TestOptionalImports(unittest.TestCase):
                     self.assertEqual(internal_name, error.exception.name)
                     self.assertNotIn(message, str(error.exception))
 
-    def test_loader_reports_missing_windows_only_dependency(self):
+    def test_loader_reports_missing_optional_dependency(self):
         with self._optional_import_test_environment():
             importlib.import_module("office")
 
-            for module_name, loader_name, dependency_name, _, message in WINDOWS_ONLY_LOADERS:
+            for module_name, loader_name, dependency_name, _, message in OPTIONAL_LOADERS:
                 with self.subTest(dependency_name=dependency_name):
                     api_module = importlib.import_module(module_name)
                     loader = getattr(api_module, loader_name)
