@@ -18,7 +18,7 @@ description: 将文件夹下的所有文件名整理到一个 Excel 表格中。
 ## 调用方式
 
 ```python
-from office.skills.file import output_file_list_to_excel
+from skills.file import output_file_list_to_excel
 
 output_file_list_to_excel(dir_path='./data')
 ```
@@ -36,7 +36,7 @@ output_file_list_to_excel(dir_path='./data')
 ## 使用示例
 
 ```python
-from office.skills.file import output_file_list_to_excel
+from skills.file import output_file_list_to_excel
 output_file_list_to_excel(dir_path='./我的文件夹')
 ```
 
