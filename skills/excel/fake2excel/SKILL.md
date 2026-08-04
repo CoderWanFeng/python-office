@@ -18,7 +18,7 @@ description: 自动创建 Excel 并模拟数据。当用户提到生成测试数
 ## 调用方式
 
 ```python
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 
 fake2excel(
     columns=['name', 'phone'],
@@ -45,7 +45,7 @@ fake2excel(
 
 ```python
 # 示例 1：生成中文测试数据
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 fake2excel(columns=['name', 'phone', 'address'], rows=1000, path='./test_cn.xlsx')
 
 # 示例 2：生成英文测试数据

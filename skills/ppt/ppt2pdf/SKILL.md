@@ -18,7 +18,7 @@ description: 将 PowerPoint 文件转换为 PDF。当用户提到 PPT 转 PDF、
 ## 调用方式
 
 ```python
-from office.skills.ppt import ppt2pdf
+from skills.ppt import ppt2pdf
 
 ppt2pdf(
     path='./test.pptx',
@@ -40,7 +40,7 @@ ppt2pdf(
 ## 使用示例
 
 ```python
-from office.skills.ppt import ppt2pdf
+from skills.ppt import ppt2pdf
 ppt2pdf(path='./presentation.pptx', output_path='./output/')
 ```
 

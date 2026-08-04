@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
 """WeChat Skills 包 - 统一暴露微信自动化相关的所有 Skills"""
-from office.skills.wechat.send_message import send_message
-from office.skills.wechat.send_message_by_time import send_message_by_time
-from office.skills.wechat.chat_by_keywords import chat_by_keywords
-from office.skills.wechat.send_file import send_file
-from office.skills.wechat.group_send import group_send
-from office.skills.wechat.receive_message import receive_message
-from office.skills.wechat.chat_robot import chat_robot
+from .send_message import send_message
+from .send_message_by_time import send_message_by_time
+from .chat_by_keywords import chat_by_keywords
+from .send_file import send_file
+from .group_send import group_send
+from .receive_message import receive_message
+from .chat_robot import chat_robot
 
 __all__ = [
     'send_message',

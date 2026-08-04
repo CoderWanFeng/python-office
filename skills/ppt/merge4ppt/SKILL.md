@@ -18,7 +18,7 @@ description: 将多个 PowerPoint 文件合并为一个 PPT。当用户提到 PP
 ## 调用方式
 
 ```python
-from office.skills.ppt import merge4ppt
+from skills.ppt import merge4ppt
 
 merge4ppt(
     input_path='./ppt_files',
@@ -42,7 +42,7 @@ merge4ppt(
 ## 使用示例
 
 ```python
-from office.skills.ppt import merge4ppt
+from skills.ppt import merge4ppt
 merge4ppt(input_path='./ppt_files', output_name='all_merged.pptx')
 ```
 

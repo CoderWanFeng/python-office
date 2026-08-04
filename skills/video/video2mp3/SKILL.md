@@ -18,7 +18,7 @@ description: 从视频文件中提取音频并保存为 MP3。当用户提到视
 ## 调用方式
 
 ```python
-from office.skills.video import video2mp3
+from skills.video import video2mp3
 
 video2mp3(
     path='./test.mp4',
@@ -42,7 +42,7 @@ video2mp3(
 ## 使用示例
 
 ```python
-from office.skills.video import video2mp3
+from skills.video import video2mp3
 video2mp3(path='./movie.mp4', mp3_name='movie_audio.mp3')
 ```
 

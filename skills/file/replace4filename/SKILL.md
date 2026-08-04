@@ -18,7 +18,7 @@ description: 批量修改文件/文件夹名称，替换或删除指定内容。
 ## 调用方式
 
 ```python
-from office.skills.file import replace4filename
+from skills.file import replace4filename
 
 replace4filename(
     path='./my_folder',
@@ -48,7 +48,7 @@ replace4filename(
 ## 使用示例
 
 ```python
-from office.skills.file import replace4filename
+from skills.file import replace4filename
 # 批量替换文件名中的"old"为"new"
 replace4filename(path='./data', del_content='old', replace_content='new')
 # 批量删除文件名中的"tmp"

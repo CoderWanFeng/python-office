@@ -18,7 +18,7 @@ description: 按指定列的内容拆分 Excel 文件，每个唯一值一个文
 ## 调用方式
 
 ```python
-from office.skills.excel import split_excel_by_column
+from skills.excel import split_excel_by_column
 
 split_excel_by_column(
     filepath='./data.xlsx',
@@ -42,7 +42,7 @@ split_excel_by_column(
 ## 使用示例
 
 ```python
-from office.skills.excel import split_excel_by_column
+from skills.excel import split_excel_by_column
 # 按第 0 列拆分
 split_excel_by_column(filepath='./orders.xlsx', column=0)
 ```

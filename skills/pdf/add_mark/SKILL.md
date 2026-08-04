@@ -18,7 +18,7 @@ description: 给 PDF 添加文字水印（简化接口）。当用户提到 PDF 
 ## 调用方式
 
 ```python
-from office.skills.pdf import add_mark
+from skills.pdf import add_mark
 
 add_mark(
     input_file='./test.pdf',
@@ -46,7 +46,7 @@ add_mark(
 ## 使用示例
 
 ```python
-from office.skills.pdf import add_mark
+from skills.pdf import add_mark
 add_mark(input_file='./report.pdf', mark_str='机密')
 ```
 

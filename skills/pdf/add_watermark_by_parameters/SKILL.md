@@ -18,7 +18,7 @@ description: 通过参数化方式给 PDF 添加水印。当用户提到参数�
 ## 调用方式
 
 ```python
-from office.skills.pdf import add_watermark_by_parameters
+from skills.pdf import add_watermark_by_parameters
 
 add_watermark_by_parameters(
     input_file='./test.pdf',
@@ -46,7 +46,7 @@ add_watermark_by_parameters(
 ## 使用示例
 
 ```python
-from office.skills.pdf import add_watermark_by_parameters
+from skills.pdf import add_watermark_by_parameters
 add_watermark_by_parameters(input_file='./report.pdf', mark_str='机密')
 ```
 
