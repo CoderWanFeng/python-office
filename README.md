@@ -59,7 +59,7 @@ import office  # one import, all features available
 | 🤖 **AI-friendly** | Each Skill ships `SKILL.md` + YAML, recognizable by Codex / Claude / Cursor |
 | 🌏 **Beginner-friendly** | Full tutorials, video guides, and an active WeChat community |
 | 🪶 **Lightweight** | `pip install popdf / poimage / poword` for sub-libraries — no bloat |
-| 🔄 **Continuously updated** | Maintained since 2020, 73+ features still evolving |
+| 🔄 **Continuously updated** | Actively maintained, with 73+ features still evolving |
 | 📦 **One import** | `import office` brings everything; or import individually |
 | 🛡️ **Stable** | Used by thousands of projects, MIT licensed |
 
