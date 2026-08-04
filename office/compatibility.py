@@ -27,14 +27,18 @@ class CrossPlatformCompatibility:
         Returns:
             bool: 如果是首次运行返回True，否则返回False
         """
-        # 创建标记目录
-        self.mark_file.parent.mkdir(exist_ok=True)
-        
-        # 如果标记文件不存在，则是首次运行
-        if not self.mark_file.exists():
-            # 创建标记文件
-            self.mark_file.write_text(f"First run on {platform.system()} at {platform.platform()}")
-            return True
+        try:
+            # 创建标记目录
+            self.mark_file.parent.mkdir(exist_ok=True)
+            
+            # 如果标记文件不存在，则是首次运行
+            if not self.mark_file.exists():
+                # 创建标记文件
+                self.mark_file.write_text(f"First run on {platform.system()} at {platform.platform()}")
+                return True
+        except OSError:
+            # 兼容性提示不应影响主包导入；HOME 只读或不可写时跳过首次运行提示。
+            return False
         return False
     
     def get_compatibility_info(self) -> Dict[str, List[str]]:
@@ -233,10 +237,6 @@ def check_compatibility():
     checker = CrossPlatformCompatibility()
     checker.display_warning()
     return checker
-
-
-# 在模块导入时自动检查兼容性
-compatibility_checker = check_compatibility()
 
 
 if __name__ == "__main__":
