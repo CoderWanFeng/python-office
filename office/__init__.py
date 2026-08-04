@@ -13,6 +13,7 @@ from office.api import pdf
 from office.api import ppt
 from office.api import tools
 from office.api import video
+from office.api import web
 from office.api import wechat
 from office.api import word
 from office.api import markdown
