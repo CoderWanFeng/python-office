@@ -199,6 +199,9 @@ add_watermark(file='test.png', mark='python-office')
 | `audio2txt` | 音频提取文字 | `office/skills/video/audio2txt/` |
 | `mark2video` | 给视频添加水印 | `office/skills/video/mark2video/` |
 | `txt2mp3` | 文本转语音 | `office/skills/video/txt2mp3/` |
+| `video_edit` | 音频与视频剪辑集合（截取、画面裁剪、音视频拼接、合成/替换音频） | `office/skills/video/video_edit/` |
+
+
 
 ---
 
