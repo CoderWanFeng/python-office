@@ -16,6 +16,7 @@
 - [PPT 处理](#ppt-处理)
 - [Tools 工具](#tools-工具)
 - [Video 视频处理](#video-视频处理)
+- [Web 网页处理](#web-网页处理)
 - [WeChat 微信](#wechat-微信)
 - [Word 文档处理](#word-文档处理)
 - [Ruiming 测试 API](#ruiming-测试-api)
@@ -205,6 +206,20 @@ add_watermark(file='test.png', mark='python-office')
 
 ---
 
+## Web 网页处理
+
+| Skill | 功能 | 所在路径 |
+|-------|------|----------|
+| `url2ebook` | 将网页转换为电子书 | `office/skills/web/url2ebook/` |
+
+调用示例：
+```python
+from skills.web import url2ebook
+url2ebook(url='https://www.python-office.com', tile='Python-Office自动化办公指南')
+```
+
+---
+
 ## WeChat 微信
 
 | Skill | 功能 | 所在路径 |
@@ -259,7 +274,7 @@ office/skills/<category>/<skill_name>/
 
 ## 统计
 
-- 总计：**73 个 Skill**，涵盖 13 个分类
+- 总计：**74 个 Skill**，涵盖 14 个分类
 - 各分类 Skill 数量：
   - Excel：7
   - File：9
@@ -271,6 +286,7 @@ office/skills/<category>/<skill_name>/
   - PPT：3
   - Tools：10
   - Video：4
+  - Web：1
   - WeChat：7
   - Word：5
   - Ruiming：3

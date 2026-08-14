@@ -17,6 +17,7 @@ CATEGORIES = (
     "ruiming",
     "tools",
     "video",
+    "web",
     "wechat",
     "word",
 )
