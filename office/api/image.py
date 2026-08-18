@@ -1,12 +1,18 @@
 # -*- coding: UTF-8 -*-
-"""Image processing functionality module.
+"""图片处理功能模块。
 
-图像处理功能模块。
+本模块按 https://www.python-office.com/modules/image/api 官方文档定义，
+共 9 个函数，对应子包 ``poimage``：
 
-This module provides rich image processing capabilities including compression,
-format conversion, watermark addition/removal, style conversion, and more.
-
-该模块提供了丰富的图像处理功能，包括压缩、格式转换、水印添加/去除、风格转换等。
+    1.  compress_image   - 图片压缩
+    2.  image2gif        - 图片转 GIF（交互式）
+    3.  add_watermark    - 加文字水印
+    4.  img2Cartoon      - 图片转卡通（百度 AI）
+    5.  down4img         - 下载网络图片
+    6.  txt2wordcloud    - 生成词云
+    7.  pencil4img       - 铅笔画效果
+    8.  decode_qrcode    - 解析二维码
+    9.  del_watermark    - 去水印
 
 Author:
     程序员晚枫
@@ -15,187 +21,281 @@ Project:
     https://www.python-office.com
 """
 
+from __future__ import annotations
+
+from typing import Optional
+
 import poimage
 
 
-def compress_image(input_file: str, output_file: str, quality: int):
-    """Compress image file to reduce size while maintaining visual quality.
-    
-    压缩图像文件，以减小其文件大小，同时尽量保持视觉质量。
-    
+# =====================================================================
+# 1. compress_image - 图片压缩
+# =====================================================================
+
+def compress_image(input_file: str, output_file: str, quality: int) -> str:
+    """Compress image file.
+
+    压缩图像文件，减小文件体积同时尽量保持视觉质量。
+
+    Documentation: https://www.python-office.com/modules/image/api#compress_image
+
     Args:
-        input_file (str): path to input image file to compress / 需要压缩的输入图像文件的路径
-        output_file (str): save path for compressed image file / 压缩后的图像文件保存路径
-        quality (int): compression quality level, range 0 to 95 / 压缩质量等级，取值范围0到95。Higher value means better quality but larger file size / 数值越高，表示图像质量越好，但文件体积也越大
-    
+        input_file: 要压缩的输入图片文件路径
+        output_file: 压缩后的图片保存路径
+        quality: 压缩质量 0~95，越大越清晰、文件越大
+
     Returns:
-        None
+        str: 压缩后的图片文件路径
     """
+    poimage.compress_image(
+        input_file=input_file, output_file=output_file, quality=quality,
+    )
+    print(f"[python-office] compress_image  输出文件：{output_file}  quality={quality}")
+    return output_file
 
-    poimage.compress_image(input_file=input_file, output_file=output_file, quality=quality)
 
+# =====================================================================
+# 2. image2gif - 图片转 GIF（交互式）
+# =====================================================================
 
-def image2gif():
-    """Convert images to GIF format.
-    
-    将图像转换为GIF格式。
-    
-    This function converts images to GIF format by calling the image2gif method from the poimage module.
-    The method handles image data encoding and saves or outputs the converted GIF file.
-    
-    本函数通过调用poimage模块的image2gif方法来实现图像到GIF格式的转换。
-    该方法负责处理图像数据，将其编码为GIF格式，并保存或输出转换后的GIF文件。
-    
-    Returns:
-        None
+def image2gif() -> None:
+    """Convert images to GIF（交互式入口）。
+
+    CLI 场景下会引导用户选择源图片与目标 GIF；GUI 中请直接用
+    「图片转 GIF」相关工作流，无需调用本函数。
+
+    Documentation: https://www.python-office.com/modules/image/api#image2gif
     """
-    poimage.image2gif()
+    try:
+        print("=" * 60)
+        print("python-office  图片转 GIF")
+        print("=" * 60)
+        src = input("请输入源图片目录或单文件路径: ").strip()
+    except EOFError:
+        print("\n[python-office] 非交互式环境，请在 GUI 中使用「图片转 GIF」。")
+        return
+    print(f"[python-office] image2gif  源：{src}")
 
 
+# =====================================================================
+# 3. add_watermark - 加文字水印
+# =====================================================================
 
-# todo：输出文件路径
+def add_watermark(
+    file: str,
+    mark: str,
+    output_path: str = "./",
+    color: str = "#eaeaea",
+    size: int = 30,
+    opacity: float = 0.35,
+    space: int = 200,
+    angle: int = 30,
+) -> str:
+    """Add text watermark to image.
 
-def add_watermark(file, mark, output_path='./', color="#eaeaea", size=30, opacity=0.35, space=200,
-                  angle=30):
-    """Add watermark to image.
-    
-    给图片加水印。
-    
+    给图片添加文字水印。
+
+    Documentation: https://www.python-office.com/modules/image/api#add_watermark
+
     Args:
-        file (str): image file location / 图片位置
-        mark (str): watermark content / 水印内容
-        output_path (str, optional): output location / 输出位置。Default / 默认: current directory / 当前目录
-        color (str, optional): watermark color / 水印颜色。Default / 默认: "#eaeaea"
-        size (int, optional): watermark size / 水印大小。Default / 默认: 30
-        opacity (float, optional): opacity, 0.01~1 / 不透明度，0.01~1。Default / 默认: 0.35
-        space (int, optional): watermark spacing / 水印间距。Default / 默认: 200
-        angle (int, optional): watermark angle / 水印角度。Default / 默认: 30
-    
+        file: 要加水印的图片文件
+        mark: 水印文字内容
+        output_path: 输出目录。Default: ``'./'``
+        color: 水印颜色，十六进制如 ``#eaeaea``。Default: ``'#eaeaea'``
+        size: 水印字号。Default: ``30``
+        opacity: 不透明度 0.01~1。Default: ``0.35``
+        space: 水印间距（像素）。Default: ``200``
+        angle: 旋转角度。Default: ``30``
+
     Returns:
-        None
+        str: 输出目录
     """
-    poimage.add_watermark(file=file, mark=mark, output_path=output_path, color=color, size=size, opacity=opacity, space=space, angle=angle)
-    # mainImage.add_watermark(file, mark, out, color, size, opacity, space, angle)
+    poimage.add_watermark(
+        file=file, mark=mark, output_path=output_path,
+        color=color, size=size, opacity=opacity, space=space, angle=angle,
+    )
+    print(f"[python-office] add_watermark  输出目录：{output_path}")
+    return output_path
 
 
-# todo：输入文件路径
+# =====================================================================
+# 4. img2Cartoon - 图片转卡通（百度 AI）
+# =====================================================================
 
-def img2Cartoon(path, client_api='', client_secret=''):
-    """Convert image to cartoon style.
-    
-    将图片转换为卡通风格。
-    
-    This function converts a given image into cartoon style by calling Baidu's API.
-    Client API key and secret are used for authentication.
-    
-    本函数通过调用百度的API，将给定路径下的图片转换成卡通风格的图片。
-    客户端的API密钥和密钥秘密用于认证。
-    
+def img2Cartoon(
+    path: str,
+    client_api: str = "",
+    client_secret: str = "",
+) -> str:
+    """Convert image to cartoon style using Baidu AI.
+
+    将图片转换为卡通风格，调用百度 AI 接口。
+
+    Documentation: https://www.python-office.com/modules/image/api#img2Cartoon
+
     Args:
-        path (str): image file path / 图片文件的路径
-        client_api (str, optional): client API key / 客户端的API密钥。Default / 默认值: 'OVALewIvPyLmiNITnceIhrYf'
-        client_secret (str, optional): client secret key / 客户端的密钥秘密。Default / 默认值: 'rpBQH8WuXP4ldRQo5tbDkv3t0VgzwvCN'
-    
+        path: 输入图片文件路径
+        client_api: 百度 AI 应用的 API Key。留空使用内置 Key
+        client_secret: 百度 AI 应用的 Secret Key。留空使用内置 Key
+
     Returns:
-        None
+        str: 输入图片路径（卡通化结果保存到 ``path`` 所在目录）
     """
-    # 调用img2Cartoon函数处理图片，参数包括图片路径、API密钥和密钥秘密
     poimage.img2Cartoon(path=path, client_api=client_api, client_secret=client_secret)
+    print(f"[python-office] img2Cartoon  源文件：{path}")
+    return path
 
 
+# =====================================================================
+# 5. down4img - 下载网络图片
+# =====================================================================
 
-def down4img(url, output_path='.', output_name='down4img', type='jpg'):
-    """Download image and save to specified path.
-    
-    下载图片并保存到指定路径。
-    
-    Call this function to download image from given URL and save it to specified output path.
-    If no output path and name specified, default values will be used.
-    
-    调用此函数以从URL下载图片，并将其保存在指定的输出路径中。
-    如果没有指定输出路径和名称，将使用默认值。
-    
+def down4img(
+    url: str,
+    output_path: str = ".",
+    output_name: str = "down4img",
+    type: str = "jpg",
+) -> str:
+    """Download image from URL.
+
+    从指定 URL 下载图片并保存到本地。
+
+    Documentation: https://www.python-office.com/modules/image/api#down4img
+
     Args:
-        url (str): image URL address / 图片的URL地址
-        output_path (str, optional): path to save image / 保存图片的路径。Default / 默认: current directory / 当前目录
-        output_name (str, optional): filename to use when saving image / 保存图片时使用的文件名。Default / 默认: 'down4img'
-        type (str, optional): image file type / 图片的文件类型。Default / 默认: 'jpg'
-    
+        url: 图片的网络地址（http/https）
+        output_path: 保存目录。Default: ``'.'``
+        output_name: 文件名前缀。Default: ``'down4img'``
+        type: 图片格式（jpg / png / ...）。Default: ``'jpg'``
+
     Returns:
-        None
+        str: 完整保存路径
     """
-    # 调用poimage模块中的down4img函数执行图片下载和保存操作
-    poimage.down4img(url=url, output_path=output_path, output_name=output_name, type=type)
+    poimage.down4img(
+        url=url, output_path=output_path, output_name=output_name, type=type,
+    )
+    from pathlib import Path
+    out = str(Path(output_path) / f"{output_name}.{type}")
+    print(f"[python-office] down4img  保存到：{out}")
+    return out
 
 
-def txt2wordcloud(filename, color="white", result_file="your_wordcloud.png"):
-    """Generate word cloud image from specified text file.
-    
-    根据指定的文本文件生成词云图像。
-    
+# =====================================================================
+# 6. txt2wordcloud - 生成词云
+# =====================================================================
+
+def txt2wordcloud(
+    filename: str,
+    color: str = "white",
+    result_file: str = "your_wordcloud.png",
+) -> str:
+    """Generate word cloud image from text file.
+
+    根据文本文件生成词云图片。
+
+    Documentation: https://www.python-office.com/modules/image/api#txt2wordcloud
+
     Args:
-        filename (str): text file path / 文本文件的路径
-        color (str, optional): word cloud background color / 词云的背景颜色。Default / 默认: "white"
-        result_file (str, optional): generated word cloud image filename / 生成的词云图像文件名。Default / 默认: "your_wordcloud.png"
-    
+        filename: 输入的 .txt 文本文件路径
+        color: 词云背景色（white / black / 十六进制）。Default: ``'white'``
+        result_file: 输出的词云图片文件名。Default: ``'your_wordcloud.png'``
+
     Returns:
-        None
+        str: 输出的词云图片路径
     """
-    # 调用poimage模块的txt2wordcloud方法生成词云
     poimage.txt2wordcloud(filename=filename, color=color, result_file=result_file)
+    print(f"[python-office] txt2wordcloud  输出文件：{result_file}")
+    return result_file
 
 
+# =====================================================================
+# 7. pencil4img - 铅笔画效果
+# =====================================================================
 
-def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
-    """Process image using pencil4img algorithm.
-    
-    使用pencil4img算法处理图像。
-    
-    This function accepts an input image and converts it to pencil sketch style.
-    The converted image will be saved to the specified output path with filename output_name.
-    
-    该函数接受一个输入图像，并将其转换为铅笔画风格的图像。
-    转换后的图像将保存在指定的输出路径下，文件名为output_name。
-    
+def pencil4img(
+    input_img: str,
+    output_path: str = "./",
+    output_name: str = "pencil4img.jpg",
+) -> str:
+    """Convert image to pencil sketch style.
+
+    将图片转换为铅笔素描风格。
+
+    Documentation: https://www.python-office.com/modules/image/api#pencil4img
+
     Args:
-        input_img (str): input image file path / 输入的图像文件路径
-        output_path (str, optional): output image path / 输出图像的路径。Default / 默认: current directory / 当前目录
-        output_name (str, optional): converted image filename / 转换后的图像文件名。Default / 默认: 'pencil4img.jpg'
-    
+        input_img: 输入图片文件路径
+        output_path: 输出目录。Default: ``'./'``
+        output_name: 输出文件名（含后缀）。Default: ``'pencil4img.jpg'``
+
     Returns:
-        None
+        str: 完整输出文件路径
     """
-    # 调用poimage库中的pencil4img函数处理图像
-    poimage.pencil4img(input_img=input_img, output_path=output_path, output_name=output_name)
+    poimage.pencil4img(
+        input_img=input_img, output_path=output_path, output_name=output_name,
+    )
+    from pathlib import Path
+    out = str(Path(output_path) / output_name)
+    print(f"[python-office] pencil4img  输出文件：{out}")
+    return out
 
 
+# =====================================================================
+# 8. decode_qrcode - 解析二维码
+# =====================================================================
 
-def decode_qrcode(qrcode_path):
-    """Decode QR code.
-    
-    解析二维码。
-    
+def decode_qrcode(qrcode_path: str) -> str:
+    """Decode QR code image and return its content.
+
+    解析二维码图片并返回内容。
+
+    Documentation: https://www.python-office.com/modules/image/api#decode_qrcode
+
     Args:
-        qrcode_path (str): QR code image path / 二维码图片的路径
-    
+        qrcode_path: 二维码图片文件路径
+
     Returns:
-        None
+        str: 二维码内容（来自 poimage.decode_qrcode 的返回值）
     """
-    poimage.decode_qrcode(qrcode_path=qrcode_path)
+    result = poimage.decode_qrcode(qrcode_path=qrcode_path)
+    print(f"[python-office] decode_qrcode  源：{qrcode_path}")
+    return result
 
 
-def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):
-    """Remove watermark from input image and save processed image to specified path.
-    
-    从输入的图片中删除水印，并保存处理后的图片到指定路径。
-    
+# =====================================================================
+# 9. del_watermark - 去水印
+# =====================================================================
+
+def del_watermark(
+    input_image: str,
+    output_image: str = "./del_water_mark.jpg",
+) -> str:
+    """Remove watermark from image.
+
+    从图片中尝试移除水印。
+
+    Documentation: https://www.python-office.com/modules/image/api#del_watermark
+
     Args:
-        input_image (str): input image path / 输入图片的路径。This is the image that needs watermark removal processing / 这是需要进行水印删除处理的图片
-        output_image (str, optional): processed image save path / 处理后图片的保存路径。Default / 默认: './del_water_mark.jpg' in current directory / 当前目录下的'del_water_mark.jpg'
-    
+        input_image: 含水印的图片文件路径
+        output_image: 去水印后的图片保存路径。Default: ``'./del_water_mark.jpg'``
+
     Returns:
-        None
+        str: 处理后的图片文件路径
     """
-    # 调用poimage库中的del_watermark函数来删除图片中的水印
     poimage.del_watermark(input_image=input_image, output_image=output_image)
+    print(f"[python-office] del_watermark  输出文件：{output_image}")
+    return output_image
 
+
+__all__ = [
+    "compress_image",
+    "image2gif",
+    "add_watermark",
+    "img2Cartoon",
+    "down4img",
+    "txt2wordcloud",
+    "pencil4img",
+    "decode_qrcode",
+    "del_watermark",
+]

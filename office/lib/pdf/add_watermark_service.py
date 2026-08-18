@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import reportlab
-from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2 import PdfFileWriter, PdfFileReader, PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import registerFont
@@ -44,42 +44,29 @@ def pdf_add_watermark(pdf_file_in: str, pdf_file_mark: str, pdf_file_out: str) -
     """
     # print(pdf_file_out)
     pdf_output = PdfWriter()
-    input_stream = None
-    mark_stream = None
-    try:
-        input_stream = open(pdf_file_in, 'rb')
-        pdf_input = PdfReader(input_stream, strict=False)
-        # 获取PDF文件的页数
-        if pdf_input.is_encrypted:
-            print("文件已被加密")
-            PDF_Passwd = input("请输入PDF密码：")
-            # 尝试用空密码解密
-            try:
-                pdf_input.decrypt(PDF_Passwd)
-            except Exception:
-                print(f"尝试用密码{PDF_Passwd}解密失败.")
-                return False
-        pageNum = len(pdf_input.pages)
-        # 读入水印pdf文件
-        # print(pdf_file_mark)
-        mark_stream = open(pdf_file_mark, mode='rb')
-        pdf_watermark = PdfReader(mark_stream, strict=False)
-        # 检查水印PDF是否有效（至少包含一页）
-        if len(pdf_watermark.pages) == 0:
-            print(f"水印文件不包含任何页面：{pdf_file_mark}")
+    input_stream = open(pdf_file_in, 'rb')
+    pdf_input = PdfReader(input_stream, strict=False)
+    # 获取PDF文件的页数
+    if pdf_input.is_encrypted:
+        print("文件已被加密")
+        PDF_Passwd = input("请输入PDF密码：")
+        # 尝试用空密码解密
+        try:
+            pdf_input.decrypt(PDF_Passwd)
+        except Exception:
+            print(f"尝试用密码{PDF_Passwd}解密失败.")
             return False
-        # 给每一页打水印
-        for pageNumber in tqdm(range(pageNum)):
-            page = pdf_input.pages[pageNumber]
-            page.merge_page(pdf_watermark.pages[0])
-            page.compress_content_streams()  # 压缩内容
-            pdf_output.add_page(page)
-        with open(pdf_file_out, 'wb') as pdf_file_out_f:
-            pdf_output.write(pdf_file_out_f)
-        return True
-    finally:
-        # 无论成功失败，都确保输入流和水印流被关闭，避免批量处理时文件句柄泄漏
-        if input_stream is not None:
-            input_stream.close()
-        if mark_stream is not None:
-            mark_stream.close()
+    pageNum = len(pdf_input.pages)
+    # 读入水印pdf文件
+    # print(pdf_file_mark)
+    mark_stream = open(pdf_file_mark, mode='rb')
+    pdf_watermark = PdfReader(mark_stream, strict=False)
+    # 给每一页打水印
+    for pageNumber in tqdm(range(pageNum)):
+        page = pdf_input.pages[pageNumber]
+        page.merge_page(pdf_watermark.pages[0])
+        page.compress_content_streams()  # 压缩内容
+        pdf_output.add_page(page)
+    with open(pdf_file_out, 'wb') as pdf_file_out_f:
+        pdf_output.write(pdf_file_out_f)
+    return True
