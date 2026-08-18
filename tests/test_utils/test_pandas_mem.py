@@ -11,6 +11,14 @@ def test_object_column_with_integer_name():
     assert str(result[0].dtype) == "category"
 
 
+def test_object_column_is_converted_to_category():
+    df = pd.DataFrame({"city": ["a", "b", "a"]})
+
+    result = reduce_pandas_mem_usage(df)
+
+    assert str(result["city"].dtype) == "category"
+
+
 def test_date_column_name_is_preserved():
     df = pd.DataFrame({"date": ["2026-01-01", "2026-01-02"]})
 
