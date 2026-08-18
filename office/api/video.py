@@ -1,11 +1,13 @@
-"""Video processing functionality module.
+# -*- coding: UTF-8 -*-
+"""视频处理功能模块。
 
-视频处理功能模块。
+本模块按 https://www.python-office.com/modules/video/api 官方文档定义，
+共 4 个函数，对应子包 ``povideo``：
 
-This module provides video processing capabilities including format conversion,
-audio extraction, watermark addition, text-to-speech, and more.
-
-该模块提供了视频处理功能，包括格式转换、音频提取、水印添加、文本转语音等。
+    1. video2mp3   - 视频提取音频
+    2. audio2txt   - 音频转文字（调用腾讯云语音识别）
+    3. mark2video  - 视频加文字水印
+    4. txt2mp3     - 文本转语音
 
 Author:
     程序员晚枫
@@ -14,97 +16,146 @@ Project:
     https://www.python-office.com
 """
 
+from __future__ import annotations
+
+from typing import Optional
+
 import povideo
 
-# 从视频里提取音频
+
+__all__ = ["video2mp3", "audio2txt", "mark2video", "txt2mp3"]
 
 
+# =====================================================================
+# 1. video2mp3 - 视频提取音频
+# =====================================================================
 
+def video2mp3(
+    path: str,
+    mp3_name: Optional[str] = None,
+    output_path: str = "./",
+) -> str:
+    """Extract audio from video and save as MP3.
 
-def video2mp3(path, mp3_name=None, output_path=r'./'):
-    """Convert video file to mp3 audio file.
-    
-    将视频文件转换为mp3音频文件。
-    
+    将视频文件提取为 MP3 音频。
+
+    Documentation: https://www.python-office.com/modules/video/api#video2mp3
+
     Args:
-        path (str): video file path / 视频文件的路径
-        mp3_name (str, optional): output mp3 filename / 输出mp3文件的名称。If not provided, defaults to original video filename / 如果未提供，默认为原视频文件名
-        output_path (str, optional): output mp3 file path / 输出mp3文件的路径。Default / 默认: current directory / 当前目录
-    
+        path: 输入视频文件路径
+        mp3_name: 输出 MP3 文件名（不含后缀），留空则用原视频文件名。Default: ``None``
+        output_path: 输出目录。Default: ``'./'``
+
     Returns:
-        None: generates mp3 file in specified output path / 在指定输出路径下生成mp3文件
+        str: 输出 MP3 文件路径
     """
     povideo.video2mp3(path=path, mp3_name=mp3_name, output_path=output_path)
+    from pathlib import Path
+    name = mp3_name or Path(path).stem
+    out = str(Path(output_path) / f"{name}.mp3")
+    print(f"[python-office] video2mp3  输出：{out}")
+    return out
 
-def audio2txt(audio_path, appid, secret_id, secret_key):
-    """Extract text from audio.
-    
-    从音频里提取文字。
-    
-    Note: Local audio file cannot exceed 5MB.
-    注意：本地语音文件不能大于5MB。
-    
+
+# =====================================================================
+# 2. audio2txt - 音频转文字
+# =====================================================================
+
+def audio2txt(audio_path: str, appid: str, secret_id: str, secret_key: str) -> None:
+    """Convert audio to text using Tencent Cloud ASR.
+
+    调用腾讯云语音识别 API，把音频文件转为文字。
+
+    注意：本地音频文件不能大于 5MB。
+
+    Documentation: https://www.python-office.com/modules/video/api#audio2txt
+
     Args:
-        audio_path (str): audio file path / 音频文件路径
-        appid (str): speech recognition API application ID / 语音识别API的应用ID
-        secret_id (str): speech recognition API secret ID / 语音识别API的密钥ID
-        secret_key (str): speech recognition API secret key / 语音识别API的密钥
-    
-    Returns:
-        None
+        audio_path: 输入音频文件路径
+        appid: 腾讯云语音识别应用的 appid
+        secret_id: 腾讯云 API SecretId
+        secret_key: 腾讯云 API SecretKey
     """
-    povideo.audio2txt(audio_path=audio_path, appid=appid, secret_id=secret_id, secret_key=secret_key)
+    povideo.audio2txt(
+        audio_path=audio_path,
+        appid=appid,
+        secret_id=secret_id,
+        secret_key=secret_key,
+    )
+    print(f"[python-office] audio2txt  源：{audio_path}")
 
 
+# =====================================================================
+# 3. mark2video - 视频加文字水印
+# =====================================================================
 
-def mark2video(video_path, output_path=r'./', output_name=r'mark2video.mp4', mark_str: str = "www.python-office.com",
-               font_size=28,
-               font_type='Arial', font_color='white'):
-    """Add watermark to video.
-    
-    给视频添加水印。
-    
+def mark2video(
+    video_path: str,
+    output_path: str = "./",
+    output_name: str = "mark2video.mp4",
+    mark_str: str = "www.python-office.com",
+    font_size: int = 28,
+    font_type: str = "Arial",
+    font_color: str = "white",
+) -> str:
+    """Add text watermark to video.
+
+    给视频添加文字水印（默认滚动）。
+
+    Documentation: https://www.python-office.com/modules/video/api#mark2video
+
     Args:
-        video_path (str): video file path / 视频地址
-        output_path (str, optional): output path / 输出地址。Default / 默认: current directory / 当前目录
-        output_name (str, optional): output filename, remember to include '.mp4' / 输出名称，记得带'.mp4'。Default / 默认: 'mark2video.mp4'
-        mark_str (str, optional): watermark content, only supports English / 水印内容，只支持英文。Default / 默认: 'www.python-office.com'
-        font_size (int, optional): watermark font size / 水印字体大小。Default / 默认: 28
-        font_type (str, optional): watermark font type / 水印字体类型。Default / 默认: 'Arial'
-        font_color (str, optional): watermark color / 水印颜色。Default / 默认: 'white'
-    
+        video_path: 输入视频文件路径
+        output_path: 输出目录。Default: ``'./'``
+        output_name: 输出文件名（**记得带 .mp4 后缀**）。Default: ``'mark2video.mp4'``
+        mark_str: 水印文字内容。Default: ``'www.python-office.com'``
+        font_size: 水印字号。Default: ``28``
+        font_type: 字体名称或字体文件路径。Default: ``'Arial'``
+        font_color: 字体颜色。Default: ``'white'``
+
     Returns:
-        None
+        str: 完整输出文件路径
     """
-    povideo.mark2video(video_path=video_path, output_path=output_path, output_name=output_name, mark_str=mark_str, font_size=font_size, font_type=font_type, font_color=font_color)
+    povideo.mark2video(
+        video_path=video_path,
+        output_path=output_path,
+        output_name=output_name,
+        mark_str=mark_str,
+        font_size=font_size,
+        font_type=font_type,
+        font_color=font_color,
+    )
+    from pathlib import Path
+    out = str(Path(output_path) / output_name)
+    print(f"[python-office] mark2video  输出：{out}  水印：{mark_str!r}")
+    return out
 
 
+# =====================================================================
+# 4. txt2mp3 - 文本转语音
+# =====================================================================
 
-def txt2mp3(content='程序员晚枫', file=None, mp3=r'./程序员晚枫.mp3', speak=True):
-    """Convert text to speech.
-    
-    文本转语音。
-    
+def txt2mp3(
+    content: str = "程序员晚枫",
+    file: Optional[str] = None,
+    mp3: str = "./程序员晚枫.mp3",
+    speak: bool = True,
+) -> str:
+    """Convert text to speech and save as MP3.
+
+    调用本地 TTS 引擎把文本转为 MP3 语音。
+
+    Documentation: https://www.python-office.com/modules/video/api#txt2mp3
+
     Args:
-        content (str, optional): content to convert / 需要转换的内容。Default / 默认: '程序员晚枫'
-        file (str, optional): specify file to read, highest priority / 指定读取的文件，优先级最高
-        mp3 (str, optional): mp3 save location and name / 需要保存的mp3位置和名称。Fill None to not save / 填None不保存。Default / 默认: './程序员晚枫.mp3'
-        speak (bool, optional): whether to read aloud / 是否阅读。Default / 默认: True
-    
+        content: 要朗读的文本内容。Default: ``'程序员晚枫'``
+        file: 可选：从指定文件读取文本（优先级最高）。Default: ``None``
+        mp3: 输出 MP3 文件路径。Default: ``'./程序员晚枫.mp3'``
+        speak: True=边合成边朗读，False=只生成文件。Default: ``True``
+
     Returns:
-        None
+        str: 输出 MP3 文件路径
     """
-    return povideo.txt2mp3(content=content, file=file, mp3=mp3, speak=speak)
-
-
-from office.lib.video.video_edit_service import (
-    _parse_time,
-    cut_video,
-    cut_audio,
-    crop_video,
-    concat_videos,
-    concat_audios,
-    add_audio_to_video,
-)
-
-
+    result = povideo.txt2mp3(content=content, file=file, mp3=mp3, speak=speak)
+    print(f"[python-office] txt2mp3  输出：{mp3}  speak={speak}")
+    return result if isinstance(result, str) else mp3

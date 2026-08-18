@@ -1,11 +1,19 @@
-"""Utility tools functionality module.
+# -*- coding: UTF-8 -*-
+"""实用工具功能模块。
 
-工具类功能模块。
+本模块按 https://www.python-office.com/modules/tools/api 官方文档定义，
+共 10 个函数，对应子包 ``wftools``（随主包自动安装）：
 
-This module provides various utility tools including translation, QR code generation,
-password generation, weather query, URL to IP conversion, article generation, and more.
-
-该模块提供了各种工具类功能，包括翻译、二维码生成、密码生成、天气查询、URL转IP、文章生成等。
+    1.  transtools        - 多语言翻译
+    2.  qrcodetools       - 生成二维码
+    3.  passwordtools     - 随机密码
+    4.  weather           - 天气查询（CLI 交互式）
+    5.  url2ip            - URL 转 IP
+    6.  lottery8ticket    - 彩票号码（CLI 交互式）
+    7.  create_article    - AI 生成文章
+    8.  pwd4wifi          - WiFi 密码（仅 Windows）
+    9.  net_speed_test    - 网速测试（CLI 交互式）
+    10. course            - 项目信息展示
 
 Author:
     程序员晚枫
@@ -14,181 +22,231 @@ Project:
     https://www.python-office.com
 """
 
+from __future__ import annotations
+
+from typing import List, Optional
+
 import wftools
-from pocode.api.color import random_color_print
 
-from office.lib.conf.CONST import SPLIT_LINE
+try:
+    from pocode.api.color import random_color_print
+except ImportError:  # 兜底：pocode 不可用时退化为普通 print
+    def random_color_print(text: str) -> None:  # type: ignore[no-redef]
+        print(text)
 
 
-#
-def transtools(to_lang: str, content: str, from_lang: str = 'zh'):
-    """Translate content from one language to another.
-    
-    将内容从一种语言翻译为另一种语言。
-    
+# =====================================================================
+# 1. transtools - 多语言翻译
+# =====================================================================
+
+def transtools(to_lang: str, content: str, from_lang: str = "zh") -> str:
+    """Translate text between languages.
+
+    将内容从一种语言翻译为另一种语言（调用 libretranslate）。
+
+    Documentation: https://www.python-office.com/modules/tools/api#transtools
+
     Args:
-        to_lang (str): target language / 目标语言
-        content (str): content to translate / 待翻译的内容
-        from_lang (str, optional): source language / 源语言。Default / 默认: 'zh' (Chinese / 中文)
-    
+        to_lang: 目标语言代码（en / zh / ja / ...）
+        content: 待翻译的内容
+        from_lang: 源语言代码。Default: ``'zh'``（中文）
+
     Returns:
-        str: translated result / 翻译后的结果
+        str: 翻译后的结果
     """
-    return wftools.transtools(to_lang=to_lang, content=content, from_lang=from_lang)
+    result = wftools.transtools(
+        to_lang=to_lang, content=content, from_lang=from_lang,
+    )
+    print(f"[python-office] transtools  {from_lang}→{to_lang}: {content[:20]!r}")
+    return result
 
 
-def qrcodetools(url: str, output: str = r'./qrcode_img.png'):
-    """Generate QR code image.
-    
-    生成二维码图片。
-    
+# =====================================================================
+# 2. qrcodetools - 生成二维码
+# =====================================================================
+
+def qrcodetools(url: str, output: str = "./qrcode_img.png") -> str:
+    """Generate QR code image from URL.
+
+    把 URL 编码为二维码图片。
+
+    Documentation: https://www.python-office.com/modules/tools/api#qrcodetools
+
     Args:
-        url (str): URL address for generating QR code / 用于生成二维码的URL地址
-        output (str, optional): save path for generated QR code image / 生成的二维码图片保存路径。Default / 默认: './qrcode_img.png' in current directory / 当前目录下的'./qrcode_img.png'
-    
+        url: 要编码的网址或文本
+        output: 二维码图片保存路径。Default: ``'./qrcode_img.png'``
+
     Returns:
-        None
+        str: 生成的二维码图片路径
     """
     wftools.qrcodetools(url=url, output=output)
+    print(f"[python-office] qrcodetools  → {output}")
+    return output
 
 
-def passwordtools(len=8):
-    """Generate password of specified length.
-    
-    生成一个指定长度的密码。
-    
+# =====================================================================
+# 3. passwordtools - 随机密码
+# =====================================================================
+
+def passwordtools(len: int = 8) -> str:
+    """Generate random password of specified length.
+
+    生成指定长度的随机密码。
+
+    Documentation: https://www.python-office.com/modules/tools/api#passwordtools
+
     Args:
-        len (int, optional): password length / 密码长度。Default / 默认: 8
-    
-    Returns:
-        str: generated password / 生成的密码
-    """
-    return wftools.passwordtools(len=len)
+        len: 密码长度。Default: ``8``
 
-def weather():
-    """Get current weather information.
-    
-    获取当前天气信息。
-    
-    This function calls the weather method in wftools library to get current weather information.
-    Note that this function has no parameters and returns no value. It depends on external library wftools to complete actual weather information retrieval.
-    
-    该函数调用了wftools库中的weather方法，以获取当前的天气信息。
-    请注意，此函数内部无参数且不返回任何值。它依赖于外部库wftools来完成实际的天气信息获取。
-    
     Returns:
-        None
+        str: 生成的随机密码字符串
     """
+    password = wftools.passwordtools(len=len)
+    print(f"[python-office] passwordtools  长度={len}  密码={password!r}")
+    return password
+
+
+# =====================================================================
+# 4. weather - 天气查询（CLI 交互式）
+# =====================================================================
+
+def weather() -> None:
+    """Get current weather information（CLI 交互式）.
+
+    获取当前天气信息（CLI 场景会引导用户输入城市；GUI 中标占位即可）。
+
+    Documentation: https://www.python-office.com/modules/tools/api#weather
+    """
+    try:
+        city = input("请输入要查询的城市: ").strip()
+    except EOFError:
+        print("\n[python-office] 非交互式环境，请在 GUI 中使用天气查询。")
+        return
     wftools.weather()
+    print(f"[python-office] weather  查询：{city}")
 
 
+# =====================================================================
+# 5. url2ip - URL 转 IP
+# =====================================================================
 
-# 通过url，获取ip地址
-#
 def url2ip(url: str) -> str:
-    """Convert URL to IP address.
-    
-    将URL转换为IP地址。
-    
-    This function calls url2ip method in wftools library to parse given URL and return corresponding IP address.
-    
-    此函数调用了wftools库中的url2ip方法，用于解析给定的URL并返回相应的IP地址。
-    
+    """Resolve URL to IP address.
+
+    把 URL / 域名解析为 IP 地址。
+
+    Documentation: https://www.python-office.com/modules/tools/api#url2ip
+
     Args:
-        url (str): URL string to convert / 需要转换的URL字符串
-    
+        url: 要查询的网址或域名
+
     Returns:
-        str: parsed IP address string / 解析得到的IP地址字符串
+        str: 解析得到的 IP 地址字符串
     """
-    return wftools.url2ip(url)
+    ip = wftools.url2ip(url=url)
+    print(f"[python-office] url2ip  {url} → {ip}")
+    return ip
 
 
+# =====================================================================
+# 6. lottery8ticket - 彩票号码（CLI 交互式）
+# =====================================================================
 
-# 通过url，获取ip地址
+def lottery8ticket() -> None:
+    """Generate an 8-digit lottery ticket number（CLI 交互式）.
 
-def lottery8ticket():
-    """Generate 8-digit lottery ticket number.
-    
-    生成一张8位彩票号码。
-    
-    Calls lottery8ticket method in `wftools` library to generate lottery ticket number in specified format.
-    This function requires no parameters and has no return value, all logic is completed internally.
-    
-    调用了`wftools`库中的lottery8ticket方法，用于生成指定格式的彩票号码。
-    该函数不需要任何参数，也无返回值，所有逻辑都在内部完成。
-    
-    Returns:
-        None
+    生成一张 8 位彩票号码（CLI 场景）。
+
+    Documentation: https://www.python-office.com/modules/tools/api#lottery8ticket
     """
     wftools.lottery8ticket()
+    print("[python-office] lottery8ticket  已生成彩票号码")
 
 
+# =====================================================================
+# 7. create_article - AI 生成文章
+# =====================================================================
 
-def create_article(theme, line_num=200):
-    """Create article.
-    
-    创建文章。
-    
+def create_article(theme: str, line_num: int = 200) -> None:
+    """Create an article around the given theme.
+
+    围绕主题自动生成文章。
+
+    Documentation: https://www.python-office.com/modules/tools/api#create_article
+
     Args:
-        theme (str): article theme / 文章的主题
-        line_num (int, optional): number of lines in article / 文章的行数。Default / 默认: 200 lines / 200行
-    
-    Returns:
-        None
+        theme: 文章主题
+        line_num: 目标字数。Default: ``200``
     """
     wftools.create_article(theme=theme, line_num=line_num)
+    print(f"[python-office] create_article  主题：{theme!r}  字数：{line_num}")
 
 
-def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
-    """Generate WiFi password list.
-    
-    生成WiFi密码列表。
-    
-    This function calls pwd4wifi function in wftools module to generate WiFi password list of specified length.
-    If no password list provided, function will use empty list as default parameter.
-    
-    该函数调用wftools模块中的pwd4wifi函数，以生成指定长度的WiFi密码列表。
-    如果没有提供密码列表，函数将使用空列表作为默认参数。
-    
+# =====================================================================
+# 8. pwd4wifi - WiFi 密码（仅 Windows）
+# =====================================================================
+
+def pwd4wifi(len_pwd: int = 8, pwd_list: Optional[List[str]] = None) -> None:
+    """Generate WiFi password list (Windows only).
+
+    生成 WiFi 密码字典列表（仅 Windows，依赖 pywifi）。
+
+    Documentation: https://www.python-office.com/modules/tools/api#pwd4wifi
+
     Args:
-        len_pwd (int, optional): password length / 密码长度。Default / 默认: 8
-        pwd_list (list, optional): password list / 密码列表。Default / 默认: empty list / 空列表
-    
-    Returns:
-        None
+        len_pwd: 密码长度。Default: ``8``
+        pwd_list: 自定义字符集，留空用默认。Default: ``None``
     """
-    # 调用wftools模块中的pwd4wifi函数，传递密码长度和密码列表参数
+    if pwd_list is None:
+        pwd_list = []
     wftools.pwd4wifi(len_pwd=len_pwd, pwd_list=pwd_list)
+    print(f"[python-office] pwd4wifi  长度={len_pwd}  字符集={len(pwd_list)} 项")
 
-# 测试网速
 
-def net_speed_test():
-    """Network speed test function.
-    
-    网络速度测试函数。
-    
-    This function is used to test network upload and download speed.
-    
-    该函数用于测试网络的上传和下载速度。
-    
-    Returns:
-        None
+# =====================================================================
+# 9. net_speed_test - 网速测试（CLI 交互式）
+# =====================================================================
+
+def net_speed_test() -> None:
+    """Test network upload and download speed（CLI 交互式）.
+
+    测试网络上传和下载速度（CLI 场景）。
+
+    Documentation: https://www.python-office.com/modules/tools/api#net_speed_test
     """
     wftools.net_speed_test()
+    print("[python-office] net_speed_test  测试完成")
 
 
-def course():
-    """Display information and resource links for python-office library.
-    
-    显示python-office库的相关信息和资源链接。
-    
-    Returns:
-        None
+# =====================================================================
+# 10. course - 项目信息
+# =====================================================================
+
+def course() -> None:
+    """Display project info and resource links for python-office.
+
+    显示 python-office 库的相关信息和资源链接。
+
+    Documentation: https://www.python-office.com/modules/tools/api#course
     """
-    random_color_print(SPLIT_LINE)
-    random_color_print('【python-office库】，功能持续更新中')
-    random_color_print('使用有问题 or 提交你的功能需求 or 参与项目开发')
-    random_color_print('1、给小白的【50讲Python自动化办公】：https://www.python-office.com/course/50-python-office.html')
-    random_color_print('2、请+【项目交流群】：https://www.python4office.cn/wechat-group/')
-    random_color_print('3、本开源项目的【源代码】：https://github.com/CoderWanFeng/python-office')
-    random_color_print(SPLIT_LINE)
+    random_color_print("=" * 60)
+    random_color_print("【python-office 库】，功能持续更新中")
+    random_color_print("使用有问题 or 提交功能需求 or 参与项目开发")
+    random_color_print("1、给小白的【50 讲 Python 自动化办公】: https://www.python-office.com/course/50-python-office.html")
+    random_color_print("2、请+【项目交流群】: https://www.python4office.cn/wechat-group/")
+    random_color_print("3、本开源项目的【源代码】: https://github.com/CoderWanFeng/python-office")
+    random_color_print("=" * 60)
+
+
+__all__ = [
+    "transtools",
+    "qrcodetools",
+    "passwordtools",
+    "weather",
+    "url2ip",
+    "lottery8ticket",
+    "create_article",
+    "pwd4wifi",
+    "net_speed_test",
+    "course",
+]

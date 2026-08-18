@@ -1,12 +1,17 @@
 # -*- coding: UTF-8 -*-
-"""Word processing functionality module.
+"""Word 处理功能模块。
 
-Word处理功能模块。
+本模块按 https://www.python-office.com/modules/word/api 官方文档定义，
+共 5 个函数，对应子包 ``poword``：
 
-This module provides Word document processing capabilities including format conversion,
-file merging, image extraction, and more.
+    1. docx2pdf    - Word 转 PDF（支持单个文件或整个文件夹批量）
+    2. merge4docx  - 合并多个 Word
+    3. doc2docx    - 旧版 .doc 转为 .docx
+    4. docx2doc    - .docx 转回旧版 .doc
+    5. docx4imgs   - 从 Word 提取图片
 
-该模块提供了Word文档处理功能，包括格式转换、文件合并、图片提取等。
+所有函数依赖 Microsoft Word / WPS / LibreOffice，**仅 Windows / macOS / Linux 桌面环境**可用。
+CI / 无头服务器调用会失败。
 
 Author:
     程序员晚枫
@@ -14,105 +19,179 @@ Author:
 Project:
     https://www.python-office.com
 """
-from pathlib import Path
+
+from __future__ import annotations
+
+import os
+from typing import Optional
+
+import poword
 
 
-def _load_poword():
-    try:
-        import poword
-    except ModuleNotFoundError as exc:
-        if exc.name != "poword":
-            raise
-        raise ModuleNotFoundError(
-            "Word处理功能依赖 poword，该功能仅支持安装了 Microsoft Word "
-            "和 poword 的 Windows 环境。"
-        ) from exc
-    return poword
+# =====================================================================
+# 1. docx2pdf - Word 转 PDF
+# =====================================================================
 
-
-def docx2pdf(path: str, output_path: str = None):
+def docx2pdf(path: str, output_path: Optional[str] = None) -> str:
     """Convert Word to PDF.
-    
-    将Word转换为PDF。
-    
+
+    将 Word 文档转换为 PDF。**支持单个文件或整个文件夹批量转换**。
+
+    - 输入 ``path`` 是文件 → 转换该文件
+    - 输入 ``path`` 是目录 → 批量转换目录下所有 .docx / .doc
+
+    平台要求：依赖 Microsoft Word / WPS / LibreOffice。
+    - Windows：装 Office 或 WPS
+    - macOS：``brew install --cask libreoffice``
+    - Linux：``sudo apt install libreoffice``
+
+    Documentation: https://www.python-office.com/modules/word/api#docx2pdf
+
     Args:
-        path (str): Word file location / Word文件的位置。Supports batch processing / 支持批量处理: fill in folder location / 填写文件夹位置
-        output_path (str, optional): output location after conversion / 转换后的输出位置。Will be created automatically if not exists / 如果不存在会自动创建
-    
+        path: Word 文件路径，或包含多个 Word 文件的目录路径
+        output_path: 转换后的 PDF 输出目录；不存在会自动创建。
+            留空则输出到 ``path`` 所在目录。
+
     Returns:
-        None
+        str: 实际输出目录路径
     """
     if output_path is None:
         output_path = path
-    poword = _load_poword()
     poword.docx2pdf(path=path, output_path=output_path)
+    print(f"[python-office] docx2pdf  输出目录：{output_path}")
+    return output_path
 
-def merge4docx(input_path: str, output_path: str, new_word_name: str = 'merge4docx'):
-    """Merge multiple Docx files into one file.
-    
-    合并多个Docx文件为一个文件。
-    
+
+# =====================================================================
+# 2. merge4docx - 合并多个 Word
+# =====================================================================
+
+def merge4docx(
+    input_path: str,
+    output_path: str,
+    new_word_name: str = "merge4docx",
+) -> str:
+    """Merge multiple Word files into one.
+
+    合并多个 .docx 文件为一个文件。
+
+    Documentation: https://www.python-office.com/modules/word/api#merge4docx
+
     Args:
-        input_path (str): input file path / 输入文件的路径。Can be a single file or folder path / 可以是单个文件或文件夹路径
-        output_path (str): output path for merged file / 输出合并后文件的路径
-        new_word_name (str, optional): name of merged new file / 合并后新文件的名称。Default / 默认: 'merge4docx'
-    
+        input_path: 包含多个 .docx 的目录路径
+        output_path: 合并后文件保存目录
+        new_word_name: 合并后新文件的名称（不含 .docx 后缀）。Default: ``'merge4docx'``
+
     Returns:
-        None
+        str: 合并后新文件的完整路径
     """
-    poword = _load_poword()
-    poword.merge4docx(input_path=input_path, output_path=output_path, new_word_name=new_word_name)
+    poword.merge4docx(
+        input_path=input_path,
+        output_path=output_path,
+        new_word_name=new_word_name,
+    )
+    out_dir = output_path.rstrip("/\\")
+    full = f"{out_dir}/{new_word_name}.docx"
+    print(f"[python-office] merge4docx  输出文件：{full}")
+    return full
 
 
-def doc2docx(input_path: str, output_path: str = r'./', output_name: str = None):
-    """Convert Doc file to Docx file.
-    
-    将Doc文件转换为Docx文件。
-    
+# =====================================================================
+# 3. doc2docx - .doc 转为 .docx
+# =====================================================================
+
+def doc2docx(
+    input_path: str,
+    output_path: str = "./",
+    output_name: Optional[str] = None,
+) -> str:
+    """Convert legacy .doc to .docx.
+
+    将旧版 .doc 文档转换为新版 .docx。
+
+    Documentation: https://www.python-office.com/modules/word/api#doc2docx
+
     Args:
-        input_path (str): input Doc file path / 输入Doc文件的路径
-        output_path (str, optional): output Docx file path / 输出Docx文件的路径。Can be a directory or a .docx file path / 可以是目录或 .docx 文件路径。Default / 默认: current directory / 当前目录
-        output_name (str, optional): output Docx file name / 输出Docx文件的名称。Default / 默认: original filename / 原文件名
-    
+        input_path: 要转换的 .doc 文件路径
+        output_path: 输出的 .docx 保存目录。Default: ``'./'``
+        output_name: 输出的 .docx 文件名（不含后缀），留空则与原文件同名。Default: ``None``
+
     Returns:
-        None
+        str: 转换后的 .docx 完整路径
     """
-    if output_name is None and Path(output_path).suffix.lower() == ".docx":
-        output_file = Path(output_path)
-        output_path = str(output_file.parent)
-        output_name = output_file.name
+    poword.doc2docx(
+        input_path=input_path, output_path=output_path, output_name=output_name,
+    )
+    base = output_name or os.path.basename(input_path).rsplit(".", 1)[0]
+    out_dir = output_path.rstrip("/\\")
+    full = f"{out_dir}/{base}.docx"
+    print(f"[python-office] doc2docx  输出文件：{full}")
+    return full
 
-    poword = _load_poword()
-    poword.doc2docx(input_path=input_path, output_path=output_path, output_name=output_name)
 
+# =====================================================================
+# 4. docx2doc - .docx 转回 .doc
+# =====================================================================
 
-def docx2doc(input_path: str, output_path: str = r'./', output_name: str = None):
-    """Convert Docx file to Doc file.
-    
-    将Docx文件转换为Doc文件。
-    
+def docx2doc(
+    input_path: str,
+    output_path: str = "./",
+    output_name: Optional[str] = None,
+) -> str:
+    """Convert .docx back to legacy .doc.
+
+    将 .docx 文档转回旧版 .doc。
+
+    Documentation: https://www.python-office.com/modules/word/api#docx2doc
+
     Args:
-        input_path (str): input Docx file path / 输入Docx文件的路径
-        output_path (str, optional): output Doc file path / 输出Doc文件的路径。Default / 默认: current directory / 当前目录
-        output_name (str, optional): output Doc file name / 输出Doc文件的名称。Default / 默认: original filename / 原文件名
-    
-    Returns:
-        None
-    """
-    poword = _load_poword()
-    poword.docx2doc(input_path=input_path, output_path=output_path, output_name=output_name)
+        input_path: 要转换的 .docx 文件路径
+        output_path: 输出的 .doc 保存目录。Default: ``'./'``
+        output_name: 输出的 .doc 文件名（不含后缀），留空则与原文件同名。Default: ``None``
 
-def docx4imgs(word_path, img_path):
-    """Extract images from Word document.
-    
-    从Word里提取图片。
-    
-    Args:
-        word_path (str): Word document path / Word文档的路径
-        img_path (str): storage location for extracted images / 提取图片的存储位置。Will automatically generate a subdirectory / 会自动根据word名称在指定文件夹下生成一个子目录
-    
     Returns:
-        None
+        str: 转换后的 .doc 完整路径
     """
-    poword = _load_poword()
+    poword.docx2doc(
+        input_path=input_path, output_path=output_path, output_name=output_name,
+    )
+    base = output_name or os.path.basename(input_path).rsplit(".", 1)[0]
+    out_dir = output_path.rstrip("/\\")
+    full = f"{out_dir}/{base}.doc"
+    print(f"[python-office] docx2doc  输出文件：{full}")
+    return full
+
+
+# =====================================================================
+# 5. docx4imgs - 从 Word 提取图片
+# =====================================================================
+
+def docx4imgs(word_path: str, img_path: str) -> str:
+    """Extract images from a Word document.
+
+    从 Word 文档中提取所有图片到指定目录。
+    会在 ``img_path`` 下自动按 Word 名称生成一个子目录。
+
+    Documentation: https://www.python-office.com/modules/word/api#docx4imgs
+
+    Args:
+        word_path: .docx 文件路径
+        img_path: 图片输出根目录
+
+    Returns:
+        str: 实际图片输出目录（``img_path/<word 文件名>``）
+    """
     poword.docx4imgs(word_path=word_path, img_path=img_path)
+    from pathlib import Path
+    out = str(Path(img_path) / Path(word_path).stem)
+    print(f"[python-office] docx4imgs  输出目录：{out}")
+    return out
+
+
+__all__ = [
+    "docx2pdf",
+    "merge4docx",
+    "doc2docx",
+    "docx2doc",
+    "docx4imgs",
+]
