@@ -128,7 +128,7 @@ def pdf2imgs(input_file: str = None, output_file: str = None,
         pdf_path (str): [已弃用] 请使用 input_file
         out_dir (str): [已弃用] 请使用 output_file
     """
-    popdf.pdf2imgs(input_file=input_file, output_path=output_file, merge=merge)
+    popdf.pdf2imgs(input_file=input_file, output_file=output_file, merge=merge)
 
 
 # =====================================================================

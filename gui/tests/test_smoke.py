@@ -67,6 +67,25 @@ def test_feature_params_are_resolved_lazily():
     }
 
 
+def test_pdf2imgs_passes_output_file(monkeypatch):
+    import office.api.pdf as api_pdf
+
+    captured = {}
+
+    def fake_pdf2imgs(**kwargs):
+        captured.update(kwargs)
+
+    monkeypatch.setattr(api_pdf.popdf, "pdf2imgs", fake_pdf2imgs)
+
+    api_pdf.pdf2imgs(input_file="input.pdf", output_file="images", merge=False)
+
+    assert captured == {
+        "input_file": "input.pdf",
+        "output_file": "images",
+        "merge": False,
+    }
+
+
 def test_feature_cards_are_actionable_or_explained():
     from gui.registry import build_registry
 
