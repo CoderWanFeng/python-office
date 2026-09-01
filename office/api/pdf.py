@@ -28,6 +28,7 @@ Project:
 from __future__ import annotations
 
 import warnings
+from ast import literal_eval
 from pathlib import Path
 from typing import List, Optional, Tuple
 
@@ -129,6 +130,24 @@ def pdf2imgs(input_file: str = None, output_file: str = None,
         out_dir (str): [已弃用] 请使用 output_file
     """
     popdf.pdf2imgs(input_file=input_file, output_file=output_file, merge=merge)
+
+
+def _coerce_number_tuple(value, default: tuple[float, ...]) -> tuple[float, ...]:
+    """把 GUI 文本框里的元组字符串转成底层库需要的数字 tuple。"""
+    if value in (None, ""):
+        return default
+    if isinstance(value, tuple):
+        return tuple(float(item) for item in value)
+    if isinstance(value, list):
+        return tuple(float(item) for item in value)
+    if isinstance(value, str):
+        try:
+            parsed = literal_eval(value)
+        except (SyntaxError, ValueError):
+            return default
+        if isinstance(parsed, (tuple, list)):
+            return tuple(float(item) for item in parsed)
+    return default
 
 
 # =====================================================================
@@ -267,10 +286,12 @@ def add_text_watermark(input_file: str = None, text: str = "python-office",
     if output_file is None and input_file:
         in_path = Path(input_file)
         output_file = str(in_path.parent / f"{in_path.stem}_watermark.pdf")
+    point = _coerce_number_tuple(point, (72, 72))
+    color = _coerce_number_tuple(color, (0, 0, 1))
     print(f"[python-office] 文本水印  输出文件：{output_file}")
-    popdf.add_watermark(input_file=input_file, point=point, text=text,
-                        output_file=output_file, fontname=fontname,
-                        fontsize=fontsize, color=color)
+    popdf.add_text_watermark(input_file=input_file, point=point, text=text,
+                             output_file=output_file, fontname=fontname,
+                             fontsize=fontsize, color=color)
 
 
 # =====================================================================

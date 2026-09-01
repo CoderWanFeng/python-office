@@ -86,6 +86,53 @@ def test_pdf2imgs_passes_output_file(monkeypatch):
     }
 
 
+def test_add_text_watermark_calls_current_popdf_api(monkeypatch):
+    import office.api.pdf as api_pdf
+
+    captured = {}
+
+    def fake_add_text_watermark(**kwargs):
+        captured.update(kwargs)
+
+    monkeypatch.setattr(api_pdf.popdf, "add_text_watermark", fake_add_text_watermark)
+
+    api_pdf.add_text_watermark(
+        input_file="input.pdf",
+        output_file="output.pdf",
+        point="(10, 20)",
+        color="(0, 0, 1)",
+    )
+
+    assert captured == {
+        "input_file": "input.pdf",
+        "point": (10.0, 20.0),
+        "text": "python-office",
+        "output_file": "output.pdf",
+        "fontname": "Helvetica",
+        "fontsize": 20,
+        "color": (0.0, 0.0, 1.0),
+    }
+
+
+def test_add_text_watermark_output_file_filter_is_pdf():
+    from gui.registry import build_registry, resolve_feature
+
+    cats = build_registry()
+    feature = next(
+        item
+        for cat in cats
+        if cat.id == "pdf"
+        for item in cat.features
+        if item.id == "add_text_watermark"
+    )
+    resolve_feature(feature)
+
+    output = next(param for param in feature.params if param.name == "output_file")
+    assert output.kind == "save"
+    assert "pdf" in output.file_filter.lower()
+    assert "docx" not in output.file_filter.lower()
+
+
 def test_pdf2imgs_output_file_is_output_dir():
     """pdf2imgs 常用模式下 output_file 实际是输出目录，不能显示为 docx 另存为。"""
     from gui.registry import build_registry, resolve_feature

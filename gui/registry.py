@@ -492,6 +492,12 @@ _PARAM_OVERRIDES: dict[tuple[str, str], dict[str, dict]] = {
             "file_filter": "",
         },
     },
+    ("office.api.pdf", "add_text_watermark"): {
+        "output_file": {
+            "placeholder": "留空则输出到 <输入文件同目录>/<同名>_watermark.pdf",
+            "file_filter": "PDF files (*.pdf)",
+        },
+    },
 }
 
 
