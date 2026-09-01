@@ -86,6 +86,57 @@ def test_pdf2imgs_passes_output_file(monkeypatch):
     }
 
 
+def test_pdf2imgs_output_file_is_output_dir():
+    """pdf2imgs 常用模式下 output_file 实际是输出目录，不能显示为 docx 另存为。"""
+    from gui.registry import build_registry, resolve_feature
+
+    cats = build_registry()
+    feature = next(
+        item
+        for cat in cats
+        if cat.id == "pdf"
+        for item in cat.features
+        if item.id == "pdf2imgs"
+    )
+    resolve_feature(feature)
+
+    output = next(param for param in feature.params if param.name == "output_file")
+    assert output.kind == "dir"
+    assert output.label == "输出目录"
+    assert ".docx" not in output.placeholder.lower()
+
+
+def test_output_dir_resets_when_input_file_changes():
+    """输出目录字段跟随输入文件派生为 <stem>_images。"""
+    import os
+
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    warnings.simplefilter("ignore")
+
+    from PySide6.QtWidgets import QApplication
+
+    app = QApplication.instance() or QApplication([])
+
+    from gui.registry import Param
+    from gui.widgets import ParamForm
+
+    def norm(path):
+        return os.path.normpath(path)
+
+    params = [
+        Param(name="input_file", label="Input File", kind="file",
+              file_filter="PDF files (*.pdf)"),
+        Param(name="output_file", label="Output Dir", kind="dir"),
+    ]
+    form = ParamForm(params)
+
+    form._fields["input_file"].setValue("D:/docs/report.pdf")
+    assert norm(form._fields["output_file"].value()) == norm("D:/docs/report_images")
+
+    form._fields["input_file"].setValue("D:/docs/manual.pdf")
+    assert norm(form._fields["output_file"].value()) == norm("D:/docs/manual_images")
+
+
 def test_feature_cards_are_actionable_or_explained():
     from gui.registry import build_registry
 

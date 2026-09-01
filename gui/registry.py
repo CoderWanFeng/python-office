@@ -484,6 +484,14 @@ _PARAM_OVERRIDES: dict[tuple[str, str], dict[str, dict]] = {
             "file_filter": "Word documents (*.docx)",
         },
     },
+    ("office.api.pdf", "pdf2imgs"): {
+        "output_file": {
+            "label": "输出目录",
+            "kind": "dir",
+            "placeholder": "默认输出到 <输入文件同目录>/<同名>_images",
+            "file_filter": "",
+        },
+    },
 }
 
 

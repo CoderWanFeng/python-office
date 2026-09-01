@@ -271,6 +271,8 @@ class ParamForm(QWidget):
         self._fields: dict[str, _BaseField] = {}
         # save_name -> input_name 的配对关系
         self._save_pairs: dict[str, str] = {}
+        # dir_name -> input_name 的配对关系，用于 PDF 转图片这类输出目录。
+        self._dir_pairs: dict[str, str] = {}
 
         layout = QFormLayout(self)
         layout.setLabelAlignment(Qt.AlignLeft | Qt.AlignVCenter)
@@ -312,6 +314,15 @@ class ParamForm(QWidget):
                         continue
                     self._save_pairs[p.name] = input_name
                     self._refresh_save_field(p.name)
+            elif p.kind == "dir" and p.name == "output_file":
+                input_name = self._pair_to_input(p.name)
+                if input_name in self._fields:
+                    input_param = next(
+                        (pp for pp in self._params if pp.name == input_name), None
+                    )
+                    if input_param and input_param.kind == "file":
+                        self._dir_pairs[p.name] = input_name
+                        self._refresh_dir_field(p.name)
 
     # ----- 派生字段联动 -----
     @staticmethod
@@ -343,6 +354,9 @@ class ParamForm(QWidget):
         for save_name, in_name in self._save_pairs.items():
             if in_name == name:
                 self._refresh_save_field(save_name)
+        for dir_name, in_name in self._dir_pairs.items():
+            if in_name == name:
+                self._refresh_dir_field(dir_name)
 
     def _refresh_save_field(self, save_name: str) -> None:
         """基于配对 input 字段重新计算 save 字段的派生值。"""
@@ -373,6 +387,19 @@ class ParamForm(QWidget):
 
         new_path = str(in_path.with_suffix(ext))
         self._fields[save_name].setValue(new_path)
+
+    def _refresh_dir_field(self, dir_name: str) -> None:
+        """基于配对 input 文件重新计算输出目录字段的派生值。"""
+        in_name = self._dir_pairs.get(dir_name)
+        if not in_name:
+            return
+        in_text = self._fields[in_name].value()
+        if not in_text:
+            return
+        from pathlib import Path
+        in_path = Path(in_text)
+        new_path = str(in_path.parent / f"{in_path.stem}_images")
+        self._fields[dir_name].setValue(new_path)
 
     # ----- 公共 API -----
     def collect(self) -> dict:
