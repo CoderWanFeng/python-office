@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import warnings
 
+import pytest
+
 
 def test_deprecated_params_warns_and_remaps():
     from office.lib.decorator_utils import deprecated_params
@@ -86,32 +88,26 @@ def test_pdf2imgs_passes_output_file(monkeypatch):
     }
 
 
-def test_add_text_watermark_calls_current_popdf_api(monkeypatch):
-    import office.api.pdf as api_pdf
+def test_add_text_watermark_creates_tiled_watermark_pdf(tmp_path):
+    pymupdf = pytest.importorskip("pymupdf")
+    from office.api.pdf import add_text_watermark
 
-    captured = {}
+    src = tmp_path / "sample.pdf"
+    out = tmp_path / "sample_watermark.pdf"
 
-    def fake_add_text_watermark(**kwargs):
-        captured.update(kwargs)
+    doc = pymupdf.open()
+    page = doc.new_page(width=595, height=842)
+    page.insert_text((72, 72), "sample")
+    doc.save(src)
+    doc.close()
 
-    monkeypatch.setattr(api_pdf.popdf, "add_text_watermark", fake_add_text_watermark)
+    add_text_watermark(input_file=str(src), output_file=str(out), text="python-office")
 
-    api_pdf.add_text_watermark(
-        input_file="input.pdf",
-        output_file="output.pdf",
-        point="(10, 20)",
-        color="(0, 0, 1)",
-    )
-
-    assert captured == {
-        "input_file": "input.pdf",
-        "point": (10.0, 20.0),
-        "text": "python-office",
-        "output_file": "output.pdf",
-        "fontname": "Helvetica",
-        "fontsize": 20,
-        "color": (0.0, 0.0, 1.0),
-    }
+    assert out.exists()
+    watermarked = pymupdf.open(out)
+    text = watermarked[0].get_text()
+    watermarked.close()
+    assert text.count("python-office") >= 3
 
 
 def test_add_text_watermark_output_file_filter_is_pdf():

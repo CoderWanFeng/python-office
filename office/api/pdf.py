@@ -266,8 +266,10 @@ def add_text_watermark(input_file: str = None, text: str = "python-office",
                        output_file: str = None,
                        point: Tuple[float, float] = None,
                        fontname: str = "Helvetica",
-                       fontsize: int = 20,
-                       color: Tuple[float, float, float] = (0, 0, 1)) -> None:
+                       fontsize: int = 48,
+                       color: Tuple[float, float, float] = (0.45, 0.50, 0.55),
+                       opacity: float = 0.16,
+                       angle: int = -35) -> None:
     """Add text watermark to PDF document.
 
     在PDF文档中添加文本水印。
@@ -278,20 +280,52 @@ def add_text_watermark(input_file: str = None, text: str = "python-office",
         input_file (str): PDF 文件路径
         text (str): 水印文本内容。Default: "python-office"
         output_file (str): 输出 PDF 文件路径；留空时自动用输入文件同目录 + "_watermark" 后缀
-        point (tuple): 水印位置坐标 (x, y)
+        point (tuple): 起始位置坐标 (x, y)，留空时自动铺满页面
         fontname (str): 字体名称。Default: "Helvetica"
-        fontsize (int): 字体大小。Default: 20
-        color (tuple): RGB 颜色三元组，每个分量 0~1。Default: (0, 0, 1) 蓝色
+        fontsize (int): 字体大小。Default: 48
+        color (tuple): RGB 颜色三元组，每个分量 0~1。Default: 浅灰色
+        opacity (float): 水印透明度，0~1。Default: 0.16
+        angle (int): 水印倾斜角度。Default: -35
     """
     if output_file is None and input_file:
         in_path = Path(input_file)
         output_file = str(in_path.parent / f"{in_path.stem}_watermark.pdf")
-    point = _coerce_number_tuple(point, (72, 72))
-    color = _coerce_number_tuple(color, (0, 0, 1))
+    start_point = _coerce_number_tuple(point, ())
+    color = _coerce_number_tuple(color, (0.45, 0.50, 0.55))
+    opacity = max(0.01, min(float(opacity), 1.0))
+    angle = int(angle)
+
+    import pymupdf
+
     print(f"[python-office] 文本水印  输出文件：{output_file}")
-    popdf.add_text_watermark(input_file=input_file, point=point, text=text,
-                             output_file=output_file, fontname=fontname,
-                             fontsize=fontsize, color=color)
+    doc = pymupdf.open(input_file)
+    for page in doc:
+        rect = page.rect
+        matrix = pymupdf.Matrix(1, 1).prerotate(angle)
+        if len(start_point) == 2:
+            positions = [pymupdf.Point(start_point[0], start_point[1])]
+        else:
+            x_step = max(fontsize * max(len(str(text)), 4) * 0.65, 220)
+            y_step = max(fontsize * 3.0, 150)
+            positions = [
+                pymupdf.Point(x, y)
+                for y in range(int(-rect.height), int(rect.height * 2), int(y_step))
+                for x in range(int(-rect.width), int(rect.width * 2), int(x_step))
+            ]
+        for pos in positions:
+            page.insert_text(
+                pos,
+                str(text),
+                fontsize=fontsize,
+                fontname=fontname,
+                color=color,
+                fill_opacity=opacity,
+                overlay=True,
+                morph=(pos, matrix),
+            )
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
+    doc.save(output_file)
+    doc.close()
 
 
 # =====================================================================
