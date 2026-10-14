@@ -52,7 +52,7 @@ def process_xls(filepath: str, column: int, worksheet_name: str = None) -> str:
     cols = worksheet.ncols
     split_data_dict = {}
     for r in tqdm(range(rows)):
-        row_data = [worksheet.cell(r, c).value if worksheet.cell(r, c).value else ' ' for c in range(cols)]
+        row_data = [worksheet.cell(r, c).value if worksheet.cell(r, c).value != '' else ' ' for c in range(cols)]
         temp_data = row_data[column - 1]
         temp_data_list = split_data_dict.get(temp_data, [])
         temp_data_list.append(row_data)
@@ -105,7 +105,7 @@ def process_xlsx(filepath: str, column: int, worksheet_name: str = None) -> str:
 
             split_data_dict = {}
             for row in worksheet.rows:
-                row_data = [cell.value if cell.value else ' ' for cell in row]
+                row_data = [cell.value if cell.value is not None else ' ' for cell in row]
                 temp_data = row_data[column - 1]
                 temp_data_list = split_data_dict.get(temp_data, [])
                 temp_data_list.append(row_data)
