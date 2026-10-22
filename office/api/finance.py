@@ -35,6 +35,9 @@ def t0(buy_price: float, sale_price: float, shares: int, w_rate: float = 2.5 / 1
     Returns:
         float: profit after T+0 trading / 做T后的收益金额
     """
+    # Decimal 不能和 float 直接相乘，否则金额超过 RATE_LINE 时会抛 TypeError
+    w_rate = Decimal(str(w_rate))
+
     buy_money = Decimal(str(buy_price)) * shares  # 买入的价格
     base_rate = min_rate if buy_money <= RATE_LINE else buy_money * w_rate
 
