@@ -7,6 +7,39 @@ from tqdm import tqdm
 
 #
 
+# Excel 对 sheet 名的限制：最长 31 个字符，且不能包含 : \ / ? * [ ]
+_SHEET_NAME_MAX_LEN = 31
+_SHEET_NAME_INVALID_CHARS = ':\\/?*[]'
+
+
+def _to_valid_sheet_name(value, used_names: set) -> str:
+    """把分组值转换成合法的 sheet 名。
+
+    拆分依据的列内容可能包含 Excel 不允许的字符（例如日期 2026/10/22、
+    文件路径、网址），也可能超过 31 个字符，直接用作 sheet 名会抛异常，
+    导致整个拆分失败。这里统一替换非法字符并截断。
+
+    Args:
+        value: 分组依据的单元格内容
+        used_names (set): 已被占用的 sheet 名，用于避免截断后重名
+
+    Returns:
+        str: 合法的 sheet 名
+    """
+    name = str(value)
+    for char in _SHEET_NAME_INVALID_CHARS:
+        name = name.replace(char, '_')
+    name = name.strip()[:_SHEET_NAME_MAX_LEN] or 'Sheet'
+    candidate = name
+    index = 1
+    while candidate in used_names:
+        suffix = '_{}'.format(index)
+        candidate = name[:_SHEET_NAME_MAX_LEN - len(suffix)] + suffix
+        index += 1
+    used_names.add(candidate)
+    return candidate
+
+
 def generate_xls(filepath: str, worksheet_data: dict) -> str:
     """生成XLS格式的拆分文件。
     
@@ -20,8 +53,10 @@ def generate_xls(filepath: str, worksheet_data: dict) -> str:
     datetime_str = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
     new_filepath = filepath.replace('.xls', '_Split_{}.xls'.format(datetime_str))
     new_workbook = xlwt.Workbook(encoding='utf-8')
+    used_names = set()
     for worksheet_name, row_data_list in worksheet_data.items():
-        new_worksheet = new_workbook.add_sheet(worksheet_name)
+        title = _to_valid_sheet_name(worksheet_name, used_names)
+        new_worksheet = new_workbook.add_sheet(title)
         for row_index, row_data in enumerate(row_data_list):
             for column_index, data in enumerate(row_data):
                 new_worksheet.write(row_index, column_index, data)
@@ -74,8 +109,17 @@ def generate_xlsx(filepath: str, worksheet_data: dict) -> str:
     datetime_str = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
     new_filepath = filepath.replace('.xlsx', '_Split_{}.xlsx'.format(datetime_str))
     new_workbook = openpyxl.Workbook()
-    for worksheet_name, row_data_list in worksheet_data.items():
-        new_worksheet = new_workbook.create_sheet(worksheet_name)
+    # openpyxl 新建工作簿时会自带一个空白 sheet，这里直接复用给第一个分组，
+    # 避免拆分结果里多出一个没有内容的 Sheet
+    default_worksheet = new_workbook.active
+    used_names = set()
+    for index, (worksheet_name, row_data_list) in enumerate(worksheet_data.items()):
+        title = _to_valid_sheet_name(worksheet_name, used_names)
+        if index == 0:
+            new_worksheet = default_worksheet
+            new_worksheet.title = title
+        else:
+            new_worksheet = new_workbook.create_sheet(title)
         for row_data in row_data_list:
             new_worksheet.append(row_data)
     new_workbook.save(new_filepath)
