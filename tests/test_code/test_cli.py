@@ -395,7 +395,7 @@ def test_dispatch_image_decode_qrcode_via_stub(capsys):
 def test_platform_guard_blocks_real_windows_modules(argv, capsys):
     assert main(argv) == 1
     err = capsys.readouterr().err
-    assert "仅支持平台" in err or "only available" in err
+    assert "only available on" in err
     assert "win32" in err
 
 

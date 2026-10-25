@@ -78,14 +78,12 @@ def build_parser(registry=None):
     registry = commands.MODULES if registry is None else registry
     parser = argparse.ArgumentParser(
         prog="po",
-        description="python-office 命令行 — 终端里完成办公自动化 "
-                    "(python-office CLI — office automation from the terminal)",
+        description="python-office CLI — office automation from the terminal",
     )
     parser.add_argument("-V", "--version", action="store_true",
-                        help="显示版本并退出 / show version and exit")
+                        help="show version and exit")
     parser.add_argument("--json", action="store_true",
-                        help="机器可读输出（stdout 仅含一行 JSON）/ "
-                             "machine readable output")
+                        help="machine readable output (stdout is a single JSON line)")
     module_sub = parser.add_subparsers(dest="module", metavar="<module>")
     for module_name in sorted(registry):
         module = registry[module_name]
@@ -117,10 +115,8 @@ def dispatch(module_name, command_name, namespace, registry, as_json=False):
     allowed = module.get("platforms")
     if allowed and sys.platform not in allowed:
         raise CliError(
-            "module '%s' 仅支持平台: %s（当前: %s）/ "
             "module '%s' is only available on: %s (current: %s)"
-            % (module_name, ", ".join(allowed), sys.platform,
-               module_name, ", ".join(allowed), sys.platform))
+            % (module_name, ", ".join(allowed), sys.platform))
     # office 包导入期可能打印横幅（首次运行提示），重定向到 stderr 保持 stdout 干净
     with contextlib.redirect_stdout(sys.stderr):
         target = importlib.import_module(module["module"])
@@ -152,7 +148,7 @@ def main(argv=None, registry=None):
     except CliError as exc:
         return output.emit_error(exc, as_json=args.json)
     except KeyboardInterrupt:
-        return output.emit_error("interrupted / 已中断", as_json=args.json) or 130
+        return output.emit_error("interrupted", as_json=args.json) or 130
     except Exception as exc:
         return output.emit_error("%s: %s" % (type(exc).__name__, exc),
                                  as_json=args.json)
