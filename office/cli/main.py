@@ -32,6 +32,18 @@ def _kebab(name):
     return name.replace("_", "-")
 
 
+def _str2bool(value):
+    """支持 ``--flag true/false/1/0/yes/no/on/off``，用于 api 默认值为 True 的参数。"""
+    if isinstance(value, bool):
+        return value
+    text = str(value).strip().lower()
+    if text in ("1", "true", "t", "yes", "y", "on"):
+        return True
+    if text in ("0", "false", "f", "no", "n", "off"):
+        return False
+    raise argparse.ArgumentTypeError("expect true/false, got %r" % value)
+
+
 def _add_params(cmd_parser, params):
     for param in params:
         name = param["name"]
@@ -41,6 +53,9 @@ def _add_params(cmd_parser, params):
             for key in ("nargs", "metavar", "type", "choices"):
                 if key in param:
                     kwargs[key] = param[key]
+            if param.get("type") == "bool":
+                kwargs["type"] = _str2bool
+                kwargs["metavar"] = "BOOL"
             cmd_parser.add_argument(name, **kwargs)
         else:
             kwargs = {"dest": name, "help": help_text}
@@ -50,6 +65,9 @@ def _add_params(cmd_parser, params):
                 for key in ("default", "nargs", "choices", "type"):
                     if key in param:
                         kwargs[key] = param[key]
+                if param.get("type") == "bool":
+                    kwargs["type"] = _str2bool
+                    kwargs["metavar"] = "BOOL"
                 if param.get("required"):
                     kwargs["required"] = True
             cmd_parser.add_argument("--" + _kebab(name), **kwargs)
