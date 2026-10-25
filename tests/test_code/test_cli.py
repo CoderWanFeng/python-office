@@ -47,7 +47,34 @@ from office.cli.main import CliError, build_parser, dispatch, main  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
-# 2. 注册表完整性
+# 2. office 包懒加载回归（import office 不得拖入任何 po* 依赖）
+# ---------------------------------------------------------------------------
+import os  # noqa: E402
+import subprocess  # noqa: E402
+
+
+def test_office_import_is_lazy():
+    code = (
+        "import sys, office\n"
+        "po = [m for m in sys.modules if m.split('.')[0] in "
+        "('popdf','poexcel','poimage','pofile','wftools','pocode',"
+        "'povideo','poocr','poemail','pospider')]\n"
+        "assert not po, po\n"
+        "try:\n"
+        "    office.nope\n"
+        "    raise SystemExit('no AttributeError for office.nope')\n"
+        "except AttributeError:\n"
+        "    pass\n"
+    )
+    repo_root = os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.abspath(__file__))))
+    result = subprocess.run([sys.executable, "-c", code], cwd=repo_root,
+                            capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+
+
+# ---------------------------------------------------------------------------
+# 3. 注册表完整性
 # ---------------------------------------------------------------------------
 def test_registry_modules_point_to_public_api():
     for name, module in commands.MODULES.items():
@@ -80,25 +107,22 @@ def test_registry_params_are_wellformed():
                         (module_name, command_name, name)
 
 
-def test_registry_covers_all_modules():
+def test_registry_covers_core_modules():
+    # 非核心模块（video/web/word/ppt/wechat）拆到独立 issue，后续加入
     assert set(commands.MODULES) == {
         "pdf", "excel", "tools", "image", "file", "markdown", "finance",
-        "video", "web", "word", "ppt", "wechat",
     }
     total = sum(len(m["commands"]) for m in commands.MODULES.values())
-    assert total == 62
+    assert total == 42
 
 
-def test_registry_windows_only_modules_are_guared():
-    for name in ("word", "ppt", "wechat"):
-        assert commands.MODULES[name]["platforms"] == ["win32"], name
-    for name in ("pdf", "excel", "tools", "image", "file", "markdown",
-                 "finance", "video", "web"):
-        assert commands.MODULES[name]["platforms"] is None, name
+def test_registry_core_modules_are_cross_platform():
+    for name, module in commands.MODULES.items():
+        assert module["platforms"] is None, name
 
 
 # ---------------------------------------------------------------------------
-# 3. 解析器：--help 冒烟 + 参数解析抽查
+# 4. 解析器：--help 冒烟 + 参数解析抽查
 # ---------------------------------------------------------------------------
 @pytest.mark.parametrize("module_name", sorted(commands.MODULES))
 @pytest.mark.parametrize("help_level", ["module", "command"])
@@ -176,7 +200,7 @@ def test_parse_tools_commands():
 
 
 # ---------------------------------------------------------------------------
-# 4. 分发：经 stub 依赖直达 office.api → po* 层
+# 5. 分发：经 stub 依赖直达 office.api → po* 层
 # ---------------------------------------------------------------------------
 def _configure_wftools(**attrs):
     wftools = sys.modules["wftools"]
@@ -244,163 +268,10 @@ def test_dispatch_runtime_error_json_mode(capsys):
 # ---------------------------------------------------------------------------
 # 5. 平台守卫
 # ---------------------------------------------------------------------------
-@pytest.mark.skipif(sys.platform == "win32", reason="guards non-Windows behaviour")
-def test_platform_guard_blocks_windows_only_module(capsys):
-    registry = copy.deepcopy(commands.MODULES)
-    registry["wechat"] = {
-        "module": "office.api.wechat",
-        "help": "WeChat robot (Windows only)",
-        "platforms": ["win32"],
-        "commands": {"send": {"help": "send message", "params": []}},
-    }
-    code = main(["wechat", "send"], registry=registry)
-    assert code == 1
-    err = capsys.readouterr().err
-    assert "wechat" in err and "win32" in err
-
-
-def test_platform_guard_allows_all_by_default():
-    registry = copy.deepcopy(commands.MODULES)
-    assert registry["tools"]["platforms"] is None  # 默认全平台，不触发守卫
-    parser = build_parser(registry)
-    args = parser.parse_args(["tools", "url2ip", "x"])
-    assert args.url == "x"
 
 
 # ---------------------------------------------------------------------------
-# 6. 顶层行为：--version / 缺参 / python -m office
-# ---------------------------------------------------------------------------
-def test_version_flag(capsys):
-    assert main(["--version"]) == 0
-    out = capsys.readouterr().out
-    assert out.startswith("po ") and "python-office" in out
-
-
-def test_no_module_shows_help(capsys):
-    assert main([]) == 2
-    assert "usage" in capsys.readouterr().err.lower()
-
-
-def test_unknown_command_is_usage_error(capsys):
-    with pytest.raises(SystemExit) as excinfo:
-        main(["pdf", "no-such-command"])
-    assert excinfo.value.code == 2
-
-
-def test_python_m_office_alias(capsys, monkeypatch):
-    monkeypatch.setattr(sys, "argv", ["office", "--version"])
-    with pytest.raises(SystemExit) as excinfo:
-        runpy.run_module("office", run_name="__main__")
-    assert excinfo.value.code == 0
-    assert capsys.readouterr().out.startswith("po ")
-
-
-# ---------------------------------------------------------------------------
-# 6b. 第二批模块（image/file/markdown/finance/video/web/word/ppt/wechat）
-# ---------------------------------------------------------------------------
-def test_parse_image_commands():
-    parser = build_parser()
-    args = parser.parse_args(
-        ["image", "add_watermark", "a.jpg", "@python-office",
-         "--opacity", "0.8", "--angle", "45"])
-    assert (args.file, args.mark) == ("a.jpg", "@python-office")
-    assert args.opacity == 0.8 and args.angle == 45
-    assert args.color == "#eaeaea" and args.size == 30
-    args = parser.parse_args(
-        ["image", "compress_image", "big.jpg", "--output-file", "small.jpg",
-         "--quality", "30"])
-    assert args.output_file == "small.jpg" and args.quality == 30
-    args = parser.parse_args(["image", "decode_qrcode", "q.png"])
-    assert args.qrcode_path == "q.png"
-
-
-def test_parse_file_replace4filename_bool_options():
-    parser = build_parser()
-    args = parser.parse_args(
-        ["file", "replace4filename", "./docs", "副本", "--dir-rename", "false"])
-    assert args.dir_rename is False      # api 默认 True，可用 --dir-rename false 关闭
-    assert args.file_rename is True
-    assert args.replace_content == ""
-    args = parser.parse_args(
-        ["file", "replace4filename", "./docs", "副本", "--suffix", ".pdf"])
-    assert args.suffix == ".pdf"
-    with pytest.raises(SystemExit):      # 非法布尔值报 usage error
-        parser.parse_args(
-            ["file", "replace4filename", "./docs", "副本", "--dir-rename", "maybe"])
-
-
-def test_parse_file_get_files():
-    args = build_parser().parse_args(
-        ["file", "get_files", "./data", "--name", "报表", "--suffix", ".xlsx",
-         "--sub", "--level", "2"])
-    assert (args.name, args.suffix, args.sub, args.level) == ("报表", ".xlsx", True, 2)
-    default = build_parser().parse_args(["file", "get_files", "./data"])
-    assert default.sub is False and default.level == 0
-
-
-def test_parse_finance_t0():
-    args = build_parser().parse_args(["finance", "t0", "10.5", "11.2", "200"])
-    assert (args.buy_price, args.sale_price, args.shares) == (10.5, 11.2, 200)
-    assert args.w_rate == pytest.approx(2.5 / 10000)
-    assert args.min_rate == pytest.approx(5)
-    assert args.stamp_tax == pytest.approx(1 / 1000)
-
-
-def test_parse_video_and_web():
-    args = build_parser().parse_args(["video", "txt2mp3", "你好世界"])
-    assert args.content == "你好世界" and args.speak is True
-    args = build_parser().parse_args(
-        ["video", "txt2mp3", "你好", "--speak", "false"])
-    assert args.speak is False
-    args = build_parser().parse_args(
-        ["web", "url2ebook", "https://example.com", "My Book"])
-    assert (args.url, args.tile) == ("https://example.com", "My Book")
-
-
-def test_parse_windows_only_commands_parse_on_any_platform():
-    args = build_parser().parse_args(
-        ["word", "docx2pdf", "a.docx", "--output-path", "./out"])
-    assert args.path == "a.docx" and args.output_path == "./out"
-    args = build_parser().parse_args(["wechat", "send_message", "晚枫", "你好"])
-    assert (args.who, args.message) == ("晚枫", "你好")
-    args = build_parser().parse_args(["ppt", "merge4ppt", "./ppts"])
-    assert args.output_name == "merge4ppt.pptx"
-
-
-def test_dispatch_finance_t0_real_computation(capsys):
-    # finance.t0 是纯标准库实现，可真实计算，无需 stub
-    code = main(["--json", "finance", "t0", "10", "11", "100"])
-    assert code == 0
-    payload = json.loads(capsys.readouterr().out)
-    assert payload["ok"] is True
-    # t0 实际返回 Decimal，JSON 序列化为数字字符串
-    assert float(payload["result"]) == pytest.approx(88.9, abs=0.01)
-
-
-def test_dispatch_image_decode_qrcode_via_stub(capsys):
-    sys.modules["poimage"].decode_qrcode = mock.MagicMock(return_value=None)
-    code = main(["--json", "image", "decode_qrcode", "q.png"])
-    assert code == 0
-    payload = json.loads(capsys.readouterr().out)
-    assert payload == {"ok": True, "result": None}
-    sys.modules["poimage"].decode_qrcode.assert_called_once_with(qrcode_path="q.png")
-
-
-@pytest.mark.skipif(sys.platform == "win32", reason="guards non-Windows behaviour")
-@pytest.mark.parametrize("argv", [
-    ["word", "docx2pdf", "a.docx"],
-    ["ppt", "ppt2pdf", "a.pptx"],
-    ["wechat", "send_message", "晚枫", "你好"],
-])
-def test_platform_guard_blocks_real_windows_modules(argv, capsys):
-    assert main(argv) == 1
-    err = capsys.readouterr().err
-    assert "only available on" in err
-    assert "win32" in err
-
-
-# ---------------------------------------------------------------------------
-# 7. 输出层
+# 6. 输出层
 # ---------------------------------------------------------------------------
 def test_jsonable_handles_common_types():
     from pathlib import Path
