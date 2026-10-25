@@ -158,6 +158,22 @@ pip install poexcel    # 只用 Excel 处理
 
 ---
 
+## 💻 命令行：`po` 命令
+
+安装 python-office 后自带终端命令，不写代码也能用：
+
+```bash
+po pdf merge2pdf a.pdf b.pdf --output-file merged.pdf
+po excel excel2pdf 报表.xlsx 报表.pdf
+po tools url2ip www.python-office.com
+
+po --json tools url2ip www.python-office.com   # 单行 JSON 输出，方便脚本和 agent 调用
+```
+
+`po --help` 查看全部模块与子命令（`python -m office` 为等价入口）。
+
+---
+
 ## 🚀 Quick Start（5 行代码体验）
 
 ```python
