@@ -9,6 +9,7 @@ from .add_line_by_type import add_line_by_type
 from .search_specify_type_file import search_specify_type_file
 from .group_by_name import group_by_name
 from .get_files import get_files
+from .batch_rename_by_excel import batch_rename_by_excel
 
 __all__ = [
     'replace4filename',
@@ -20,4 +21,5 @@ __all__ = [
     'search_specify_type_file',
     'group_by_name',
     'get_files',
+    'batch_rename_by_excel',
 ]
