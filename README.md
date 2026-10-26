@@ -410,7 +410,7 @@ copies or substantial portions of the Software.
 
 ## ⭐ Star History
 
-[![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
+[![Stargazers over time](https://api.star-history.com/svg?repos=CoderWanFeng/python-office&type=Date)](https://star-history.com/#CoderWanFeng/python-office&Date)
 
 ---
 
