@@ -41,6 +41,7 @@ The python-office project follows a modular structure with clear separation of c
 graph TD
 office[office/] --> api[api/]
 office --> lib[lib/]
+office --> cli[cli/]
 office --> __init__[__init__.py]
 api --> excel[excel.py]
 api --> pdf[pdf.py]
@@ -72,8 +73,11 @@ lib --> tools[tools/]
 
 The core components of python-office implement a facade pattern that provides simplified interfaces to complex office automation tasks. The main entry point is the `office` package, which exposes specialized sub-modules for different functionality areas. Each API module acts as a facade that abstracts away the complexity of underlying libraries and provides a simple, consistent interface for common operations.
 
+Since version **1.1.0**, the package also ships a command-line layer at `office/cli/`, exposing 42 subcommands across 7 cross-platform modules via the `po` command. It is a thin wrapper over the same `office.api` functions and does not modify them. See [Command Line Interface](../Command Line Interface.md).
+
 **Section sources**
 - [office/__init__.py](file://office/__init__.py#L7-L21)
+- [office/cli/main.py](file://office/cli/main.py#L1-L25)
 - [README.md](file://README.md#L84-L110)
 
 ## Architecture Overview
