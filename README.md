@@ -154,6 +154,22 @@ pip install poexcel    # Excel processing only
 
 ---
 
+## 💻 CLI: the `po` command
+
+Installing python-office also gives you a terminal command — no Python code needed:
+
+```bash
+po pdf merge2pdf a.pdf b.pdf --output-file merged.pdf
+po excel excel2pdf report.xlsx report.pdf
+po tools url2ip www.python-office.com
+
+po --json tools url2ip www.python-office.com   # one-line JSON for scripts & agents
+```
+
+`po --help` lists all modules and commands (`python -m office` works as an alias).
+
+---
+
 ## 🚀 Quick Start
 
 ```python
