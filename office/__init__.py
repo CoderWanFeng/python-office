@@ -62,4 +62,4 @@ __doc__ = """【python-office库】，功能持续更新中
 2、请+【项目交流群】：https://www.python4office.cn/wechat-group
 3、本开源项目的【源代码】：https://github.com/CoderWanFeng/python-office"""
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
