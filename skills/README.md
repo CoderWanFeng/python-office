@@ -274,10 +274,10 @@ office/skills/<category>/<skill_name>/
 
 ## 统计
 
-- 总计：**74 个 Skill**，涵盖 14 个分类
+- 总计：**81 个 Skill**，涵盖 14 个分类
 - 各分类 Skill 数量：
-  - Excel：7
-  - File：9
+  - Excel：12
+  - File：10
   - Finance：1
   - Image：9
   - Markdown：1
@@ -285,7 +285,7 @@ office/skills/<category>/<skill_name>/
   - PDF：13
   - PPT：3
   - Tools：10
-  - Video：4
+  - Video：5
   - Web：1
   - WeChat：7
   - Word：5
