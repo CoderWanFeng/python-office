@@ -1,26 +1,71 @@
 # -*- coding: utf-8 -*-
-import reportlab
-from PyPDF2 import PdfReader, PdfWriter
-from reportlab.pdfgen import canvas
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfbase.pdfmetrics import registerFont
-from tqdm import tqdm
+"""PDF 水印底层实现（遗留模块）。
+
+说明：
+* 本模块未被 ``office.api`` 的公开接口引用，对外的水印能力由
+  ``office.api.pdf.add_text_watermark``（基于 popdf）提供，此处保留以兼容
+  历史用法。
+* reportlab / PyPDF2 / tqdm 均为可选依赖且未列入 install_requires，因此
+  改为按需加载：导入本模块不再因缺依赖而直接失败。
+"""
+
+import os
+
+# 系统中文字体的候选路径（按平台顺序尝试）
+_FONT_CANDIDATES = (
+    'C:/Windows/Fonts/simfang.ttf',                    # Windows
+    '/System/Library/Fonts/Supplemental/Songti.ttc',   # macOS
+    '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',    # Linux
+)
 
 
-def create_watermark(content: str) -> PdfReader:
+def _load_deps():
+    """按需加载 reportlab / PyPDF2 / tqdm，缺失时给出可操作的报错。"""
+    try:
+        from reportlab.pdfgen import canvas
+        from reportlab.pdfbase.ttfonts import TTFont
+        from reportlab.pdfbase.pdfmetrics import registerFont
+        from PyPDF2 import PdfReader, PdfWriter
+        from tqdm import tqdm
+    except ImportError as exc:
+        raise ModuleNotFoundError(
+            "PDF 水印功能依赖 reportlab、PyPDF2 和 tqdm，请先安装："
+            "pip install reportlab PyPDF2 tqdm"
+        ) from exc
+    return canvas, TTFont, registerFont, PdfReader, PdfWriter, tqdm
+
+
+def _register_watermark_font(TTFont, registerFont) -> str:
+    """注册水印字体，返回可用的字体名。
+
+    优先使用系统中的中文字体；找不到时退回 reportlab 内置字体
+    （可正常渲染，但不支持中文）。
+    """
+    for path in _FONT_CANDIDATES:
+        if not os.path.exists(path):
+            continue
+        try:
+            registerFont(TTFont('simfang', path))
+            return 'simfang'
+        except Exception:
+            continue
+    return 'Helvetica'
+
+
+def create_watermark(content: str):
     """创建PDF水印模板。
-    
+
     Args:
         content (str): 水印文字内容
-    
+
     Returns:
         PdfReader: 水印PDF文件对象
     """
+    canvas, TTFont, registerFont, PdfReader, _, _ = _load_deps()
     # 创建一个PDF文件来作为一个水印文件
     c = canvas.Canvas('watermark.popdf')
-    reportlab.pdfbase.pdfmetrics.registerFont(
-        reportlab.pdfbase.ttfonts.TTFont('simfang', 'C:/Windows/Fonts/simfang.ttf'))
-    c.setFont('simfang', 20)
+    font_name = _register_watermark_font(TTFont, registerFont)
+    c.setFont(font_name, 20)
     c.saveState()
     c.translate(305, 505)
     c.rotate(45)
@@ -33,15 +78,16 @@ def create_watermark(content: str) -> PdfReader:
 
 def pdf_add_watermark(pdf_file_in: str, pdf_file_mark: str, pdf_file_out: str) -> bool:
     """给PDF文件添加水印。
-    
+
     Args:
         pdf_file_in (str): 输入PDF文件路径
         pdf_file_mark (str): 水印PDF文件路径
         pdf_file_out (str): 输出PDF文件路径
-    
+
     Returns:
         bool: 操作是否成功
     """
+    _, _, _, PdfReader, PdfWriter, tqdm = _load_deps()
     # print(pdf_file_out)
     pdf_output = PdfWriter()
     input_stream = None

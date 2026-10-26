@@ -18,16 +18,16 @@ Project:
 import poimage
 
 
-def compress_image(input_file: str, output_file: str, quality: int):
+def compress_image(input_file: str, output_file: str = './compress_img.jpg', quality: int = 95):
     """Compress image file to reduce size while maintaining visual quality.
-    
+
     压缩图像文件，以减小其文件大小，同时尽量保持视觉质量。
-    
+
     Args:
         input_file (str): path to input image file to compress / 需要压缩的输入图像文件的路径
-        output_file (str): save path for compressed image file / 压缩后的图像文件保存路径
-        quality (int): compression quality level, range 0 to 95 / 压缩质量等级，取值范围0到95。Higher value means better quality but larger file size / 数值越高，表示图像质量越好，但文件体积也越大
-    
+        output_file (str): save path for compressed image file / 压缩后的图像文件保存路径。Default / 默认: './compress_img.jpg'
+        quality (int): compression quality level, range 0 to 95 / 压缩质量等级，取值范围0到95。Higher value means better quality but larger file size / 数值越高，表示图像质量越好，但文件体积也越大。Default / 默认: 95
+
     Returns:
         None
     """
@@ -172,16 +172,21 @@ def pencil4img(input_img, output_path='./', output_name='pencil4img.jpg'):
 
 def decode_qrcode(qrcode_path):
     """Decode QR code.
-    
+
     解析二维码。
-    
+
     Args:
         qrcode_path (str): QR code image path / 二维码图片的路径
-    
+
     Returns:
-        None
+        str: 二维码中的文本内容；未识别到二维码时返回空字符串
     """
-    poimage.decode_qrcode(qrcode_path=qrcode_path)
+    # poimage 至今未提供 decode_qrcode，这里使用内置实现
+    from office.lib.image.qrcode_service import decode_qrcode as _decode_qrcode
+
+    result = _decode_qrcode(qrcode_path=qrcode_path)
+    print(result)
+    return result
 
 
 def del_watermark(input_image, output_image=r'./del_water_mark.jpg'):

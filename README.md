@@ -15,7 +15,7 @@
 <p align="center">
   <strong>🚀 Office automation, one line of code at a time</strong>
   <br>
-  <em>73 ready-to-use Skills covering PDF, Word, Excel, PPT, Email, WeChat, Images, Video and more</em>
+  <em>81 ready-to-use Skills covering PDF, Word, Excel, PPT, Email, WeChat, Images, Video and more</em>
 </p>
 
 <p align="center">
@@ -55,13 +55,13 @@ import office  # one import, all features available
 | | Feature |
 |---|---|
 | 🎯 **One-line code** | 90% of features need only `office.module.method()` — zero learning curve |
-| 🧩 **73 Skills** | Every feature independently importable, install only what you need |
+| 🧩 **81 Skills** | Every feature independently importable, install only what you need |
 | 🤖 **AI-friendly** | Each Skill ships `SKILL.md` + YAML, recognizable by Codex / Claude / Cursor |
 | 🌏 **Beginner-friendly** | Full tutorials, video guides, and an active WeChat community |
 | 🪶 **Lightweight** | `pip install popdf / poimage / poword` for sub-libraries — no bloat |
-| 🔄 **Continuously updated** | Actively maintained, with 73+ features still evolving |
+| 🔄 **Continuously updated** | Actively maintained, with 81+ features still evolving |
 | 📦 **One import** | `import office` brings everything; or import individually |
-| 🛡️ **Stable** | Used by thousands of projects, MIT licensed |
+| 🛡️ **Stable** | Used by thousands of projects, Apache-2.0 licensed |
 
 ---
 
@@ -88,15 +88,15 @@ import office  # one import, all features available
 | First time here | [📦 Installation](#-installation) |
 | See 5 examples | [🚀 Quick Start](#-quick-start) |
 | Find a specific feature | [🛠️ Components](#%EF%B8%8F-components) or [`skills/README.md`](./skills/README.md) |
-| Understand the Skills system | [✨ Skills system](#-skills-system-73-ready-to-use-skills) |
+| Understand the Skills system | [✨ Skills system](#-skills-system-81-ready-to-use-skills) |
 | Ask the community | [💬 Contact](#-contact-the-author) |
 | Contribute code | [🤝 Contributing](#-contributing) |
 
 ---
 
-## 🧩 Skills system (73 ready-to-use Skills)
+## 🧩 Skills system (81 ready-to-use Skills)
 
-`python-office` ships with a built-in **Skill system**: the library's 73 methods are wrapped as 73 independently importable Skills, each with its own `SKILL.md` documentation.
+`python-office` ships with a built-in **Skill system**: the library's 81 methods are wrapped as 81 independently importable Skills, each with its own `SKILL.md` documentation.
 
 > 💡 **Why Skills?** Skills let Codex, Claude, Cursor and other AI tools **automatically recognize** your request and call the right function.
 
@@ -114,12 +114,12 @@ import office
 office.image.compress_image(input_file='photo.jpg', output_file='photo_small.jpg', quality=30)
 ```
 
-### 📋 13 Categories at a Glance
+### 📋 14 Categories at a Glance
 
 | Category | Skills | Typical Skills |
 |----------|--------|----------------|
-| 📊 Excel | 7 | `fake2excel` / `merge2excel` / `excel2pdf` |
-| 📁 File | 9 | `replace4filename` / `get_files` |
+| 📊 Excel | 12 | `fake2excel` / `merge2excel` / `excel2pdf` |
+| 📁 File | 10 | `replace4filename` / `get_files` |
 | 💰 Finance | 1 | `t0` (stock T+0 return calculator) |
 | 🖼️ Image | 9 | `compress_image` / `add_watermark` / `txt2wordcloud` |
 | 📝 Markdown | 1 | `excel2markdown` |
@@ -127,7 +127,8 @@ office.image.compress_image(input_file='photo.jpg', output_file='photo_small.jpg
 | 📕 PDF | 13 | `pdf2docx` / `pdf2imgs` / `merge2pdf` / `encrypt4pdf` |
 | 🎬 PPT | 3 | `ppt2pdf` / `ppt2img` / `merge4ppt` |
 | 🛠️ Tools | 10 | `transtools` / `qrcodetools` / `passwordtools` |
-| 🎥 Video | 4 | `video2mp3` / `audio2txt` / `txt2mp3` |
+| 🌐 Web | 1 | `url2ebook` |
+| 🎥 Video | 5 | `video2mp3` / `audio2txt` / `txt2mp3` / `video_edit` |
 | 💬 WeChat | 7 | `send_message` / `chat_robot` / `receive_message` |
 | 📄 Word | 5 | `docx2pdf` / `merge4docx` / `docx4imgs` |
 | 🏷️ Ruiming | 3 | `screen_unmarked_image` / `change_label_in_xml` |
@@ -309,7 +310,7 @@ Each feature is accessible via the traditional `import office` style, or directl
 
 ## 🗺️ Roadmap
 
-- [x] **v1.x**: 73 Skills covering all office automation scenarios
+- [x] **v1.x**: 81 Skills covering all office automation scenarios
 - [x] **Skills system**: Every feature independently AI-callable
 - [ ] **v2.0**: Plugin architecture with custom Skill support
 - [ ] **Web GUI**: Visual operation interface
@@ -379,23 +380,9 @@ If python-office has saved you significant time, please consider supporting cont
 
 ## 📜 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).
 
-```
-MIT License
-
-Copyright (c) 2026 CoderWanFeng
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+The full license text is available in the [`LICENSE`](./LICENSE) file at the root of this repository.
 
 ---
 

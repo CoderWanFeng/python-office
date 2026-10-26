@@ -139,24 +139,27 @@ def create_article(theme, line_num=200):
     wftools.create_article(theme=theme, line_num=line_num)
 
 
-def pwd4wifi(len_pwd: int = 8, pwd_list=[]):
+def pwd4wifi(len_pwd: int = 8, pwd_list=None):
     """Generate WiFi password list.
-    
+
     生成WiFi密码列表。
-    
+
     This function calls pwd4wifi function in wftools module to generate WiFi password list of specified length.
     If no password list provided, function will use empty list as default parameter.
-    
+
     该函数调用wftools模块中的pwd4wifi函数，以生成指定长度的WiFi密码列表。
     如果没有提供密码列表，函数将使用空列表作为默认参数。
-    
+
     Args:
         len_pwd (int, optional): password length / 密码长度。Default / 默认: 8
         pwd_list (list, optional): password list / 密码列表。Default / 默认: empty list / 空列表
-    
+
     Returns:
         None
     """
+    # 避免使用可变默认参数，防止多次调用之间共享同一个列表
+    if pwd_list is None:
+        pwd_list = []
     # 调用wftools模块中的pwd4wifi函数，传递密码长度和密码列表参数
     wftools.pwd4wifi(len_pwd=len_pwd, pwd_list=pwd_list)
 

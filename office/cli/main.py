@@ -79,6 +79,11 @@ def build_parser(registry=None):
     parser = argparse.ArgumentParser(
         prog="po",
         description="python-office CLI — office automation from the terminal",
+        epilog=(
+            "Note: in text mode only the return value of the api function is printed; "
+            "commands whose api returns None produce no stdout. Use --json to always "
+            "get a machine readable status line."
+        ),
     )
     parser.add_argument("-V", "--version", action="store_true",
                         help="show version and exit")
@@ -148,7 +153,9 @@ def main(argv=None, registry=None):
     except CliError as exc:
         return output.emit_error(exc, as_json=args.json)
     except KeyboardInterrupt:
-        return output.emit_error("interrupted", as_json=args.json) or 130
+        # Ctrl-C 按 shell 惯例返回 130；emit_error 本身恒返回 1，需单独指定退出码
+        output.emit_error("interrupted", as_json=args.json)
+        return 130
     except Exception as exc:
         return output.emit_error("%s: %s" % (type(exc).__name__, exc),
                                  as_json=args.json)

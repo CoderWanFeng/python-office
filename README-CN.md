@@ -15,7 +15,7 @@
 <p align="center">
   <strong>🚀 一行代码，搞定办公自动化</strong>
   <br>
-  <em>73 个开箱即用的 Skills，覆盖 PDF、Word、Excel、PPT、邮件、微信、图片、视频等全场景</em>
+  <em>81 个开箱即用的 Skills，覆盖 PDF、Word、Excel、PPT、邮件、微信、图片、视频等全场景</em>
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
   <a href="https://github.com/CoderWanFeng/python-office/stargazers"><img src="https://img.shields.io/github/stars/CoderWanFeng/python-office?style=social&color=ff7043" alt="GitHub stars"></a>
   <a href="https://gitee.com/CoderWanFeng/python-office/stargazers"><img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='Gitee stars'></a>
   <!-- License & Build -->
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-28a745" alt="License"></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/license-Apache--2.0-28a745" alt="License"></a>
   <a href="https://www.python-office.com/"><img src="https://img.shields.io/badge/python-3.7%2B-3776AB?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://github.com/CoderWanFeng/python-office/actions"><img src="https://img.shields.io/badge/build-passing-00d4aa" alt="Build"></a>
   <a href="#-安装"><img src="https://img.shields.io/badge/platform-Windows-0078d4?logo=windows&logoColor=white" alt="Windows"></a>
@@ -59,13 +59,13 @@ import office  # 一行导入，所有功能立刻可用
 | | 功能 |
 |---|---|
 | 🎯 **一行代码** | 90% 的功能只需 `office.模块.方法()`，零学习成本 |
-| 🧩 **73 个 Skills** | 每个功能独立可调，按需使用，不冗余 |
+| 🧩 **81 个 Skills** | 每个功能独立可调，按需使用，不冗余 |
 | 🤖 **AI 友好** | 每个 Skill 都有 `SKILL.md` + YAML 描述，Codex/Claude/Cursor 可直接识别 |
 | 🌏 **中文优先** | 全中文文档、视频教程、微信答疑群 |
 | 🪶 **轻量灵活** | 不需要的功能可以不安装：`pip install popdf` / `poimage` / `poword` |
-| 🔄 **持续更新** | 持续维护中，73+ 功能仍在迭代 |
+| 🔄 **持续更新** | 持续维护中，81+ 功能仍在迭代 |
 | 📦 **一次安装** | `import office` 即引入全部能力；不想要也可单独 import |
-| 🛡️ **稳定可靠** | 已被数千个项目使用，MIT 开源 |
+| 🛡️ **稳定可靠** | 已被数千个项目使用，Apache-2.0 开源 |
 
 ---
 
@@ -92,15 +92,15 @@ import office  # 一行导入，所有功能立刻可用
 | 第一次使用 | [📦 安装](#-安装) |
 | 看 5 个例子感受一下 | [🚀 Quick Start](#-quick-start5-行代码体验) |
 | 找具体功能 | [🛠️ 功能分类](#%EF%B8%8F-功能分类) 或 [`skills/README.md`](./skills/README.md) |
-| 了解 Skill 体系 | [✨ Skills 体系](#-skills-体系73-个开箱即用) |
+| 了解 Skill 体系 | [✨ Skills 体系](#-skills-体系81-个开箱即用) |
 | 加群提问 | [💬 联系作者](#-联系作者) |
 | 给项目贡献代码 | [🤝 贡献](#-贡献代码) |
 
 ---
 
-## 🧩 Skills 体系（73 个开箱即用）
+## 🧩 Skills 体系（81 个开箱即用）
 
-`python-office` 内置了一套 **Skill 体系**：把库里的 73 个方法封装成 73 个独立可调用的 Skill，每个 Skill 有自己的 `SKILL.md` 文档，可以单独 import，也可以整体使用。
+`python-office` 内置了一套 **Skill 体系**：把库里的 81 个方法封装成 81 个独立可调用的 Skill，每个 Skill 有自己的 `SKILL.md` 文档，可以单独 import，也可以整体使用。
 
 > 💡 **为什么是 Skill？** 借助 Skill，Codex、Claude、Cursor 等 AI 工具可以**自动识别**你的需求并调用对应功能。
 
@@ -118,12 +118,12 @@ import office
 office.image.compress_image(input_file='photo.jpg', output_file='photo_small.jpg', quality=30)
 ```
 
-### 📋 13 个分类速查表
+### 📋 14 个分类速查表
 
 | 分类 | Skill 数 | 典型 Skill |
 |------|--------|-----------|
-| 📊 Excel | 7 | `fake2excel` / `merge2excel` / `excel2pdf` |
-| 📁 File | 9 | `replace4filename` / `get_files` |
+| 📊 Excel | 12 | `fake2excel` / `merge2excel` / `excel2pdf` |
+| 📁 File | 10 | `replace4filename` / `get_files` |
 | 💰 Finance | 1 | `t0`（股票做 T 收益计算）|
 | 🖼️ Image | 9 | `compress_image` / `add_watermark` / `txt2wordcloud` |
 | 📝 Markdown | 1 | `excel2markdown` |
@@ -131,7 +131,8 @@ office.image.compress_image(input_file='photo.jpg', output_file='photo_small.jpg
 | 📕 PDF | 13 | `pdf2docx` / `pdf2imgs` / `merge2pdf` / `encrypt4pdf` |
 | 🎬 PPT | 3 | `ppt2pdf` / `ppt2img` / `merge4ppt` |
 | 🛠️ Tools | 10 | `transtools` / `qrcodetools` / `passwordtools` |
-| 🎥 Video | 4 | `video2mp3` / `audio2txt` / `txt2mp3` |
+| 🌐 Web | 1 | `url2ebook` |
+| 🎥 Video | 5 | `video2mp3` / `audio2txt` / `txt2mp3` / `video_edit` |
 | 💬 WeChat | 7 | `send_message` / `chat_robot` / `receive_message` |
 | 📄 Word | 5 | `docx2pdf` / `merge4docx` / `docx4imgs` |
 | 🏷️ Ruiming | 3 | `screen_unmarked_image` / `change_label_in_xml` |
@@ -313,7 +314,7 @@ python-office 适用于以下人群和场景：
 
 ## 🗺️ 路线图
 
-- [x] **v1.x**：73 个 Skill，覆盖办公自动化全场景
+- [x] **v1.x**：81 个 Skill，覆盖办公自动化全场景
 - [x] **Skills 体系**：每个功能可独立 AI 调用
 - [ ] **v2.0**：插件化架构，支持自定义 Skill
 - [ ] **Web GUI**：可视化操作界面
@@ -383,23 +384,9 @@ python-office 欢迎任何人来添砖加瓦。建议提交的 PR 放在一个�
 
 ## 📜 License
 
-本项目使用 [MIT License](https://opensource.org/licenses/MIT) 开源。
+本项目使用 [Apache License 2.0](https://opensource.org/licenses/Apache-2.0) 开源。
 
-```
-MIT License
-
-Copyright (c) 2026 CoderWanFeng
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+完整协议文本见仓库根目录的 [`LICENSE`](./LICENSE) 文件。
 
 ---
 

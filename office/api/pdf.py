@@ -225,7 +225,7 @@ def add_text_watermark(input_file=None, point=None, text='python-office',
 
     Args:
         input_file (str, optional): path to the PDF file / PDF文件路径
-        point (tuple, optional): coordinates for watermark position / 水印位置坐标
+        point (tuple, optional): coordinates for watermark position / 水印位置坐标。Default / 默认: (30, 30)
         text (str, optional): watermark text content / 水印文本内容。Default / 默认: 'python-office'
         output_file (str, optional): output PDF file path / 输出PDF文件路径。Default / 默认: './pdf_watermark.pdf'
         fontname (str, optional): font name / 字体名称。Default / 默认: 'Helvetica'
@@ -237,9 +237,14 @@ def add_text_watermark(input_file=None, point=None, text='python-office',
     """
     if output_file is None:
         output_file = './pdf_watermark.pdf'
+    if point is None:
+        # PyMuPDF 的 insert_text 要求 point 为 (x, y)，缺省时使用左上角默认坐标
+        point = (30, 30)
 
-    popdf.add_watermark(input_file=input_file, point=point, text=text,
-                        output_file=output_file, fontname=fontname, fontsize=fontsize, color=color)
+    # 注意：popdf.add_watermark() 自 1.0.2 起已改为零参数的“功能已迁移”提示函数，
+    # 真正带参数的实现是 popdf.add_text_watermark()。
+    popdf.add_text_watermark(input_file=input_file, point=point, text=text,
+                             output_file=output_file, fontname=fontname, fontsize=fontsize, color=color)
 
 
 def merge2pdf(input_file_list=None, output_file=None, one_by_one=None, output=None):
@@ -275,6 +280,10 @@ def merge2pdf(input_file_list=None, output_file=None, one_by_one=None, output=No
         )
         if output_file is None:
             output_file = output
+
+    if output_file is None:
+        # popdf.merge2pdf 的 output_file 为必填参数，缺省时给出默认文件名
+        output_file = './merged.pdf'
 
     popdf.merge2pdf(input_file_list=input_file_list, output_file=output_file)
 
@@ -343,14 +352,34 @@ def add_img_water(input_file=None, mark_file=None, output_file=None, pdf_file_in
     popdf.add_img_water(pdf_file_in=input_file, pdf_file_mark=mark_file, pdf_file_out=output_file)
 
 
-def add_watermark() -> None:
-    """Add watermark to PDF (interactive mode).
+def add_watermark(input_file=None, point=None, text='python-office',
+                  output_file=None, fontname="Helvetica", fontsize=12, color=(1, 0, 0)) -> None:
+    """Add watermark to PDF (legacy alias of :func:`add_text_watermark`).
 
-    给PDF添加水印（交互模式）。
+    给PDF添加水印（旧接口，等价于 add_text_watermark）。
+
+    .. deprecated::
+        该函数已更名为 :func:`add_text_watermark`，保留仅为向后兼容。
+
+    Args:
+        input_file (str, optional): path to the PDF file / PDF文件路径
+        point (tuple, optional): coordinates for watermark position / 水印位置坐标。Default / 默认: (30, 30)
+        text (str, optional): watermark text content / 水印文本内容。Default / 默认: 'python-office'
+        output_file (str, optional): output PDF file path / 输出PDF文件路径。Default / 默认: './pdf_watermark.pdf'
+        fontname (str, optional): font name / 字体名称。Default / 默认: 'Helvetica'
+        fontsize (int, optional): font size / 字体大小。Default / 默认: 12
+        color (tuple, optional): font color / 字体颜色。Default / 默认: red / 红色 (1, 0, 0)
 
     Returns:
         None
     """
+    warnings.warn(
+        "add_watermark 已被 add_text_watermark 取代，将在未来版本移除，请改用 add_text_watermark。",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    add_text_watermark(input_file=input_file, point=point, text=text, output_file=output_file,
+                       fontname=fontname, fontsize=fontsize, color=color)
 
 
 # 给pdf加水印-有参数
@@ -389,8 +418,9 @@ def add_mark(input_file=None, mark_str=None, output_path=None, output_file=None,
         if output_file is None:
             output_file = output_file_name
 
-    popdf.add_watermark_by_parameters(pdf_file=input_file, mark_str=mark_str, output_path=output_path,
-                                      output_file_name=output_file)
+    # add_mark 与 add_watermark_by_parameters 实现完全一致，统一收敛到后者
+    add_watermark_by_parameters(input_file=input_file, mark_str=mark_str, output_path=output_path,
+                                output_file=output_file)
 
 
 # 给pdf加水印-有参数

@@ -5,7 +5,21 @@
 """
 
 import os
-from moviepy import VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips
+
+
+def _load_moviepy():
+    """按需加载 moviepy。
+
+    moviepy 是重量级依赖，改为在真正执行剪辑时才加载，
+    避免仅 import 本模块就拉起整个音视频栈。
+    """
+    try:
+        from moviepy import VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips
+    except ImportError as exc:
+        raise ModuleNotFoundError(
+            "视频剪辑功能依赖 moviepy，请先安装：pip install moviepy"
+        ) from exc
+    return VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips
 
 
 def _parse_time(t):
@@ -37,6 +51,7 @@ def cut_video(video_path, start_time=0, end_time=None, output_path=r'./', output
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: None
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     if not output_name:
         base_name = os.path.basename(video_path)
@@ -70,6 +85,7 @@ def cut_audio(audio_path, start_time=0, end_time=None, output_path=r'./', output
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: None
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     if not output_name:
         base_name = os.path.basename(audio_path)
@@ -107,6 +123,7 @@ def crop_video(video_path, x1=0, y1=0, x2=None, y2=None, width=None, height=None
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: None
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     if not output_name:
         base_name = os.path.basename(video_path)
@@ -138,6 +155,7 @@ def concat_videos(video_list, output_path=r'./', output_name=r'concat_video.mp4'
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: 'concat_video.mp4'
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     out_file = os.path.join(output_path, output_name)
 
@@ -160,6 +178,7 @@ def concat_audios(audio_list, output_path=r'./', output_name=r'concat_audio.mp3'
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: 'concat_audio.mp3'
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     out_file = os.path.join(output_path, output_name)
 
@@ -183,6 +202,7 @@ def add_audio_to_video(video_path, audio_path, output_path=r'./', output_name=No
         output_path (str, optional): output directory / 输出目录。Default / 默认: './'
         output_name (str, optional): output filename / 输出文件名。Default / 默认: None
     """
+    VideoFileClip, AudioFileClip, concatenate_videoclips, concatenate_audioclips = _load_moviepy()
     os.makedirs(output_path, exist_ok=True)
     if not output_name:
         base_name = os.path.basename(video_path)

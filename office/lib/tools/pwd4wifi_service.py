@@ -1,13 +1,28 @@
-import pywifi
+import sys
 import time
-from pywifi import const
 import string
 import random
-import threading
+
+
+def _load_pywifi():
+    """按需加载 pywifi。
+
+    pywifi 属于可选依赖（仅本机 WiFi 审计场景需要），因此不在导入模块时
+    强制依赖，缺失时给出可操作的报错。
+    """
+    try:
+        import pywifi
+        from pywifi import const
+    except ImportError as exc:
+        raise ModuleNotFoundError(
+            "WiFi 相关功能依赖 pywifi，请先安装：pip install pywifi"
+        ) from exc
+    return pywifi, const
 
 
 # WiFi扫描模块
 def wifi_scan():
+    pywifi, _ = _load_pywifi()
     # 初始化wifi
     wifi = pywifi.PyWiFi()
     # 使用第一个无线网卡
@@ -42,6 +57,7 @@ def wifi_scan():
 
 # WIFI破解模块
 def wifi_password_crack(wifi_name, pwd_len, pwd_list):
+    pywifi, const = _load_pywifi()
     # 创建wifi对象
     wifi = pywifi.PyWiFi()
     # 创建网卡对象，为第一个wifi网卡
@@ -77,8 +93,7 @@ def wifi_password_crack(wifi_name, pwd_len, pwd_list):
                 # if time.time() - start_time < 2:
                 if interface.status() == 4:
                     print(f'\r连接成功！密码为：{pwd}')
-                    exit(0)
-                    print()
+                    sys.exit(0)
                     # print(start_time)
                     # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
             print(f'{pwd_list}中，没有合适的密码')
@@ -98,8 +113,7 @@ def wifi_password_crack(wifi_name, pwd_len, pwd_list):
             # if time.time() - start_time < 2:
             if interface.status() == 4:
                 print(f'\r连接成功！密码为：{pwd}')
-                exit(0)
-                print()
+                sys.exit(0)
                 # print(start_time)
                 # 接口状态为4代表连接成功（当尝试时间大于1.5秒之后则为错误密码，经测试测正确密码一般都在1.5秒内连接，若要提高准确性可以设置为2s或以上，相应暴力破解速度就会变慢）
 

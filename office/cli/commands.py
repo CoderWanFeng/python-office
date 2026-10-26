@@ -291,9 +291,10 @@ MODULES = {
                 "params": [
                     {"name": "input_file", "positional": True, "metavar": "IMG",
                      "help": "input image"},
-                    {"name": "output_file", "help": "output image"},
-                    {"name": "quality", "type": int,
-                     "help": "compression quality"},
+                    {"name": "output_file", "default": "./compress_img.jpg",
+                     "help": "output image"},
+                    {"name": "quality", "type": int, "default": 95,
+                     "help": "compression quality (0-95)"},
                 ],
             },
             "add_watermark": {
