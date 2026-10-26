@@ -9,6 +9,9 @@
 try:
     from contributors.my12yyds.excel_column_stats import excel_column_stats
 except ImportError as _import_error:  # pragma: no cover - 仅在安装包环境触发
+    # except 块结束后 Python 会自动 del 掉 as 绑定的异常名，
+    # 因此把它存到模块级变量，供下面的兜底函数保留异常链。
+    _CONTRIBUTORS_IMPORT_ERROR = _import_error
 
     def excel_column_stats(*args, **kwargs):
         """未找到贡献者实现时的兜底函数。
@@ -20,7 +23,7 @@ except ImportError as _import_error:  # pragma: no cover - 仅在安装包环境
             '该 Skill 的实现位于仓库的 contributors/my12yyds/excel_column_stats.py，'
             '该目录不随 python-office 一起发布。'
             '请克隆源码仓库后使用，或直接复制该文件到项目中。'
-        ) from _import_error
+        ) from _CONTRIBUTORS_IMPORT_ERROR
 
 
 __all__ = ['excel_column_stats']
