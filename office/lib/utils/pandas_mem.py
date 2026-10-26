@@ -29,7 +29,7 @@ def reduce_pandas_mem_usage(df) -> object:
                 elif c_min > np.iinfo(np.int64).min and c_max < np.iinfo(np.int64).max:
                     df[col] = df[col].astype(np.int64)
         else:
-            if 'date' in col:
+            if 'date' in str(col).lower():
                 pass
             else:
                 df[col] = df[col].astype('category')

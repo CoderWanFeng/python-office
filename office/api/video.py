@@ -95,3 +95,16 @@ def txt2mp3(content='程序员晚枫', file=None, mp3=r'./程序员晚枫.mp3', 
         None
     """
     return povideo.txt2mp3(content=content, file=file, mp3=mp3, speak=speak)
+
+
+from office.lib.video.video_edit_service import (
+    _parse_time,
+    cut_video,
+    cut_audio,
+    crop_video,
+    concat_videos,
+    concat_audios,
+    add_audio_to_video,
+)
+
+

@@ -340,6 +340,8 @@ def add_img_water(input_file=None, mark_file=None, output_file=None, pdf_file_in
         if output_file is None:
             output_file = pdf_file_out
 
+    popdf.add_img_water(pdf_file_in=input_file, pdf_file_mark=mark_file, pdf_file_out=output_file)
+
 
 def add_watermark() -> None:
     """Add watermark to PDF (interactive mode).

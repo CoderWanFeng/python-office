@@ -141,7 +141,11 @@ def split_excel_by_column(filepath: str, column: int, worksheet_name: str = None
     Returns:
         None
     """
-    poexcel.split_excel_by_column(filepath=filepath, column=column, worksheet_name=worksheet_name)
+    split_excel = getattr(poexcel, "split_excel_by_column", None)
+    if split_excel is None:
+        from office.lib.excel.SplitExcel import split_excel_by_column as split_excel
+
+    split_excel(filepath=filepath, column=column, worksheet_name=worksheet_name)
 
 
 def excel2pdf(excel_path, pdf_path, sheet_id: int = 0):

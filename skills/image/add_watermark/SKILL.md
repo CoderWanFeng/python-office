@@ -18,7 +18,7 @@ description: 通过交互方式给 PDF 添加水印。当用户提到 PDF 互动
 ## 调用方式
 
 ```python
-from office.skills.image import add_watermark
+from skills.image import add_watermark
 
 add_watermark(
     file='./test.png',
@@ -52,7 +52,7 @@ add_watermark(
 ## 使用示例
 
 ```python
-from office.skills.image import add_watermark
+from skills.image import add_watermark
 add_watermark(file='./photo.jpg', mark='我的水印')
 ```
 

@@ -1,0 +1,115 @@
+{
+  "code_snippets": [
+    {
+      "id": "po_office_init",
+      "path": "office/__init__.py",
+      "line_range": "1-30",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_compatibility",
+      "path": "office/compatibility.py",
+      "line_range": "1-250",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_image",
+      "path": "office/api/image.py",
+      "line_range": "1-202",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_pdf",
+      "path": "office/api/pdf.py",
+      "line_range": "1-434",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_excel",
+      "path": "office/api/excel.py",
+      "line_range": "1-163",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_tools",
+      "path": "office/api/tools.py",
+      "line_range": "1-195",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_file",
+      "path": "office/api/file.py",
+      "line_range": "1-198",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_wechat",
+      "path": "office/api/wechat.py",
+      "line_range": "1-145",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_word",
+      "path": "office/api/word.py",
+      "line_range": "1-119",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_video",
+      "path": "office/api/video.py",
+      "line_range": "1-98",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_api_finance",
+      "path": "office/api/finance.py",
+      "line_range": "1-51",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_setup_cfg",
+      "path": "setup.cfg",
+      "line_range": "1-44",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_setup_py",
+      "path": "setup.py",
+      "line_range": "1-14",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_readme",
+      "path": "README.md",
+      "line_range": "1-420",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    },
+    {
+      "id": "po_skills_readme",
+      "path": "skills/README.md",
+      "line_range": "1-274",
+      "gmt_create": "2026-07-21T23:37:00+08:00",
+      "gmt_modified": "2026-07-21T23:37:00+08:00"
+    }
+  ],
+  "project_info": {
+    "name": "python-office",
+    "version": "1.0.6",
+    "language": "zh",
+    "description": "面向Python自动化办公的多功能聚合库，73个Skill覆盖PDF/Word/Excel/PPT/图片/视频/微信/邮件等场景"
+  }
+}

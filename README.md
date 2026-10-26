@@ -59,7 +59,7 @@ import office  # one import, all features available
 | 🤖 **AI-friendly** | Each Skill ships `SKILL.md` + YAML, recognizable by Codex / Claude / Cursor |
 | 🌏 **Beginner-friendly** | Full tutorials, video guides, and an active WeChat community |
 | 🪶 **Lightweight** | `pip install popdf / poimage / poword` for sub-libraries — no bloat |
-| 🔄 **Continuously updated** | Maintained since 2020, 73+ features still evolving |
+| 🔄 **Continuously updated** | Actively maintained, with 73+ features still evolving |
 | 📦 **One import** | `import office` brings everything; or import individually |
 | 🛡️ **Stable** | Used by thousands of projects, MIT licensed |
 
@@ -151,6 +151,22 @@ pip install poexcel    # Excel processing only
 
 > **Python version**: Python 3.7+
 > **Install issues?** [📝 Troubleshooting](https://www.python4office.cn/python-office/profile/)
+
+---
+
+## 💻 CLI: the `po` command
+
+Installing python-office also gives you a terminal command — no Python code needed:
+
+```bash
+po pdf merge2pdf a.pdf b.pdf --output-file merged.pdf
+po excel excel2pdf report.xlsx report.pdf
+po tools url2ip www.python-office.com
+
+po --json tools url2ip www.python-office.com   # one-line JSON for scripts & agents
+```
+
+`po --help` lists all modules and commands (`python -m office` works as an alias).
 
 ---
 
@@ -394,7 +410,7 @@ copies or substantial portions of the Software.
 
 ## ⭐ Star History
 
-[![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
+[![Stargazers over time](https://api.star-history.com/svg?repos=CoderWanFeng/python-office&type=Date)](https://star-history.com/#CoderWanFeng/python-office&Date)
 
 ---
 

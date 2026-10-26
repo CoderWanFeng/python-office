@@ -63,7 +63,7 @@ import office  # 一行导入，所有功能立刻可用
 | 🤖 **AI 友好** | 每个 Skill 都有 `SKILL.md` + YAML 描述，Codex/Claude/Cursor 可直接识别 |
 | 🌏 **中文优先** | 全中文文档、视频教程、微信答疑群 |
 | 🪶 **轻量灵活** | 不需要的功能可以不安装：`pip install popdf` / `poimage` / `poword` |
-| 🔄 **持续更新** | 2020 起持续维护，73+ 功能仍在迭代 |
+| 🔄 **持续更新** | 持续维护中，73+ 功能仍在迭代 |
 | 📦 **一次安装** | `import office` 即引入全部能力；不想要也可单独 import |
 | 🛡️ **稳定可靠** | 已被数千个项目使用，MIT 开源 |
 
@@ -155,6 +155,22 @@ pip install poexcel    # 只用 Excel 处理
 
 > **Python 版本要求**：Python 3.7+
 > **安装问题**：[📝 常见问题与故障排除](https://www.python4office.cn/python-office/profile/)
+
+---
+
+## 💻 命令行：`po` 命令
+
+安装 python-office 后自带终端命令，不写代码也能用：
+
+```bash
+po pdf merge2pdf a.pdf b.pdf --output-file merged.pdf
+po excel excel2pdf 报表.xlsx 报表.pdf
+po tools url2ip www.python-office.com
+
+po --json tools url2ip www.python-office.com   # 单行 JSON 输出，方便脚本和 agent 调用
+```
+
+`po --help` 查看全部模块与子命令（`python -m office` 为等价入口）。
 
 ---
 
@@ -398,7 +414,7 @@ copies or substantial portions of the Software.
 
 ## ⭐ Star History
 
-[![Stargazers over time](https://starchart.cc/CoderWanFeng/python-office.svg)](https://starchart.cc/CoderWanFeng/python-office)
+[![Stargazers over time](https://api.star-history.com/svg?repos=CoderWanFeng/python-office&type=Date)](https://star-history.com/#CoderWanFeng/python-office&Date)
 
 ---
 

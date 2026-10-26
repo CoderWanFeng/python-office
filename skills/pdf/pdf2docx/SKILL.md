@@ -18,7 +18,7 @@ description: 将 PDF 文件转换为 Word 文档（.docx），支持单文件和
 ## 调用方式
 
 ```python
-from office.skills.pdf import pdf2docx
+from skills.pdf import pdf2docx
 
 # 单个文件
 pdf2docx(input_file='./test.pdf', output_file='./test.docx')
@@ -46,7 +46,7 @@ pdf2docx(input_path='./pdfs/', output_path='./docs/')
 ## 使用示例
 
 ```python
-from office.skills.pdf import pdf2docx
+from skills.pdf import pdf2docx
 pdf2docx(input_file='./report.pdf', output_file='./report.docx')
 ```
 

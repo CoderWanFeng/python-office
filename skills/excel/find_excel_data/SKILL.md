@@ -18,7 +18,7 @@ description: 在 Excel 文件中搜索指定关键词并返回文件、行号、
 ## 调用方式
 
 ```python
-from office.skills.excel import find_excel_data
+from skills.excel import find_excel_data
 
 find_excel_data(
     search_key='python',
@@ -40,7 +40,7 @@ find_excel_data(
 ## 使用示例
 
 ```python
-from office.skills.excel import find_excel_data
+from skills.excel import find_excel_data
 find_excel_data(search_key='订单', target_dir='./订单数据')
 ```
 

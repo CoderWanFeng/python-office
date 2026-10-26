@@ -16,6 +16,7 @@
 - [PPT 处理](#ppt-处理)
 - [Tools 工具](#tools-工具)
 - [Video 视频处理](#video-视频处理)
+- [Web 网页处理](#web-网页处理)
 - [WeChat 微信](#wechat-微信)
 - [Word 文档处理](#word-文档处理)
 - [Ruiming 测试 API](#ruiming-测试-api)
@@ -28,11 +29,11 @@
 
 ```python
 # 方式 1：直接导入函数
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 fake2excel(rows=10)
 
 # 方式 2：导入子模块
-from office.skills.excel import fake2excel as fe
+from skills.excel import fake2excel as fe
 fe(rows=10, columns=['name', 'phone'])
 ```
 
@@ -63,7 +64,7 @@ fe(rows=10, columns=['name', 'phone'])
 
 调用示例：
 ```python
-from office.skills.excel import fake2excel
+from skills.excel import fake2excel
 fake2excel(columns=['name', 'phone'], rows=100, path='./test.xlsx')
 ```
 
@@ -85,7 +86,7 @@ fake2excel(columns=['name', 'phone'], rows=100, path='./test.xlsx')
 
 调用示例：
 ```python
-from office.skills.file import replace4filename
+from skills.file import replace4filename
 replace4filename(path='./test_dir', del_content='old', replace_content='new')
 ```
 
@@ -99,7 +100,7 @@ replace4filename(path='./test_dir', del_content='old', replace_content='new')
 
 调用示例：
 ```python
-from office.skills.finance import t0
+from skills.finance import t0
 profit = t0(buy_price=11.99, sale_price=12.26, shares=700)
 print(profit)
 ```
@@ -122,7 +123,7 @@ print(profit)
 
 调用示例：
 ```python
-from office.skills.image import add_watermark
+from skills.image import add_watermark
 add_watermark(file='test.png', mark='python-office')
 ```
 
@@ -199,6 +200,23 @@ add_watermark(file='test.png', mark='python-office')
 | `audio2txt` | 音频提取文字 | `office/skills/video/audio2txt/` |
 | `mark2video` | 给视频添加水印 | `office/skills/video/mark2video/` |
 | `txt2mp3` | 文本转语音 | `office/skills/video/txt2mp3/` |
+| `video_edit` | 音频与视频剪辑集合（截取、画面裁剪、音视频拼接、合成/替换音频） | `office/skills/video/video_edit/` |
+
+
+
+---
+
+## Web 网页处理
+
+| Skill | 功能 | 所在路径 |
+|-------|------|----------|
+| `url2ebook` | 将网页转换为电子书 | `office/skills/web/url2ebook/` |
+
+调用示例：
+```python
+from skills.web import url2ebook
+url2ebook(url='https://www.python-office.com', tile='Python-Office自动化办公指南')
+```
 
 ---
 
@@ -249,17 +267,17 @@ office/skills/<category>/<skill_name>/
 ```
 
 - **细粒度**：每个方法对应一个独立 Skill
-- **可单独调用**：每个 Skill 都可通过 `from office.skills.<category> import <skill_name>` 单独使用
+- **可单独调用**：每个 Skill 都可通过 `from skills.<category> import <skill_name>` 单独使用
 - **文档齐全**：每个 Skill 都有对应的 `SKILL.md` 详细说明
 
 ---
 
 ## 统计
 
-- 总计：**73 个 Skill**，涵盖 13 个分类
+- 总计：**81 个 Skill**，涵盖 14 个分类
 - 各分类 Skill 数量：
-  - Excel：7
-  - File：9
+  - Excel：12
+  - File：10
   - Finance：1
   - Image：9
   - Markdown：1
@@ -267,7 +285,8 @@ office/skills/<category>/<skill_name>/
   - PDF：13
   - PPT：3
   - Tools：10
-  - Video：4
+  - Video：5
+  - Web：1
   - WeChat：7
   - Word：5
   - Ruiming：3

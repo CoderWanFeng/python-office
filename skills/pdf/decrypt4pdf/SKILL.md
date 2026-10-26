@@ -18,7 +18,7 @@ description: 对加密的 PDF 文件进行解密。当用户提到 PDF 解密、
 ## 调用方式
 
 ```python
-from office.skills.pdf import decrypt4pdf
+from skills.pdf import decrypt4pdf
 
 decrypt4pdf(
     password='123456',
@@ -44,7 +44,7 @@ decrypt4pdf(
 ## 使用示例
 
 ```python
-from office.skills.pdf import decrypt4pdf
+from skills.pdf import decrypt4pdf
 decrypt4pdf(password='mypassword', input_file='./encrypted.pdf', output_file='./decrypted.pdf')
 ```
 
