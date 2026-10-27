@@ -108,17 +108,28 @@ def test_registry_params_are_wellformed():
 
 
 def test_registry_covers_core_modules():
-    # 非核心模块（video/web/word/ppt/wechat）拆到独立 issue，后续加入
+    # 第一波 7 个跨平台核心模块 + 第二波逐步加入的 Windows-only 模块
+    # word 是第二波加入的，依赖 poword（仅 Windows）
     assert set(commands.MODULES) == {
-        "pdf", "excel", "tools", "image", "file", "markdown", "finance",
+        "pdf", "excel", "tools", "image", "file", "markdown", "finance", "word",
     }
     total = sum(len(m["commands"]) for m in commands.MODULES.values())
-    assert total == 42
+    assert total == 47  # 42 (first wave) + 5 (word)
 
 
 def test_registry_core_modules_are_cross_platform():
-    for name, module in commands.MODULES.items():
-        assert module["platforms"] is None, name
+    # 第一波 7 个核心模块必须是跨平台的
+    core = {"pdf", "excel", "tools", "image", "file", "markdown", "finance"}
+    for name in core:
+        assert commands.MODULES[name]["platforms"] is None, name
+
+
+def test_registry_word_is_windows_only():
+    word = commands.MODULES["word"]
+    assert word["platforms"] == ["win32"]
+    assert set(word["commands"]) == {
+        "docx2pdf", "merge4docx", "doc2docx", "docx2doc", "docx4imgs",
+    }
 
 
 # ---------------------------------------------------------------------------
