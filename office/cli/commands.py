@@ -519,4 +519,62 @@ MODULES = {
             },
         },
     },
+    "word": {
+        "module": "office.api.word",
+        "help": "Word: convert to PDF, merge, doc/docx convert, extract images",
+        "platforms": ["win32"],
+        "commands": {
+            "docx2pdf": {
+                "help": "Convert Word to PDF",
+                "params": [
+                    {"name": "path", "positional": True, "metavar": "DOCX",
+                     "help": "input Word file or folder (batch)"},
+                    {"name": "output_path",
+                     "help": "output PDF file or folder (default: same as input)"},
+                ],
+            },
+            "merge4docx": {
+                "help": "input folder containing docx files to merge",
+                "params": [
+                    {"name": "input_path", "positional": True, "metavar": "PATH",
+                     "help": "input file or folder path"},
+                    {"name": "output_path", "positional": True, "metavar": "DIR",
+                     "help": "output directory for merged file"},
+                    {"name": "new_word_name", "default": "merge4docx",
+                     "help": "name of merged new file"},
+                ],
+            },
+            "doc2docx": {
+                "help": "Convert Doc file to Docx file",
+                "params": [
+                    {"name": "input_path", "positional": True, "metavar": "DOC",
+                     "help": "input Doc file path"},
+                    {"name": "output_path", "default": "./",
+                     "help": "output Docx path (dir or .docx file)"},
+                    {"name": "output_name",
+                     "help": "output Docx file name"},
+                ],
+            },
+            "docx2doc": {
+                "help": "Convert Docx file to Doc file",
+                "params": [
+                    {"name": "input_path", "positional": True, "metavar": "DOCX",
+                     "help": "input Docx file path"},
+                    {"name": "output_path", "default": "./",
+                     "help": "output Doc file path"},
+                    {"name": "output_name",
+                     "help": "output Doc file name"},
+                ],
+            },
+            "docx4imgs": {
+                "help": "Extract images from Word document",
+                "params": [
+                    {"name": "word_path", "positional": True, "metavar": "DOCX",
+                     "help": "Word document path"},
+                    {"name": "img_path", "positional": True, "metavar": "DIR",
+                     "help": "storage location for extracted images"},
+                ],
+            },
+        },
+    },
 }
