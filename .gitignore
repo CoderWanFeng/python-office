@@ -19,3 +19,5 @@ tests/test_files/
 *.exe
 *.app
 *.dmg
+
+.workbuddy
